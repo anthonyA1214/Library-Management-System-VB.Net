@@ -126,6 +126,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ViewRecords.Designer.vb">
+      <DependentUpon>ViewRecords.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ViewRecords.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AdminForm.resx">
@@ -148,6 +154,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewRecords.resx">
+      <DependentUpon>ViewRecords.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
