@@ -92,10 +92,23 @@
       <DependentUpon>LoginForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ManageGenres.Designer.vb">
+      <DependentUpon>ManageGenres.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManageGenres.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberBooks.Designer.vb">
+      <DependentUpon>MemberBooks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MemberBooks.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -114,6 +127,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageGenres.resx">
+      <DependentUpon>ManageGenres.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberBooks.resx">
+      <DependentUpon>MemberBooks.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
