@@ -388,6 +388,7 @@ Partial Class MemberBooks
         '
         'pbExit2
         '
+        Me.pbExit2.Image = Global.Library_Management_System.My.Resources.Resources.reject2
         Me.pbExit2.ImageRotate = 0!
         Me.pbExit2.Location = New System.Drawing.Point(483, 14)
         Me.pbExit2.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
@@ -459,6 +460,7 @@ Partial Class MemberBooks
         '
         'pbExit
         '
+        Me.pbExit.Image = Global.Library_Management_System.My.Resources.Resources.reject2
         Me.pbExit.ImageRotate = 0!
         Me.pbExit.Location = New System.Drawing.Point(19, 17)
         Me.pbExit.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
