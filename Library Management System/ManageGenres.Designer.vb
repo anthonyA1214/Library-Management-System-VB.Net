@@ -29,21 +29,21 @@ Partial Class ManageGenres
         Me.pnlGrid = New Guna.UI2.WinForms.Guna2Panel()
         Me.dgvGenre = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.pnlAddGenre = New Guna.UI2.WinForms.Guna2Panel()
+        Me.pbExit2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.btnSaveGenre = New Guna.UI2.WinForms.Guna2Button()
         Me.label2 = New System.Windows.Forms.Label()
         Me.tbGenreName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.pnlTopMenu = New Guna.UI2.WinForms.Guna2Panel()
         Me.btnAddGenre = New Guna.UI2.WinForms.Guna2Button()
-        Me.tbSearch = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.pbExit2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.pbExit = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.tbSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.guna2Panel3.SuspendLayout()
         Me.pnlGrid.SuspendLayout()
         CType(Me.dgvGenre, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlAddGenre.SuspendLayout()
-        Me.pnlTopMenu.SuspendLayout()
         CType(Me.pbExit2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlTopMenu.SuspendLayout()
         CType(Me.pbExit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -148,6 +148,19 @@ Partial Class ManageGenres
         Me.pnlAddGenre.Size = New System.Drawing.Size(1727, 155)
         Me.pnlAddGenre.TabIndex = 36
         '
+        'pbExit2
+        '
+        Me.pbExit2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pbExit2.Image = Global.Library_Management_System.My.Resources.Resources.reject2
+        Me.pbExit2.ImageRotate = 0!
+        Me.pbExit2.Location = New System.Drawing.Point(1636, 17)
+        Me.pbExit2.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.pbExit2.Name = "pbExit2"
+        Me.pbExit2.Size = New System.Drawing.Size(67, 60)
+        Me.pbExit2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbExit2.TabIndex = 3
+        Me.pbExit2.TabStop = False
+        '
         'btnSaveGenre
         '
         Me.btnSaveGenre.Anchor = System.Windows.Forms.AnchorStyles.Top
@@ -247,6 +260,18 @@ Partial Class ManageGenres
         Me.btnAddGenre.TabIndex = 2
         Me.btnAddGenre.Text = "Add Genre"
         '
+        'pbExit
+        '
+        Me.pbExit.Image = Global.Library_Management_System.My.Resources.Resources.reject2
+        Me.pbExit.ImageRotate = 0!
+        Me.pbExit.Location = New System.Drawing.Point(19, 17)
+        Me.pbExit.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.pbExit.Name = "pbExit"
+        Me.pbExit.Size = New System.Drawing.Size(67, 60)
+        Me.pbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbExit.TabIndex = 1
+        Me.pbExit.TabStop = False
+        '
         'tbSearch
         '
         Me.tbSearch.Anchor = System.Windows.Forms.AnchorStyles.Top
@@ -270,29 +295,6 @@ Partial Class ManageGenres
         Me.tbSearch.Size = New System.Drawing.Size(533, 86)
         Me.tbSearch.TabIndex = 1
         '
-        'pbExit2
-        '
-        Me.pbExit2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.pbExit2.ImageRotate = 0!
-        Me.pbExit2.Location = New System.Drawing.Point(1636, 17)
-        Me.pbExit2.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
-        Me.pbExit2.Name = "pbExit2"
-        Me.pbExit2.Size = New System.Drawing.Size(67, 60)
-        Me.pbExit2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbExit2.TabIndex = 3
-        Me.pbExit2.TabStop = False
-        '
-        'pbExit
-        '
-        Me.pbExit.ImageRotate = 0!
-        Me.pbExit.Location = New System.Drawing.Point(19, 17)
-        Me.pbExit.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
-        Me.pbExit.Name = "pbExit"
-        Me.pbExit.Size = New System.Drawing.Size(67, 60)
-        Me.pbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbExit.TabIndex = 1
-        Me.pbExit.TabStop = False
-        '
         'ManageGenres
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
@@ -311,8 +313,8 @@ Partial Class ManageGenres
         CType(Me.dgvGenre, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlAddGenre.ResumeLayout(False)
         Me.pnlAddGenre.PerformLayout()
-        Me.pnlTopMenu.ResumeLayout(False)
         CType(Me.pbExit2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlTopMenu.ResumeLayout(False)
         CType(Me.pbExit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
