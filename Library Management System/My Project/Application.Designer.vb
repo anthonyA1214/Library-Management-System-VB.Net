@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Library_Management_System.CirculationReport
+            Me.MainForm = Global.Library_Management_System.MemberProfiles
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _

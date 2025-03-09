@@ -103,11 +103,41 @@
     <Compile Include="Inventory.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="IssueBook.Designer.vb">
+      <DependentUpon>IssueBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IssueBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LoginForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginForm.Designer.vb">
       <DependentUpon>LoginForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageMembers.Designer.vb">
+      <DependentUpon>ManageMembers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManageMembers.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageStaffs.Designer.vb">
+      <DependentUpon>ManageStaffs.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManageStaffs.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberActivityReport.Designer.vb">
+      <DependentUpon>MemberActivityReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MemberActivityReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberProfiles.Designer.vb">
+      <DependentUpon>MemberProfiles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MemberProfiles.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -140,8 +170,23 @@
     <EmbeddedResource Include="Inventory.resx">
       <DependentUpon>Inventory.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="IssueBook.resx">
+      <DependentUpon>IssueBook.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageMembers.resx">
+      <DependentUpon>ManageMembers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageStaffs.resx">
+      <DependentUpon>ManageStaffs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberActivityReport.resx">
+      <DependentUpon>MemberActivityReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberProfiles.resx">
+      <DependentUpon>MemberProfiles.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
