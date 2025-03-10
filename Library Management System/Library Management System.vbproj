@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -85,6 +85,30 @@
     <Compile Include="AdminForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Archive.Designer.vb">
+      <DependentUpon>Archive.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Archive.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CirculationReport.Designer.vb">
+      <DependentUpon>CirculationReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CirculationReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory.Designer.vb">
+      <DependentUpon>Inventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IssueBook.Designer.vb">
+      <DependentUpon>IssueBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IssueBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LoginForm.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -92,22 +116,28 @@
       <DependentUpon>LoginForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManageGenres.Designer.vb">
-      <DependentUpon>ManageGenres.vb</DependentUpon>
+    <Compile Include="ManageMembers.Designer.vb">
+      <DependentUpon>ManageMembers.vb</DependentUpon>
     </Compile>
-    <Compile Include="ManageGenres.vb">
+    <Compile Include="ManageMembers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MemberActivityReports.Designer.vb">
-      <DependentUpon>MemberActivityReports.vb</DependentUpon>
+    <Compile Include="ManageStaffs.Designer.vb">
+      <DependentUpon>ManageStaffs.vb</DependentUpon>
     </Compile>
-    <Compile Include="MemberActivityReports.vb">
+    <Compile Include="ManageStaffs.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MemberBooks.Designer.vb">
-      <DependentUpon>MemberBooks.vb</DependentUpon>
+    <Compile Include="MemberActivityReport.Designer.vb">
+      <DependentUpon>MemberActivityReport.vb</DependentUpon>
     </Compile>
-    <Compile Include="MemberBooks.vb">
+    <Compile Include="MemberActivityReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberProfiles.Designer.vb">
+      <DependentUpon>MemberProfiles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MemberProfiles.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -155,17 +185,32 @@
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Archive.resx">
+      <DependentUpon>Archive.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CirculationReport.resx">
+      <DependentUpon>CirculationReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory.resx">
+      <DependentUpon>Inventory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IssueBook.resx">
+      <DependentUpon>IssueBook.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageGenres.resx">
-      <DependentUpon>ManageGenres.vb</DependentUpon>
+    <EmbeddedResource Include="ManageMembers.resx">
+      <DependentUpon>ManageMembers.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MemberActivityReports.resx">
-      <DependentUpon>MemberActivityReports.vb</DependentUpon>
+    <EmbeddedResource Include="ManageStaffs.resx">
+      <DependentUpon>ManageStaffs.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MemberBooks.resx">
-      <DependentUpon>MemberBooks.vb</DependentUpon>
+    <EmbeddedResource Include="MemberActivityReport.resx">
+      <DependentUpon>MemberActivityReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberProfiles.resx">
+      <DependentUpon>MemberProfiles.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
