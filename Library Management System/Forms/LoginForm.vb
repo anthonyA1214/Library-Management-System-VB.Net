@@ -28,7 +28,7 @@ Public Class LoginForm
 
         If authResult.IsSuccesful() Then
             If authResult.Role = "admin" Then
-                Dim adminForm As New AdminForm()
+                Dim adminForm As New AdminForm(username)
                 adminForm.Show()
                 Me.Hide()
             Else

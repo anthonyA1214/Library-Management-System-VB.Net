@@ -28,9 +28,9 @@ Partial Class ManageStaffs
         Me.pnlTopMenu = New Guna.UI2.WinForms.Guna2Panel()
         Me.label1 = New System.Windows.Forms.Label()
         Me.btnAddStaff = New Guna.UI2.WinForms.Guna2Button()
+        Me.pbExit = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.tbSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.cbSearchBy = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.pbExit = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.pnlSideMenu = New Guna.UI2.WinForms.Guna2Panel()
         Me.guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.tbConfirmPassword = New Guna.UI2.WinForms.Guna2TextBox()
@@ -82,9 +82,10 @@ Partial Class ManageStaffs
         Me.pnlTopMenu.Controls.Add(Me.cbSearchBy)
         Me.pnlTopMenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlTopMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.pnlTopMenu.Location = New System.Drawing.Point(0, 0)
+        Me.pnlTopMenu.Location = New System.Drawing.Point(13, 12)
+        Me.pnlTopMenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnlTopMenu.Name = "pnlTopMenu"
-        Me.pnlTopMenu.Size = New System.Drawing.Size(668, 50)
+        Me.pnlTopMenu.Size = New System.Drawing.Size(865, 62)
         Me.pnlTopMenu.TabIndex = 7
         '
         'label1
@@ -92,9 +93,10 @@ Partial Class ManageStaffs
         Me.label1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.label1.AutoSize = True
         Me.label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label1.Location = New System.Drawing.Point(228, 18)
+        Me.label1.Location = New System.Drawing.Point(291, 22)
+        Me.label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label1.Name = "label1"
-        Me.label1.Size = New System.Drawing.Size(70, 17)
+        Me.label1.Size = New System.Drawing.Size(89, 23)
         Me.label1.TabIndex = 1
         Me.label1.Text = "Search by:"
         '
@@ -102,7 +104,7 @@ Partial Class ManageStaffs
         '
         Me.btnAddStaff.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnAddStaff.AutoRoundedCorners = True
-        Me.btnAddStaff.BorderRadius = 19
+        Me.btnAddStaff.BorderRadius = 23
         Me.btnAddStaff.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btnAddStaff.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnAddStaff.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
@@ -110,17 +112,30 @@ Partial Class ManageStaffs
         Me.btnAddStaff.FillColor = System.Drawing.Color.FromArgb(CType(CType(162, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(163, Byte), Integer))
         Me.btnAddStaff.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.btnAddStaff.ForeColor = System.Drawing.Color.White
-        Me.btnAddStaff.Location = New System.Drawing.Point(66, 5)
+        Me.btnAddStaff.Location = New System.Drawing.Point(75, 6)
+        Me.btnAddStaff.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAddStaff.Name = "btnAddStaff"
-        Me.btnAddStaff.Size = New System.Drawing.Size(150, 40)
+        Me.btnAddStaff.Size = New System.Drawing.Size(200, 49)
         Me.btnAddStaff.TabIndex = 2
         Me.btnAddStaff.Text = "Add Staff"
+        '
+        'pbExit
+        '
+        Me.pbExit.Image = Global.Library_Management_System.My.Resources.Resources.reject2
+        Me.pbExit.ImageRotate = 0!
+        Me.pbExit.Location = New System.Drawing.Point(9, 9)
+        Me.pbExit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pbExit.Name = "pbExit"
+        Me.pbExit.Size = New System.Drawing.Size(33, 31)
+        Me.pbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbExit.TabIndex = 1
+        Me.pbExit.TabStop = False
         '
         'tbSearch
         '
         Me.tbSearch.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.tbSearch.AutoRoundedCorners = True
-        Me.tbSearch.BorderRadius = 17
+        Me.tbSearch.BorderRadius = 21
         Me.tbSearch.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbSearch.DefaultText = ""
         Me.tbSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -131,11 +146,12 @@ Partial Class ManageStaffs
         Me.tbSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbSearch.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbSearch.Location = New System.Drawing.Point(456, 7)
+        Me.tbSearch.Location = New System.Drawing.Point(595, 9)
+        Me.tbSearch.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbSearch.Name = "tbSearch"
         Me.tbSearch.PlaceholderText = "Search staffs"
         Me.tbSearch.SelectedText = ""
-        Me.tbSearch.Size = New System.Drawing.Size(200, 36)
+        Me.tbSearch.Size = New System.Drawing.Size(267, 44)
         Me.tbSearch.TabIndex = 1
         '
         'cbSearchBy
@@ -153,21 +169,11 @@ Partial Class ManageStaffs
         Me.cbSearchBy.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cbSearchBy.ItemHeight = 30
         Me.cbSearchBy.Items.AddRange(New Object() {"Name", "Username", "ID"})
-        Me.cbSearchBy.Location = New System.Drawing.Point(307, 7)
+        Me.cbSearchBy.Location = New System.Drawing.Point(396, 9)
+        Me.cbSearchBy.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cbSearchBy.Name = "cbSearchBy"
-        Me.cbSearchBy.Size = New System.Drawing.Size(140, 36)
+        Me.cbSearchBy.Size = New System.Drawing.Size(185, 36)
         Me.cbSearchBy.TabIndex = 0
-        '
-        'pbExit
-        '
-        Me.pbExit.Image = Global.Library_Management_System.My.Resources.Resources.reject2
-        Me.pbExit.ImageRotate = 0!
-        Me.pbExit.Location = New System.Drawing.Point(7, 7)
-        Me.pbExit.Name = "pbExit"
-        Me.pbExit.Size = New System.Drawing.Size(25, 25)
-        Me.pbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbExit.TabIndex = 1
-        Me.pbExit.TabStop = False
         '
         'pnlSideMenu
         '
@@ -195,9 +201,10 @@ Partial Class ManageStaffs
         Me.pnlSideMenu.Controls.Add(Me.lblSideMenu)
         Me.pnlSideMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.pnlSideMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.pnlSideMenu.Location = New System.Drawing.Point(0, 50)
+        Me.pnlSideMenu.Location = New System.Drawing.Point(13, 74)
+        Me.pnlSideMenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnlSideMenu.Name = "pnlSideMenu"
-        Me.pnlSideMenu.Size = New System.Drawing.Size(225, 472)
+        Me.pnlSideMenu.Size = New System.Drawing.Size(300, 556)
         Me.pnlSideMenu.TabIndex = 8
         '
         'guna2Panel1
@@ -209,9 +216,10 @@ Partial Class ManageStaffs
         Me.guna2Panel1.Controls.Add(Me.tbConfirmPassword)
         Me.guna2Panel1.Controls.Add(Me.visibility2)
         Me.guna2Panel1.FillColor = System.Drawing.Color.White
-        Me.guna2Panel1.Location = New System.Drawing.Point(13, 346)
+        Me.guna2Panel1.Location = New System.Drawing.Point(17, 426)
+        Me.guna2Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.guna2Panel1.Name = "guna2Panel1"
-        Me.guna2Panel1.Size = New System.Drawing.Size(200, 36)
+        Me.guna2Panel1.Size = New System.Drawing.Size(267, 44)
         Me.guna2Panel1.TabIndex = 40
         '
         'tbConfirmPassword
@@ -229,10 +237,11 @@ Partial Class ManageStaffs
         Me.tbConfirmPassword.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.tbConfirmPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbConfirmPassword.Location = New System.Drawing.Point(1, 2)
+        Me.tbConfirmPassword.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbConfirmPassword.Name = "tbConfirmPassword"
         Me.tbConfirmPassword.PlaceholderText = ""
         Me.tbConfirmPassword.SelectedText = ""
-        Me.tbConfirmPassword.Size = New System.Drawing.Size(164, 33)
+        Me.tbConfirmPassword.Size = New System.Drawing.Size(219, 41)
         Me.tbConfirmPassword.TabIndex = 4
         '
         'visibility2
@@ -240,9 +249,10 @@ Partial Class ManageStaffs
         Me.visibility2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.visibility2.BackColor = System.Drawing.Color.Transparent
         Me.visibility2.ImageRotate = 0!
-        Me.visibility2.Location = New System.Drawing.Point(171, 6)
+        Me.visibility2.Location = New System.Drawing.Point(228, 7)
+        Me.visibility2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.visibility2.Name = "visibility2"
-        Me.visibility2.Size = New System.Drawing.Size(25, 25)
+        Me.visibility2.Size = New System.Drawing.Size(33, 31)
         Me.visibility2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.visibility2.TabIndex = 39
         Me.visibility2.TabStop = False
@@ -257,9 +267,10 @@ Partial Class ManageStaffs
         Me.guna2Panel2.Controls.Add(Me.tbPassword)
         Me.guna2Panel2.Controls.Add(Me.visibility1)
         Me.guna2Panel2.FillColor = System.Drawing.Color.White
-        Me.guna2Panel2.Location = New System.Drawing.Point(12, 287)
+        Me.guna2Panel2.Location = New System.Drawing.Point(16, 353)
+        Me.guna2Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.guna2Panel2.Name = "guna2Panel2"
-        Me.guna2Panel2.Size = New System.Drawing.Size(200, 36)
+        Me.guna2Panel2.Size = New System.Drawing.Size(267, 44)
         Me.guna2Panel2.TabIndex = 39
         '
         'tbPassword
@@ -277,10 +288,11 @@ Partial Class ManageStaffs
         Me.tbPassword.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.tbPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbPassword.Location = New System.Drawing.Point(1, 2)
+        Me.tbPassword.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbPassword.Name = "tbPassword"
         Me.tbPassword.PlaceholderText = ""
         Me.tbPassword.SelectedText = ""
-        Me.tbPassword.Size = New System.Drawing.Size(164, 33)
+        Me.tbPassword.Size = New System.Drawing.Size(219, 41)
         Me.tbPassword.TabIndex = 4
         '
         'visibility1
@@ -288,9 +300,10 @@ Partial Class ManageStaffs
         Me.visibility1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.visibility1.BackColor = System.Drawing.Color.Transparent
         Me.visibility1.ImageRotate = 0!
-        Me.visibility1.Location = New System.Drawing.Point(171, 6)
+        Me.visibility1.Location = New System.Drawing.Point(228, 7)
+        Me.visibility1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.visibility1.Name = "visibility1"
-        Me.visibility1.Size = New System.Drawing.Size(25, 25)
+        Me.visibility1.Size = New System.Drawing.Size(33, 31)
         Me.visibility1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.visibility1.TabIndex = 39
         Me.visibility1.TabStop = False
@@ -301,9 +314,10 @@ Partial Class ManageStaffs
         Me.label7.AutoSize = True
         Me.label7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.label7.Location = New System.Drawing.Point(17, 326)
+        Me.label7.Location = New System.Drawing.Point(23, 401)
+        Me.label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label7.Name = "label7"
-        Me.label7.Size = New System.Drawing.Size(121, 17)
+        Me.label7.Size = New System.Drawing.Size(153, 23)
         Me.label7.TabIndex = 24
         Me.label7.Text = "Confirm Password:"
         '
@@ -321,9 +335,10 @@ Partial Class ManageStaffs
         Me.cbRole.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cbRole.ItemHeight = 30
         Me.cbRole.Items.AddRange(New Object() {"Staff", "Admin"})
-        Me.cbRole.Location = New System.Drawing.Point(11, 523)
+        Me.cbRole.Location = New System.Drawing.Point(15, 644)
+        Me.cbRole.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cbRole.Name = "cbRole"
-        Me.cbRole.Size = New System.Drawing.Size(200, 36)
+        Me.cbRole.Size = New System.Drawing.Size(265, 36)
         Me.cbRole.TabIndex = 22
         '
         'label9
@@ -331,9 +346,10 @@ Partial Class ManageStaffs
         Me.label9.AutoSize = True
         Me.label9.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.label9.Location = New System.Drawing.Point(17, 503)
+        Me.label9.Location = New System.Drawing.Point(23, 619)
+        Me.label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label9.Name = "label9"
-        Me.label9.Size = New System.Drawing.Size(37, 17)
+        Me.label9.Size = New System.Drawing.Size(48, 23)
         Me.label9.TabIndex = 21
         Me.label9.Text = "Role:"
         '
@@ -342,16 +358,17 @@ Partial Class ManageStaffs
         Me.label5.AutoSize = True
         Me.label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.label5.Location = New System.Drawing.Point(17, 267)
+        Me.label5.Location = New System.Drawing.Point(23, 329)
+        Me.label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label5.Name = "label5"
-        Me.label5.Size = New System.Drawing.Size(69, 17)
+        Me.label5.Size = New System.Drawing.Size(86, 23)
         Me.label5.TabIndex = 20
         Me.label5.Text = "Password:"
         '
         'tbUsername
         '
         Me.tbUsername.AutoRoundedCorners = True
-        Me.tbUsername.BorderRadius = 17
+        Me.tbUsername.BorderRadius = 21
         Me.tbUsername.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbUsername.DefaultText = ""
         Me.tbUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -362,17 +379,18 @@ Partial Class ManageStaffs
         Me.tbUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbUsername.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.tbUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbUsername.Location = New System.Drawing.Point(12, 227)
+        Me.tbUsername.Location = New System.Drawing.Point(16, 279)
+        Me.tbUsername.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
         Me.tbUsername.Name = "tbUsername"
         Me.tbUsername.PlaceholderText = ""
         Me.tbUsername.SelectedText = ""
-        Me.tbUsername.Size = New System.Drawing.Size(200, 36)
+        Me.tbUsername.Size = New System.Drawing.Size(267, 44)
         Me.tbUsername.TabIndex = 19
         '
         'tbEmail
         '
         Me.tbEmail.AutoRoundedCorners = True
-        Me.tbEmail.BorderRadius = 17
+        Me.tbEmail.BorderRadius = 21
         Me.tbEmail.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbEmail.DefaultText = ""
         Me.tbEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -383,11 +401,12 @@ Partial Class ManageStaffs
         Me.tbEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbEmail.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.tbEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbEmail.Location = New System.Drawing.Point(12, 464)
+        Me.tbEmail.Location = New System.Drawing.Point(16, 571)
+        Me.tbEmail.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
         Me.tbEmail.Name = "tbEmail"
         Me.tbEmail.PlaceholderText = ""
         Me.tbEmail.SelectedText = ""
-        Me.tbEmail.Size = New System.Drawing.Size(200, 36)
+        Me.tbEmail.Size = New System.Drawing.Size(267, 44)
         Me.tbEmail.TabIndex = 18
         '
         'label8
@@ -395,16 +414,17 @@ Partial Class ManageStaffs
         Me.label8.AutoSize = True
         Me.label8.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.label8.Location = New System.Drawing.Point(17, 444)
+        Me.label8.Location = New System.Drawing.Point(23, 546)
+        Me.label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label8.Name = "label8"
-        Me.label8.Size = New System.Drawing.Size(43, 17)
+        Me.label8.Size = New System.Drawing.Size(55, 23)
         Me.label8.TabIndex = 17
         Me.label8.Text = "Email:"
         '
         'tbContactNumber
         '
         Me.tbContactNumber.AutoRoundedCorners = True
-        Me.tbContactNumber.BorderRadius = 17
+        Me.tbContactNumber.BorderRadius = 21
         Me.tbContactNumber.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbContactNumber.DefaultText = ""
         Me.tbContactNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -415,17 +435,18 @@ Partial Class ManageStaffs
         Me.tbContactNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbContactNumber.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.tbContactNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbContactNumber.Location = New System.Drawing.Point(11, 405)
+        Me.tbContactNumber.Location = New System.Drawing.Point(15, 498)
+        Me.tbContactNumber.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
         Me.tbContactNumber.Name = "tbContactNumber"
         Me.tbContactNumber.PlaceholderText = ""
         Me.tbContactNumber.SelectedText = ""
-        Me.tbContactNumber.Size = New System.Drawing.Size(200, 36)
+        Me.tbContactNumber.Size = New System.Drawing.Size(267, 44)
         Me.tbContactNumber.TabIndex = 14
         '
         'btnEnter
         '
         Me.btnEnter.AutoRoundedCorners = True
-        Me.btnEnter.BorderRadius = 19
+        Me.btnEnter.BorderRadius = 23
         Me.btnEnter.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btnEnter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnEnter.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
@@ -433,9 +454,10 @@ Partial Class ManageStaffs
         Me.btnEnter.FillColor = System.Drawing.Color.FromArgb(CType(CType(162, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(163, Byte), Integer))
         Me.btnEnter.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.btnEnter.ForeColor = System.Drawing.Color.White
-        Me.btnEnter.Location = New System.Drawing.Point(29, 565)
+        Me.btnEnter.Location = New System.Drawing.Point(39, 695)
+        Me.btnEnter.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnEnter.Name = "btnEnter"
-        Me.btnEnter.Size = New System.Drawing.Size(150, 40)
+        Me.btnEnter.Size = New System.Drawing.Size(200, 49)
         Me.btnEnter.TabIndex = 12
         Me.btnEnter.Text = "Enter"
         '
@@ -444,9 +466,10 @@ Partial Class ManageStaffs
         Me.label6.AutoSize = True
         Me.label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.label6.Location = New System.Drawing.Point(17, 385)
+        Me.label6.Location = New System.Drawing.Point(23, 474)
+        Me.label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label6.Name = "label6"
-        Me.label6.Size = New System.Drawing.Size(113, 17)
+        Me.label6.Size = New System.Drawing.Size(143, 23)
         Me.label6.TabIndex = 9
         Me.label6.Text = "Contact Number:"
         '
@@ -455,9 +478,10 @@ Partial Class ManageStaffs
         Me.label4.AutoSize = True
         Me.label4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.label4.Location = New System.Drawing.Point(17, 204)
+        Me.label4.Location = New System.Drawing.Point(23, 251)
+        Me.label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label4.Name = "label4"
-        Me.label4.Size = New System.Drawing.Size(72, 17)
+        Me.label4.Size = New System.Drawing.Size(91, 23)
         Me.label4.TabIndex = 6
         Me.label4.Text = "Username:"
         '
@@ -466,16 +490,17 @@ Partial Class ManageStaffs
         Me.label3.AutoSize = True
         Me.label3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.label3.Location = New System.Drawing.Point(17, 142)
+        Me.label3.Location = New System.Drawing.Point(23, 175)
+        Me.label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label3.Name = "label3"
-        Me.label3.Size = New System.Drawing.Size(75, 17)
+        Me.label3.Size = New System.Drawing.Size(95, 23)
         Me.label3.TabIndex = 4
         Me.label3.Text = "Last Name:"
         '
         'tbLastName
         '
         Me.tbLastName.AutoRoundedCorners = True
-        Me.tbLastName.BorderRadius = 17
+        Me.tbLastName.BorderRadius = 21
         Me.tbLastName.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbLastName.DefaultText = ""
         Me.tbLastName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -486,11 +511,12 @@ Partial Class ManageStaffs
         Me.tbLastName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbLastName.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.tbLastName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbLastName.Location = New System.Drawing.Point(12, 162)
+        Me.tbLastName.Location = New System.Drawing.Point(16, 199)
+        Me.tbLastName.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
         Me.tbLastName.Name = "tbLastName"
         Me.tbLastName.PlaceholderText = ""
         Me.tbLastName.SelectedText = ""
-        Me.tbLastName.Size = New System.Drawing.Size(200, 36)
+        Me.tbLastName.Size = New System.Drawing.Size(267, 44)
         Me.tbLastName.TabIndex = 5
         '
         'label2
@@ -498,16 +524,17 @@ Partial Class ManageStaffs
         Me.label2.AutoSize = True
         Me.label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.label2.Location = New System.Drawing.Point(17, 80)
+        Me.label2.Location = New System.Drawing.Point(23, 98)
+        Me.label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label2.Name = "label2"
-        Me.label2.Size = New System.Drawing.Size(77, 17)
+        Me.label2.Size = New System.Drawing.Size(97, 23)
         Me.label2.TabIndex = 1
         Me.label2.Text = "First Name:"
         '
         'tbFirstName
         '
         Me.tbFirstName.AutoRoundedCorners = True
-        Me.tbFirstName.BorderRadius = 17
+        Me.tbFirstName.BorderRadius = 21
         Me.tbFirstName.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbFirstName.DefaultText = ""
         Me.tbFirstName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -518,20 +545,22 @@ Partial Class ManageStaffs
         Me.tbFirstName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbFirstName.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.tbFirstName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbFirstName.Location = New System.Drawing.Point(12, 100)
+        Me.tbFirstName.Location = New System.Drawing.Point(16, 123)
+        Me.tbFirstName.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
         Me.tbFirstName.Name = "tbFirstName"
         Me.tbFirstName.PlaceholderText = ""
         Me.tbFirstName.SelectedText = ""
-        Me.tbFirstName.Size = New System.Drawing.Size(200, 36)
+        Me.tbFirstName.Size = New System.Drawing.Size(267, 44)
         Me.tbFirstName.TabIndex = 1
         '
         'pbExit2
         '
         Me.pbExit2.Image = Global.Library_Management_System.My.Resources.Resources.reject2
         Me.pbExit2.ImageRotate = 0!
-        Me.pbExit2.Location = New System.Drawing.Point(181, 6)
+        Me.pbExit2.Location = New System.Drawing.Point(241, 7)
+        Me.pbExit2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbExit2.Name = "pbExit2"
-        Me.pbExit2.Size = New System.Drawing.Size(25, 25)
+        Me.pbExit2.Size = New System.Drawing.Size(33, 31)
         Me.pbExit2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbExit2.TabIndex = 3
         Me.pbExit2.TabStop = False
@@ -541,9 +570,10 @@ Partial Class ManageStaffs
         Me.lblSideMenu.AutoSize = True
         Me.lblSideMenu.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSideMenu.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.lblSideMenu.Location = New System.Drawing.Point(15, 35)
+        Me.lblSideMenu.Location = New System.Drawing.Point(20, 43)
+        Me.lblSideMenu.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblSideMenu.Name = "lblSideMenu"
-        Me.lblSideMenu.Size = New System.Drawing.Size(124, 30)
+        Me.lblSideMenu.Size = New System.Drawing.Size(159, 37)
         Me.lblSideMenu.TabIndex = 2
         Me.lblSideMenu.Text = "ADD STAFF"
         '
@@ -551,10 +581,11 @@ Partial Class ManageStaffs
         '
         Me.guna2Panel3.Controls.Add(Me.pnlGrid)
         Me.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.guna2Panel3.Location = New System.Drawing.Point(225, 50)
+        Me.guna2Panel3.Location = New System.Drawing.Point(313, 74)
+        Me.guna2Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.guna2Panel3.Name = "guna2Panel3"
-        Me.guna2Panel3.Padding = New System.Windows.Forms.Padding(10)
-        Me.guna2Panel3.Size = New System.Drawing.Size(443, 472)
+        Me.guna2Panel3.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
+        Me.guna2Panel3.Size = New System.Drawing.Size(565, 556)
         Me.guna2Panel3.TabIndex = 9
         '
         'pnlGrid
@@ -564,10 +595,11 @@ Partial Class ManageStaffs
         Me.pnlGrid.Controls.Add(Me.dgvStaff)
         Me.pnlGrid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlGrid.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.pnlGrid.Location = New System.Drawing.Point(10, 10)
+        Me.pnlGrid.Location = New System.Drawing.Point(13, 12)
+        Me.pnlGrid.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnlGrid.Name = "pnlGrid"
-        Me.pnlGrid.Padding = New System.Windows.Forms.Padding(10)
-        Me.pnlGrid.Size = New System.Drawing.Size(423, 452)
+        Me.pnlGrid.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
+        Me.pnlGrid.Size = New System.Drawing.Size(539, 532)
         Me.pnlGrid.TabIndex = 0
         '
         'dgvStaff
@@ -598,12 +630,14 @@ Partial Class ManageStaffs
         Me.dgvStaff.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvStaff.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvStaff.GridColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.dgvStaff.Location = New System.Drawing.Point(10, 10)
+        Me.dgvStaff.Location = New System.Drawing.Point(13, 12)
+        Me.dgvStaff.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dgvStaff.Name = "dgvStaff"
         Me.dgvStaff.ReadOnly = True
         Me.dgvStaff.RowHeadersVisible = False
+        Me.dgvStaff.RowHeadersWidth = 51
         Me.dgvStaff.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.dgvStaff.Size = New System.Drawing.Size(403, 432)
+        Me.dgvStaff.Size = New System.Drawing.Size(513, 508)
         Me.dgvStaff.TabIndex = 0
         Me.dgvStaff.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.LightGreen
         Me.dgvStaff.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(201, Byte), Integer))
@@ -630,14 +664,16 @@ Partial Class ManageStaffs
         '
         'ManageStaffs
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(233, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(668, 522)
+        Me.ClientSize = New System.Drawing.Size(891, 642)
         Me.Controls.Add(Me.guna2Panel3)
         Me.Controls.Add(Me.pnlSideMenu)
         Me.Controls.Add(Me.pnlTopMenu)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "ManageStaffs"
+        Me.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
         Me.Text = "ManageStaffs"
         Me.pnlTopMenu.ResumeLayout(False)
         Me.pnlTopMenu.PerformLayout()

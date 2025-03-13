@@ -59,6 +59,7 @@
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -118,6 +119,18 @@
       <DependentUpon>LoginForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\ManageBooks.Designer.vb">
+      <DependentUpon>ManageBooks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManageBooks.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManageGenres.Designer.vb">
+      <DependentUpon>ManageGenres.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManageGenres.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\ManageMembers.Designer.vb">
       <DependentUpon>ManageMembers.vb</DependentUpon>
     </Compile>
@@ -159,10 +172,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Forms\ReturnBooks.Designer.vb">
-      <DependentUpon>ReturnBooks.vb</DependentUpon>
+    <Compile Include="Forms\ReturnBook.Designer.vb">
+      <DependentUpon>ReturnBook.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ReturnBooks.vb">
+    <Compile Include="Forms\ReturnBook.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\SignUpForm.Designer.vb">
@@ -203,6 +216,12 @@
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageBooks.resx">
+      <DependentUpon>ManageBooks.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManageGenres.resx">
+      <DependentUpon>ManageGenres.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ManageMembers.resx">
       <DependentUpon>ManageMembers.vb</DependentUpon>
     </EmbeddedResource>
@@ -224,8 +243,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ReturnBooks.resx">
-      <DependentUpon>ReturnBooks.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\ReturnBook.resx">
+      <DependentUpon>ReturnBook.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SignUpForm.resx">
       <DependentUpon>SignUpForm.vb</DependentUpon>
