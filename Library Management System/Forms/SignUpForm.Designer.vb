@@ -23,9 +23,11 @@ Partial Class SignUpForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.visibility2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.tbConfirmPassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.tbPassword = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.visibility1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btnSubmit = New Guna.UI2.WinForms.Guna2GradientButton()
@@ -40,12 +42,10 @@ Partial Class SignUpForm
         Me.tbLastName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.tbFirstName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.visibility2 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.visibility1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.pbExit = New System.Windows.Forms.PictureBox()
         Me.guna2Panel3.SuspendLayout()
-        Me.guna2Panel2.SuspendLayout()
         CType(Me.visibility2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.guna2Panel2.SuspendLayout()
         CType(Me.visibility1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbExit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -59,11 +59,25 @@ Partial Class SignUpForm
         Me.guna2Panel3.Controls.Add(Me.visibility2)
         Me.guna2Panel3.Controls.Add(Me.tbConfirmPassword)
         Me.guna2Panel3.FillColor = System.Drawing.Color.White
-        Me.guna2Panel3.Location = New System.Drawing.Point(32, 713)
-        Me.guna2Panel3.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.guna2Panel3.Location = New System.Drawing.Point(16, 368)
+        Me.guna2Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.guna2Panel3.Name = "guna2Panel3"
-        Me.guna2Panel3.Size = New System.Drawing.Size(747, 86)
+        Me.guna2Panel3.Size = New System.Drawing.Size(374, 44)
         Me.guna2Panel3.TabIndex = 56
+        '
+        'visibility2
+        '
+        Me.visibility2.BackColor = System.Drawing.Color.Transparent
+        Me.visibility2.Image = Global.Library_Management_System.My.Resources.Resources.visibilityon
+        Me.visibility2.ImageRotate = 0!
+        Me.visibility2.Location = New System.Drawing.Point(334, 10)
+        Me.visibility2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.visibility2.Name = "visibility2"
+        Me.visibility2.Size = New System.Drawing.Size(34, 31)
+        Me.visibility2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.visibility2.TabIndex = 39
+        Me.visibility2.TabStop = False
+        Me.visibility2.UseTransparentBackground = True
         '
         'tbConfirmPassword
         '
@@ -79,12 +93,12 @@ Partial Class SignUpForm
         Me.tbConfirmPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbConfirmPassword.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.tbConfirmPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbConfirmPassword.Location = New System.Drawing.Point(3, 5)
-        Me.tbConfirmPassword.Margin = New System.Windows.Forms.Padding(19)
+        Me.tbConfirmPassword.Location = New System.Drawing.Point(2, 3)
+        Me.tbConfirmPassword.Margin = New System.Windows.Forms.Padding(10, 10, 10, 10)
         Me.tbConfirmPassword.Name = "tbConfirmPassword"
         Me.tbConfirmPassword.PlaceholderText = ""
         Me.tbConfirmPassword.SelectedText = ""
-        Me.tbConfirmPassword.Size = New System.Drawing.Size(651, 79)
+        Me.tbConfirmPassword.Size = New System.Drawing.Size(326, 41)
         Me.tbConfirmPassword.TabIndex = 5
         '
         'guna2Panel2
@@ -96,10 +110,10 @@ Partial Class SignUpForm
         Me.guna2Panel2.Controls.Add(Me.tbPassword)
         Me.guna2Panel2.Controls.Add(Me.visibility1)
         Me.guna2Panel2.FillColor = System.Drawing.Color.White
-        Me.guna2Panel2.Location = New System.Drawing.Point(32, 558)
-        Me.guna2Panel2.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.guna2Panel2.Location = New System.Drawing.Point(16, 288)
+        Me.guna2Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.guna2Panel2.Name = "guna2Panel2"
-        Me.guna2Panel2.Size = New System.Drawing.Size(747, 86)
+        Me.guna2Panel2.Size = New System.Drawing.Size(374, 44)
         Me.guna2Panel2.TabIndex = 55
         '
         'tbPassword
@@ -116,22 +130,37 @@ Partial Class SignUpForm
         Me.tbPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbPassword.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.tbPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbPassword.Location = New System.Drawing.Point(3, 5)
-        Me.tbPassword.Margin = New System.Windows.Forms.Padding(19)
+        Me.tbPassword.Location = New System.Drawing.Point(2, 3)
+        Me.tbPassword.Margin = New System.Windows.Forms.Padding(10, 10, 10, 10)
         Me.tbPassword.Name = "tbPassword"
         Me.tbPassword.PlaceholderText = ""
         Me.tbPassword.SelectedText = ""
-        Me.tbPassword.Size = New System.Drawing.Size(651, 79)
+        Me.tbPassword.Size = New System.Drawing.Size(326, 41)
         Me.tbPassword.TabIndex = 4
+        '
+        'visibility1
+        '
+        Me.visibility1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.visibility1.BackColor = System.Drawing.Color.Transparent
+        Me.visibility1.Image = Global.Library_Management_System.My.Resources.Resources.visibilityon
+        Me.visibility1.ImageRotate = 0!
+        Me.visibility1.Location = New System.Drawing.Point(334, 7)
+        Me.visibility1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.visibility1.Name = "visibility1"
+        Me.visibility1.Size = New System.Drawing.Size(34, 31)
+        Me.visibility1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.visibility1.TabIndex = 39
+        Me.visibility1.TabStop = False
+        Me.visibility1.UseTransparentBackground = True
         '
         'guna2HtmlLabel8
         '
         Me.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent
         Me.guna2HtmlLabel8.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.guna2HtmlLabel8.Location = New System.Drawing.Point(40, 656)
-        Me.guna2HtmlLabel8.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.guna2HtmlLabel8.Location = New System.Drawing.Point(20, 339)
+        Me.guna2HtmlLabel8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.guna2HtmlLabel8.Name = "guna2HtmlLabel8"
-        Me.guna2HtmlLabel8.Size = New System.Drawing.Size(287, 47)
+        Me.guna2HtmlLabel8.Size = New System.Drawing.Size(145, 23)
         Me.guna2HtmlLabel8.TabIndex = 54
         Me.guna2HtmlLabel8.Text = "Confirm Password:"
         '
@@ -140,10 +169,10 @@ Partial Class SignUpForm
         Me.guna2HtmlLabel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(114, Byte), Integer))
         Me.guna2HtmlLabel2.Font = New System.Drawing.Font("Cooper Black", 21.75!, System.Drawing.FontStyle.Italic)
         Me.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Black
-        Me.guna2HtmlLabel2.Location = New System.Drawing.Point(40, 96)
-        Me.guna2HtmlLabel2.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.guna2HtmlLabel2.Location = New System.Drawing.Point(20, 50)
+        Me.guna2HtmlLabel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.guna2HtmlLabel2.Name = "guna2HtmlLabel2"
-        Me.guna2HtmlLabel2.Size = New System.Drawing.Size(680, 84)
+        Me.guna2HtmlLabel2.Size = New System.Drawing.Size(343, 43)
         Me.guna2HtmlLabel2.TabIndex = 53
         Me.guna2HtmlLabel2.Text = "LMS Sign Up Form"
         '
@@ -151,7 +180,7 @@ Partial Class SignUpForm
         '
         Me.btnSubmit.AutoRoundedCorners = True
         Me.btnSubmit.BackColor = System.Drawing.Color.Transparent
-        Me.btnSubmit.BorderRadius = 43
+        Me.btnSubmit.BorderRadius = 21
         Me.btnSubmit.BorderThickness = 1
         Me.btnSubmit.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btnSubmit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
@@ -162,10 +191,10 @@ Partial Class SignUpForm
         Me.btnSubmit.FillColor2 = System.Drawing.Color.LimeGreen
         Me.btnSubmit.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnSubmit.ForeColor = System.Drawing.Color.Black
-        Me.btnSubmit.Location = New System.Drawing.Point(198, 1133)
-        Me.btnSubmit.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.btnSubmit.Location = New System.Drawing.Point(99, 585)
+        Me.btnSubmit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSubmit.Name = "btnSubmit"
-        Me.btnSubmit.Size = New System.Drawing.Size(416, 88)
+        Me.btnSubmit.Size = New System.Drawing.Size(208, 45)
         Me.btnSubmit.TabIndex = 45
         Me.btnSubmit.Text = "Submit"
         '
@@ -174,7 +203,7 @@ Partial Class SignUpForm
         Me.tbContactNumber.AutoRoundedCorners = True
         Me.tbContactNumber.BackColor = System.Drawing.Color.Transparent
         Me.tbContactNumber.BorderColor = System.Drawing.Color.Black
-        Me.tbContactNumber.BorderRadius = 42
+        Me.tbContactNumber.BorderRadius = 21
         Me.tbContactNumber.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbContactNumber.DefaultText = ""
         Me.tbContactNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -184,22 +213,22 @@ Partial Class SignUpForm
         Me.tbContactNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbContactNumber.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.tbContactNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbContactNumber.Location = New System.Drawing.Point(32, 1021)
-        Me.tbContactNumber.Margin = New System.Windows.Forms.Padding(19)
+        Me.tbContactNumber.Location = New System.Drawing.Point(16, 527)
+        Me.tbContactNumber.Margin = New System.Windows.Forms.Padding(10, 10, 10, 10)
         Me.tbContactNumber.Name = "tbContactNumber"
         Me.tbContactNumber.PlaceholderText = "0000 000 0000"
         Me.tbContactNumber.SelectedText = ""
-        Me.tbContactNumber.Size = New System.Drawing.Size(747, 86)
+        Me.tbContactNumber.Size = New System.Drawing.Size(374, 44)
         Me.tbContactNumber.TabIndex = 44
         '
         'guna2HtmlLabel4
         '
         Me.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
         Me.guna2HtmlLabel4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.guna2HtmlLabel4.Location = New System.Drawing.Point(40, 961)
-        Me.guna2HtmlLabel4.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.guna2HtmlLabel4.Location = New System.Drawing.Point(20, 496)
+        Me.guna2HtmlLabel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.guna2HtmlLabel4.Name = "guna2HtmlLabel4"
-        Me.guna2HtmlLabel4.Size = New System.Drawing.Size(259, 47)
+        Me.guna2HtmlLabel4.Size = New System.Drawing.Size(133, 23)
         Me.guna2HtmlLabel4.TabIndex = 51
         Me.guna2HtmlLabel4.Text = "Contact Number:"
         '
@@ -207,10 +236,10 @@ Partial Class SignUpForm
         '
         Me.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
         Me.guna2HtmlLabel5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.guna2HtmlLabel5.Location = New System.Drawing.Point(40, 804)
-        Me.guna2HtmlLabel5.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.guna2HtmlLabel5.Location = New System.Drawing.Point(20, 415)
+        Me.guna2HtmlLabel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.guna2HtmlLabel5.Name = "guna2HtmlLabel5"
-        Me.guna2HtmlLabel5.Size = New System.Drawing.Size(93, 47)
+        Me.guna2HtmlLabel5.Size = New System.Drawing.Size(50, 23)
         Me.guna2HtmlLabel5.TabIndex = 50
         Me.guna2HtmlLabel5.Text = "Email:"
         '
@@ -219,7 +248,7 @@ Partial Class SignUpForm
         Me.tbEmail.AutoRoundedCorners = True
         Me.tbEmail.BackColor = System.Drawing.Color.Transparent
         Me.tbEmail.BorderColor = System.Drawing.Color.Black
-        Me.tbEmail.BorderRadius = 42
+        Me.tbEmail.BorderRadius = 21
         Me.tbEmail.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbEmail.DefaultText = ""
         Me.tbEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -229,22 +258,22 @@ Partial Class SignUpForm
         Me.tbEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbEmail.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.tbEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbEmail.Location = New System.Drawing.Point(32, 861)
-        Me.tbEmail.Margin = New System.Windows.Forms.Padding(19)
+        Me.tbEmail.Location = New System.Drawing.Point(16, 444)
+        Me.tbEmail.Margin = New System.Windows.Forms.Padding(10, 10, 10, 10)
         Me.tbEmail.Name = "tbEmail"
         Me.tbEmail.PlaceholderText = "example@example.com"
         Me.tbEmail.SelectedText = ""
-        Me.tbEmail.Size = New System.Drawing.Size(747, 86)
+        Me.tbEmail.Size = New System.Drawing.Size(374, 44)
         Me.tbEmail.TabIndex = 43
         '
         'guna2HtmlLabel3
         '
         Me.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
         Me.guna2HtmlLabel3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.guna2HtmlLabel3.Location = New System.Drawing.Point(40, 801)
-        Me.guna2HtmlLabel3.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.guna2HtmlLabel3.Location = New System.Drawing.Point(20, 413)
+        Me.guna2HtmlLabel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.guna2HtmlLabel3.Name = "guna2HtmlLabel3"
-        Me.guna2HtmlLabel3.Size = New System.Drawing.Size(93, 47)
+        Me.guna2HtmlLabel3.Size = New System.Drawing.Size(50, 23)
         Me.guna2HtmlLabel3.TabIndex = 49
         Me.guna2HtmlLabel3.Text = "Email:"
         '
@@ -252,10 +281,10 @@ Partial Class SignUpForm
         '
         Me.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent
         Me.guna2HtmlLabel7.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.guna2HtmlLabel7.Location = New System.Drawing.Point(40, 501)
-        Me.guna2HtmlLabel7.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.guna2HtmlLabel7.Location = New System.Drawing.Point(20, 259)
+        Me.guna2HtmlLabel7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.guna2HtmlLabel7.Name = "guna2HtmlLabel7"
-        Me.guna2HtmlLabel7.Size = New System.Drawing.Size(156, 47)
+        Me.guna2HtmlLabel7.Size = New System.Drawing.Size(79, 23)
         Me.guna2HtmlLabel7.TabIndex = 48
         Me.guna2HtmlLabel7.Text = "Password:"
         '
@@ -264,7 +293,7 @@ Partial Class SignUpForm
         Me.tbUsername.AutoRoundedCorners = True
         Me.tbUsername.BackColor = System.Drawing.Color.Transparent
         Me.tbUsername.BorderColor = System.Drawing.Color.Black
-        Me.tbUsername.BorderRadius = 42
+        Me.tbUsername.BorderRadius = 21
         Me.tbUsername.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbUsername.DefaultText = ""
         Me.tbUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -274,22 +303,22 @@ Partial Class SignUpForm
         Me.tbUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbUsername.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.tbUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbUsername.Location = New System.Drawing.Point(32, 403)
-        Me.tbUsername.Margin = New System.Windows.Forms.Padding(19)
+        Me.tbUsername.Location = New System.Drawing.Point(16, 208)
+        Me.tbUsername.Margin = New System.Windows.Forms.Padding(10, 10, 10, 10)
         Me.tbUsername.Name = "tbUsername"
         Me.tbUsername.PlaceholderText = ""
         Me.tbUsername.SelectedText = ""
-        Me.tbUsername.Size = New System.Drawing.Size(747, 86)
+        Me.tbUsername.Size = New System.Drawing.Size(374, 44)
         Me.tbUsername.TabIndex = 42
         '
         'guna2HtmlLabel6
         '
         Me.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
         Me.guna2HtmlLabel6.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.guna2HtmlLabel6.Location = New System.Drawing.Point(40, 346)
-        Me.guna2HtmlLabel6.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.guna2HtmlLabel6.Location = New System.Drawing.Point(20, 179)
+        Me.guna2HtmlLabel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.guna2HtmlLabel6.Name = "guna2HtmlLabel6"
-        Me.guna2HtmlLabel6.Size = New System.Drawing.Size(161, 47)
+        Me.guna2HtmlLabel6.Size = New System.Drawing.Size(84, 23)
         Me.guna2HtmlLabel6.TabIndex = 47
         Me.guna2HtmlLabel6.Text = "Username:"
         '
@@ -298,7 +327,7 @@ Partial Class SignUpForm
         Me.tbLastName.AutoRoundedCorners = True
         Me.tbLastName.BackColor = System.Drawing.Color.Transparent
         Me.tbLastName.BorderColor = System.Drawing.Color.Black
-        Me.tbLastName.BorderRadius = 42
+        Me.tbLastName.BorderRadius = 21
         Me.tbLastName.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbLastName.DefaultText = ""
         Me.tbLastName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -308,12 +337,12 @@ Partial Class SignUpForm
         Me.tbLastName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbLastName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.tbLastName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbLastName.Location = New System.Drawing.Point(414, 248)
-        Me.tbLastName.Margin = New System.Windows.Forms.Padding(19)
+        Me.tbLastName.Location = New System.Drawing.Point(207, 128)
+        Me.tbLastName.Margin = New System.Windows.Forms.Padding(10, 10, 10, 10)
         Me.tbLastName.Name = "tbLastName"
         Me.tbLastName.PlaceholderText = "Last Name"
         Me.tbLastName.SelectedText = ""
-        Me.tbLastName.Size = New System.Drawing.Size(371, 86)
+        Me.tbLastName.Size = New System.Drawing.Size(186, 44)
         Me.tbLastName.TabIndex = 41
         '
         'tbFirstName
@@ -321,7 +350,7 @@ Partial Class SignUpForm
         Me.tbFirstName.AutoRoundedCorners = True
         Me.tbFirstName.BackColor = System.Drawing.Color.Transparent
         Me.tbFirstName.BorderColor = System.Drawing.Color.Black
-        Me.tbFirstName.BorderRadius = 42
+        Me.tbFirstName.BorderRadius = 21
         Me.tbFirstName.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbFirstName.DefaultText = ""
         Me.tbFirstName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -331,72 +360,43 @@ Partial Class SignUpForm
         Me.tbFirstName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbFirstName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.tbFirstName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbFirstName.Location = New System.Drawing.Point(27, 248)
-        Me.tbFirstName.Margin = New System.Windows.Forms.Padding(19)
+        Me.tbFirstName.Location = New System.Drawing.Point(14, 128)
+        Me.tbFirstName.Margin = New System.Windows.Forms.Padding(10, 10, 10, 10)
         Me.tbFirstName.Name = "tbFirstName"
         Me.tbFirstName.PlaceholderText = "First Name"
         Me.tbFirstName.SelectedText = ""
-        Me.tbFirstName.Size = New System.Drawing.Size(371, 86)
+        Me.tbFirstName.Size = New System.Drawing.Size(186, 44)
         Me.tbFirstName.TabIndex = 40
         '
         'guna2HtmlLabel1
         '
         Me.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
         Me.guna2HtmlLabel1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.guna2HtmlLabel1.Location = New System.Drawing.Point(40, 191)
-        Me.guna2HtmlLabel1.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.guna2HtmlLabel1.Location = New System.Drawing.Point(20, 99)
+        Me.guna2HtmlLabel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.guna2HtmlLabel1.Name = "guna2HtmlLabel1"
-        Me.guna2HtmlLabel1.Size = New System.Drawing.Size(100, 47)
+        Me.guna2HtmlLabel1.Size = New System.Drawing.Size(53, 23)
         Me.guna2HtmlLabel1.TabIndex = 46
         Me.guna2HtmlLabel1.Text = "Name:"
-        '
-        'visibility2
-        '
-        Me.visibility2.BackColor = System.Drawing.Color.Transparent
-        Me.visibility2.Image = Global.Library_Management_System.My.Resources.Resources.visibilityon
-        Me.visibility2.ImageRotate = 0!
-        Me.visibility2.Location = New System.Drawing.Point(669, 19)
-        Me.visibility2.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
-        Me.visibility2.Name = "visibility2"
-        Me.visibility2.Size = New System.Drawing.Size(67, 60)
-        Me.visibility2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.visibility2.TabIndex = 39
-        Me.visibility2.TabStop = False
-        Me.visibility2.UseTransparentBackground = True
-        '
-        'visibility1
-        '
-        Me.visibility1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.visibility1.BackColor = System.Drawing.Color.Transparent
-        Me.visibility1.Image = Global.Library_Management_System.My.Resources.Resources.visibilityon
-        Me.visibility1.ImageRotate = 0!
-        Me.visibility1.Location = New System.Drawing.Point(669, 14)
-        Me.visibility1.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
-        Me.visibility1.Name = "visibility1"
-        Me.visibility1.Size = New System.Drawing.Size(67, 60)
-        Me.visibility1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.visibility1.TabIndex = 39
-        Me.visibility1.TabStop = False
-        Me.visibility1.UseTransparentBackground = True
         '
         'pbExit
         '
         Me.pbExit.BackColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(114, Byte), Integer))
         Me.pbExit.Image = Global.Library_Management_System.My.Resources.Resources.reject2
-        Me.pbExit.Location = New System.Drawing.Point(726, 29)
-        Me.pbExit.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.pbExit.Location = New System.Drawing.Point(363, 15)
+        Me.pbExit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbExit.Name = "pbExit"
-        Me.pbExit.Size = New System.Drawing.Size(67, 60)
+        Me.pbExit.Size = New System.Drawing.Size(34, 31)
         Me.pbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbExit.TabIndex = 52
         Me.pbExit.TabStop = False
         '
         'SignUpForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(114, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(821, 1250)
+        Me.ClientSize = New System.Drawing.Size(409, 643)
         Me.Controls.Add(Me.guna2Panel3)
         Me.Controls.Add(Me.guna2Panel2)
         Me.Controls.Add(Me.guna2HtmlLabel8)
@@ -414,11 +414,13 @@ Partial Class SignUpForm
         Me.Controls.Add(Me.tbLastName)
         Me.Controls.Add(Me.tbFirstName)
         Me.Controls.Add(Me.guna2HtmlLabel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "SignUpForm"
         Me.Text = "SignUpForm"
         Me.guna2Panel3.ResumeLayout(False)
-        Me.guna2Panel2.ResumeLayout(False)
         CType(Me.visibility2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.guna2Panel2.ResumeLayout(False)
         CType(Me.visibility1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbExit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

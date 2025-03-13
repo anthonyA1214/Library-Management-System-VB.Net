@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A8A2E05A-C292-4B1B-9035-C9DDE42E408F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Library_Management_System.My.MyApplication</StartupObject>
+    <StartupObject>Library_Management_System.LoginForm</StartupObject>
     <RootNamespace>Library_Management_System</RootNamespace>
     <AssemblyName>Library Management System</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -79,73 +79,76 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminForm.Designer.vb">
+    <Compile Include="Classes\AuthenticateUser.vb" />
+    <Compile Include="Classes\dbConnection.vb" />
+    <Compile Include="Forms\AdminForm.Designer.vb">
       <DependentUpon>AdminForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="AdminForm.vb">
+    <Compile Include="Forms\AdminForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Archive.Designer.vb">
+    <Compile Include="Forms\Archive.Designer.vb">
       <DependentUpon>Archive.vb</DependentUpon>
     </Compile>
-    <Compile Include="Archive.vb">
+    <Compile Include="Forms\Archive.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CirculationReport.Designer.vb">
+    <Compile Include="Forms\CirculationReport.Designer.vb">
       <DependentUpon>CirculationReport.vb</DependentUpon>
     </Compile>
-    <Compile Include="CirculationReport.vb">
+    <Compile Include="Forms\CirculationReport.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inventory.Designer.vb">
+    <Compile Include="Forms\Inventory.Designer.vb">
       <DependentUpon>Inventory.vb</DependentUpon>
     </Compile>
-    <Compile Include="Inventory.vb">
+    <Compile Include="Forms\Inventory.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IssueBook.Designer.vb">
+    <Compile Include="Forms\IssueBook.Designer.vb">
       <DependentUpon>IssueBook.vb</DependentUpon>
     </Compile>
-    <Compile Include="IssueBook.vb">
+    <Compile Include="Forms\IssueBook.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.vb">
+    <Compile Include="Forms\LoginForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.vb">
+    <Compile Include="Forms\LoginForm.Designer.vb">
       <DependentUpon>LoginForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManageMembers.Designer.vb">
+    <Compile Include="Forms\ManageMembers.Designer.vb">
       <DependentUpon>ManageMembers.vb</DependentUpon>
     </Compile>
-    <Compile Include="ManageMembers.vb">
+    <Compile Include="Forms\ManageMembers.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManageStaffs.Designer.vb">
+    <Compile Include="Forms\ManageStaffs.Designer.vb">
       <DependentUpon>ManageStaffs.vb</DependentUpon>
     </Compile>
-    <Compile Include="ManageStaffs.vb">
+    <Compile Include="Forms\ManageStaffs.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MemberActivityReport.Designer.vb">
+    <Compile Include="Forms\MemberActivityReport.Designer.vb">
       <DependentUpon>MemberActivityReport.vb</DependentUpon>
     </Compile>
-    <Compile Include="MemberActivityReport.vb">
+    <Compile Include="Forms\MemberActivityReport.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MemberProfiles.Designer.vb">
+    <Compile Include="Forms\MemberProfiles.Designer.vb">
       <DependentUpon>MemberProfiles.vb</DependentUpon>
     </Compile>
-    <Compile Include="MemberProfiles.vb">
+    <Compile Include="Forms\MemberProfiles.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserForm.Designer.vb">
+      <DependentUpon>UserForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
-    <Compile Include="My Project\Application.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Application.myapp</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -156,61 +159,64 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="ReturnBooks.Designer.vb">
+    <Compile Include="Forms\ReturnBooks.Designer.vb">
       <DependentUpon>ReturnBooks.vb</DependentUpon>
     </Compile>
-    <Compile Include="ReturnBooks.vb">
+    <Compile Include="Forms\ReturnBooks.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SignUpForm.Designer.vb">
+    <Compile Include="Forms\SignUpForm.Designer.vb">
       <DependentUpon>SignUpForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="SignUpForm.vb">
+    <Compile Include="Forms\SignUpForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StaffApproval.Designer.vb">
+    <Compile Include="Forms\StaffApproval.Designer.vb">
       <DependentUpon>StaffApproval.vb</DependentUpon>
     </Compile>
-    <Compile Include="StaffApproval.vb">
+    <Compile Include="Forms\StaffApproval.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewRecords.Designer.vb">
+    <Compile Include="Forms\ViewRecords.Designer.vb">
       <DependentUpon>ViewRecords.vb</DependentUpon>
     </Compile>
-    <Compile Include="ViewRecords.vb">
+    <Compile Include="Forms\ViewRecords.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AdminForm.resx">
+    <EmbeddedResource Include="Forms\AdminForm.resx">
       <DependentUpon>AdminForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Archive.resx">
+    <EmbeddedResource Include="Forms\Archive.resx">
       <DependentUpon>Archive.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CirculationReport.resx">
+    <EmbeddedResource Include="Forms\CirculationReport.resx">
       <DependentUpon>CirculationReport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inventory.resx">
+    <EmbeddedResource Include="Forms\Inventory.resx">
       <DependentUpon>Inventory.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IssueBook.resx">
+    <EmbeddedResource Include="Forms\IssueBook.resx">
       <DependentUpon>IssueBook.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageMembers.resx">
+    <EmbeddedResource Include="Forms\ManageMembers.resx">
       <DependentUpon>ManageMembers.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageStaffs.resx">
+    <EmbeddedResource Include="Forms\ManageStaffs.resx">
       <DependentUpon>ManageStaffs.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MemberActivityReport.resx">
+    <EmbeddedResource Include="Forms\MemberActivityReport.resx">
       <DependentUpon>MemberActivityReport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MemberProfiles.resx">
+    <EmbeddedResource Include="Forms\MemberProfiles.resx">
       <DependentUpon>MemberProfiles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserForm.resx">
+      <DependentUpon>UserForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -218,23 +224,22 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReturnBooks.resx">
+    <EmbeddedResource Include="Forms\ReturnBooks.resx">
       <DependentUpon>ReturnBooks.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SignUpForm.resx">
+    <EmbeddedResource Include="Forms\SignUpForm.resx">
       <DependentUpon>SignUpForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StaffApproval.resx">
+    <EmbeddedResource Include="Forms\StaffApproval.resx">
       <DependentUpon>StaffApproval.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewRecords.resx">
+    <EmbeddedResource Include="Forms\ViewRecords.resx">
       <DependentUpon>ViewRecords.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
-      <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
