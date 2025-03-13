@@ -1,13 +1,14 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Text.RegularExpressions
-Imports System.Windows.Forms
 
-Public Class SignupForm
-    Dim conn As SqlConnection = dbConnection.GetConnection()
+Partial Public Class SignupForm
+    Inherits Form
 
     Public Sub New()
         InitializeComponent()
     End Sub
+
+    Dim conn As SqlConnection = dbConnection.GetConnection()
 
     Private Sub lblLinkBack2Login_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lblLinkBack2Login.LinkClicked
         Me.Close()
@@ -48,7 +49,7 @@ Public Class SignupForm
             MessageBox.Show("The Contact Number field cannot be empty!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             tbContactNumber.Focus()
             Return
-        ElseIf tbUsername.Text.Length < 3 Or tbUsername.Text.Length > 20 Then
+        ElseIf tbUsername.Text.Length < 3 OrElse tbUsername.Text.Length > 20 Then
             MessageBox.Show("The Username must be between 3 and 20 characters long!", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             tbUsername.Focus()
             Return
@@ -124,10 +125,10 @@ Public Class SignupForm
                 MessageBox.Show("There was an error while submitting your account. Please try again later.", "Signup Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         Catch ex As SqlException
-            If ex.Number = 2627 Or ex.Number = 2601 Then
+            If ex.Number = 2627 OrElse ex.Number = 2601 Then
                 MessageBox.Show("The username or email already exists. Please choose a different one.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
-                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         Finally
             conn.Close()
@@ -156,7 +157,7 @@ Public Class SignupForm
     End Sub
 
     Private Sub visibility1_Click(sender As Object, e As EventArgs) Handles visibility1.Click
-        If tbPassword.UseSystemPasswordChar = True Then
+        If tbPassword.UseSystemPasswordChar Then
             visibility1.Image = My.Resources.visibilityoff
             tbPassword.UseSystemPasswordChar = False
         Else
@@ -166,7 +167,7 @@ Public Class SignupForm
     End Sub
 
     Private Sub visibility2_Click(sender As Object, e As EventArgs) Handles visibility2.Click
-        If tbConfirmPassword.UseSystemPasswordChar = True Then
+        If tbConfirmPassword.UseSystemPasswordChar Then
             visibility2.Image = My.Resources.visibilityoff
             tbConfirmPassword.UseSystemPasswordChar = False
         Else

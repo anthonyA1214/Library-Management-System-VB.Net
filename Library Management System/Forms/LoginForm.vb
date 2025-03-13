@@ -32,7 +32,7 @@ Public Class LoginForm
                 adminForm.Show()
                 Me.Hide()
             Else
-                Dim userForm As New UserForm()
+                Dim userForm As New UserForm(username)
                 userForm.Show()
                 Me.Hide()
             End If

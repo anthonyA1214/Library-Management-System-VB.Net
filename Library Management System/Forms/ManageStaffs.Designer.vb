@@ -83,7 +83,7 @@ Partial Class ManageStaffs
         Me.pnlTopMenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlTopMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.pnlTopMenu.Location = New System.Drawing.Point(13, 12)
-        Me.pnlTopMenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlTopMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlTopMenu.Name = "pnlTopMenu"
         Me.pnlTopMenu.Size = New System.Drawing.Size(865, 62)
         Me.pnlTopMenu.TabIndex = 7
@@ -113,7 +113,7 @@ Partial Class ManageStaffs
         Me.btnAddStaff.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.btnAddStaff.ForeColor = System.Drawing.Color.White
         Me.btnAddStaff.Location = New System.Drawing.Point(75, 6)
-        Me.btnAddStaff.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAddStaff.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAddStaff.Name = "btnAddStaff"
         Me.btnAddStaff.Size = New System.Drawing.Size(200, 49)
         Me.btnAddStaff.TabIndex = 2
@@ -124,7 +124,7 @@ Partial Class ManageStaffs
         Me.pbExit.Image = Global.Library_Management_System.My.Resources.Resources.reject2
         Me.pbExit.ImageRotate = 0!
         Me.pbExit.Location = New System.Drawing.Point(9, 9)
-        Me.pbExit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pbExit.Margin = New System.Windows.Forms.Padding(4)
         Me.pbExit.Name = "pbExit"
         Me.pbExit.Size = New System.Drawing.Size(33, 31)
         Me.pbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -170,7 +170,7 @@ Partial Class ManageStaffs
         Me.cbSearchBy.ItemHeight = 30
         Me.cbSearchBy.Items.AddRange(New Object() {"Name", "Username", "ID"})
         Me.cbSearchBy.Location = New System.Drawing.Point(396, 9)
-        Me.cbSearchBy.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbSearchBy.Margin = New System.Windows.Forms.Padding(4)
         Me.cbSearchBy.Name = "cbSearchBy"
         Me.cbSearchBy.Size = New System.Drawing.Size(185, 36)
         Me.cbSearchBy.TabIndex = 0
@@ -202,7 +202,7 @@ Partial Class ManageStaffs
         Me.pnlSideMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.pnlSideMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.pnlSideMenu.Location = New System.Drawing.Point(13, 74)
-        Me.pnlSideMenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlSideMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlSideMenu.Name = "pnlSideMenu"
         Me.pnlSideMenu.Size = New System.Drawing.Size(300, 556)
         Me.pnlSideMenu.TabIndex = 8
@@ -217,7 +217,7 @@ Partial Class ManageStaffs
         Me.guna2Panel1.Controls.Add(Me.visibility2)
         Me.guna2Panel1.FillColor = System.Drawing.Color.White
         Me.guna2Panel1.Location = New System.Drawing.Point(17, 426)
-        Me.guna2Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel1.Name = "guna2Panel1"
         Me.guna2Panel1.Size = New System.Drawing.Size(267, 44)
         Me.guna2Panel1.TabIndex = 40
@@ -248,9 +248,10 @@ Partial Class ManageStaffs
         '
         Me.visibility2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.visibility2.BackColor = System.Drawing.Color.Transparent
+        Me.visibility2.Image = Global.Library_Management_System.My.Resources.Resources.visibilityon
         Me.visibility2.ImageRotate = 0!
         Me.visibility2.Location = New System.Drawing.Point(228, 7)
-        Me.visibility2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.visibility2.Margin = New System.Windows.Forms.Padding(4)
         Me.visibility2.Name = "visibility2"
         Me.visibility2.Size = New System.Drawing.Size(33, 31)
         Me.visibility2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -268,7 +269,7 @@ Partial Class ManageStaffs
         Me.guna2Panel2.Controls.Add(Me.visibility1)
         Me.guna2Panel2.FillColor = System.Drawing.Color.White
         Me.guna2Panel2.Location = New System.Drawing.Point(16, 353)
-        Me.guna2Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel2.Name = "guna2Panel2"
         Me.guna2Panel2.Size = New System.Drawing.Size(267, 44)
         Me.guna2Panel2.TabIndex = 39
@@ -299,9 +300,10 @@ Partial Class ManageStaffs
         '
         Me.visibility1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.visibility1.BackColor = System.Drawing.Color.Transparent
+        Me.visibility1.Image = Global.Library_Management_System.My.Resources.Resources.visibilityon
         Me.visibility1.ImageRotate = 0!
         Me.visibility1.Location = New System.Drawing.Point(228, 7)
-        Me.visibility1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.visibility1.Margin = New System.Windows.Forms.Padding(4)
         Me.visibility1.Name = "visibility1"
         Me.visibility1.Size = New System.Drawing.Size(33, 31)
         Me.visibility1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -336,7 +338,7 @@ Partial Class ManageStaffs
         Me.cbRole.ItemHeight = 30
         Me.cbRole.Items.AddRange(New Object() {"Staff", "Admin"})
         Me.cbRole.Location = New System.Drawing.Point(15, 644)
-        Me.cbRole.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbRole.Margin = New System.Windows.Forms.Padding(4)
         Me.cbRole.Name = "cbRole"
         Me.cbRole.Size = New System.Drawing.Size(265, 36)
         Me.cbRole.TabIndex = 22
@@ -455,7 +457,7 @@ Partial Class ManageStaffs
         Me.btnEnter.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.btnEnter.ForeColor = System.Drawing.Color.White
         Me.btnEnter.Location = New System.Drawing.Point(39, 695)
-        Me.btnEnter.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnEnter.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEnter.Name = "btnEnter"
         Me.btnEnter.Size = New System.Drawing.Size(200, 49)
         Me.btnEnter.TabIndex = 12
@@ -558,7 +560,7 @@ Partial Class ManageStaffs
         Me.pbExit2.Image = Global.Library_Management_System.My.Resources.Resources.reject2
         Me.pbExit2.ImageRotate = 0!
         Me.pbExit2.Location = New System.Drawing.Point(241, 7)
-        Me.pbExit2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pbExit2.Margin = New System.Windows.Forms.Padding(4)
         Me.pbExit2.Name = "pbExit2"
         Me.pbExit2.Size = New System.Drawing.Size(33, 31)
         Me.pbExit2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -582,7 +584,7 @@ Partial Class ManageStaffs
         Me.guna2Panel3.Controls.Add(Me.pnlGrid)
         Me.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.guna2Panel3.Location = New System.Drawing.Point(313, 74)
-        Me.guna2Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel3.Name = "guna2Panel3"
         Me.guna2Panel3.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
         Me.guna2Panel3.Size = New System.Drawing.Size(565, 556)
@@ -596,7 +598,7 @@ Partial Class ManageStaffs
         Me.pnlGrid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlGrid.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.pnlGrid.Location = New System.Drawing.Point(13, 12)
-        Me.pnlGrid.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlGrid.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlGrid.Name = "pnlGrid"
         Me.pnlGrid.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
         Me.pnlGrid.Size = New System.Drawing.Size(539, 532)
@@ -631,7 +633,7 @@ Partial Class ManageStaffs
         Me.dgvStaff.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvStaff.GridColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.dgvStaff.Location = New System.Drawing.Point(13, 12)
-        Me.dgvStaff.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgvStaff.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvStaff.Name = "dgvStaff"
         Me.dgvStaff.ReadOnly = True
         Me.dgvStaff.RowHeadersVisible = False
@@ -671,7 +673,7 @@ Partial Class ManageStaffs
         Me.Controls.Add(Me.guna2Panel3)
         Me.Controls.Add(Me.pnlSideMenu)
         Me.Controls.Add(Me.pnlTopMenu)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "ManageStaffs"
         Me.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
         Me.Text = "ManageStaffs"

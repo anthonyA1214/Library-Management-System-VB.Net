@@ -75,7 +75,7 @@ Partial Class MemberProfiles
         Me.pnlTopMenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlTopMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.pnlTopMenu.Location = New System.Drawing.Point(13, 12)
-        Me.pnlTopMenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlTopMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlTopMenu.Name = "pnlTopMenu"
         Me.pnlTopMenu.Size = New System.Drawing.Size(865, 62)
         Me.pnlTopMenu.TabIndex = 10
@@ -97,7 +97,7 @@ Partial Class MemberProfiles
         Me.pbExit.Image = Global.Library_Management_System.My.Resources.Resources.reject2
         Me.pbExit.ImageRotate = 0!
         Me.pbExit.Location = New System.Drawing.Point(9, 9)
-        Me.pbExit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pbExit.Margin = New System.Windows.Forms.Padding(4)
         Me.pbExit.Name = "pbExit"
         Me.pbExit.Size = New System.Drawing.Size(33, 31)
         Me.pbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -143,7 +143,7 @@ Partial Class MemberProfiles
         Me.cbSearchBy.ItemHeight = 30
         Me.cbSearchBy.Items.AddRange(New Object() {"Name", "ID"})
         Me.cbSearchBy.Location = New System.Drawing.Point(396, 9)
-        Me.cbSearchBy.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbSearchBy.Margin = New System.Windows.Forms.Padding(4)
         Me.cbSearchBy.Name = "cbSearchBy"
         Me.cbSearchBy.Size = New System.Drawing.Size(185, 36)
         Me.cbSearchBy.TabIndex = 0
@@ -157,7 +157,7 @@ Partial Class MemberProfiles
         Me.tableLayoutPanel1.Controls.Add(Me.pnlSelectMember, 0, 0)
         Me.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tableLayoutPanel1.Location = New System.Drawing.Point(13, 74)
-        Me.tableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tableLayoutPanel1.Margin = New System.Windows.Forms.Padding(4)
         Me.tableLayoutPanel1.Name = "tableLayoutPanel1"
         Me.tableLayoutPanel1.RowCount = 1
         Me.tableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -170,7 +170,7 @@ Partial Class MemberProfiles
         Me.pnlViewMemberRecords.Controls.Add(Me.tableLayoutPanel2)
         Me.pnlViewMemberRecords.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlViewMemberRecords.Location = New System.Drawing.Point(436, 4)
-        Me.pnlViewMemberRecords.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlViewMemberRecords.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlViewMemberRecords.Name = "pnlViewMemberRecords"
         Me.pnlViewMemberRecords.Padding = New System.Windows.Forms.Padding(7, 6, 7, 6)
         Me.pnlViewMemberRecords.Size = New System.Drawing.Size(425, 548)
@@ -185,7 +185,7 @@ Partial Class MemberProfiles
         Me.tableLayoutPanel2.Controls.Add(Me.guna2Panel1, 0, 0)
         Me.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tableLayoutPanel2.Location = New System.Drawing.Point(7, 6)
-        Me.tableLayoutPanel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tableLayoutPanel2.Margin = New System.Windows.Forms.Padding(4)
         Me.tableLayoutPanel2.Name = "tableLayoutPanel2"
         Me.tableLayoutPanel2.RowCount = 2
         Me.tableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -202,7 +202,7 @@ Partial Class MemberProfiles
         Me.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.guna2Panel2.Location = New System.Drawing.Point(4, 272)
-        Me.guna2Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel2.Name = "guna2Panel2"
         Me.guna2Panel2.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
         Me.guna2Panel2.Size = New System.Drawing.Size(403, 260)
@@ -239,7 +239,7 @@ Partial Class MemberProfiles
         Me.dgvIssue2.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvIssue2.GridColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.dgvIssue2.Location = New System.Drawing.Point(13, 47)
-        Me.dgvIssue2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgvIssue2.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvIssue2.Name = "dgvIssue2"
         Me.dgvIssue2.ReadOnly = True
         Me.dgvIssue2.RowHeadersVisible = False
@@ -292,7 +292,7 @@ Partial Class MemberProfiles
         Me.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.guna2Panel1.Location = New System.Drawing.Point(4, 4)
-        Me.guna2Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel1.Name = "guna2Panel1"
         Me.guna2Panel1.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
         Me.guna2Panel1.Size = New System.Drawing.Size(403, 260)
@@ -304,7 +304,7 @@ Partial Class MemberProfiles
         Me.pbExit2.Image = Global.Library_Management_System.My.Resources.Resources.reject2
         Me.pbExit2.ImageRotate = 0!
         Me.pbExit2.Location = New System.Drawing.Point(360, 9)
-        Me.pbExit2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pbExit2.Margin = New System.Windows.Forms.Padding(4)
         Me.pbExit2.Name = "pbExit2"
         Me.pbExit2.Size = New System.Drawing.Size(33, 31)
         Me.pbExit2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -342,7 +342,7 @@ Partial Class MemberProfiles
         Me.dgvIssue1.DefaultCellStyle = DataGridViewCellStyle6
         Me.dgvIssue1.GridColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.dgvIssue1.Location = New System.Drawing.Point(13, 47)
-        Me.dgvIssue1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgvIssue1.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvIssue1.Name = "dgvIssue1"
         Me.dgvIssue1.ReadOnly = True
         Me.dgvIssue1.RowHeadersVisible = False
@@ -390,9 +390,9 @@ Partial Class MemberProfiles
         Me.pnlSelectMember.Controls.Add(Me.pnlGrid)
         Me.pnlSelectMember.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlSelectMember.Location = New System.Drawing.Point(4, 4)
-        Me.pnlSelectMember.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlSelectMember.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlSelectMember.Name = "pnlSelectMember"
-        Me.pnlSelectMember.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
+        Me.pnlSelectMember.Padding = New System.Windows.Forms.Padding(7)
         Me.pnlSelectMember.Size = New System.Drawing.Size(424, 548)
         Me.pnlSelectMember.TabIndex = 13
         '
@@ -403,11 +403,11 @@ Partial Class MemberProfiles
         Me.pnlGrid.Controls.Add(Me.dgvMember)
         Me.pnlGrid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlGrid.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.pnlGrid.Location = New System.Drawing.Point(13, 12)
-        Me.pnlGrid.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlGrid.Location = New System.Drawing.Point(7, 7)
+        Me.pnlGrid.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlGrid.Name = "pnlGrid"
         Me.pnlGrid.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
-        Me.pnlGrid.Size = New System.Drawing.Size(398, 524)
+        Me.pnlGrid.Size = New System.Drawing.Size(410, 534)
         Me.pnlGrid.TabIndex = 0
         '
         'dgvMember
@@ -439,13 +439,13 @@ Partial Class MemberProfiles
         Me.dgvMember.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvMember.GridColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.dgvMember.Location = New System.Drawing.Point(13, 12)
-        Me.dgvMember.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgvMember.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvMember.Name = "dgvMember"
         Me.dgvMember.ReadOnly = True
         Me.dgvMember.RowHeadersVisible = False
         Me.dgvMember.RowHeadersWidth = 51
         Me.dgvMember.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.dgvMember.Size = New System.Drawing.Size(372, 500)
+        Me.dgvMember.Size = New System.Drawing.Size(384, 510)
         Me.dgvMember.TabIndex = 0
         Me.dgvMember.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.LightGreen
         Me.dgvMember.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(201, Byte), Integer))
@@ -478,7 +478,7 @@ Partial Class MemberProfiles
         Me.ClientSize = New System.Drawing.Size(891, 642)
         Me.Controls.Add(Me.tableLayoutPanel1)
         Me.Controls.Add(Me.pnlTopMenu)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "MemberProfiles"
         Me.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
         Me.Text = "MemberProfiles"

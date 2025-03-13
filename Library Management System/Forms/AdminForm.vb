@@ -2,15 +2,14 @@
 Imports System.Windows.Forms.DataVisualization.Charting
 
 Public Class AdminForm
+    Inherits Form
+
     Dim conn As SqlConnection = dbConnection.GetConnection()
     Private Username As String
 
     Public Sub New(username As String)
         InitializeComponent()
         Me.Username = username
-    End Sub
-
-    Public Sub New()
     End Sub
 
     Private Sub hideDashboard()
@@ -158,11 +157,11 @@ Public Class AdminForm
     End Sub
 
     Private Sub btnInventory_Click(sender As Object, e As EventArgs) Handles btnInventory.Click
-        openForm(New Inventory())
+        openForm(New Inventory("Admin"))
     End Sub
 
     Private Sub btnManageMembers_Click(sender As Object, e As EventArgs) Handles btnManageMembers.Click
-        openForm(New ManageMembers())
+        openForm(New ManageMembers("Admin"))
     End Sub
 
     Private Sub btnMemberProfiles_Click(sender As Object, e As EventArgs) Handles btnMemberProfiles.Click
@@ -217,23 +216,23 @@ Public Class AdminForm
         lblDateAndTime.Text = DateTime.Now.ToLongDateString() & " | " & DateTime.Now.ToLongTimeString()
     End Sub
 
-    Private Sub btnAddNewMember_Click(sender As Object, e As EventArgs)
-        openForm(New ManageMembers())
+    Private Sub btnAddNewMember_Click(sender As Object, e As EventArgs) Handles btnAddNewMember.Click
+        openForm(New ManageMembers("Admin"))
     End Sub
 
-    Private Sub btnAddNewBook_Click(sender As Object, e As EventArgs)
+    Private Sub btnAddNewBook_Click(sender As Object, e As EventArgs) Handles btnAddNewBook.Click
         openForm(New ManageBooks())
     End Sub
 
-    Private Sub lblMemberSeeAll_Click(sender As Object, e As EventArgs)
+    Private Sub lblMemberSeeAll_Click(sender As Object, e As EventArgs) Handles lblMemberSeeAll.Click
         openForm(New MemberProfiles())
     End Sub
 
-    Private Sub lblBookSeeAll_Click(sender As Object, e As EventArgs)
-        openForm(New Inventory())
+    Private Sub lblBookSeeAll_Click(sender As Object, e As EventArgs) Handles lblBookSeeAll.Click
+        openForm(New Inventory("Admin"))
     End Sub
 
-    Private Sub btnIssueBook2_Click(sender As Object, e As EventArgs)
+    Private Sub btnIssueBook2_Click(sender As Object, e As EventArgs) Handles btnIssueBook2.Click
         openForm(New IssueBook())
     End Sub
 
@@ -246,7 +245,7 @@ Public Class AdminForm
     End Sub
 
     Private Sub btnManageGenre_Click(sender As Object, e As EventArgs) Handles btnManageGenre.Click
-        openForm(New ManageGenres())
+        openForm(New ManageGenres("Admin"))
     End Sub
 
     Private Sub btnRecycleBin_Click(sender As Object, e As EventArgs) Handles btnArchive.Click
@@ -270,8 +269,9 @@ Public Class AdminForm
         borrowerstatistics.Titles.Clear()
         borrowerstatistics.Titles.Add("Books Borrowed by Membership Type")
 
-        Dim series As New System.Windows.Forms.DataVisualization.Charting.Series("Total Borrowed")
-        series.ChartType = SeriesChartType.Column
+        Dim series As New System.Windows.Forms.DataVisualization.Charting.Series("Total Borrowed") With {
+            .ChartType = SeriesChartType.Column
+        }
 
         While dr.Read()
             Dim membershipType As String = dr("membership_type").ToString()

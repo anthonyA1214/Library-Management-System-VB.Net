@@ -1795,4 +1795,10 @@
         AAAAAAA4Tv4fUYzhfW7TOAAAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="autoLoadDashboard.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="autoLoadCount.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>329, 20</value>
+  </metadata>
 </root>
