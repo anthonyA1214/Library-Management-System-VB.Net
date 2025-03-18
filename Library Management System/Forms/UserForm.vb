@@ -203,7 +203,7 @@ Public Class UserForm
         dgvIssuedBook.ColumnHeadersDefaultCellStyle.SelectionForeColor = dgvIssuedBook.ColumnHeadersDefaultCellStyle.ForeColor
     End Sub
 
-    Private Sub btnAddNewMember_Click(sender As Object, e As EventArgs) Handles btnAddNewMember.Click
+    Private Sub btnAddNewMember_Click(sender As Object, e As EventArgs) 
         openForm(New ManageMembers("Staff"))
     End Sub
 
@@ -215,7 +215,7 @@ Public Class UserForm
         openForm(New Inventory("Staff"))
     End Sub
 
-    Private Sub btnIssueBook2_Click(sender As Object, e As EventArgs) Handles btnIssueBook2.Click
+    Private Sub btnIssueBook2_Click(sender As Object, e As EventArgs) 
         openForm(New IssueBook())
     End Sub
 

@@ -168,11 +168,11 @@ Public Class AdminForm
         openForm(New MemberProfiles())
     End Sub
 
-    Private Sub btnIssueBook_Click(sender As Object, e As EventArgs) Handles btnIssueBook.Click
+    Private Sub btnIssueBook_Click(sender As Object, e As EventArgs)
         openForm(New IssueBook())
     End Sub
 
-    Private Sub btnReturnBook_Click(sender As Object, e As EventArgs) Handles btnReturnBook.Click
+    Private Sub btnReturnBook_Click(sender As Object, e As EventArgs)
         openForm(New ReturnBook())
     End Sub
 
@@ -216,11 +216,11 @@ Public Class AdminForm
         lblDateAndTime.Text = DateTime.Now.ToLongDateString() & " | " & DateTime.Now.ToLongTimeString()
     End Sub
 
-    Private Sub btnAddNewMember_Click(sender As Object, e As EventArgs) Handles btnAddNewMember.Click
+    Private Sub btnAddNewMember_Click(sender As Object, e As EventArgs)
         openForm(New ManageMembers("Admin"))
     End Sub
 
-    Private Sub btnAddNewBook_Click(sender As Object, e As EventArgs) Handles btnAddNewBook.Click
+    Private Sub btnAddNewBook_Click(sender As Object, e As EventArgs)
         openForm(New ManageBooks())
     End Sub
 
@@ -232,7 +232,7 @@ Public Class AdminForm
         openForm(New Inventory("Admin"))
     End Sub
 
-    Private Sub btnIssueBook2_Click(sender As Object, e As EventArgs) Handles btnIssueBook2.Click
+    Private Sub btnIssueBook2_Click(sender As Object, e As EventArgs)
         openForm(New IssueBook())
     End Sub
 
@@ -244,7 +244,7 @@ Public Class AdminForm
         openForm(New StaffApproval())
     End Sub
 
-    Private Sub btnManageGenre_Click(sender As Object, e As EventArgs) Handles btnManageGenre.Click
+    Private Sub btnManageGenre_Click(sender As Object, e As EventArgs) 
         openForm(New ManageGenres("Admin"))
     End Sub
 
