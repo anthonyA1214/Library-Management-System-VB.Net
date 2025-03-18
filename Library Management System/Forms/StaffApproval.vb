@@ -45,7 +45,7 @@ Public Class StaffApproval
         dgvStaff.ColumnHeadersDefaultCellStyle.SelectionForeColor = dgvStaff.ColumnHeadersDefaultCellStyle.ForeColor
     End Sub
 
-    Private Sub dgvStaff_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvStaff.CellContentClick
+    Private Sub dgvStaff_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
         Dim staffid As Integer
         Dim checkrow As Integer
 
@@ -102,7 +102,7 @@ Public Class StaffApproval
         End If
     End Sub
 
-    Private Sub dgvStaff_CellToolTipTextNeeded(sender As Object, e As DataGridViewCellToolTipTextNeededEventArgs) Handles dgvStaff.CellToolTipTextNeeded
+    Private Sub dgvStaff_CellToolTipTextNeeded(sender As Object, e As DataGridViewCellToolTipTextNeededEventArgs)
         If dgvStaff.Columns(e.ColumnIndex).Name = "approve" Then
             e.ToolTipText = "Approve"
         End If
@@ -116,7 +116,7 @@ Public Class StaffApproval
         cbSearchBy.Text = "Name"
     End Sub
 
-    Private Sub tbSearch_TextChanged(sender As Object, e As EventArgs) Handles tbSearch.TextChanged
+    Private Sub tbSearch_TextChanged(sender As Object, e As EventArgs)
         Dim query As String = "SELECT staff_id AS [Staff ID], CONCAT(first_name, ' ', last_name) AS [Staff Name], username AS [Username], password AS [Password], email AS [Email], contact_number AS [Contact Number] from tbl_staff WHERE IsDeleted = 0 AND IsApproved = 0"
         Dim search As String = tbSearch.Text
 
@@ -146,7 +146,7 @@ Public Class StaffApproval
         dgvStaff.DataSource = dt
     End Sub
 
-    Private Sub pbExit_Click(sender As Object, e As EventArgs) Handles pbExit.Click
+    Private Sub pbExit_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 

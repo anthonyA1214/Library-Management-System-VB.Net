@@ -5,7 +5,7 @@ Partial Public Class ManageBooks
 
     Private conn As SqlConnection = dbConnection.GetConnection()
     Private selectionMode As Integer
-    Private bookid As Integer
+    Public bookid As Integer
     Private checkrow As Integer
 
     Public Sub New()
@@ -14,7 +14,7 @@ Partial Public Class ManageBooks
     End Sub
 
     Private Sub loadTable()
-        Dim query As String = "SELECT book_id as [Book ID], title as [Title], author as [Author], isbn as [ISBN], genre as [Genre], publication_year as [Publication Year], quantity as [Quantity] from tbl_book WHERE IsDeleted = 0"
+        Dim query As String = "SELECT custom_book_id as [Book ID], title as [Title], author as [Author], isbn as [ISBN], genre as [Genre], publication_year as [Publication Year], quantity as [Quantity] from tbl_book WHERE IsDeleted = 0"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable()
@@ -182,30 +182,34 @@ Partial Public Class ManageBooks
 
     Private Sub dgvBook_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvBook.CellContentClick
         If e.RowIndex >= 0 AndAlso e.ColumnIndex = dgvBook.Columns("update").Index Then
-            Dim query As String = "SELECT * from tbl_book WHERE book_id = @bookid"
-            bookid = Integer.Parse(dgvBook.Rows(e.RowIndex).Cells("Book ID").Value.ToString())
+            Dim customBookId As String = dgvBook.Rows(e.RowIndex).Cells("Book ID").Value.ToString()
+            bookid = Integer.Parse(customBookId.Substring(2))
+
             selectionMode = 2
             clearTexts()
             lblSideMenu.Text = "UPDATE BOOK"
             pnlSideMenu.Visible = True
+
+            Dim query As String = "SELECT * FROM tbl_book WHERE book_id = @bookid"
             Dim cmd As New SqlCommand(query, conn)
-            cmd.Parameters.AddWithValue("@bookid", bookid)
+            cmd.Parameters.AddWithValue("@bookid", bookId)
             Dim da As New SqlDataAdapter(cmd)
             Dim ds As New DataSet()
             da.Fill(ds)
 
-            tbTitle.Text = ds.Tables(0).Rows(0)(1).ToString()
-            tbAuthor.Text = ds.Tables(0).Rows(0)(2).ToString()
-            tbISBN.Text = ds.Tables(0).Rows(0)(3).ToString()
-            cbGenre.Text = ds.Tables(0).Rows(0)(4).ToString()
-            Dim publicationYear As Integer = Integer.Parse(ds.Tables(0).Rows(0)(5).ToString())
+            tbTitle.Text = ds.Tables(0).Rows(0)(2).ToString()
+            tbAuthor.Text = ds.Tables(0).Rows(0)(3).ToString()
+            tbISBN.Text = ds.Tables(0).Rows(0)(4).ToString()
+            cbGenre.Text = ds.Tables(0).Rows(0)(5).ToString()
+            Dim publicationYear As Integer = Integer.Parse(ds.Tables(0).Rows(0)(6).ToString())
             dtpPublicationYear.Value = New DateTime(publicationYear, 1, 1)
-            numQuantity.Value = Decimal.Parse(ds.Tables(0).Rows(0)(6).ToString())
+            numQuantity.Value = Decimal.Parse(ds.Tables(0).Rows(0)(7).ToString())
         End If
 
         If e.RowIndex >= 0 AndAlso e.ColumnIndex = dgvBook.Columns("delete").Index Then
+            Dim customBookId As String = dgvBook.Rows(e.RowIndex).Cells("Book ID").Value.ToString()
+            bookid = Integer.Parse(customBookId.Substring(2))
             Dim query As String = "UPDATE tbl_book SET IsDeleted = 1 WHERE book_id = @bookid"
-            bookid = Integer.Parse(dgvBook.Rows(e.RowIndex).Cells("Book ID").Value.ToString())
             Try
                 conn.Open()
                 Dim cmd As New SqlCommand(query, conn)
@@ -229,13 +233,16 @@ Partial Public Class ManageBooks
     End Sub
 
     Private Sub tbSearch_TextChanged(sender As Object, e As EventArgs) Handles tbSearch.TextChanged
-        Dim query As String = "SELECT book_id as [Book ID], title as [Title], author as [Author], isbn as [ISBN], genre as [Genre], publication_year as [Publication Year], quantity as [Quantity] from tbl_book WHERE IsDeleted = 0"
+        Dim query As String = "SELECT custom_book_id as [Book ID], title as [Title], author as [Author], isbn as [ISBN], genre as [Genre], publication_year as [Publication Year], quantity as [Quantity] from tbl_book WHERE IsDeleted = 0"
         Dim search As String = tbSearch.Text
 
         If String.IsNullOrEmpty(tbSearch.Text) Then
             loadTable()
             Return
         End If
+
+        Dim pattern As String = "^b-\d{6}$"  ' ^b- means starting with 'b-', \d{6} means exactly six digits, $ means end of the string
+        If cbSearchBy.Text = "ID" AndAlso Not System.Text.RegularExpressions.Regex.IsMatch(search, pattern) Then Return
 
         If cbSearchBy.Text = "Title" Then
             query += " AND title LIKE @search"
@@ -246,8 +253,7 @@ Partial Public Class ManageBooks
         ElseIf cbSearchBy.Text = "Publication Year" Then
             query += " AND publication_year LIKE @search"
         ElseIf cbSearchBy.Text = "ID" Then
-            If Not Integer.TryParse(search, Nothing) Then Return
-            query += " AND book_id LIKE @search"
+            query += " AND custom_book_id LIKE @search"
         End If
 
         Dim cmd As New SqlCommand(query, conn)

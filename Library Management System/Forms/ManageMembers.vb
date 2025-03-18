@@ -34,7 +34,7 @@ Partial Public Class ManageMembers
     End Sub
 
     Private Sub loadTable()
-        Dim query As String = "SELECT member_id AS [Member ID], CONCAT(first_name, ' ', last_name) AS [Member Name], age AS [Age], address AS [Address], contact_number AS [Contact Number], email AS [Email], membership_type AS [Membership Type] from tbl_member WHERE IsDeleted = 0"
+        Dim query As String = "SELECT custom_member_id AS [Member ID], CONCAT(first_name, ' ', last_name) AS [Member Name], age AS [Age], address AS [Address], contact_number AS [Contact Number], email AS [Email], membership_type AS [Membership Type] from tbl_member WHERE IsDeleted = 0"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable()
@@ -93,7 +93,8 @@ Partial Public Class ManageMembers
     Private Sub dgvMember_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvMember.CellContentClick
         If e.RowIndex >= 0 AndAlso e.ColumnIndex = dgvMember.Columns("update").Index Then
             Dim query As String = "SELECT * from tbl_member WHERE member_id = @memberid"
-            memberid = Integer.Parse(dgvMember.Rows(e.RowIndex).Cells("Member ID").Value.ToString())
+            Dim customMemberId As String = dgvMember.Rows(e.RowIndex).Cells("Member ID").Value.ToString()
+            memberid = Integer.Parse(customMemberId.Substring(2))
             selectionMode = 2
             clearTexts()
             lblSideMenu.Text = "UPDATE MEMBER"
@@ -104,18 +105,19 @@ Partial Public Class ManageMembers
             Dim ds As New DataSet()
             da.Fill(ds)
 
-            tbFirstName.Text = ds.Tables(0).Rows(0)(1).ToString()
-            tbLastName.Text = ds.Tables(0).Rows(0)(2).ToString()
-            numAge.Value = Decimal.Parse(ds.Tables(0).Rows(0)(3).ToString())
-            tbAddress.Text = ds.Tables(0).Rows(0)(4).ToString()
-            tbContactNumber.Text = ds.Tables(0).Rows(0)(5).ToString()
-            tbEmail.Text = ds.Tables(0).Rows(0)(6).ToString()
-            cbMembershipType.Text = ds.Tables(0).Rows(0)(7).ToString()
+            tbFirstName.Text = ds.Tables(0).Rows(0)(2).ToString()
+            tbLastName.Text = ds.Tables(0).Rows(0)(3).ToString()
+            numAge.Value = Decimal.Parse(ds.Tables(0).Rows(0)(4).ToString())
+            tbAddress.Text = ds.Tables(0).Rows(0)(5).ToString()
+            tbContactNumber.Text = ds.Tables(0).Rows(0)(6).ToString()
+            tbEmail.Text = ds.Tables(0).Rows(0)(7).ToString()
+            cbMembershipType.Text = ds.Tables(0).Rows(0)(8).ToString()
         End If
 
         If e.RowIndex >= 0 AndAlso e.ColumnIndex = dgvMember.Columns("delete").Index Then
             Dim query As String = "UPDATE tbl_member SET IsDeleted = 1 WHERE member_id = @memberid"
-            memberid = Integer.Parse(dgvMember.Rows(e.RowIndex).Cells("Member ID").Value.ToString())
+            Dim customMemberId As String = dgvMember.Rows(e.RowIndex).Cells("Member ID").Value.ToString()
+            memberid = Integer.Parse(customMemberId.Substring(2))
             Try
                 conn.Open()
                 Dim cmd As New SqlCommand(query, conn)
@@ -141,7 +143,7 @@ Partial Public Class ManageMembers
     End Sub
 
     Private Sub tbSearch_TextChanged(sender As Object, e As EventArgs) Handles tbSearch.TextChanged
-        Dim query As String = "SELECT member_id AS [Member ID], CONCAT(first_name, ' ', last_name) AS [Member Name], age AS [Age], address AS [Address], contact_number AS [Contact Number], email AS [Email], membership_type AS [Membership Type] from tbl_member WHERE IsDeleted = 0"
+        Dim query As String = "SELECT custom_member_id AS [Member ID], CONCAT(first_name, ' ', last_name) AS [Member Name], age AS [Age], address AS [Address], contact_number AS [Contact Number], email AS [Email], membership_type AS [Membership Type] from tbl_member WHERE IsDeleted = 0"
         Dim search As String = tbSearch.Text
 
         If String.IsNullOrEmpty(tbSearch.Text) Then
@@ -149,13 +151,13 @@ Partial Public Class ManageMembers
             Return
         End If
 
+        Dim pattern As String = "^m-\d{6}$"  ' ^b- means starting with 'b-', \d{6} means exactly six digits, $ means end of the string
+        If cbSearchBy.Text = "ID" AndAlso Not System.Text.RegularExpressions.Regex.IsMatch(search, pattern) Then Return
+
         If cbSearchBy.Text = "Name" Then
             query &= " AND CONCAT(first_name, ' ', last_name) LIKE @search"
         ElseIf cbSearchBy.Text = "ID" Then
-            If Not Integer.TryParse(search, Nothing) Then
-                Return
-            End If
-            query &= " AND member_id LIKE @search"
+            query &= " AND custom_member_id LIKE @search"
         End If
 
         Dim cmd As New SqlCommand(query, conn)

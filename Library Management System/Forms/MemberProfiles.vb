@@ -11,7 +11,7 @@ Public Class MemberProfiles
     End Sub
 
     Private Sub LoadMemberTable()
-        Dim query As String = "SELECT member_id AS [Member ID], CONCAT(first_name, ' ', last_name) AS [Member Name], age AS [Age], address AS [Address], contact_number AS [Contact Number], email AS [Email], membership_type AS [Membership Type] from tbl_member WHERE IsDeleted = 0"
+        Dim query As String = "SELECT custom_member_id AS [Member ID], CONCAT(first_name, ' ', last_name) AS [Member Name], age AS [Age], address AS [Address], contact_number AS [Contact Number], email AS [Email], membership_type AS [Membership Type] from tbl_member WHERE IsDeleted = 0"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable()
@@ -75,7 +75,8 @@ Public Class MemberProfiles
     Private Sub dgvMember_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvMember.CellContentClick
         If e.RowIndex >= 0 AndAlso e.ColumnIndex = dgvMember.Columns("viewactivity").Index Then
             tableLayoutPanel1.ColumnStyles(1).Width = 50
-            memberid = Integer.Parse(dgvMember.Rows(e.RowIndex).Cells("Member ID").Value.ToString())
+            Dim customMemberId As String = dgvMember.Rows(e.RowIndex).Cells("Member ID").Value.ToString()
+            memberid = Integer.Parse(customMemberId.Substring(2))
             ViewMemberRecords()
         End If
     End Sub
@@ -95,22 +96,20 @@ Public Class MemberProfiles
     End Sub
 
     Private Sub tbSearch_TextChanged(sender As Object, e As EventArgs) Handles tbSearch.TextChanged
-        Dim query As String = "SELECT member_id AS [Member ID], CONCAT(first_name, ' ', last_name) AS [Member Name], age AS [Age], address AS [Address], contact_number AS [Contact Number], email AS [Email], membership_type AS [Membership Type] from tbl_member WHERE IsDeleted = 0"
+        Dim query As String = "SELECT custom_member_id AS [Member ID], CONCAT(first_name, ' ', last_name) AS [Member Name], age AS [Age], address AS [Address], contact_number AS [Contact Number], email AS [Email], membership_type AS [Membership Type] from tbl_member WHERE IsDeleted = 0"
         Dim search As String = tbSearch.Text
 
         If String.IsNullOrEmpty(tbSearch.Text) Then
             LoadMemberTable()
             Return
         End If
+        Dim pattern As String = "^m-\d{6}$"  ' ^b- means starting with 'b-', \d{6} means exactly six digits, $ means end of the string
+        If cbSearchBy.Text = "ID" AndAlso Not System.Text.RegularExpressions.Regex.IsMatch(search, pattern) Then Return
 
         If cbSearchBy.Text = "Name" Then
             query &= " AND CONCAT(first_name, ' ', last_name) LIKE @search"
         ElseIf cbSearchBy.Text = "ID" Then
-            Dim id As Integer
-            If Not Integer.TryParse(search, id) Then
-                Return
-            End If
-            query &= " AND member_id LIKE @search"
+            query &= " AND custom_member_id LIKE @search"
         End If
 
         Dim cmd As New SqlCommand(query, conn)

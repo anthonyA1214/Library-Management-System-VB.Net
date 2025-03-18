@@ -22,7 +22,7 @@ Partial Public Class Inventory
     End Sub
 
     Private Sub LoadTable()
-        Dim query As String = "SELECT book_id as [Book ID], title as [Title], author as [Author], isbn as [ISBN], genre as [Genre], publication_year as [Publication Year], quantity as [Quantity], CASE WHEN quantity > 0 THEN 'Available' ELSE 'Unavailable' END AS [Availability Status] from tbl_book WHERE IsDeleted = 0"
+        Dim query As String = "SELECT custom_book_id as [Book ID], title as [Title], author as [Author], isbn as [ISBN], genre as [Genre], publication_year as [Publication Year], quantity as [Quantity], CASE WHEN quantity > 0 THEN 'Available' ELSE 'Unavailable' END AS [Availability Status] from tbl_book WHERE IsDeleted = 0"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable()
@@ -105,7 +105,8 @@ Partial Public Class Inventory
     Private Sub dgvBook_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvBook.CellContentClick
         If e.RowIndex >= 0 AndAlso e.ColumnIndex = dgvBook.Columns("add").Index Then
             Dim query As String = "SELECT * from tbl_book WHERE book_id = @bookid"
-            bookid = Integer.Parse(dgvBook.Rows(e.RowIndex).Cells("Book ID").Value.ToString())
+            Dim customBookId As String = dgvBook.Rows(e.RowIndex).Cells("Book ID").Value.ToString()
+            bookid = Integer.Parse(customBookId.Substring(2))
             ClearTexts()
             pnlSideMenu.Visible = True
             Dim cmd As New SqlCommand(query, conn)
@@ -114,8 +115,8 @@ Partial Public Class Inventory
             Dim ds As New DataSet()
             da.Fill(ds)
 
-            tbTitle.Text = ds.Tables(0).Rows(0)(1).ToString()
-            tbAuthor.Text = ds.Tables(0).Rows(0)(2).ToString()
+            tbTitle.Text = ds.Tables(0).Rows(0)(2).ToString()
+            tbAuthor.Text = ds.Tables(0).Rows(0)(3).ToString()
         End If
     End Sub
 
@@ -150,11 +151,12 @@ Partial Public Class Inventory
     End Sub
 
     Private Sub SearchFilter()
-        Dim query As String = "SELECT book_id as [Book ID], title as [Title], author as [Author], isbn as [ISBN], genre as [Genre], publication_year as [Publication Year], quantity as [Quantity], CASE WHEN quantity > 0 THEN 'Available' ELSE 'Unavailable' END AS [Availability Status] FROM tbl_book WHERE IsDeleted = 0"
+        Dim query As String = "SELECT custom_book_id as [Book ID], title as [Title], author as [Author], isbn as [ISBN], genre as [Genre], publication_year as [Publication Year], quantity as [Quantity], CASE WHEN quantity > 0 THEN 'Available' ELSE 'Unavailable' END AS [Availability Status] FROM tbl_book WHERE IsDeleted = 0"
 
-        ' Check if search text box is not empty
         If Not String.IsNullOrEmpty(tbSearch.Text) Then
             Dim search As String = tbSearch.Text
+            Dim pattern As String = "^b-\d{6}$"  ' ^b- means starting with 'b-', \d{6} means exactly six digits, $ means end of the string
+            If cbSearchBy.Text = "ID" AndAlso Not System.Text.RegularExpressions.Regex.IsMatch(search, pattern) Then Return
             If cbSearchBy.Text = "Title" Then
                 query += " AND title LIKE @search"
             ElseIf cbSearchBy.Text = "Author" Then
@@ -164,10 +166,7 @@ Partial Public Class Inventory
             ElseIf cbSearchBy.Text = "Publication Year" Then
                 query += " AND publication_year LIKE @search"
             ElseIf cbSearchBy.Text = "ID" Then
-                If Not Integer.TryParse(search, 0) Then
-                    Return
-                End If
-                query += " AND book_id LIKE @search"
+                query += " AND custom_book_id LIKE @search"
             End If
         End If
 
