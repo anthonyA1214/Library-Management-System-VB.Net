@@ -10,7 +10,7 @@ Partial Public Class Archive
     Dim conn As SqlConnection = dbConnection.GetConnection()
 
     Private Sub loadBookTable()
-        Dim query As String = "SELECT book_id as [Book ID], title as [Title], author as [Author], isbn as [ISBN], genre as [Genre], publication_year as [Publication Year], quantity as [Quantity] from tbl_book WHERE IsDeleted = 1"
+        Dim query As String = "SELECT custom_book_id as [Book ID], title as [Title], author as [Author], isbn as [ISBN], genre as [Genre], publication_year as [Publication Year], quantity as [Quantity] from tbl_book WHERE IsDeleted = 1"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable()
@@ -21,7 +21,7 @@ Partial Public Class Archive
     End Sub
 
     Private Sub loadMemberTable()
-        Dim query As String = "SELECT member_id AS [Member ID], CONCAT(first_name, ' ', last_name) AS [Member Name], age AS [Age], address AS [Address], contact_number AS [Contact Number], email AS [Email], membership_type AS [Membership Type] from tbl_member WHERE IsDeleted = 1"
+        Dim query As String = "SELECT custom_member_id AS [Member ID], CONCAT(first_name, ' ', last_name) AS [Member Name], age AS [Age], address AS [Address], contact_number AS [Contact Number], email AS [Email], membership_type AS [Membership Type] from tbl_member WHERE IsDeleted = 1"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable()
@@ -32,7 +32,7 @@ Partial Public Class Archive
     End Sub
 
     Private Sub loadStaffTable()
-        Dim query As String = "SELECT staff_id AS [Staff ID], CONCAT(first_name, ' ', last_name) AS [Staff Name], username AS [Username], password AS [Password], email AS [Email], contact_number AS [Contact Number], role AS [Role] from tbl_staff WHERE IsDeleted = 1 AND IsApproved = 1"
+        Dim query As String = "SELECT custom_staff_id AS [Staff ID], CONCAT(first_name, ' ', last_name) AS [Staff Name], username AS [Username], password AS [Password], email AS [Email], contact_number AS [Contact Number], role AS [Role] from tbl_staff WHERE IsDeleted = 1 AND IsApproved = 1"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable()
@@ -43,7 +43,7 @@ Partial Public Class Archive
     End Sub
 
     Private Sub loadGenreTable()
-        Dim query As String = "SELECT genre_id AS [Genre ID], genre_name AS [Genre Name] from tbl_genre WHERE IsDeleted = 1"
+        Dim query As String = "SELECT custom_genre_id AS [Genre ID], genre_name AS [Genre Name] from tbl_genre WHERE IsDeleted = 1"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable()
@@ -249,7 +249,9 @@ Partial Public Class Archive
 
         Select Case tableName
             Case "Book"
-                query = "SELECT book_id as [Book ID], title as [Title], author as [Author], isbn as [ISBN], genre as [Genre], publication_year as [Publication Year], quantity as [Quantity] from tbl_book WHERE IsDeleted = 1"
+                query = "SELECT custom_book_id as [Book ID], title as [Title], author as [Author], isbn as [ISBN], genre as [Genre], publication_year as [Publication Year], quantity as [Quantity] from tbl_book WHERE IsDeleted = 1"
+                Dim pattern As String = "^b-\d{6}$"  ' ^b- means starting with 'b-', \d{6} means exactly six digits, $ means end of the string
+                If cbSearchBy.Text = "ID" AndAlso Not System.Text.RegularExpressions.Regex.IsMatch(search, pattern) Then Return
                 If cbSearchBy.Text = "Title" Then
                     query += " AND title LIKE @search"
                 ElseIf cbSearchBy.Text = "Author" Then
@@ -259,42 +261,36 @@ Partial Public Class Archive
                 ElseIf cbSearchBy.Text = "Publication Year" Then
                     query += " AND publication_year LIKE @search"
                 ElseIf cbSearchBy.Text = "ID" Then
-                    If Not Integer.TryParse(search, 0) Then
-                        Return
-                    End If
-                    query += " AND book_id LIKE @search"
+                    query += " AND custom_book_id LIKE @search"
                 End If
             Case "Member"
-                query = "SELECT member_id AS [Member ID], CONCAT(first_name, ' ', last_name) AS [Member Name], age AS [Age], address AS [Address], contact_number AS [Contact Number], email AS [Email], membership_type AS [Membership Type] from tbl_member WHERE IsDeleted = 1"
+                query = "SELECT custom_member_id AS [Member ID], CONCAT(first_name, ' ', last_name) AS [Member Name], age AS [Age], address AS [Address], contact_number AS [Contact Number], email AS [Email], membership_type AS [Membership Type] from tbl_member WHERE IsDeleted = 1"
+                Dim pattern As String = "^m-\d{6}$"  ' ^b- means starting with 'b-', \d{6} means exactly six digits, $ means end of the string
+                If cbSearchBy.Text = "ID" AndAlso Not System.Text.RegularExpressions.Regex.IsMatch(search, pattern) Then Return
                 If cbSearchBy.Text = "Name" Then
                     query += " AND CONCAT(first_name, ' ', last_name) LIKE @search"
                 ElseIf cbSearchBy.Text = "ID" Then
-                    If Not Integer.TryParse(search, 0) Then
-                        Return
-                    End If
-                    query += " AND member_id LIKE @search"
+                    query += " AND custom_member_id LIKE @search"
                 End If
             Case "Staff"
-                query = "SELECT staff_id AS [Staff ID], CONCAT(first_name, ' ', last_name) AS [Staff Name], username AS [Username], password AS [Password], email AS [Email], contact_number AS [Contact Number], role AS [Role] from tbl_staff WHERE IsDeleted = 1 AND IsApproved = 1"
+                query = "SELECT custom_staff_id AS [Staff ID], CONCAT(first_name, ' ', last_name) AS [Staff Name], username AS [Username], password AS [Password], email AS [Email], contact_number AS [Contact Number], role AS [Role] from tbl_staff WHERE IsDeleted = 1 AND IsApproved = 1"
+                Dim pattern As String = "^s-\d{6}$"  ' ^b- means starting with 'b-', \d{6} means exactly six digits, $ means end of the string
+                If cbSearchBy.Text = "ID" AndAlso Not System.Text.RegularExpressions.Regex.IsMatch(search, pattern) Then Return
                 If cbSearchBy.Text = "Name" Then
                     query += " AND CONCAT(first_name, ' ', last_name) LIKE @search"
                 ElseIf cbSearchBy.Text = "Username" Then
                     query += " AND username LIKE @search"
                 ElseIf cbSearchBy.Text = "ID" Then
-                    If Not Integer.TryParse(search, 0) Then
-                        Return
-                    End If
-                    query += " AND staff_id LIKE @search"
+                    query += " AND custom_staff_id LIKE @search"
                 End If
             Case "Genre"
-                query = "SELECT genre_id AS [Genre ID], genre_name AS [Genre Name] from tbl_genre WHERE IsDeleted = 1"
+                query = "SELECT custom_genre_id AS [Genre ID], genre_name AS [Genre Name] from tbl_genre WHERE IsDeleted = 1"
+                Dim pattern As String = "^g-\d{6}$"  ' ^b- means starting with 'b-', \d{6} means exactly six digits, $ means end of the string
+                If cbSearchBy.Text = "ID" AndAlso Not System.Text.RegularExpressions.Regex.IsMatch(search, pattern) Then Return
                 If cbSearchBy.Text = "Name" Then
                     query += " AND genre_name LIKE @search"
                 ElseIf cbSearchBy.Text = "ID" Then
-                    If Not Integer.TryParse(search, 0) Then
-                        Return
-                    End If
-                    query += " AND genre_id LIKE @search"
+                    query += " AND custom_genre_id LIKE @search"
                 End If
         End Select
 

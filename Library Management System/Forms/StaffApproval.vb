@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-
+Imports System.Text.RegularExpressions
 Public Class StaffApproval
     Inherits Form
 
@@ -10,7 +10,7 @@ Public Class StaffApproval
     End Sub
 
     Private Sub LoadTable()
-        Dim query As String = "SELECT staff_id AS [Staff ID], CONCAT(first_name, ' ', last_name) AS [Staff Name], username AS [Username], password AS [Password], email AS [Email], contact_number AS [Contact Number] from tbl_staff WHERE IsDeleted = 0 AND IsApproved = 0"
+        Dim query As String = "SELECT custom_staff_id AS [Staff ID], CONCAT(first_name, ' ', last_name) AS [Staff Name], username AS [Username], password AS [Password], email AS [Email], contact_number AS [Contact Number] from tbl_staff WHERE IsDeleted = 0 AND IsApproved = 0"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable()
@@ -40,6 +40,9 @@ Public Class StaffApproval
         If dgvStaff.Columns("reject") Is Nothing Then
             dgvStaff.Columns.Add(rejectImgCol)
         End If
+
+        dgvStaff.Columns("approve").DisplayIndex = dgvStaff.Columns.Count - 1
+        dgvStaff.Columns("reject").DisplayIndex = dgvStaff.Columns.Count - 1
 
         dgvStaff.ColumnHeadersDefaultCellStyle.SelectionBackColor = dgvStaff.ColumnHeadersDefaultCellStyle.BackColor
         dgvStaff.ColumnHeadersDefaultCellStyle.SelectionForeColor = dgvStaff.ColumnHeadersDefaultCellStyle.ForeColor
@@ -116,29 +119,33 @@ Public Class StaffApproval
         cbSearchBy.Text = "Name"
     End Sub
 
-    Private Sub tbSearch_TextChanged(sender As Object, e As EventArgs)
-        Dim query As String = "SELECT staff_id AS [Staff ID], CONCAT(first_name, ' ', last_name) AS [Staff Name], username AS [Username], password AS [Password], email AS [Email], contact_number AS [Contact Number] from tbl_staff WHERE IsDeleted = 0 AND IsApproved = 0"
-        Dim search As String = tbSearch.Text
+    Private Sub tbSearch_TextChanged(sender As Object, e As EventArgs) Handles tbSearch.TextChanged
+        Dim query As String = "SELECT custom_staff_id AS [Staff ID], CONCAT(first_name, ' ', last_name) AS [Staff Name], username AS [Username], password AS [Password], email AS [Email], contact_number AS [Contact Number] FROM tbl_staff WHERE IsDeleted = 0 AND IsApproved = 0"
+        Dim search As String = tbSearch.Text.Trim()
 
         If String.IsNullOrEmpty(search) Then
             LoadTable()
             Return
         End If
 
+        Dim pattern As String = "^s-\d{6}$"
+        If cbSearchBy.Text = "ID" AndAlso Not System.Text.RegularExpressions.Regex.IsMatch(search, pattern, RegexOptions.IgnoreCase) Then Return
+
+        Dim cmd As New SqlCommand()
+        cmd.Connection = conn
+
         If cbSearchBy.Text = "Name" Then
             query &= " AND CONCAT(first_name, ' ', last_name) LIKE @search"
+            cmd.Parameters.AddWithValue("@search", "%" & search & "%")
         ElseIf cbSearchBy.Text = "Username" Then
             query &= " AND username = @search"
+            cmd.Parameters.AddWithValue("@search", search)
         ElseIf cbSearchBy.Text = "ID" Then
-            query &= " AND staff_id = @search"
+            query &= " AND custom_staff_id = @search"
+            cmd.Parameters.AddWithValue("@search", search.ToUpper())
         End If
 
-        Dim cmd As New SqlCommand(query, conn)
-        If cbSearchBy.Text = "Name" Then
-            cmd.Parameters.AddWithValue("@search", "%" & search & "%")
-        Else
-            cmd.Parameters.AddWithValue("@search", search)
-        End If
+        cmd.CommandText = query
 
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable()
@@ -146,7 +153,8 @@ Public Class StaffApproval
         dgvStaff.DataSource = dt
     End Sub
 
-    Private Sub pbExit_Click(sender As Object, e As EventArgs)
+
+    Private Sub pbExit_Click(sender As Object, e As EventArgs) Handles pbExit.Click
         Me.Close()
     End Sub
 

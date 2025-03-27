@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Text.RegularExpressions
 
 Public Class IssueBook
     Inherits Form
@@ -12,7 +13,7 @@ Public Class IssueBook
     End Sub
 
     Private Sub loadMemberTable()
-        Dim query As String = "SELECT member_id AS [Member ID], CONCAT(first_name, ' ', last_name) AS [Member Name] from tbl_member WHERE IsDeleted = 0"
+        Dim query As String = "SELECT custom_member_id AS [Member ID], CONCAT(first_name, ' ', last_name) AS [Member Name] from tbl_member WHERE IsDeleted = 0"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable()
@@ -22,7 +23,7 @@ Public Class IssueBook
     End Sub
 
     Private Sub loadBookTable()
-        Dim query As String = "SELECT book_id as [Book ID], title as [Title], author as [Author], quantity as [Quantity] from tbl_book WHERE IsDeleted = 0"
+        Dim query As String = "SELECT custom_book_id as [Book ID], title as [Title], author as [Author], quantity as [Quantity] from tbl_book WHERE IsDeleted = 0"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable()
@@ -41,7 +42,8 @@ Public Class IssueBook
 
     Private Sub dgvBook_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvBook.CellClick
         If e.RowIndex >= 0 AndAlso dgvBook.Rows(e.RowIndex).Cells(e.ColumnIndex) IsNot Nothing Then
-            bookid = Convert.ToInt32(dgvBook.Rows(e.RowIndex).Cells(0).Value.ToString())
+            Dim customBookId As String = dgvBook.Rows(e.RowIndex).Cells(0).Value.ToString()
+            bookid = Integer.Parse(customBookId.Substring(2))
 
             Dim query As String = "SELECT * from tbl_book WHERE book_id = @bookid"
             Dim cmd As New SqlCommand(query, conn)
@@ -50,15 +52,16 @@ Public Class IssueBook
             Dim ds As New DataSet()
             da.Fill(ds)
 
-            lblBookID.Text = ds.Tables(0).Rows(0)(0).ToString()
-            lblBookTitle.Text = ds.Tables(0).Rows(0)(1).ToString()
-            lblBookAuthor.Text = ds.Tables(0).Rows(0)(2).ToString()
+            lblBookID.Text = ds.Tables(0).Rows(0)(1).ToString()
+            lblBookTitle.Text = ds.Tables(0).Rows(0)(2).ToString()
+            lblBookAuthor.Text = ds.Tables(0).Rows(0)(3).ToString()
         End If
     End Sub
 
     Private Sub dgvMember_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvMember.CellClick
         If e.RowIndex >= 0 AndAlso dgvMember.Rows(e.RowIndex).Cells(e.ColumnIndex) IsNot Nothing Then
-            memberid = Convert.ToInt32(dgvMember.Rows(e.RowIndex).Cells(0).Value.ToString())
+            Dim customBookId As String = dgvMember.Rows(e.RowIndex).Cells(0).Value.ToString()
+            memberid = Integer.Parse(customBookId.Substring(2))
 
             Dim query As String = "SELECT * from tbl_member WHERE member_id = @memberid"
             Dim cmd As New SqlCommand(query, conn)
@@ -67,8 +70,8 @@ Public Class IssueBook
             Dim ds As New DataSet()
             da.Fill(ds)
 
-            lblMemberID.Text = ds.Tables(0).Rows(0)(0).ToString()
-            lblMemberName.Text = ds.Tables(0).Rows(0)(1).ToString() & " " & ds.Tables(0).Rows(0)(2).ToString()
+            lblMemberID.Text = ds.Tables(0).Rows(0)(1).ToString()
+            lblMemberName.Text = ds.Tables(0).Rows(0)(2).ToString() & " " & ds.Tables(0).Rows(0)(3).ToString()
         End If
     End Sub
 
@@ -168,7 +171,7 @@ Public Class IssueBook
     End Sub
 
     Private Sub tbSearch1_TextChanged(sender As Object, e As EventArgs) Handles tbSearch1.TextChanged
-        Dim query As String = "SELECT member_id AS [Member ID], CONCAT(first_name, ' ', last_name) AS [Member Name] from tbl_member WHERE IsDeleted = 0"
+        Dim query As String = "SELECT custom_member_id AS [Member ID], CONCAT(first_name, ' ', last_name) AS [Member Name] from tbl_member WHERE IsDeleted = 0"
         Dim search As String = tbSearch1.Text
 
         If String.IsNullOrEmpty(tbSearch1.Text) Then
@@ -179,8 +182,9 @@ Public Class IssueBook
         If cbSearchBy1.Text = "Name" Then
             query += " AND CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) LIKE @search"
         ElseIf cbSearchBy1.Text = "ID" Then
-            If Not Integer.TryParse(search, Nothing) Then Return
-            query += " AND member_id LIKE @search"
+            Dim pattern As String = "^m-\d{6}$"
+            If cbSearchBy1.Text = "ID" AndAlso Not System.Text.RegularExpressions.Regex.IsMatch(search, pattern, RegexOptions.IgnoreCase) Then Return
+            query += " AND custom_member_id LIKE @search"
         End If
 
         Dim cmd As New SqlCommand(query, conn)
@@ -193,7 +197,7 @@ Public Class IssueBook
     End Sub
 
     Private Sub tbSearch2_TextChanged(sender As Object, e As EventArgs) Handles tbSearch2.TextChanged
-        Dim query As String = "SELECT book_id as [Book ID], title as [Title], author as [Author], quantity as [Quantity] from tbl_book WHERE IsDeleted = 0"
+        Dim query As String = "SELECT custom_book_id as [Book ID], title as [Title], author as [Author], quantity as [Quantity] from tbl_book WHERE IsDeleted = 0"
         Dim search As String = tbSearch2.Text
 
         If String.IsNullOrEmpty(tbSearch2.Text) Then
@@ -208,8 +212,9 @@ Public Class IssueBook
         ElseIf cbSearchBy2.Text = "ISBN" Then
             query += " AND isbn LIKE @search"
         ElseIf cbSearchBy2.Text = "ID" Then
-            If Not Integer.TryParse(search, Nothing) Then Return
-            query += " AND book_id LIKE @search"
+            Dim pattern As String = "^b-\d{6}$"
+            If Not System.Text.RegularExpressions.Regex.IsMatch(search, pattern, RegexOptions.IgnoreCase) Then Return
+            query += " AND custom_book_id LIKE @search" ' Use custom_book_id instead of book_id
         End If
 
         Dim cmd As New SqlCommand(query, conn)

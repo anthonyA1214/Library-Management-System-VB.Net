@@ -1,5 +1,6 @@
 ﻿Imports ClosedXML.Excel
 Imports System.Data.SqlClient
+Imports System.Text.RegularExpressions
 
 Public Class CirculationReport
     Inherits Form
@@ -11,7 +12,7 @@ Public Class CirculationReport
     Dim conn As SqlConnection = dbConnection.GetConnection()
 
     Private Sub loadData()
-        Dim loadTableQuery As String = "SELECT tbl_issue.issue_id AS [Issue ID], tbl_book.title AS [Book Title], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) AS [Member Name], tbl_issue.status AS [Loan Status], CASE WHEN tbl_issue.return_date IS NULL AND tbl_issue.due_date < GETDATE() THEN 'Overdue' WHEN tbl_issue.return_date IS NULL THEN 'Not Returned' WHEN tbl_issue.return_date <= tbl_issue.due_date THEN 'On Time' ELSE 'Late Return' END AS [Return Status] FROM tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id"
+        Dim loadTableQuery As String = "SELECT tbl_issue.custom_issue_id AS [Issue ID], tbl_book.title AS [Book Title], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) AS [Member Name], tbl_issue.status AS [Loan Status], CASE WHEN tbl_issue.return_date IS NULL AND tbl_issue.due_date < GETDATE() THEN 'Overdue' WHEN tbl_issue.return_date IS NULL THEN 'Not Returned' WHEN tbl_issue.return_date <= tbl_issue.due_date THEN 'On Time' ELSE 'Late Return' END AS [Return Status] FROM tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id"
         Dim query As String = "SELECT (SELECT COUNT(*) FROM tbl_issue) AS [Total Items Borrowed], (SELECT COUNT(*) FROM tbl_issue WHERE return_date IS NOT NULL) AS [Total Items Returned], (SELECT COUNT(*) FROM tbl_issue WHERE return_date IS NULL AND due_date < GETDATE()) AS [Overdue Items]"
 
         Dim cmd As New SqlCommand(loadTableQuery, conn)
@@ -41,16 +42,14 @@ Public Class CirculationReport
     End Sub
 
     Private Sub searchFilter()
-        Dim query As String = "SELECT tbl_issue.issue_id AS [Issue ID], tbl_book.title AS [Book Title], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) AS [Member Name], tbl_issue.status AS [Loan Status], CASE WHEN tbl_issue.return_date IS NULL AND tbl_issue.due_date < GETDATE() THEN 'Overdue' WHEN tbl_issue.return_date IS NULL THEN 'Not Returned' WHEN tbl_issue.return_date <= tbl_issue.due_date THEN 'On Time' ELSE 'Late Return' END AS [Return Status] FROM tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id WHERE 1=1"
+        Dim query As String = "SELECT tbl_issue.custom_issue_id AS [Issue ID], tbl_book.title AS [Book Title], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) AS [Member Name], tbl_issue.status AS [Loan Status], CASE WHEN tbl_issue.return_date IS NULL AND tbl_issue.due_date < GETDATE() THEN 'Overdue' WHEN tbl_issue.return_date IS NULL THEN 'Not Returned' WHEN tbl_issue.return_date <= tbl_issue.due_date THEN 'On Time' ELSE 'Late Return' END AS [Return Status] FROM tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id WHERE 1=1"
         Dim search As String = tbSearch.Text
 
         If Not String.IsNullOrEmpty(search) Then
             If cbSearchBy.Text = "Issue ID" Then
-                Dim id As Integer
-                If Not Integer.TryParse(search, id) Then
-                    Return
-                End If
-                query &= " AND tbl_issue.issue_id LIKE @search"
+                Dim pattern As String = "^i-\d{6}$"
+                If cbSearchBy.Text = "ID" AndAlso Not System.Text.RegularExpressions.Regex.IsMatch(search, pattern, RegexOptions.IgnoreCase) Then Return
+                query &= " AND tbl_issue.custom_issue_id LIKE @search"
             ElseIf cbSearchBy.Text = "Book Title" Then
                 query &= " AND tbl_book.title LIKE @search"
             ElseIf cbSearchBy.Text = "Member Name" Then

@@ -217,7 +217,7 @@ Partial Class StaffApproval
         Me.ClientSize = New System.Drawing.Size(888, 633)
         Me.Controls.Add(Me.guna2Panel3)
         Me.Controls.Add(Me.pnlTopMenu)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "StaffApproval"
         Me.Padding = New System.Windows.Forms.Padding(14, 12, 14, 12)
         Me.Text = "StaffApproval"

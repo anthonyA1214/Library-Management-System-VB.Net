@@ -20,7 +20,7 @@ Public Class ReturnBook
     End Sub
 
     Private Sub LoadTable()
-        Dim query As String = "SELECT tbl_issue.issue_id as [Issue ID], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) as [Member Name], tbl_book.title as [Book Title] from tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id WHERE status = 'Issued'"
+        Dim query As String = "SELECT tbl_issue.custom_issue_id as [Issue ID], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) as [Member Name], tbl_book.title as [Book Title] from tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id WHERE status = 'Issued'"
 
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
@@ -78,7 +78,7 @@ Public Class ReturnBook
     End Sub
 
     Private Sub tbSearch_TextChanged(sender As Object, e As EventArgs) Handles tbSearch.TextChanged
-        Dim query As String = "SELECT tbl_issue.issue_id as [Issue ID], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) as [Member Name], tbl_book.title as [Book Title] from tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id WHERE status = 'Issued'"
+        Dim query As String = "SELECT tbl_issue.custom_issue_id as [Issue ID], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) as [Member Name], tbl_book.title as [Book Title] from tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id WHERE status = 'Issued'"
         Dim search As String = tbSearch.Text
 
         If String.IsNullOrEmpty(tbSearch.Text) Then

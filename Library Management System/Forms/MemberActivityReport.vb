@@ -1,5 +1,6 @@
 ﻿Imports ClosedXML.Excel
 Imports System.Data.SqlClient
+Imports System.Text.RegularExpressions
 
 Public Class MemberActivityReport
     Inherits Form
@@ -10,7 +11,14 @@ Public Class MemberActivityReport
     Dim conn As SqlConnection = dbConnection.GetConnection()
 
     Private Sub LoadTable()
-        Dim query As String = "SELECT tbl_member.member_id AS [Member ID], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) AS [Member Name], COUNT(tbl_issue.issue_id) AS [Total Borrowed Books], SUM(CASE WHEN tbl_issue.return_date IS NULL AND tbl_issue.issue_id IS NOT NULL THEN 1 ELSE 0 END) AS [Currently Borrowed], SUM(CASE WHEN tbl_issue.return_date IS NOT NULL THEN 1 ELSE 0 END) AS [Returned Books] FROM tbl_member LEFT JOIN tbl_issue ON tbl_member.member_id = tbl_issue.member_id GROUP BY tbl_member.member_id, tbl_member.first_name, tbl_member.last_name"
+        Dim query As String = "SELECT tbl_member.custom_member_id AS [Member ID], " &
+                      "CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) AS [Member Name], " &
+                      "COUNT(tbl_issue.issue_id) AS [Total Borrowed Books], " &
+                      "SUM(CASE WHEN tbl_issue.return_date IS NULL AND tbl_issue.issue_id IS NOT NULL THEN 1 ELSE 0 END) AS [Currently Borrowed], " &
+                      "SUM(CASE WHEN tbl_issue.return_date IS NOT NULL THEN 1 ELSE 0 END) AS [Returned Books] " &
+                      "FROM tbl_member " &
+                      "LEFT JOIN tbl_issue ON tbl_member.member_id = tbl_issue.member_id " &
+                      "GROUP BY tbl_member.member_id, tbl_member.first_name, tbl_member.last_name, tbl_member.custom_member_id"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable()
@@ -27,7 +35,7 @@ Public Class MemberActivityReport
     End Sub
 
     Private Sub tbSearch_TextChanged(sender As Object, e As EventArgs) Handles tbSearch.TextChanged
-        Dim query As String = "SELECT tbl_member.member_id AS [Member ID], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) AS [Member Name], COUNT(tbl_issue.issue_id) AS [Total Borrowed Books], SUM(CASE WHEN tbl_issue.return_date IS NULL AND tbl_issue.issue_id IS NOT NULL THEN 1 ELSE 0 END) AS [Currently Borrowed], SUM(CASE WHEN tbl_issue.return_date IS NOT NULL THEN 1 ELSE 0 END) AS [Returned Books] FROM tbl_member LEFT JOIN tbl_issue ON tbl_member.member_id = tbl_issue.member_id WHERE 1=1"
+        Dim query As String = "SELECT tbl_member.custom_member_id AS [Member ID], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) AS [Member Name], COUNT(tbl_issue.issue_id) AS [Total Borrowed Books], SUM(CASE WHEN tbl_issue.return_date IS NULL AND tbl_issue.issue_id IS NOT NULL THEN 1 ELSE 0 END) AS [Currently Borrowed], SUM(CASE WHEN tbl_issue.return_date IS NOT NULL THEN 1 ELSE 0 END) AS [Returned Books] FROM tbl_member LEFT JOIN tbl_issue ON tbl_member.member_id = tbl_issue.member_id WHERE 1=1"
         Dim search As String = tbSearch.Text
 
         If String.IsNullOrEmpty(tbSearch.Text) Then
@@ -38,14 +46,12 @@ Public Class MemberActivityReport
         If cbSearchBy.Text = "Name" Then
             query &= " AND CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) LIKE @search"
         ElseIf cbSearchBy.Text = "ID" Then
-            Dim id As Integer
-            If Not Integer.TryParse(search, id) Then
-                Return
-            End If
-            query &= " AND tbl_member.member_id LIKE @search"
+            Dim pattern As String = "^m-\d{6}$"
+            If cbSearchBy.Text = "ID" AndAlso Not System.Text.RegularExpressions.Regex.IsMatch(search, pattern, RegexOptions.IgnoreCase) Then Return
+            query &= " AND tbl_member.custom_member_id LIKE @search"
         End If
 
-        query &= " GROUP BY tbl_member.member_id, tbl_member.first_name, tbl_member.last_name ORDER BY [Total Borrowed Books] DESC"
+        query &= " GROUP BY tbl_member.custom_member_id, tbl_member.first_name, tbl_member.last_name ORDER BY [Total Borrowed Books] DESC"
 
         Dim cmd As New SqlCommand(query, conn)
         cmd.Parameters.AddWithValue("@search", "%" & search & "%")

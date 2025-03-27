@@ -76,19 +76,19 @@ Public Class UserForm
     End Sub
 
     Private Sub loadTable()
-        Dim issueQuery As String = "SELECT tbl_issue.issue_id AS [Issue ID], tbl_book.title AS [Book Title], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) AS [Member Name], tbl_issue.issue_date AS [Issue Date], tbl_issue.due_date AS [Due Date], tbl_issue.status AS [Loan Status], CASE WHEN tbl_issue.return_date IS NULL AND tbl_issue.due_date < GETDATE() THEN 'Overdue' WHEN tbl_issue.return_date IS NULL THEN 'Not Returned' WHEN tbl_issue.return_date <= tbl_issue.due_date THEN 'On Time' ELSE 'Late Return' END AS [Return Status] FROM tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id WHERE tbl_issue.status = 'Issued'"
+        Dim issueQuery As String = "SELECT tbl_issue.custom_issue_id AS [Issue ID], tbl_book.title AS [Book Title], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) AS [Member Name], tbl_issue.issue_date AS [Issue Date], tbl_issue.due_date AS [Due Date], tbl_issue.status AS [Loan Status], CASE WHEN tbl_issue.return_date IS NULL AND tbl_issue.due_date < GETDATE() THEN 'Overdue' WHEN tbl_issue.return_date IS NULL THEN 'Not Returned' WHEN tbl_issue.return_date <= tbl_issue.due_date THEN 'On Time' ELSE 'Late Return' END AS [Return Status] FROM tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id WHERE tbl_issue.status = 'Issued'"
         dgvIssuedBook.DataSource = loadData(issueQuery)
         dgvIssuedBook.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
 
-        Dim overdueQuery As String = "SELECT tbl_issue.issue_id AS [Issue ID], tbl_book.title AS [Book Title], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) AS [Member Name], tbl_issue.issue_date AS [Issue Date], tbl_issue.due_date AS [Due Date], tbl_issue.status AS [Loan Status], 'Overdue' AS [Return Status] FROM tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id WHERE tbl_issue.return_date IS NULL AND tbl_issue.due_date < GETDATE()"
+        Dim overdueQuery As String = "SELECT tbl_issue.custom_issue_id AS [Issue ID], tbl_book.title AS [Book Title], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) AS [Member Name], tbl_issue.issue_date AS [Issue Date], tbl_issue.due_date AS [Due Date], tbl_issue.status AS [Loan Status], 'Overdue' AS [Return Status] FROM tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id WHERE tbl_issue.return_date IS NULL AND tbl_issue.due_date < GETDATE()"
         dgvOverdueBook.DataSource = loadData(overdueQuery)
         dgvOverdueBook.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
 
-        Dim memberQuery As String = "SELECT TOP 5 member_id AS [Member ID], CONCAT(first_name, ' ', last_name) AS [Member Name], age AS [Age], membership_type AS [Membership Type] from tbl_member WHERE IsDeleted = 0"
+        Dim memberQuery As String = "SELECT TOP 5 custom_member_id AS [Member ID], CONCAT(first_name, ' ', last_name) AS [Member Name], age AS [Age], membership_type AS [Membership Type] from tbl_member WHERE IsDeleted = 0"
         dgvMember.DataSource = loadData(memberQuery)
         dgvMember.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
 
-        Dim bookQuery As String = "SELECT TOP 5 book_id as [Book ID], title as [Title], author as [Author], genre as [Genre], publication_year as [Publication Year] from tbl_book WHERE IsDeleted = 0"
+        Dim bookQuery As String = "SELECT TOP 5 custom_book_id as [Book ID], title as [Title], author as [Author], genre as [Genre], publication_year as [Publication Year] from tbl_book WHERE IsDeleted = 0"
         dgvBook.DataSource = loadData(bookQuery)
         dgvBook.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
     End Sub
@@ -101,7 +101,6 @@ Public Class UserForm
         Return dt
     End Function
 
-    ' Event handlers
     Private Sub btnBooks_Click(sender As Object, e As EventArgs) Handles btnBooks.Click
         showSubMenu(pnlBooksSubMenu)
     End Sub
@@ -168,7 +167,7 @@ Public Class UserForm
         openForm(New ReturnBook())
     End Sub
 
-    Private Sub btnViewRecords_Click(sender As Object, e As EventArgs) Handles btnViewRecords.Click
+    Private Sub btnViewRecords_Click(sender As Object, e As EventArgs)
         openForm(New ViewRecords())
     End Sub
 
@@ -225,40 +224,11 @@ Public Class UserForm
 
     Private Sub autoLoadDashboard_Tick(sender As Object, e As EventArgs) Handles autoLoadDashboard.Tick
         loadCount()
-        loadBorrowerStatistics()
         lblDateAndTime.Text = DateTime.Now.ToLongDateString() & " | " & DateTime.Now.ToLongTimeString()
     End Sub
 
     Private Sub autoLoadCount_Tick(sender As Object, e As EventArgs) Handles autoLoadCount.Tick
         loadCount()
         lblDateAndTime.Text = DateTime.Now.ToLongDateString() & " | " & DateTime.Now.ToLongTimeString()
-    End Sub
-
-    Private Sub loadBorrowerStatistics()
-        Dim query As String = "SELECT tbl_member.membership_type, COUNT(tbl_issue.issue_id) AS total_borrowed FROM tbl_member JOIN tbl_issue ON tbl_member.member_id = tbl_issue.member_id GROUP BY tbl_member.membership_type"
-
-        Dim cmd As New SqlCommand(query, conn)
-        conn.Open()
-        Dim dr As SqlDataReader = cmd.ExecuteReader()
-
-        borrowerstatistics.Series.Clear()
-        borrowerstatistics.Titles.Clear()
-        borrowerstatistics.Titles.Add("Books Borrowed by Membership Type")
-
-        Dim series As New Series("Total Borrowed") With {
-            .ChartType = SeriesChartType.Column
-        }
-
-        While dr.Read()
-            Dim membershipType As String = dr("membership_type").ToString()
-            Dim totalBorrowed As Integer = Convert.ToInt32(dr("total_borrowed"))
-
-            series.Points.AddXY(membershipType, totalBorrowed)
-        End While
-
-        dr.Close()
-        conn.Close()
-
-        borrowerstatistics.Series.Add(series)
     End Sub
 End Class
