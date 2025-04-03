@@ -10,7 +10,27 @@ Public Class MemberProfiles
         InitializeComponent()
     End Sub
 
+    Private Sub updateFont()
+        ' Change cell font for dgvIssue1
+        For Each c As DataGridViewColumn In dgvIssue1.Columns
+            c.DefaultCellStyle.Font = New Font("Arial", 12.0F, GraphicsUnit.Pixel)
+        Next
+
+        ' Change cell font for dgvIssue2
+        For Each c As DataGridViewColumn In dgvIssue2.Columns
+            c.DefaultCellStyle.Font = New Font("Arial", 12.0F, GraphicsUnit.Pixel)
+        Next
+
+        ' Change cell font for dgvMember
+        For Each c As DataGridViewColumn In dgvMember.Columns
+            c.DefaultCellStyle.Font = New Font("Arial", 12.0F, GraphicsUnit.Pixel)
+        Next
+    End Sub
+
+
+
     Private Sub LoadMemberTable()
+        updateFont()
         Dim query As String = "SELECT custom_member_id AS [Member ID], CONCAT(first_name, ' ', last_name) AS [Member Name], age AS [Age], address AS [Address], contact_number AS [Contact Number], email AS [Email], membership_type AS [Membership Type] from tbl_member WHERE IsDeleted = 0"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
@@ -87,7 +107,7 @@ Public Class MemberProfiles
         End If
     End Sub
 
-    Private Sub pbExit_Click(sender As Object, e As EventArgs) Handles pbExit.Click
+    Private Sub pbExit_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 

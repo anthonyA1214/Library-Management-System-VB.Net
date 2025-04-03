@@ -13,6 +13,13 @@ Partial Public Class Inventory
         userrole = userrole
     End Sub
 
+    Private Sub updateFont()
+        ' Change cell font
+        For Each c As DataGridViewColumn In dgvBook.Columns
+            c.DefaultCellStyle.Font = New Font("Arial", 12.0F, GraphicsUnit.Pixel)
+        Next
+    End Sub
+
     Private Sub HandleLogin(userRole As String)
         If userRole = "Staff" Then
             dgvBook.Columns("add").Visible = False
@@ -22,6 +29,7 @@ Partial Public Class Inventory
     End Sub
 
     Private Sub LoadTable()
+        updateFont()
         Dim query As String = "SELECT custom_book_id as [Book ID], title as [Title], author as [Author], isbn as [ISBN], genre as [Genre], publication_year as [Publication Year], quantity as [Quantity], CASE WHEN quantity > 0 THEN 'Available' ELSE 'Unavailable' END AS [Availability Status] from tbl_book WHERE IsDeleted = 0"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
@@ -120,7 +128,7 @@ Partial Public Class Inventory
         End If
     End Sub
 
-    Private Sub pbExit_Click(sender As Object, e As EventArgs) Handles pbExit.Click
+    Private Sub pbExit_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 

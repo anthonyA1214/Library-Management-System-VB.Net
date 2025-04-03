@@ -13,7 +13,15 @@ Partial Public Class ManageBooks
         pnlSideMenu.Visible = False
     End Sub
 
+    Private Sub updateFont()
+        ' Change cell font
+        For Each c As DataGridViewColumn In dgvBook.Columns
+            c.DefaultCellStyle.Font = New Font("Arial", 12.0F, GraphicsUnit.Pixel)
+        Next
+    End Sub
+
     Private Sub loadTable()
+        updateFont()
         Dim query As String = "SELECT custom_book_id as [Book ID], title as [Title], author as [Author], isbn as [ISBN], genre as [Genre], publication_year as [Publication Year], quantity as [Quantity] from tbl_book WHERE IsDeleted = 0"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
@@ -167,7 +175,7 @@ Partial Public Class ManageBooks
         End Try
     End Sub
 
-    Private Sub pbExit_Click(sender As Object, e As EventArgs) Handles pbExit.Click
+    Private Sub pbExit_Click(sender As Object, e As EventArgs)
         Close()
     End Sub
 

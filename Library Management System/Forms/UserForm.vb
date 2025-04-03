@@ -12,6 +12,25 @@ Public Class UserForm
         Me.Username = username
     End Sub
 
+    Private Sub updateFont()
+        ' Change cell font
+        For Each c As DataGridViewColumn In dgvBook.Columns
+            c.DefaultCellStyle.Font = New Font("Arial", 10.0F, GraphicsUnit.Pixel)
+        Next
+
+        For Each c As DataGridViewColumn In dgvIssuedBook.Columns
+            c.DefaultCellStyle.Font = New Font("Arial", 10.0F, GraphicsUnit.Pixel)
+        Next
+
+        For Each c As DataGridViewColumn In dgvMember.Columns
+            c.DefaultCellStyle.Font = New Font("Arial", 10.0F, GraphicsUnit.Pixel)
+        Next
+
+        For Each c As DataGridViewColumn In dgvOverdueBook.Columns
+            c.DefaultCellStyle.Font = New Font("Arial", 10.0F, GraphicsUnit.Pixel)
+        Next
+    End Sub
+
     Private Sub hideDashboard()
         pnlTitle.Visible = False
         tlp1.Visible = False
@@ -76,6 +95,7 @@ Public Class UserForm
     End Sub
 
     Private Sub loadTable()
+        updateFont()
         Dim issueQuery As String = "SELECT tbl_issue.custom_issue_id AS [Issue ID], tbl_book.title AS [Book Title], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) AS [Member Name], tbl_issue.issue_date AS [Issue Date], tbl_issue.due_date AS [Due Date], tbl_issue.status AS [Loan Status], CASE WHEN tbl_issue.return_date IS NULL AND tbl_issue.due_date < GETDATE() THEN 'Overdue' WHEN tbl_issue.return_date IS NULL THEN 'Not Returned' WHEN tbl_issue.return_date <= tbl_issue.due_date THEN 'On Time' ELSE 'Late Return' END AS [Return Status] FROM tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id WHERE tbl_issue.status = 'Issued'"
         dgvIssuedBook.DataSource = loadData(issueQuery)
         dgvIssuedBook.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill

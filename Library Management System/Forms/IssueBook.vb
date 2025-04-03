@@ -12,7 +12,15 @@ Public Class IssueBook
         InitializeComponent()
     End Sub
 
+    Private Sub updateFont()
+        ' Change cell font
+        For Each c As DataGridViewColumn In dgvBook.Columns
+            c.DefaultCellStyle.Font = New Font("Arial", 12.0F, GraphicsUnit.Pixel)
+        Next
+    End Sub
+
     Private Sub loadMemberTable()
+        updateFont()
         Dim query As String = "SELECT custom_member_id AS [Member ID], CONCAT(first_name, ' ', last_name) AS [Member Name] from tbl_member WHERE IsDeleted = 0"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
@@ -23,6 +31,7 @@ Public Class IssueBook
     End Sub
 
     Private Sub loadBookTable()
+        updateFont()
         Dim query As String = "SELECT custom_book_id as [Book ID], title as [Title], author as [Author], quantity as [Quantity] from tbl_book WHERE IsDeleted = 0"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
@@ -226,7 +235,7 @@ Public Class IssueBook
         dgvBook.DataSource = dt
     End Sub
 
-    Private Sub pbExit_Click(sender As Object, e As EventArgs) Handles pbExit.Click
+    Private Sub pbExit_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 End Class

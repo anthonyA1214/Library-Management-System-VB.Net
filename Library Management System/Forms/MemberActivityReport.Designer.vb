@@ -30,12 +30,10 @@ Partial Class MemberActivityReport
         Me.label1 = New System.Windows.Forms.Label()
         Me.tbSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.cbSearchBy = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.pbExit = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.pnlGrid = New Guna.UI2.WinForms.Guna2Panel()
         Me.dgvMember = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.pnlAddGenre.SuspendLayout()
-        CType(Me.pbExit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.guna2Panel3.SuspendLayout()
         Me.pnlGrid.SuspendLayout()
         CType(Me.dgvMember, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -49,20 +47,18 @@ Partial Class MemberActivityReport
         Me.pnlAddGenre.Controls.Add(Me.label1)
         Me.pnlAddGenre.Controls.Add(Me.tbSearch)
         Me.pnlAddGenre.Controls.Add(Me.cbSearchBy)
-        Me.pnlAddGenre.Controls.Add(Me.pbExit)
         Me.pnlAddGenre.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlAddGenre.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.pnlAddGenre.Location = New System.Drawing.Point(13, 12)
-        Me.pnlAddGenre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlAddGenre.Location = New System.Drawing.Point(10, 10)
         Me.pnlAddGenre.Name = "pnlAddGenre"
-        Me.pnlAddGenre.Size = New System.Drawing.Size(865, 62)
+        Me.pnlAddGenre.Size = New System.Drawing.Size(648, 50)
         Me.pnlAddGenre.TabIndex = 61
         '
         'btnExport
         '
         Me.btnExport.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnExport.AutoRoundedCorners = True
-        Me.btnExport.BorderRadius = 23
+        Me.btnExport.BorderRadius = 19
         Me.btnExport.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btnExport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnExport.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
@@ -70,10 +66,9 @@ Partial Class MemberActivityReport
         Me.btnExport.FillColor = System.Drawing.Color.FromArgb(CType(CType(162, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(163, Byte), Integer))
         Me.btnExport.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.btnExport.ForeColor = System.Drawing.Color.White
-        Me.btnExport.Location = New System.Drawing.Point(83, 6)
-        Me.btnExport.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnExport.Location = New System.Drawing.Point(62, 5)
         Me.btnExport.Name = "btnExport"
-        Me.btnExport.Size = New System.Drawing.Size(200, 49)
+        Me.btnExport.Size = New System.Drawing.Size(150, 40)
         Me.btnExport.TabIndex = 7
         Me.btnExport.Text = "Export Report"
         '
@@ -82,10 +77,9 @@ Partial Class MemberActivityReport
         Me.label1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.label1.AutoSize = True
         Me.label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label1.Location = New System.Drawing.Point(291, 22)
-        Me.label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label1.Location = New System.Drawing.Point(218, 18)
         Me.label1.Name = "label1"
-        Me.label1.Size = New System.Drawing.Size(89, 23)
+        Me.label1.Size = New System.Drawing.Size(70, 17)
         Me.label1.TabIndex = 6
         Me.label1.Text = "Search by:"
         '
@@ -93,7 +87,7 @@ Partial Class MemberActivityReport
         '
         Me.tbSearch.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.tbSearch.AutoRoundedCorners = True
-        Me.tbSearch.BorderRadius = 21
+        Me.tbSearch.BorderRadius = 17
         Me.tbSearch.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbSearch.DefaultText = ""
         Me.tbSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -104,12 +98,12 @@ Partial Class MemberActivityReport
         Me.tbSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbSearch.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbSearch.Location = New System.Drawing.Point(595, 9)
-        Me.tbSearch.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.tbSearch.Location = New System.Drawing.Point(446, 7)
+        Me.tbSearch.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbSearch.Name = "tbSearch"
         Me.tbSearch.PlaceholderText = "Search members"
         Me.tbSearch.SelectedText = ""
-        Me.tbSearch.Size = New System.Drawing.Size(267, 44)
+        Me.tbSearch.Size = New System.Drawing.Size(200, 36)
         Me.tbSearch.TabIndex = 5
         '
         'cbSearchBy
@@ -127,33 +121,19 @@ Partial Class MemberActivityReport
         Me.cbSearchBy.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cbSearchBy.ItemHeight = 30
         Me.cbSearchBy.Items.AddRange(New Object() {"Name", "ID"})
-        Me.cbSearchBy.Location = New System.Drawing.Point(396, 9)
-        Me.cbSearchBy.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbSearchBy.Location = New System.Drawing.Point(297, 7)
         Me.cbSearchBy.Name = "cbSearchBy"
-        Me.cbSearchBy.Size = New System.Drawing.Size(185, 36)
+        Me.cbSearchBy.Size = New System.Drawing.Size(140, 36)
         Me.cbSearchBy.TabIndex = 4
-        '
-        'pbExit
-        '
-        Me.pbExit.Image = Global.Library_Management_System.My.Resources.Resources.reject2
-        Me.pbExit.ImageRotate = 0!
-        Me.pbExit.Location = New System.Drawing.Point(9, 9)
-        Me.pbExit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.pbExit.Name = "pbExit"
-        Me.pbExit.Size = New System.Drawing.Size(33, 31)
-        Me.pbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbExit.TabIndex = 3
-        Me.pbExit.TabStop = False
         '
         'guna2Panel3
         '
         Me.guna2Panel3.Controls.Add(Me.pnlGrid)
         Me.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.guna2Panel3.Location = New System.Drawing.Point(13, 74)
-        Me.guna2Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel3.Location = New System.Drawing.Point(10, 60)
         Me.guna2Panel3.Name = "guna2Panel3"
-        Me.guna2Panel3.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
-        Me.guna2Panel3.Size = New System.Drawing.Size(865, 556)
+        Me.guna2Panel3.Padding = New System.Windows.Forms.Padding(10, 10, 10, 10)
+        Me.guna2Panel3.Size = New System.Drawing.Size(648, 452)
         Me.guna2Panel3.TabIndex = 65
         '
         'pnlGrid
@@ -163,11 +143,10 @@ Partial Class MemberActivityReport
         Me.pnlGrid.Controls.Add(Me.dgvMember)
         Me.pnlGrid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlGrid.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.pnlGrid.Location = New System.Drawing.Point(13, 12)
-        Me.pnlGrid.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlGrid.Location = New System.Drawing.Point(10, 10)
         Me.pnlGrid.Name = "pnlGrid"
-        Me.pnlGrid.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
-        Me.pnlGrid.Size = New System.Drawing.Size(839, 532)
+        Me.pnlGrid.Padding = New System.Windows.Forms.Padding(10, 10, 10, 10)
+        Me.pnlGrid.Size = New System.Drawing.Size(628, 432)
         Me.pnlGrid.TabIndex = 0
         '
         'dgvMember
@@ -198,14 +177,13 @@ Partial Class MemberActivityReport
         Me.dgvMember.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvMember.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvMember.GridColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.dgvMember.Location = New System.Drawing.Point(13, 12)
-        Me.dgvMember.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgvMember.Location = New System.Drawing.Point(10, 10)
         Me.dgvMember.Name = "dgvMember"
         Me.dgvMember.ReadOnly = True
         Me.dgvMember.RowHeadersVisible = False
         Me.dgvMember.RowHeadersWidth = 51
         Me.dgvMember.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.dgvMember.Size = New System.Drawing.Size(813, 508)
+        Me.dgvMember.Size = New System.Drawing.Size(608, 412)
         Me.dgvMember.TabIndex = 0
         Me.dgvMember.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.LightGreen
         Me.dgvMember.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(201, Byte), Integer))
@@ -232,19 +210,17 @@ Partial Class MemberActivityReport
         '
         'MemberActivityReport
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(233, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(891, 642)
+        Me.ClientSize = New System.Drawing.Size(668, 522)
         Me.Controls.Add(Me.guna2Panel3)
         Me.Controls.Add(Me.pnlAddGenre)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "MemberActivityReport"
-        Me.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
+        Me.Padding = New System.Windows.Forms.Padding(10, 10, 10, 10)
         Me.Text = "MemberActivityReport"
         Me.pnlAddGenre.ResumeLayout(False)
         Me.pnlAddGenre.PerformLayout()
-        CType(Me.pbExit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.guna2Panel3.ResumeLayout(False)
         Me.pnlGrid.ResumeLayout(False)
         CType(Me.dgvMember, System.ComponentModel.ISupportInitialize).EndInit()
@@ -257,7 +233,6 @@ Partial Class MemberActivityReport
     Private WithEvents label1 As Label
     Private WithEvents tbSearch As Guna.UI2.WinForms.Guna2TextBox
     Private WithEvents cbSearchBy As Guna.UI2.WinForms.Guna2ComboBox
-    Private WithEvents pbExit As Guna.UI2.WinForms.Guna2PictureBox
     Private WithEvents guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
     Private WithEvents pnlGrid As Guna.UI2.WinForms.Guna2Panel
     Private WithEvents dgvMember As Guna.UI2.WinForms.Guna2DataGridView

@@ -10,6 +10,13 @@ Partial Public Class ManageGenres
         userrole = userrole
     End Sub
 
+    Private Sub updateFont()
+        ' Change cell font
+        For Each c As DataGridViewColumn In dgvGenre.Columns
+            c.DefaultCellStyle.Font = New Font("Arial", 12.0F, GraphicsUnit.Pixel)
+        Next
+    End Sub
+
     Private Sub HandleLogin(userRole As String)
         If userRole = "Staff" Then
             dgvGenre.Columns("delete").Visible = False
@@ -22,6 +29,7 @@ Partial Public Class ManageGenres
     Dim checkrow As Integer
 
     Private Sub loadTable()
+        updateFont()
         Dim query As String = "SELECT custom_genre_id AS [Genre ID], genre_name AS [Genre Name] from tbl_genre WHERE IsDeleted = 0"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
@@ -139,7 +147,7 @@ Partial Public Class ManageGenres
         dgvGenre.DataSource = dt
     End Sub
 
-    Private Sub pbExit_Click(sender As Object, e As EventArgs) Handles pbExit.Click
+    Private Sub pbExit_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 

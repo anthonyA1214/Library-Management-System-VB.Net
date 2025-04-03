@@ -7,9 +7,17 @@ Partial Public Class Archive
         InitializeComponent()
     End Sub
 
+    Private Sub updateFont()
+        ' Change cell font
+        For Each c As DataGridViewColumn In dgvRecycleBin.Columns
+            c.DefaultCellStyle.Font = New Font("Arial", 12.0F, GraphicsUnit.Pixel)
+        Next
+    End Sub
+
     Dim conn As SqlConnection = dbConnection.GetConnection()
 
     Private Sub loadBookTable()
+        updateFont()
         Dim query As String = "SELECT custom_book_id as [Book ID], title as [Title], author as [Author], isbn as [ISBN], genre as [Genre], publication_year as [Publication Year], quantity as [Quantity] from tbl_book WHERE IsDeleted = 1"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
@@ -21,6 +29,7 @@ Partial Public Class Archive
     End Sub
 
     Private Sub loadMemberTable()
+        updateFont()
         Dim query As String = "SELECT custom_member_id AS [Member ID], CONCAT(first_name, ' ', last_name) AS [Member Name], age AS [Age], address AS [Address], contact_number AS [Contact Number], email AS [Email], membership_type AS [Membership Type] from tbl_member WHERE IsDeleted = 1"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
@@ -32,6 +41,7 @@ Partial Public Class Archive
     End Sub
 
     Private Sub loadStaffTable()
+        updateFont()
         Dim query As String = "SELECT custom_staff_id AS [Staff ID], CONCAT(first_name, ' ', last_name) AS [Staff Name], username AS [Username], password AS [Password], email AS [Email], contact_number AS [Contact Number], role AS [Role] from tbl_staff WHERE IsDeleted = 1 AND IsApproved = 1"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
@@ -43,6 +53,7 @@ Partial Public Class Archive
     End Sub
 
     Private Sub loadGenreTable()
+        updateFont()
         Dim query As String = "SELECT custom_genre_id AS [Genre ID], genre_name AS [Genre Name] from tbl_genre WHERE IsDeleted = 1"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
@@ -304,7 +315,7 @@ Partial Public Class Archive
     End Sub
 
 
-    Private Sub pbExit_Click(sender As Object, e As EventArgs) Handles pbExit.Click
+    Private Sub pbExit_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 End Class

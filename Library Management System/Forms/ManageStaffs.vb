@@ -8,6 +8,13 @@ Partial Public Class ManageStaffs
         InitializeComponent()
     End Sub
 
+    Private Sub updateFont()
+        ' Change cell font
+        For Each c As DataGridViewColumn In dgvStaff.Columns
+            c.DefaultCellStyle.Font = New Font("Arial", 12.0F, GraphicsUnit.Pixel)
+        Next
+    End Sub
+
     Dim conn As SqlConnection = dbConnection.GetConnection()
     Dim selectionMode, staffid, checkrow As Integer
 
@@ -22,6 +29,7 @@ Partial Public Class ManageStaffs
     End Sub
 
     Private Sub loadTable()
+        updateFont()
         Dim query As String = "SELECT custom_staff_id AS [Staff ID], CONCAT(first_name, ' ', last_name) AS [Staff Name], username AS [Username], password AS [Password], email AS [Email], contact_number AS [Contact Number], role AS [Role] from tbl_staff WHERE IsDeleted = 0 AND IsApproved = 1"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
@@ -259,7 +267,7 @@ Partial Public Class ManageStaffs
         dgvStaff.DataSource = dt
     End Sub
 
-    Private Sub pbExit_Click(sender As Object, e As EventArgs) Handles pbExit.Click
+    Private Sub pbExit_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 

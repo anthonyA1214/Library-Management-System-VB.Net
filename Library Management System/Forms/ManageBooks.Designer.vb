@@ -47,7 +47,6 @@ Partial Class ManageBooks
         Me.pnlTopMenu = New Guna.UI2.WinForms.Guna2Panel()
         Me.label1 = New System.Windows.Forms.Label()
         Me.btnAddBook = New Guna.UI2.WinForms.Guna2Button()
-        Me.pbExit = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.tbSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.cbSearchBy = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.guna2Panel3.SuspendLayout()
@@ -57,18 +56,16 @@ Partial Class ManageBooks
         CType(Me.numQuantity, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbExit2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlTopMenu.SuspendLayout()
-        CType(Me.pbExit, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'guna2Panel3
         '
         Me.guna2Panel3.Controls.Add(Me.pnlGrid)
         Me.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.guna2Panel3.Location = New System.Drawing.Point(313, 74)
-        Me.guna2Panel3.Margin = New System.Windows.Forms.Padding(4)
+        Me.guna2Panel3.Location = New System.Drawing.Point(235, 60)
         Me.guna2Panel3.Name = "guna2Panel3"
-        Me.guna2Panel3.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
-        Me.guna2Panel3.Size = New System.Drawing.Size(565, 556)
+        Me.guna2Panel3.Padding = New System.Windows.Forms.Padding(10, 10, 10, 10)
+        Me.guna2Panel3.Size = New System.Drawing.Size(423, 452)
         Me.guna2Panel3.TabIndex = 5
         '
         'pnlGrid
@@ -78,11 +75,10 @@ Partial Class ManageBooks
         Me.pnlGrid.Controls.Add(Me.dgvBook)
         Me.pnlGrid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlGrid.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.pnlGrid.Location = New System.Drawing.Point(13, 12)
-        Me.pnlGrid.Margin = New System.Windows.Forms.Padding(4)
+        Me.pnlGrid.Location = New System.Drawing.Point(10, 10)
         Me.pnlGrid.Name = "pnlGrid"
-        Me.pnlGrid.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
-        Me.pnlGrid.Size = New System.Drawing.Size(539, 532)
+        Me.pnlGrid.Padding = New System.Windows.Forms.Padding(10, 10, 10, 10)
+        Me.pnlGrid.Size = New System.Drawing.Size(403, 432)
         Me.pnlGrid.TabIndex = 0
         '
         'dgvBook
@@ -113,14 +109,13 @@ Partial Class ManageBooks
         Me.dgvBook.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvBook.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvBook.GridColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.dgvBook.Location = New System.Drawing.Point(13, 12)
-        Me.dgvBook.Margin = New System.Windows.Forms.Padding(4)
+        Me.dgvBook.Location = New System.Drawing.Point(10, 10)
         Me.dgvBook.Name = "dgvBook"
         Me.dgvBook.ReadOnly = True
         Me.dgvBook.RowHeadersVisible = False
         Me.dgvBook.RowHeadersWidth = 51
         Me.dgvBook.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.dgvBook.Size = New System.Drawing.Size(513, 508)
+        Me.dgvBook.Size = New System.Drawing.Size(383, 412)
         Me.dgvBook.TabIndex = 0
         Me.dgvBook.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.LightGreen
         Me.dgvBook.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(201, Byte), Integer))
@@ -167,10 +162,9 @@ Partial Class ManageBooks
         Me.pnlSideMenu.Controls.Add(Me.lblSideMenu)
         Me.pnlSideMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.pnlSideMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.pnlSideMenu.Location = New System.Drawing.Point(13, 74)
-        Me.pnlSideMenu.Margin = New System.Windows.Forms.Padding(4)
+        Me.pnlSideMenu.Location = New System.Drawing.Point(10, 60)
         Me.pnlSideMenu.Name = "pnlSideMenu"
-        Me.pnlSideMenu.Size = New System.Drawing.Size(300, 556)
+        Me.pnlSideMenu.Size = New System.Drawing.Size(225, 452)
         Me.pnlSideMenu.TabIndex = 4
         '
         'numQuantity
@@ -178,20 +172,20 @@ Partial Class ManageBooks
         Me.numQuantity.AutoRoundedCorners = True
         Me.numQuantity.BackColor = System.Drawing.Color.Transparent
         Me.numQuantity.BorderColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.numQuantity.BorderRadius = 21
+        Me.numQuantity.BorderRadius = 17
         Me.numQuantity.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.numQuantity.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.numQuantity.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.numQuantity.Location = New System.Drawing.Point(16, 505)
-        Me.numQuantity.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.numQuantity.Location = New System.Drawing.Point(12, 410)
+        Me.numQuantity.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.numQuantity.Name = "numQuantity"
-        Me.numQuantity.Size = New System.Drawing.Size(267, 44)
+        Me.numQuantity.Size = New System.Drawing.Size(200, 36)
         Me.numQuantity.TabIndex = 1
         '
         'btnEnter
         '
         Me.btnEnter.AutoRoundedCorners = True
-        Me.btnEnter.BorderRadius = 23
+        Me.btnEnter.BorderRadius = 19
         Me.btnEnter.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btnEnter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnEnter.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
@@ -199,10 +193,9 @@ Partial Class ManageBooks
         Me.btnEnter.FillColor = System.Drawing.Color.FromArgb(CType(CType(162, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(163, Byte), Integer))
         Me.btnEnter.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.btnEnter.ForeColor = System.Drawing.Color.White
-        Me.btnEnter.Location = New System.Drawing.Point(39, 556)
-        Me.btnEnter.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnEnter.Location = New System.Drawing.Point(29, 452)
         Me.btnEnter.Name = "btnEnter"
-        Me.btnEnter.Size = New System.Drawing.Size(200, 49)
+        Me.btnEnter.Size = New System.Drawing.Size(150, 40)
         Me.btnEnter.TabIndex = 12
         Me.btnEnter.Text = "Enter"
         '
@@ -211,10 +204,9 @@ Partial Class ManageBooks
         Me.label7.AutoSize = True
         Me.label7.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.label7.Location = New System.Drawing.Point(23, 480)
-        Me.label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label7.Location = New System.Drawing.Point(17, 390)
         Me.label7.Name = "label7"
-        Me.label7.Size = New System.Drawing.Size(81, 23)
+        Me.label7.Size = New System.Drawing.Size(64, 17)
         Me.label7.TabIndex = 11
         Me.label7.Text = "Quantity:"
         '
@@ -223,10 +215,9 @@ Partial Class ManageBooks
         Me.label6.AutoSize = True
         Me.label6.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.label6.Location = New System.Drawing.Point(23, 404)
-        Me.label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label6.Location = New System.Drawing.Point(17, 328)
         Me.label6.Name = "label6"
-        Me.label6.Size = New System.Drawing.Size(137, 23)
+        Me.label6.Size = New System.Drawing.Size(109, 17)
         Me.label6.TabIndex = 9
         Me.label6.Text = "Publication Year:"
         '
@@ -234,7 +225,7 @@ Partial Class ManageBooks
         '
         Me.dtpPublicationYear.AutoRoundedCorners = True
         Me.dtpPublicationYear.BorderColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
-        Me.dtpPublicationYear.BorderRadius = 21
+        Me.dtpPublicationYear.BorderRadius = 17
         Me.dtpPublicationYear.BorderThickness = 1
         Me.dtpPublicationYear.Checked = True
         Me.dtpPublicationYear.CustomFormat = "yyyy"
@@ -242,13 +233,12 @@ Partial Class ManageBooks
         Me.dtpPublicationYear.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.dtpPublicationYear.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.dtpPublicationYear.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dtpPublicationYear.Location = New System.Drawing.Point(16, 428)
-        Me.dtpPublicationYear.Margin = New System.Windows.Forms.Padding(4)
+        Me.dtpPublicationYear.Location = New System.Drawing.Point(12, 348)
         Me.dtpPublicationYear.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.dtpPublicationYear.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.dtpPublicationYear.Name = "dtpPublicationYear"
         Me.dtpPublicationYear.ShowUpDown = True
-        Me.dtpPublicationYear.Size = New System.Drawing.Size(267, 44)
+        Me.dtpPublicationYear.Size = New System.Drawing.Size(200, 36)
         Me.dtpPublicationYear.TabIndex = 1
         Me.dtpPublicationYear.Value = New Date(2024, 11, 27, 16, 25, 35, 105)
         '
@@ -266,10 +256,9 @@ Partial Class ManageBooks
         Me.cbGenre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cbGenre.ItemHeight = 30
         Me.cbGenre.Items.AddRange(New Object() {"Fiction"})
-        Me.cbGenre.Location = New System.Drawing.Point(16, 352)
-        Me.cbGenre.Margin = New System.Windows.Forms.Padding(4)
+        Me.cbGenre.Location = New System.Drawing.Point(12, 286)
         Me.cbGenre.Name = "cbGenre"
-        Me.cbGenre.Size = New System.Drawing.Size(265, 36)
+        Me.cbGenre.Size = New System.Drawing.Size(200, 36)
         Me.cbGenre.TabIndex = 3
         '
         'label5
@@ -277,10 +266,9 @@ Partial Class ManageBooks
         Me.label5.AutoSize = True
         Me.label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.label5.Location = New System.Drawing.Point(23, 327)
-        Me.label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label5.Location = New System.Drawing.Point(17, 266)
         Me.label5.Name = "label5"
-        Me.label5.Size = New System.Drawing.Size(60, 23)
+        Me.label5.Size = New System.Drawing.Size(47, 17)
         Me.label5.TabIndex = 8
         Me.label5.Text = "Genre:"
         '
@@ -289,17 +277,16 @@ Partial Class ManageBooks
         Me.label4.AutoSize = True
         Me.label4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.label4.Location = New System.Drawing.Point(23, 251)
-        Me.label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label4.Location = New System.Drawing.Point(17, 204)
         Me.label4.Name = "label4"
-        Me.label4.Size = New System.Drawing.Size(51, 23)
+        Me.label4.Size = New System.Drawing.Size(40, 17)
         Me.label4.TabIndex = 6
         Me.label4.Text = "ISBN:"
         '
         'tbISBN
         '
         Me.tbISBN.AutoRoundedCorners = True
-        Me.tbISBN.BorderRadius = 21
+        Me.tbISBN.BorderRadius = 17
         Me.tbISBN.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbISBN.DefaultText = ""
         Me.tbISBN.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -310,12 +297,12 @@ Partial Class ManageBooks
         Me.tbISBN.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbISBN.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.tbISBN.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbISBN.Location = New System.Drawing.Point(16, 276)
-        Me.tbISBN.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.tbISBN.Location = New System.Drawing.Point(12, 224)
+        Me.tbISBN.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.tbISBN.Name = "tbISBN"
         Me.tbISBN.PlaceholderText = ""
         Me.tbISBN.SelectedText = ""
-        Me.tbISBN.Size = New System.Drawing.Size(267, 44)
+        Me.tbISBN.Size = New System.Drawing.Size(200, 36)
         Me.tbISBN.TabIndex = 7
         '
         'label3
@@ -323,17 +310,16 @@ Partial Class ManageBooks
         Me.label3.AutoSize = True
         Me.label3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.label3.Location = New System.Drawing.Point(23, 175)
-        Me.label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label3.Location = New System.Drawing.Point(17, 142)
         Me.label3.Name = "label3"
-        Me.label3.Size = New System.Drawing.Size(68, 23)
+        Me.label3.Size = New System.Drawing.Size(55, 17)
         Me.label3.TabIndex = 4
         Me.label3.Text = "Author:"
         '
         'tbAuthor
         '
         Me.tbAuthor.AutoRoundedCorners = True
-        Me.tbAuthor.BorderRadius = 21
+        Me.tbAuthor.BorderRadius = 17
         Me.tbAuthor.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbAuthor.DefaultText = ""
         Me.tbAuthor.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -344,12 +330,12 @@ Partial Class ManageBooks
         Me.tbAuthor.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbAuthor.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.tbAuthor.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbAuthor.Location = New System.Drawing.Point(16, 199)
-        Me.tbAuthor.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.tbAuthor.Location = New System.Drawing.Point(12, 162)
+        Me.tbAuthor.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.tbAuthor.Name = "tbAuthor"
         Me.tbAuthor.PlaceholderText = ""
         Me.tbAuthor.SelectedText = ""
-        Me.tbAuthor.Size = New System.Drawing.Size(267, 44)
+        Me.tbAuthor.Size = New System.Drawing.Size(200, 36)
         Me.tbAuthor.TabIndex = 5
         '
         'label2
@@ -357,17 +343,16 @@ Partial Class ManageBooks
         Me.label2.AutoSize = True
         Me.label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.label2.Location = New System.Drawing.Point(23, 98)
-        Me.label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label2.Location = New System.Drawing.Point(17, 80)
         Me.label2.Name = "label2"
-        Me.label2.Size = New System.Drawing.Size(46, 23)
+        Me.label2.Size = New System.Drawing.Size(36, 17)
         Me.label2.TabIndex = 1
         Me.label2.Text = "Title:"
         '
         'tbTitle
         '
         Me.tbTitle.AutoRoundedCorners = True
-        Me.tbTitle.BorderRadius = 21
+        Me.tbTitle.BorderRadius = 17
         Me.tbTitle.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbTitle.DefaultText = ""
         Me.tbTitle.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -378,22 +363,21 @@ Partial Class ManageBooks
         Me.tbTitle.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbTitle.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.tbTitle.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbTitle.Location = New System.Drawing.Point(16, 123)
-        Me.tbTitle.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.tbTitle.Location = New System.Drawing.Point(12, 100)
+        Me.tbTitle.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.tbTitle.Name = "tbTitle"
         Me.tbTitle.PlaceholderText = ""
         Me.tbTitle.SelectedText = ""
-        Me.tbTitle.Size = New System.Drawing.Size(267, 44)
+        Me.tbTitle.Size = New System.Drawing.Size(200, 36)
         Me.tbTitle.TabIndex = 1
         '
         'pbExit2
         '
         Me.pbExit2.Image = Global.Library_Management_System.My.Resources.Resources.reject2
         Me.pbExit2.ImageRotate = 0!
-        Me.pbExit2.Location = New System.Drawing.Point(241, 7)
-        Me.pbExit2.Margin = New System.Windows.Forms.Padding(4)
+        Me.pbExit2.Location = New System.Drawing.Point(181, 6)
         Me.pbExit2.Name = "pbExit2"
-        Me.pbExit2.Size = New System.Drawing.Size(33, 31)
+        Me.pbExit2.Size = New System.Drawing.Size(25, 25)
         Me.pbExit2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbExit2.TabIndex = 3
         Me.pbExit2.TabStop = False
@@ -403,10 +387,9 @@ Partial Class ManageBooks
         Me.lblSideMenu.AutoSize = True
         Me.lblSideMenu.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSideMenu.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.lblSideMenu.Location = New System.Drawing.Point(20, 43)
-        Me.lblSideMenu.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblSideMenu.Location = New System.Drawing.Point(15, 35)
         Me.lblSideMenu.Name = "lblSideMenu"
-        Me.lblSideMenu.Size = New System.Drawing.Size(158, 37)
+        Me.lblSideMenu.Size = New System.Drawing.Size(123, 30)
         Me.lblSideMenu.TabIndex = 2
         Me.lblSideMenu.Text = "ADD BOOK"
         '
@@ -416,15 +399,13 @@ Partial Class ManageBooks
         Me.pnlTopMenu.BorderRadius = 10
         Me.pnlTopMenu.Controls.Add(Me.label1)
         Me.pnlTopMenu.Controls.Add(Me.btnAddBook)
-        Me.pnlTopMenu.Controls.Add(Me.pbExit)
         Me.pnlTopMenu.Controls.Add(Me.tbSearch)
         Me.pnlTopMenu.Controls.Add(Me.cbSearchBy)
         Me.pnlTopMenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlTopMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.pnlTopMenu.Location = New System.Drawing.Point(13, 12)
-        Me.pnlTopMenu.Margin = New System.Windows.Forms.Padding(4)
+        Me.pnlTopMenu.Location = New System.Drawing.Point(10, 10)
         Me.pnlTopMenu.Name = "pnlTopMenu"
-        Me.pnlTopMenu.Size = New System.Drawing.Size(865, 62)
+        Me.pnlTopMenu.Size = New System.Drawing.Size(648, 50)
         Me.pnlTopMenu.TabIndex = 3
         '
         'label1
@@ -432,10 +413,9 @@ Partial Class ManageBooks
         Me.label1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.label1.AutoSize = True
         Me.label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label1.Location = New System.Drawing.Point(291, 22)
-        Me.label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label1.Location = New System.Drawing.Point(218, 18)
         Me.label1.Name = "label1"
-        Me.label1.Size = New System.Drawing.Size(89, 23)
+        Me.label1.Size = New System.Drawing.Size(70, 17)
         Me.label1.TabIndex = 1
         Me.label1.Text = "Search by:"
         '
@@ -443,7 +423,7 @@ Partial Class ManageBooks
         '
         Me.btnAddBook.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnAddBook.AutoRoundedCorners = True
-        Me.btnAddBook.BorderRadius = 23
+        Me.btnAddBook.BorderRadius = 19
         Me.btnAddBook.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btnAddBook.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnAddBook.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
@@ -451,30 +431,17 @@ Partial Class ManageBooks
         Me.btnAddBook.FillColor = System.Drawing.Color.FromArgb(CType(CType(162, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(163, Byte), Integer))
         Me.btnAddBook.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.btnAddBook.ForeColor = System.Drawing.Color.White
-        Me.btnAddBook.Location = New System.Drawing.Point(75, 6)
-        Me.btnAddBook.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnAddBook.Location = New System.Drawing.Point(56, 5)
         Me.btnAddBook.Name = "btnAddBook"
-        Me.btnAddBook.Size = New System.Drawing.Size(200, 49)
+        Me.btnAddBook.Size = New System.Drawing.Size(150, 40)
         Me.btnAddBook.TabIndex = 2
         Me.btnAddBook.Text = "Add Book"
-        '
-        'pbExit
-        '
-        Me.pbExit.Image = Global.Library_Management_System.My.Resources.Resources.reject2
-        Me.pbExit.ImageRotate = 0!
-        Me.pbExit.Location = New System.Drawing.Point(9, 9)
-        Me.pbExit.Margin = New System.Windows.Forms.Padding(4)
-        Me.pbExit.Name = "pbExit"
-        Me.pbExit.Size = New System.Drawing.Size(33, 31)
-        Me.pbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbExit.TabIndex = 1
-        Me.pbExit.TabStop = False
         '
         'tbSearch
         '
         Me.tbSearch.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.tbSearch.AutoRoundedCorners = True
-        Me.tbSearch.BorderRadius = 21
+        Me.tbSearch.BorderRadius = 17
         Me.tbSearch.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbSearch.DefaultText = ""
         Me.tbSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -485,12 +452,12 @@ Partial Class ManageBooks
         Me.tbSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbSearch.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbSearch.Location = New System.Drawing.Point(595, 9)
-        Me.tbSearch.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.tbSearch.Location = New System.Drawing.Point(446, 7)
+        Me.tbSearch.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbSearch.Name = "tbSearch"
         Me.tbSearch.PlaceholderText = "Search books"
         Me.tbSearch.SelectedText = ""
-        Me.tbSearch.Size = New System.Drawing.Size(267, 44)
+        Me.tbSearch.Size = New System.Drawing.Size(200, 36)
         Me.tbSearch.TabIndex = 1
         '
         'cbSearchBy
@@ -508,23 +475,23 @@ Partial Class ManageBooks
         Me.cbSearchBy.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cbSearchBy.ItemHeight = 30
         Me.cbSearchBy.Items.AddRange(New Object() {"Title", "Author", "ISBN", "Publication Year", "ID"})
-        Me.cbSearchBy.Location = New System.Drawing.Point(396, 9)
-        Me.cbSearchBy.Margin = New System.Windows.Forms.Padding(4)
+        Me.cbSearchBy.Location = New System.Drawing.Point(297, 7)
         Me.cbSearchBy.Name = "cbSearchBy"
-        Me.cbSearchBy.Size = New System.Drawing.Size(185, 36)
+        Me.cbSearchBy.Size = New System.Drawing.Size(140, 36)
         Me.cbSearchBy.TabIndex = 0
         '
         'ManageBooks
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(233, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(891, 642)
+        Me.ClientSize = New System.Drawing.Size(668, 522)
         Me.Controls.Add(Me.guna2Panel3)
         Me.Controls.Add(Me.pnlSideMenu)
         Me.Controls.Add(Me.pnlTopMenu)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "ManageBooks"
-        Me.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
+        Me.Padding = New System.Windows.Forms.Padding(10, 10, 10, 10)
         Me.Text = "ManageBooks"
         Me.guna2Panel3.ResumeLayout(False)
         Me.pnlGrid.ResumeLayout(False)
@@ -535,7 +502,6 @@ Partial Class ManageBooks
         CType(Me.pbExit2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlTopMenu.ResumeLayout(False)
         Me.pnlTopMenu.PerformLayout()
-        CType(Me.pbExit, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -562,7 +528,6 @@ Partial Class ManageBooks
     Private WithEvents pnlTopMenu As Guna.UI2.WinForms.Guna2Panel
     Private WithEvents label1 As Label
     Private WithEvents btnAddBook As Guna.UI2.WinForms.Guna2Button
-    Private WithEvents pbExit As Guna.UI2.WinForms.Guna2PictureBox
     Private WithEvents tbSearch As Guna.UI2.WinForms.Guna2TextBox
     Private WithEvents cbSearchBy As Guna.UI2.WinForms.Guna2ComboBox
 End Class

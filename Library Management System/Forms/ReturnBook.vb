@@ -11,6 +11,13 @@ Public Class ReturnBook
         InitializeComponent()
     End Sub
 
+    Private Sub updateFont()
+        ' Change cell font
+        For Each c As DataGridViewColumn In dgvIssue.Columns
+            c.DefaultCellStyle.Font = New Font("Arial", 12.0F, GraphicsUnit.Pixel)
+        Next
+    End Sub
+
     Private Sub ClearTexts()
         lblIssueID.Text = String.Empty
         lblBookTitle.Text = String.Empty
@@ -20,6 +27,7 @@ Public Class ReturnBook
     End Sub
 
     Private Sub LoadTable()
+        updateFont()
         Dim query As String = "SELECT tbl_issue.custom_issue_id as [Issue ID], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) as [Member Name], tbl_book.title as [Book Title] from tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id WHERE status = 'Issued'"
 
         Dim cmd As New SqlCommand(query, conn)
@@ -73,7 +81,7 @@ Public Class ReturnBook
         dgvIssue.ColumnHeadersDefaultCellStyle.SelectionForeColor = dgvIssue.ColumnHeadersDefaultCellStyle.ForeColor
     End Sub
 
-    Private Sub pbExit_Click(sender As Object, e As EventArgs) Handles pbExit.Click
+    Private Sub pbExit_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 

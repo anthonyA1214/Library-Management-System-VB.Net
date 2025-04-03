@@ -8,9 +8,17 @@ Public Class MemberActivityReport
         InitializeComponent()
     End Sub
 
+    Private Sub updateFont()
+        ' Change cell font
+        For Each c As DataGridViewColumn In dgvMember.Columns
+            c.DefaultCellStyle.Font = New Font("Arial", 12.0F, GraphicsUnit.Pixel)
+        Next
+    End Sub
+
     Dim conn As SqlConnection = dbConnection.GetConnection()
 
     Private Sub LoadTable()
+        updateFont()
         Dim query As String = "SELECT tbl_member.custom_member_id AS [Member ID], " &
                       "CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) AS [Member Name], " &
                       "COUNT(tbl_issue.issue_id) AS [Total Borrowed Books], " &
@@ -112,7 +120,7 @@ Public Class MemberActivityReport
         End Using
     End Sub
 
-    Private Sub pbExit_Click(sender As Object, e As EventArgs) Handles pbExit.Click
+    Private Sub pbExit_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 End Class
