@@ -1,6 +1,7 @@
 ﻿Imports ClosedXML.Excel
 Imports System.Data.SqlClient
 Imports System.Text.RegularExpressions
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class CirculationReport
     Inherits Form
@@ -47,11 +48,15 @@ Public Class CirculationReport
     Private Sub CirculationReport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadData()
         cbSearchBy.Text = "Issue ID"
+        cbLoanStatus.Text = "All"
+        cbReturnStatus.Text = "All"
     End Sub
 
     Private Sub searchFilter()
         Dim query As String = "SELECT tbl_issue.custom_issue_id AS [Issue ID], tbl_book.title AS [Book Title], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) AS [Member Name], tbl_issue.status AS [Loan Status], CASE WHEN tbl_issue.return_date IS NULL AND tbl_issue.due_date < GETDATE() THEN 'Overdue' WHEN tbl_issue.return_date IS NULL THEN 'Not Returned' WHEN tbl_issue.return_date <= tbl_issue.due_date THEN 'On Time' ELSE 'Late Return' END AS [Return Status] FROM tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id WHERE 1=1"
         Dim search As String = tbSearch.Text
+        Dim loanStatus As String = cbLoanStatus.Text
+        Dim returnStatus As String = cbReturnStatus.Text
 
         If Not String.IsNullOrEmpty(search) Then
             If cbSearchBy.Text = "Issue ID" Then
@@ -65,7 +70,27 @@ Public Class CirculationReport
             End If
         End If
 
+        If cbLoanStatus.Text <> "All" Then
+            query &= " AND tbl_issue.status = @loanStatus"
+        End If
+
+        If cbReturnStatus.Text <> "All" Then
+            If returnStatus = "Overdue" Then
+                query &= " AND tbl_issue.return_date IS NULL AND tbl_issue.due_date < GETDATE()"
+            ElseIf returnStatus = "Not Returned" Then
+                query &= " AND tbl_issue.return_date IS NULL AND tbl_issue.due_date >= GETDATE()"
+            ElseIf returnStatus = "On Time" Then
+                query &= " AND tbl_issue.return_date IS NOT NULL AND tbl_issue.return_date <= tbl_issue.due_date"
+            ElseIf returnStatus = "Late Return" Then
+                query &= " AND tbl_issue.return_date IS NOT NULL AND tbl_issue.return_date > tbl_issue.due_date"
+            End If
+        End If
+
         Dim cmd As New SqlCommand(query, conn)
+
+        If cbLoanStatus.Text <> "All" Then
+            cmd.Parameters.AddWithValue("@loanStatus", loanStatus)
+        End If
 
         If Not String.IsNullOrEmpty(search) Then
             cmd.Parameters.AddWithValue("@search", "%" & search & "%")
@@ -135,15 +160,18 @@ Public Class CirculationReport
         Me.Close()
     End Sub
 
-    Private Sub cbSearchBy_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbSearchBy.SelectedIndexChanged
-
+    Private Sub cbLoanStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbLoanStatus.SelectedIndexChanged
+        searchFilter()
     End Sub
 
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-
+    Private Sub cbReturnStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbReturnStatus.SelectedIndexChanged
+        searchFilter()
     End Sub
 
-    Private Sub dgvIssue_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvIssue.CellContentClick
-
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        cbLoanStatus.Text = "All"
+        cbReturnStatus.Text = "All"
+        tbSearch.Clear()
+        searchFilter()
     End Sub
 End Class

@@ -8,9 +8,8 @@ Partial Public Class Inventory
     Private bookid As Integer
     Private userRole As String
 
-    Public Sub New(userrole As String)
+    Public Sub New()
         InitializeComponent()
-        userrole = userrole
     End Sub
 
     Private Sub updateFont()
@@ -18,14 +17,6 @@ Partial Public Class Inventory
         For Each c As DataGridViewColumn In dgvBook.Columns
             c.DefaultCellStyle.Font = New Font("Arial", 12.0F, GraphicsUnit.Pixel)
         Next
-    End Sub
-
-    Private Sub HandleLogin(userRole As String)
-        If userRole = "Staff" Then
-            dgvBook.Columns("add").Visible = False
-        ElseIf userRole = "Admin" Then
-            dgvBook.Columns("add").Visible = True
-        End If
     End Sub
 
     Private Sub LoadTable()
@@ -49,7 +40,6 @@ Partial Public Class Inventory
         If dgvBook.Columns("add") Is Nothing Then
             dgvBook.Columns.Add(addImgCol)
         End If
-        HandleLogin(userRole)
     End Sub
 
     Private Sub LoadGenre()
@@ -272,6 +262,14 @@ Partial Public Class Inventory
     End Sub
 
     Private Sub cbAvailabilityStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAvailabilityStatus.SelectedIndexChanged
+        SearchFilter()
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        cbSearchBy.Text = "Title"
+        cbGenre.Text = "All"
+        cbAvailabilityStatus.Text = "All"
+        tbSearch.Clear()
         SearchFilter()
     End Sub
 End Class

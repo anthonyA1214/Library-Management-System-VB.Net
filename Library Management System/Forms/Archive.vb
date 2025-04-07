@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Net
 
 Partial Public Class Archive
     Inherits Form
@@ -17,7 +18,6 @@ Partial Public Class Archive
     Dim conn As SqlConnection = dbConnection.GetConnection()
 
     Private Sub loadBookTable()
-        updateFont()
         Dim query As String = "SELECT custom_book_id as [Book ID], title as [Title], author as [Author], isbn as [ISBN], genre as [Genre], publication_year as [Publication Year], quantity as [Quantity] from tbl_book WHERE IsDeleted = 1"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
@@ -29,7 +29,6 @@ Partial Public Class Archive
     End Sub
 
     Private Sub loadMemberTable()
-        updateFont()
         Dim query As String = "SELECT custom_member_id AS [Member ID], CONCAT(first_name, ' ', last_name) AS [Member Name], age AS [Age], address AS [Address], contact_number AS [Contact Number], email AS [Email], membership_type AS [Membership Type] from tbl_member WHERE IsDeleted = 1"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
@@ -41,7 +40,6 @@ Partial Public Class Archive
     End Sub
 
     Private Sub loadStaffTable()
-        updateFont()
         Dim query As String = "SELECT custom_staff_id AS [Staff ID], CONCAT(first_name, ' ', last_name) AS [Staff Name], username AS [Username], password AS [Password], email AS [Email], contact_number AS [Contact Number], role AS [Role] from tbl_staff WHERE IsDeleted = 1 AND IsApproved = 1"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
@@ -53,7 +51,6 @@ Partial Public Class Archive
     End Sub
 
     Private Sub loadGenreTable()
-        updateFont()
         Dim query As String = "SELECT custom_genre_id AS [Genre ID], genre_name AS [Genre Name] from tbl_genre WHERE IsDeleted = 1"
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
@@ -102,6 +99,7 @@ Partial Public Class Archive
         ElseIf cbSelectTable.Text = "Genre" Then
             loadGenreTable()
         End If
+        updateFont()
     End Sub
 
     Private Sub loadSearchBy()
@@ -162,7 +160,8 @@ Partial Public Class Archive
                     idCol = "Genre ID"
             End Select
             Try
-                Dim id As Integer = Integer.Parse(dgvRecycleBin.Rows(e.RowIndex).Cells(idCol).Value.ToString())
+                Dim customBookId As String = dgvRecycleBin.Rows(e.RowIndex).Cells(idCol).Value.ToString()
+                Dim id As Integer = Integer.Parse(customBookId.Substring(2))
                 Dim dialogResult As DialogResult = MessageBox.Show($"Are you sure you want to restore this {tableName} record?", "Confirm Restore", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
                 If dialogResult = DialogResult.No Then Return
@@ -205,7 +204,8 @@ Partial Public Class Archive
             End Select
 
             Try
-                Dim id As Integer = Integer.Parse(dgvRecycleBin.Rows(e.RowIndex).Cells(idCol).Value.ToString())
+                Dim customBookId As String = dgvRecycleBin.Rows(e.RowIndex).Cells(idCol).Value.ToString()
+                Dim id As Integer = Integer.Parse(customBookId.Substring(2))
                 Dim dialogResult As DialogResult = MessageBox.Show($"Are you sure you want to permanently delete this {tableName} record? This action cannot be undone.", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
                 If dialogResult = DialogResult.No Then Return

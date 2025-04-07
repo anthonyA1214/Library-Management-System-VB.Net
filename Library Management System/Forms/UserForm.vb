@@ -168,11 +168,11 @@ Public Class UserForm
     End Sub
 
     Private Sub btnInventory_Click(sender As Object, e As EventArgs) Handles btnInventory.Click
-        openForm(New Inventory("Staff"))
+        openForm(New Inventory())
     End Sub
 
     Private Sub btnManageMembers_Click(sender As Object, e As EventArgs) Handles btnManageMembers.Click
-        openForm(New ManageMembers("Staff"))
+        openForm(New ManageMembers())
     End Sub
 
     Private Sub btnMemberProfiles_Click(sender As Object, e As EventArgs) Handles btnMemberProfiles.Click
@@ -222,8 +222,8 @@ Public Class UserForm
         dgvIssuedBook.ColumnHeadersDefaultCellStyle.SelectionForeColor = dgvIssuedBook.ColumnHeadersDefaultCellStyle.ForeColor
     End Sub
 
-    Private Sub btnAddNewMember_Click(sender As Object, e As EventArgs) 
-        openForm(New ManageMembers("Staff"))
+    Private Sub btnAddNewMember_Click(sender As Object, e As EventArgs)
+        openForm(New ManageMembers())
     End Sub
 
     Private Sub lblMemberSeeAll_Click(sender As Object, e As EventArgs) Handles lblMemberSeeAll.Click
@@ -231,7 +231,7 @@ Public Class UserForm
     End Sub
 
     Private Sub lblBookSeeAll_Click(sender As Object, e As EventArgs) Handles lblBookSeeAll.Click
-        openForm(New Inventory("Staff"))
+        openForm(New Inventory())
     End Sub
 
     Private Sub btnIssueBook2_Click(sender As Object, e As EventArgs) 

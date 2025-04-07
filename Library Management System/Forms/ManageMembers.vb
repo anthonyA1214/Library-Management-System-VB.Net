@@ -9,11 +9,8 @@ Partial Public Class ManageMembers
     Dim memberid As Integer
     Dim checkrow As Integer
 
-    Private userRole As String
-
-    Public Sub New(userrole As String)
+    Public Sub New()
         InitializeComponent()
-        userrole = userrole
     End Sub
 
     Private Sub updateFont()
@@ -22,15 +19,6 @@ Partial Public Class ManageMembers
             c.DefaultCellStyle.Font = New Font("Arial", 12.0F, GraphicsUnit.Pixel)
         Next
     End Sub
-
-    Private Sub HandleLogin(userRole As String)
-        If userRole = "Staff" Then
-            dgvMember.Columns("delete").Visible = False
-        ElseIf userRole = "Admin" Then
-            dgvMember.Columns("delete").Visible = True
-        End If
-    End Sub
-
     Private Sub clearTexts()
         tbFirstName.Clear()
         tbLastName.Clear()
@@ -49,6 +37,7 @@ Partial Public Class ManageMembers
         da.Fill(dt)
         dgvMember.DataSource = dt
         dgvMember.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+
         Dim updateImgCol As New DataGridViewImageColumn() With {
             .Name = "update",
             .HeaderText = String.Empty,
@@ -56,24 +45,14 @@ Partial Public Class ManageMembers
             .ImageLayout = DataGridViewImageCellLayout.Zoom,
             .AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         }
-        Dim deleteImgCol As New DataGridViewImageColumn() With {
-            .Name = "delete",
-            .HeaderText = String.Empty,
-            .Image = My.Resources.delete,
-            .ImageLayout = DataGridViewImageCellLayout.Zoom,
-            .AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        }
+
         If dgvMember.Columns("update") Is Nothing Then
             dgvMember.Columns.Add(updateImgCol)
         End If
-        If dgvMember.Columns("delete") Is Nothing Then
-            dgvMember.Columns.Add(deleteImgCol)
-        End If
+
         dgvMember.Columns("update").DisplayIndex = dgvMember.Columns.Count - 1
-        dgvMember.Columns("delete").DisplayIndex = dgvMember.Columns.Count - 1
         dgvMember.ColumnHeadersDefaultCellStyle.SelectionBackColor = dgvMember.ColumnHeadersDefaultCellStyle.BackColor
         dgvMember.ColumnHeadersDefaultCellStyle.SelectionForeColor = dgvMember.ColumnHeadersDefaultCellStyle.ForeColor
-        HandleLogin(userRole)
     End Sub
 
     Private Sub ManageMembers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -121,33 +100,6 @@ Partial Public Class ManageMembers
             tbEmail.Text = ds.Tables(0).Rows(0)(7).ToString()
             cbMembershipType.Text = ds.Tables(0).Rows(0)(8).ToString()
         End If
-
-        If e.RowIndex >= 0 AndAlso e.ColumnIndex = dgvMember.Columns("delete").Index Then
-            Dim query As String = "UPDATE tbl_member SET IsDeleted = 1 WHERE member_id = @memberid"
-            Dim customMemberId As String = dgvMember.Rows(e.RowIndex).Cells("Member ID").Value.ToString()
-            memberid = Integer.Parse(customMemberId.Substring(2))
-            Try
-                conn.Open()
-                Dim cmd As New SqlCommand(query, conn)
-                cmd.Parameters.AddWithValue("@memberid", memberid)
-                Dim dialogResult As DialogResult = MessageBox.Show("Are you sure you want to delete this member?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-                If dialogResult = DialogResult.No Then
-                    Return
-                End If
-                checkrow = cmd.ExecuteNonQuery()
-                If checkrow > 0 Then
-                    MessageBox.Show("Member deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Else
-                    MessageBox.Show("Failed to delete the member.", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End If
-            Catch ex As Exception
-                MessageBox.Show($"An error occurred. {ex.Message}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Finally
-                conn.Close()
-                clearTexts()
-                loadTable()
-            End Try
-        End If
     End Sub
 
     Private Sub tbSearch_TextChanged(sender As Object, e As EventArgs) Handles tbSearch.TextChanged
@@ -159,7 +111,7 @@ Partial Public Class ManageMembers
             Return
         End If
 
-        Dim pattern As String = "^m-\d{6}$"  ' ^b- means starting with 'b-', \d{6} means exactly six digits, $ means end of the string
+        Dim pattern As String = "^m-\d{6}$"
         If cbSearchBy.Text = "ID" AndAlso Not System.Text.RegularExpressions.Regex.IsMatch(search, pattern) Then Return
 
         If cbSearchBy.Text = "Name" Then
@@ -181,9 +133,7 @@ Partial Public Class ManageMembers
         If dgvMember.Columns(e.ColumnIndex).Name = "update" Then
             e.ToolTipText = "Update"
         End If
-        If dgvMember.Columns(e.ColumnIndex).Name = "delete" Then
-            e.ToolTipText = "Delete"
-        End If
+        ' Removed the delete tooltip
     End Sub
 
     Private Sub pbExit2_Click(sender As Object, e As EventArgs) Handles pbExit2.Click
@@ -219,7 +169,7 @@ Partial Public Class ManageMembers
         End If
 
         Dim member As New Member(memberid, tbFirstName.Text, tbLastName.Text, Integer.Parse(numAge.Text), tbAddress.Text, tbContactNumber.Text, tbEmail.Text, cbMembershipType.Text)
-        Dim memberManager As New ManageMembers(userRole)
+        Dim memberManager As New ManageMembers()
 
         Try
             Dim nameRegex As New Regex("^[a-zA-Z\s]+$", RegexOptions.IgnoreCase)

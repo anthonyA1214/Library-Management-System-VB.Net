@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class UserForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class UserForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -161,7 +161,7 @@ Partial Class UserForm
         Me.pnlSideMenu.Controls.Add(Me.guna2Panel1)
         Me.pnlSideMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.pnlSideMenu.Location = New System.Drawing.Point(0, 0)
-        Me.pnlSideMenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlSideMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlSideMenu.Name = "pnlSideMenu"
         Me.pnlSideMenu.Size = New System.Drawing.Size(333, 690)
         Me.pnlSideMenu.TabIndex = 3
@@ -180,7 +180,7 @@ Partial Class UserForm
         Me.btnLogout.Image = Global.Library_Management_System.My.Resources.Resources.logout
         Me.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnLogout.Location = New System.Drawing.Point(0, 940)
-        Me.btnLogout.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnLogout.Margin = New System.Windows.Forms.Padding(4)
         Me.btnLogout.Name = "btnLogout"
         Me.btnLogout.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnLogout.Size = New System.Drawing.Size(312, 55)
@@ -194,7 +194,7 @@ Partial Class UserForm
         Me.pnlSettingsSubMenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlSettingsSubMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(91, Byte), Integer))
         Me.pnlSettingsSubMenu.Location = New System.Drawing.Point(0, 885)
-        Me.pnlSettingsSubMenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlSettingsSubMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlSettingsSubMenu.Name = "pnlSettingsSubMenu"
         Me.pnlSettingsSubMenu.Size = New System.Drawing.Size(312, 55)
         Me.pnlSettingsSubMenu.TabIndex = 27
@@ -211,7 +211,7 @@ Partial Class UserForm
         Me.btnManageGenre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnManageGenre.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(77, Byte), Integer))
         Me.btnManageGenre.Location = New System.Drawing.Point(0, 0)
-        Me.btnManageGenre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnManageGenre.Margin = New System.Windows.Forms.Padding(4)
         Me.btnManageGenre.Name = "btnManageGenre"
         Me.btnManageGenre.Padding = New System.Windows.Forms.Padding(33, 0, 0, 0)
         Me.btnManageGenre.Size = New System.Drawing.Size(312, 49)
@@ -233,7 +233,7 @@ Partial Class UserForm
         Me.btnSettings.Image = Global.Library_Management_System.My.Resources.Resources.settings
         Me.btnSettings.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnSettings.Location = New System.Drawing.Point(0, 830)
-        Me.btnSettings.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSettings.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSettings.Name = "btnSettings"
         Me.btnSettings.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnSettings.Size = New System.Drawing.Size(312, 55)
@@ -248,7 +248,7 @@ Partial Class UserForm
         Me.pnlReportsSubMenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlReportsSubMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(91, Byte), Integer))
         Me.pnlReportsSubMenu.Location = New System.Drawing.Point(0, 725)
-        Me.pnlReportsSubMenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlReportsSubMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlReportsSubMenu.Name = "pnlReportsSubMenu"
         Me.pnlReportsSubMenu.Size = New System.Drawing.Size(312, 105)
         Me.pnlReportsSubMenu.TabIndex = 25
@@ -265,7 +265,7 @@ Partial Class UserForm
         Me.btnMemberActivityReports.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnMemberActivityReports.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(77, Byte), Integer))
         Me.btnMemberActivityReports.Location = New System.Drawing.Point(0, 49)
-        Me.btnMemberActivityReports.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnMemberActivityReports.Margin = New System.Windows.Forms.Padding(4)
         Me.btnMemberActivityReports.Name = "btnMemberActivityReports"
         Me.btnMemberActivityReports.Padding = New System.Windows.Forms.Padding(33, 0, 0, 0)
         Me.btnMemberActivityReports.Size = New System.Drawing.Size(312, 49)
@@ -285,7 +285,7 @@ Partial Class UserForm
         Me.btnCirculationReports.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnCirculationReports.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(77, Byte), Integer))
         Me.btnCirculationReports.Location = New System.Drawing.Point(0, 0)
-        Me.btnCirculationReports.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCirculationReports.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCirculationReports.Name = "btnCirculationReports"
         Me.btnCirculationReports.Padding = New System.Windows.Forms.Padding(33, 0, 0, 0)
         Me.btnCirculationReports.Size = New System.Drawing.Size(312, 49)
@@ -307,7 +307,7 @@ Partial Class UserForm
         Me.btnReports.Image = Global.Library_Management_System.My.Resources.Resources.reports
         Me.btnReports.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnReports.Location = New System.Drawing.Point(0, 670)
-        Me.btnReports.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnReports.Margin = New System.Windows.Forms.Padding(4)
         Me.btnReports.Name = "btnReports"
         Me.btnReports.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnReports.Size = New System.Drawing.Size(312, 55)
@@ -322,7 +322,7 @@ Partial Class UserForm
         Me.pnlBorrowReturnSubMenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlBorrowReturnSubMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(91, Byte), Integer))
         Me.pnlBorrowReturnSubMenu.Location = New System.Drawing.Point(0, 565)
-        Me.pnlBorrowReturnSubMenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlBorrowReturnSubMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlBorrowReturnSubMenu.Name = "pnlBorrowReturnSubMenu"
         Me.pnlBorrowReturnSubMenu.Size = New System.Drawing.Size(312, 105)
         Me.pnlBorrowReturnSubMenu.TabIndex = 23
@@ -339,7 +339,7 @@ Partial Class UserForm
         Me.btnReturnBook.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnReturnBook.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(77, Byte), Integer))
         Me.btnReturnBook.Location = New System.Drawing.Point(0, 49)
-        Me.btnReturnBook.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnReturnBook.Margin = New System.Windows.Forms.Padding(4)
         Me.btnReturnBook.Name = "btnReturnBook"
         Me.btnReturnBook.Padding = New System.Windows.Forms.Padding(33, 0, 0, 0)
         Me.btnReturnBook.Size = New System.Drawing.Size(312, 49)
@@ -359,7 +359,7 @@ Partial Class UserForm
         Me.btnIssueBook.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnIssueBook.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(77, Byte), Integer))
         Me.btnIssueBook.Location = New System.Drawing.Point(0, 0)
-        Me.btnIssueBook.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnIssueBook.Margin = New System.Windows.Forms.Padding(4)
         Me.btnIssueBook.Name = "btnIssueBook"
         Me.btnIssueBook.Padding = New System.Windows.Forms.Padding(33, 0, 0, 0)
         Me.btnIssueBook.Size = New System.Drawing.Size(312, 49)
@@ -381,7 +381,7 @@ Partial Class UserForm
         Me.btnBorrowReturn.Image = Global.Library_Management_System.My.Resources.Resources.borrowreturn
         Me.btnBorrowReturn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnBorrowReturn.Location = New System.Drawing.Point(0, 510)
-        Me.btnBorrowReturn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnBorrowReturn.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBorrowReturn.Name = "btnBorrowReturn"
         Me.btnBorrowReturn.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnBorrowReturn.Size = New System.Drawing.Size(312, 55)
@@ -396,7 +396,7 @@ Partial Class UserForm
         Me.pnlMembersSubMenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlMembersSubMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(91, Byte), Integer))
         Me.pnlMembersSubMenu.Location = New System.Drawing.Point(0, 405)
-        Me.pnlMembersSubMenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlMembersSubMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlMembersSubMenu.Name = "pnlMembersSubMenu"
         Me.pnlMembersSubMenu.Size = New System.Drawing.Size(312, 105)
         Me.pnlMembersSubMenu.TabIndex = 7
@@ -413,7 +413,7 @@ Partial Class UserForm
         Me.btnMemberProfiles.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnMemberProfiles.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(77, Byte), Integer))
         Me.btnMemberProfiles.Location = New System.Drawing.Point(0, 49)
-        Me.btnMemberProfiles.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnMemberProfiles.Margin = New System.Windows.Forms.Padding(4)
         Me.btnMemberProfiles.Name = "btnMemberProfiles"
         Me.btnMemberProfiles.Padding = New System.Windows.Forms.Padding(33, 0, 0, 0)
         Me.btnMemberProfiles.Size = New System.Drawing.Size(312, 49)
@@ -433,7 +433,7 @@ Partial Class UserForm
         Me.btnManageMembers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnManageMembers.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(77, Byte), Integer))
         Me.btnManageMembers.Location = New System.Drawing.Point(0, 0)
-        Me.btnManageMembers.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnManageMembers.Margin = New System.Windows.Forms.Padding(4)
         Me.btnManageMembers.Name = "btnManageMembers"
         Me.btnManageMembers.Padding = New System.Windows.Forms.Padding(33, 0, 0, 0)
         Me.btnManageMembers.Size = New System.Drawing.Size(312, 49)
@@ -455,7 +455,7 @@ Partial Class UserForm
         Me.btnMembers.Image = Global.Library_Management_System.My.Resources.Resources.group1
         Me.btnMembers.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnMembers.Location = New System.Drawing.Point(0, 350)
-        Me.btnMembers.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnMembers.Margin = New System.Windows.Forms.Padding(4)
         Me.btnMembers.Name = "btnMembers"
         Me.btnMembers.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnMembers.Size = New System.Drawing.Size(312, 55)
@@ -469,7 +469,7 @@ Partial Class UserForm
         Me.pnlBooksSubMenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlBooksSubMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(91, Byte), Integer))
         Me.pnlBooksSubMenu.Location = New System.Drawing.Point(0, 295)
-        Me.pnlBooksSubMenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlBooksSubMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlBooksSubMenu.Name = "pnlBooksSubMenu"
         Me.pnlBooksSubMenu.Size = New System.Drawing.Size(312, 55)
         Me.pnlBooksSubMenu.TabIndex = 5
@@ -486,7 +486,7 @@ Partial Class UserForm
         Me.btnInventory.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnInventory.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(77, Byte), Integer))
         Me.btnInventory.Location = New System.Drawing.Point(0, 0)
-        Me.btnInventory.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnInventory.Margin = New System.Windows.Forms.Padding(4)
         Me.btnInventory.Name = "btnInventory"
         Me.btnInventory.Padding = New System.Windows.Forms.Padding(33, 0, 0, 0)
         Me.btnInventory.Size = New System.Drawing.Size(312, 49)
@@ -508,7 +508,7 @@ Partial Class UserForm
         Me.btnBooks.Image = Global.Library_Management_System.My.Resources.Resources.books
         Me.btnBooks.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnBooks.Location = New System.Drawing.Point(0, 240)
-        Me.btnBooks.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnBooks.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBooks.Name = "btnBooks"
         Me.btnBooks.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnBooks.Size = New System.Drawing.Size(312, 55)
@@ -530,7 +530,7 @@ Partial Class UserForm
         Me.btnDashboard.Image = Global.Library_Management_System.My.Resources.Resources.dashboard
         Me.btnDashboard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btnDashboard.Location = New System.Drawing.Point(0, 185)
-        Me.btnDashboard.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnDashboard.Margin = New System.Windows.Forms.Padding(4)
         Me.btnDashboard.Name = "btnDashboard"
         Me.btnDashboard.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
         Me.btnDashboard.Size = New System.Drawing.Size(312, 55)
@@ -543,7 +543,7 @@ Partial Class UserForm
         Me.guna2Panel1.Controls.Add(Me.guna2PictureBox5)
         Me.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.guna2Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.guna2Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel1.Name = "guna2Panel1"
         Me.guna2Panel1.Size = New System.Drawing.Size(312, 185)
         Me.guna2Panel1.TabIndex = 2
@@ -554,7 +554,7 @@ Partial Class UserForm
         Me.guna2PictureBox5.Image = Global.Library_Management_System.My.Resources.Resources.logo_removebg_preview
         Me.guna2PictureBox5.ImageRotate = 0!
         Me.guna2PictureBox5.Location = New System.Drawing.Point(0, 0)
-        Me.guna2PictureBox5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2PictureBox5.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2PictureBox5.Name = "guna2PictureBox5"
         Me.guna2PictureBox5.Size = New System.Drawing.Size(312, 185)
         Me.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -575,7 +575,7 @@ Partial Class UserForm
         Me.pnlContainer.Controls.Add(Me.pnlTitle)
         Me.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlContainer.Location = New System.Drawing.Point(333, 0)
-        Me.pnlContainer.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlContainer.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlContainer.Name = "pnlContainer"
         Me.pnlContainer.Size = New System.Drawing.Size(912, 690)
         Me.pnlContainer.TabIndex = 5
@@ -588,7 +588,7 @@ Partial Class UserForm
         Me.tlp4.Controls.Add(Me.guna2Panel13, 0, 0)
         Me.tlp4.Dock = System.Windows.Forms.DockStyle.Top
         Me.tlp4.Location = New System.Drawing.Point(0, 893)
-        Me.tlp4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tlp4.Margin = New System.Windows.Forms.Padding(4)
         Me.tlp4.Name = "tlp4"
         Me.tlp4.RowCount = 1
         Me.tlp4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -607,7 +607,7 @@ Partial Class UserForm
         Me.guna2Panel13.Dock = System.Windows.Forms.DockStyle.Fill
         Me.guna2Panel13.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.guna2Panel13.Location = New System.Drawing.Point(4, 4)
-        Me.guna2Panel13.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel13.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel13.Name = "guna2Panel13"
         Me.guna2Panel13.Size = New System.Drawing.Size(883, 300)
         Me.guna2Panel13.TabIndex = 4
@@ -642,7 +642,7 @@ Partial Class UserForm
         Me.dgvIssuedBook.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvIssuedBook.GridColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.dgvIssuedBook.Location = New System.Drawing.Point(7, 49)
-        Me.dgvIssuedBook.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgvIssuedBook.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvIssuedBook.Name = "dgvIssuedBook"
         Me.dgvIssuedBook.ReadOnly = True
         Me.dgvIssuedBook.RowHeadersVisible = False
@@ -693,7 +693,7 @@ Partial Class UserForm
         Me.tlp3.Controls.Add(Me.Guna2Panel17, 0, 0)
         Me.tlp3.Dock = System.Windows.Forms.DockStyle.Top
         Me.tlp3.Location = New System.Drawing.Point(0, 585)
-        Me.tlp3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tlp3.Margin = New System.Windows.Forms.Padding(4)
         Me.tlp3.Name = "tlp3"
         Me.tlp3.RowCount = 1
         Me.tlp3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -712,7 +712,7 @@ Partial Class UserForm
         Me.Guna2Panel17.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel17.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.Guna2Panel17.Location = New System.Drawing.Point(4, 4)
-        Me.Guna2Panel17.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel17.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel17.Name = "Guna2Panel17"
         Me.Guna2Panel17.Size = New System.Drawing.Size(883, 300)
         Me.Guna2Panel17.TabIndex = 2
@@ -747,7 +747,7 @@ Partial Class UserForm
         Me.dgvOverdueBook.DefaultCellStyle = DataGridViewCellStyle6
         Me.dgvOverdueBook.GridColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.dgvOverdueBook.Location = New System.Drawing.Point(7, 49)
-        Me.dgvOverdueBook.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgvOverdueBook.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvOverdueBook.Name = "dgvOverdueBook"
         Me.dgvOverdueBook.ReadOnly = True
         Me.dgvOverdueBook.RowHeadersVisible = False
@@ -794,7 +794,7 @@ Partial Class UserForm
         '
         Me.Guna2Panel16.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Guna2Panel16.Location = New System.Drawing.Point(0, 1201)
-        Me.Guna2Panel16.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel16.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel16.Name = "Guna2Panel16"
         Me.Guna2Panel16.Size = New System.Drawing.Size(891, 6)
         Me.Guna2Panel16.TabIndex = 8
@@ -808,7 +808,7 @@ Partial Class UserForm
         Me.tlp2.Controls.Add(Me.guna2Panel15, 0, 0)
         Me.tlp2.Dock = System.Windows.Forms.DockStyle.Top
         Me.tlp2.Location = New System.Drawing.Point(0, 277)
-        Me.tlp2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tlp2.Margin = New System.Windows.Forms.Padding(4)
         Me.tlp2.Name = "tlp2"
         Me.tlp2.RowCount = 1
         Me.tlp2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -828,7 +828,7 @@ Partial Class UserForm
         Me.Guna2Panel12.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel12.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.Guna2Panel12.Location = New System.Drawing.Point(449, 4)
-        Me.Guna2Panel12.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel12.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel12.Name = "Guna2Panel12"
         Me.Guna2Panel12.Size = New System.Drawing.Size(438, 300)
         Me.Guna2Panel12.TabIndex = 2
@@ -863,7 +863,7 @@ Partial Class UserForm
         Me.dgvBook.DefaultCellStyle = DataGridViewCellStyle9
         Me.dgvBook.GridColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.dgvBook.Location = New System.Drawing.Point(7, 49)
-        Me.dgvBook.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgvBook.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvBook.Name = "dgvBook"
         Me.dgvBook.ReadOnly = True
         Me.dgvBook.RowHeadersVisible = False
@@ -931,7 +931,7 @@ Partial Class UserForm
         Me.guna2Panel15.Dock = System.Windows.Forms.DockStyle.Fill
         Me.guna2Panel15.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.guna2Panel15.Location = New System.Drawing.Point(4, 4)
-        Me.guna2Panel15.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel15.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel15.Name = "guna2Panel15"
         Me.guna2Panel15.Size = New System.Drawing.Size(437, 300)
         Me.guna2Panel15.TabIndex = 1
@@ -966,7 +966,7 @@ Partial Class UserForm
         Me.dgvMember.DefaultCellStyle = DataGridViewCellStyle12
         Me.dgvMember.GridColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.dgvMember.Location = New System.Drawing.Point(7, 49)
-        Me.dgvMember.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgvMember.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvMember.Name = "dgvMember"
         Me.dgvMember.ReadOnly = True
         Me.dgvMember.RowHeadersVisible = False
@@ -1035,7 +1035,7 @@ Partial Class UserForm
         Me.tlp1.Controls.Add(Me.Guna2Panel6, 0, 0)
         Me.tlp1.Dock = System.Windows.Forms.DockStyle.Top
         Me.tlp1.Location = New System.Drawing.Point(0, 123)
-        Me.tlp1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tlp1.Margin = New System.Windows.Forms.Padding(4)
         Me.tlp1.Name = "tlp1"
         Me.tlp1.RowCount = 1
         Me.tlp1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -1054,7 +1054,7 @@ Partial Class UserForm
         Me.guna2Panel8.Dock = System.Windows.Forms.DockStyle.Fill
         Me.guna2Panel8.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.guna2Panel8.Location = New System.Drawing.Point(670, 4)
-        Me.guna2Panel8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel8.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel8.Name = "guna2Panel8"
         Me.guna2Panel8.Size = New System.Drawing.Size(217, 146)
         Me.guna2Panel8.TabIndex = 3
@@ -1090,7 +1090,7 @@ Partial Class UserForm
         Me.guna2Panel9.Controls.Add(Me.guna2PictureBox4)
         Me.guna2Panel9.FillColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(213, Byte), Integer), CType(CType(186, Byte), Integer))
         Me.guna2Panel9.Location = New System.Drawing.Point(137, 9)
-        Me.guna2Panel9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel9.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel9.Name = "guna2Panel9"
         Me.guna2Panel9.Size = New System.Drawing.Size(67, 62)
         Me.guna2Panel9.TabIndex = 0
@@ -1100,7 +1100,7 @@ Partial Class UserForm
         Me.guna2PictureBox4.Image = Global.Library_Management_System.My.Resources.Resources.hourglass
         Me.guna2PictureBox4.ImageRotate = 0!
         Me.guna2PictureBox4.Location = New System.Drawing.Point(17, 16)
-        Me.guna2PictureBox4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2PictureBox4.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2PictureBox4.Name = "guna2PictureBox4"
         Me.guna2PictureBox4.Size = New System.Drawing.Size(33, 31)
         Me.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -1119,7 +1119,7 @@ Partial Class UserForm
         Me.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.guna2Panel5.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.guna2Panel5.Location = New System.Drawing.Point(448, 4)
-        Me.guna2Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel5.Name = "guna2Panel5"
         Me.guna2Panel5.Size = New System.Drawing.Size(214, 146)
         Me.guna2Panel5.TabIndex = 2
@@ -1155,7 +1155,7 @@ Partial Class UserForm
         Me.guna2Panel7.Controls.Add(Me.guna2PictureBox3)
         Me.guna2Panel7.FillColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(213, Byte), Integer), CType(CType(186, Byte), Integer))
         Me.guna2Panel7.Location = New System.Drawing.Point(140, 9)
-        Me.guna2Panel7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel7.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel7.Name = "guna2Panel7"
         Me.guna2Panel7.Size = New System.Drawing.Size(67, 62)
         Me.guna2Panel7.TabIndex = 0
@@ -1165,7 +1165,7 @@ Partial Class UserForm
         Me.guna2PictureBox3.Image = CType(resources.GetObject("guna2PictureBox3.Image"), System.Drawing.Image)
         Me.guna2PictureBox3.ImageRotate = 0!
         Me.guna2PictureBox3.Location = New System.Drawing.Point(17, 16)
-        Me.guna2PictureBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2PictureBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2PictureBox3.Name = "guna2PictureBox3"
         Me.guna2PictureBox3.Size = New System.Drawing.Size(33, 31)
         Me.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -1184,7 +1184,7 @@ Partial Class UserForm
         Me.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.guna2Panel3.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.guna2Panel3.Location = New System.Drawing.Point(226, 4)
-        Me.guna2Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel3.Name = "guna2Panel3"
         Me.guna2Panel3.Size = New System.Drawing.Size(214, 146)
         Me.guna2Panel3.TabIndex = 1
@@ -1220,7 +1220,7 @@ Partial Class UserForm
         Me.guna2Panel4.Controls.Add(Me.guna2PictureBox2)
         Me.guna2Panel4.FillColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(213, Byte), Integer), CType(CType(186, Byte), Integer))
         Me.guna2Panel4.Location = New System.Drawing.Point(140, 9)
-        Me.guna2Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel4.Name = "guna2Panel4"
         Me.guna2Panel4.Size = New System.Drawing.Size(67, 62)
         Me.guna2Panel4.TabIndex = 0
@@ -1230,7 +1230,7 @@ Partial Class UserForm
         Me.guna2PictureBox2.Image = Global.Library_Management_System.My.Resources.Resources.group
         Me.guna2PictureBox2.ImageRotate = 0!
         Me.guna2PictureBox2.Location = New System.Drawing.Point(17, 16)
-        Me.guna2PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2PictureBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2PictureBox2.Name = "guna2PictureBox2"
         Me.guna2PictureBox2.Size = New System.Drawing.Size(33, 31)
         Me.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -1249,7 +1249,7 @@ Partial Class UserForm
         Me.Guna2Panel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel6.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.Guna2Panel6.Location = New System.Drawing.Point(4, 4)
-        Me.Guna2Panel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel6.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel6.Name = "Guna2Panel6"
         Me.Guna2Panel6.Size = New System.Drawing.Size(214, 146)
         Me.Guna2Panel6.TabIndex = 0
@@ -1285,7 +1285,7 @@ Partial Class UserForm
         Me.Guna2Panel11.Controls.Add(Me.guna2PictureBox1)
         Me.Guna2Panel11.FillColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(213, Byte), Integer), CType(CType(186, Byte), Integer))
         Me.Guna2Panel11.Location = New System.Drawing.Point(140, 9)
-        Me.Guna2Panel11.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Guna2Panel11.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel11.Name = "Guna2Panel11"
         Me.Guna2Panel11.Size = New System.Drawing.Size(67, 62)
         Me.Guna2Panel11.TabIndex = 0
@@ -1295,7 +1295,7 @@ Partial Class UserForm
         Me.guna2PictureBox1.Image = CType(resources.GetObject("guna2PictureBox1.Image"), System.Drawing.Image)
         Me.guna2PictureBox1.ImageRotate = 0!
         Me.guna2PictureBox1.Location = New System.Drawing.Point(17, 16)
-        Me.guna2PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2PictureBox1.Name = "guna2PictureBox1"
         Me.guna2PictureBox1.Size = New System.Drawing.Size(33, 31)
         Me.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -1306,7 +1306,7 @@ Partial Class UserForm
         '
         Me.guna2Panel10.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.guna2Panel10.Location = New System.Drawing.Point(0, 1207)
-        Me.guna2Panel10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel10.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel10.Name = "guna2Panel10"
         Me.guna2Panel10.Size = New System.Drawing.Size(891, 6)
         Me.guna2Panel10.TabIndex = 2
@@ -1318,7 +1318,7 @@ Partial Class UserForm
         Me.pnlTitle.Controls.Add(Me.Label4)
         Me.pnlTitle.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlTitle.Location = New System.Drawing.Point(0, 0)
-        Me.pnlTitle.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlTitle.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlTitle.Name = "pnlTitle"
         Me.pnlTitle.Size = New System.Drawing.Size(891, 123)
         Me.pnlTitle.TabIndex = 0

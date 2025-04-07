@@ -37,6 +37,7 @@ Partial Public Class ManageStaffs
         da.Fill(dt)
         dgvStaff.DataSource = dt
         dgvStaff.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+
         Dim updateImgCol As New DataGridViewImageColumn With {
             .Name = "update",
             .HeaderText = String.Empty,
@@ -44,21 +45,13 @@ Partial Public Class ManageStaffs
             .ImageLayout = DataGridViewImageCellLayout.Zoom,
             .AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         }
-        Dim deleteImgCol As New DataGridViewImageColumn With {
-            .Name = "delete",
-            .HeaderText = String.Empty,
-            .Image = My.Resources.delete,
-            .ImageLayout = DataGridViewImageCellLayout.Zoom,
-            .AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        }
+
+        ' Removed the delete image column
         If dgvStaff.Columns("update") Is Nothing Then
             dgvStaff.Columns.Add(updateImgCol)
         End If
-        If dgvStaff.Columns("delete") Is Nothing Then
-            dgvStaff.Columns.Add(deleteImgCol)
-        End If
+
         dgvStaff.Columns("update").DisplayIndex = dgvStaff.Columns.Count - 1
-        dgvStaff.Columns("delete").DisplayIndex = dgvStaff.Columns.Count - 1
         dgvStaff.ColumnHeadersDefaultCellStyle.SelectionBackColor = dgvStaff.ColumnHeadersDefaultCellStyle.BackColor
         dgvStaff.ColumnHeadersDefaultCellStyle.SelectionForeColor = dgvStaff.ColumnHeadersDefaultCellStyle.ForeColor
     End Sub
@@ -184,9 +177,7 @@ Partial Public Class ManageStaffs
         If dgvStaff.Columns(e.ColumnIndex).Name = "update" Then
             e.ToolTipText = "Update"
         End If
-        If dgvStaff.Columns(e.ColumnIndex).Name = "delete" Then
-            e.ToolTipText = "Delete"
-        End If
+        ' Removed the delete tooltip
     End Sub
 
     Private Sub dgvStaff_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvStaff.CellContentClick
@@ -213,32 +204,7 @@ Partial Public Class ManageStaffs
             cbRole.Text = ds.Tables(0).Rows(0)(7).ToString()
         End If
 
-        If e.RowIndex >= 0 AndAlso e.ColumnIndex = dgvStaff.Columns("delete").Index Then
-            Dim query As String = "UPDATE tbl_staff SET IsDeleted = 1 WHERE staff_id = @staffid"
-            staffid = Integer.Parse(dgvStaff.Rows(e.RowIndex).Cells("Staff ID").Value.ToString())
-            Try
-                conn.Open()
-                Dim cmd As New SqlCommand(query, conn)
-                cmd.Parameters.AddWithValue("@staffid", staffid)
-                Dim dialogResult As DialogResult = MessageBox.Show("Are you sure you want to delete this staff?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-
-                If dialogResult = DialogResult.No Then Return
-
-                checkrow = cmd.ExecuteNonQuery()
-
-                If checkrow > 0 Then
-                    MessageBox.Show("Staff deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Else
-                    MessageBox.Show("Failed to delete the staff.", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End If
-            Catch ex As Exception
-                MessageBox.Show($"An error occurred. {ex.Message}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Finally
-                conn.Close()
-                clearTexts()
-                loadTable()
-            End Try
-        End If
+        ' Removed the delete functionality section
     End Sub
 
     Private Sub tbSearch_TextChanged(sender As Object, e As EventArgs) Handles tbSearch.TextChanged

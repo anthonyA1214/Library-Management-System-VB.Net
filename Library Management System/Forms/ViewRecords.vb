@@ -121,4 +121,11 @@ Public Class ViewRecords
         Me.Close()
     End Sub
 
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        cbSearchBy.Text = "Member Name"
+        cbLoanStatus.Text = "All"
+        cbDateRange.Text = "All"
+        tbSearch.Clear()
+        SearchFilter()
+    End Sub
 End Class

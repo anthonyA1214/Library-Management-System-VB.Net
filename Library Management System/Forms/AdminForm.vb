@@ -177,11 +177,11 @@ Public Class AdminForm
     End Sub
 
     Private Sub btnInventory_Click(sender As Object, e As EventArgs) Handles btnInventory.Click
-        openForm(New Inventory("Admin"))
+        openForm(New Inventory())
     End Sub
 
     Private Sub btnManageMembers_Click(sender As Object, e As EventArgs) Handles btnManageMembers.Click
-        openForm(New ManageMembers("Admin"))
+        openForm(New ManageMembers())
     End Sub
 
     Private Sub btnMemberProfiles_Click(sender As Object, e As EventArgs) Handles btnMemberProfiles.Click
@@ -237,7 +237,7 @@ Public Class AdminForm
     End Sub
 
     Private Sub btnAddNewMember_Click(sender As Object, e As EventArgs)
-        openForm(New ManageMembers("Admin"))
+        openForm(New ManageMembers())
     End Sub
 
     Private Sub btnAddNewBook_Click(sender As Object, e As EventArgs)
@@ -249,7 +249,7 @@ Public Class AdminForm
     End Sub
 
     Private Sub lblBookSeeAll_Click(sender As Object, e As EventArgs) Handles lblBookSeeAll.Click
-        openForm(New Inventory("Admin"))
+        openForm(New Inventory())
     End Sub
 
     Private Sub btnIssueBook2_Click(sender As Object, e As EventArgs)
