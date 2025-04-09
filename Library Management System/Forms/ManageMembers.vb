@@ -14,7 +14,6 @@ Partial Public Class ManageMembers
     End Sub
 
     Private Sub updateFont()
-        ' Change cell font
         For Each c As DataGridViewColumn In dgvMember.Columns
             c.DefaultCellStyle.Font = New Font("Arial", 12.0F, GraphicsUnit.Pixel)
         Next
@@ -46,11 +45,23 @@ Partial Public Class ManageMembers
             .AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         }
 
+        Dim deleteImgCol As New DataGridViewImageColumn() With {
+             .Name = "delete",
+             .HeaderText = String.Empty,
+             .Image = My.Resources.delete,
+             .ImageLayout = DataGridViewImageCellLayout.Zoom,
+             .AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+         }
+
         If dgvMember.Columns("update") Is Nothing Then
             dgvMember.Columns.Add(updateImgCol)
         End If
+        If dgvMember.Columns("delete") Is Nothing Then
+            dgvMember.Columns.Add(deleteImgCol)
+        End If
 
         dgvMember.Columns("update").DisplayIndex = dgvMember.Columns.Count - 1
+        dgvMember.Columns("delete").DisplayIndex = dgvMember.Columns.Count - 1
         dgvMember.ColumnHeadersDefaultCellStyle.SelectionBackColor = dgvMember.ColumnHeadersDefaultCellStyle.BackColor
         dgvMember.ColumnHeadersDefaultCellStyle.SelectionForeColor = dgvMember.ColumnHeadersDefaultCellStyle.ForeColor
     End Sub
@@ -100,6 +111,33 @@ Partial Public Class ManageMembers
             tbEmail.Text = ds.Tables(0).Rows(0)(7).ToString()
             cbMembershipType.Text = ds.Tables(0).Rows(0)(8).ToString()
         End If
+
+        If e.RowIndex >= 0 AndAlso e.ColumnIndex = dgvMember.Columns("delete").Index Then
+            Dim query As String = "UPDATE tbl_member SET IsDeleted = 1 WHERE member_id = @memberid"
+            Dim customMemberId As String = dgvMember.Rows(e.RowIndex).Cells("Member ID").Value.ToString()
+            memberid = Integer.Parse(customMemberId.Substring(2))
+            Try
+                conn.Open()
+                Dim cmd As New SqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@memberid", memberid)
+                Dim dialogResult As DialogResult = MessageBox.Show("Are you sure you want to delete this member?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                If dialogResult = DialogResult.No Then
+                    Return
+                End If
+                checkrow = cmd.ExecuteNonQuery()
+                If checkrow > 0 Then
+                    MessageBox.Show("Member deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    MessageBox.Show("Failed to delete the member.", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            Catch ex As Exception
+                MessageBox.Show($"An error occurred. {ex.Message}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Finally
+                conn.Close()
+                clearTexts()
+                loadTable()
+            End Try
+        End If
     End Sub
 
     Private Sub tbSearch_TextChanged(sender As Object, e As EventArgs) Handles tbSearch.TextChanged
@@ -133,7 +171,9 @@ Partial Public Class ManageMembers
         If dgvMember.Columns(e.ColumnIndex).Name = "update" Then
             e.ToolTipText = "Update"
         End If
-        ' Removed the delete tooltip
+        If dgvMember.Columns(e.ColumnIndex).Name = "delete" Then
+            e.ToolTipText = "Delete"
+        End If
     End Sub
 
     Private Sub pbExit2_Click(sender As Object, e As EventArgs) Handles pbExit2.Click

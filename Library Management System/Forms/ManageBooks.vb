@@ -14,7 +14,6 @@ Partial Public Class ManageBooks
     End Sub
 
     Private Sub updateFont()
-        ' Change cell font
         For Each c As DataGridViewColumn In dgvBook.Columns
             c.DefaultCellStyle.Font = New Font("Arial", 12.0F, GraphicsUnit.Pixel)
         Next
@@ -38,11 +37,23 @@ Partial Public Class ManageBooks
             .AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         }
 
+        Dim deleteImgCol As New DataGridViewImageColumn() With {
+             .Name = "delete",
+             .HeaderText = String.Empty,
+             .Image = My.Resources.delete,
+             .ImageLayout = DataGridViewImageCellLayout.Zoom,
+             .AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+         }
+
         If dgvBook.Columns("update") Is Nothing Then
             dgvBook.Columns.Add(updateImgCol)
         End If
+        If dgvBook.Columns("delete") Is Nothing Then
+            dgvBook.Columns.Add(deleteImgCol)
+        End If
 
         dgvBook.Columns("update").DisplayIndex = dgvBook.Columns.Count - 1
+        dgvBook.Columns("delete").DisplayIndex = dgvBook.Columns.Count - 1
 
         dgvBook.ColumnHeadersDefaultCellStyle.SelectionBackColor = dgvBook.ColumnHeadersDefaultCellStyle.BackColor
         dgvBook.ColumnHeadersDefaultCellStyle.SelectionForeColor = dgvBook.ColumnHeadersDefaultCellStyle.ForeColor
@@ -170,6 +181,9 @@ Partial Public Class ManageBooks
         If dgvBook.Columns(e.ColumnIndex).Name = "update" Then
             e.ToolTipText = "Update"
         End If
+        If dgvBook.Columns(e.ColumnIndex).Name = "delete" Then
+            e.ToolTipText = "Delete"
+        End If
     End Sub
 
     Private Sub dgvBook_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvBook.CellContentClick
@@ -196,6 +210,31 @@ Partial Public Class ManageBooks
             Dim publicationYear As Integer = Integer.Parse(ds.Tables(0).Rows(0)(6).ToString())
             dtpPublicationYear.Value = New DateTime(publicationYear, 1, 1)
             numQuantity.Value = Decimal.Parse(ds.Tables(0).Rows(0)(7).ToString())
+        End If
+
+        If e.RowIndex >= 0 AndAlso e.ColumnIndex = dgvBook.Columns("delete").Index Then
+            Dim customBookId As String = dgvBook.Rows(e.RowIndex).Cells("Book ID").Value.ToString()
+            bookid = Integer.Parse(customBookId.Substring(2))
+            Dim query As String = "UPDATE tbl_book SET IsDeleted = 1 WHERE book_id = @bookid"
+            Try
+                conn.Open()
+                Dim cmd As New SqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@bookid", bookid)
+                Dim dialogResult As DialogResult = MessageBox.Show("Are you sure you want to delete this book?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                If dialogResult = DialogResult.No Then Return
+                checkrow = cmd.ExecuteNonQuery()
+                If checkrow > 0 Then
+                    MessageBox.Show("Book deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    MessageBox.Show("Failed to delete the book.", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            Catch ex As Exception
+                MessageBox.Show($"An error occurred. {ex.Message}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Finally
+                conn.Close()
+                clearTexts()
+                loadTable()
+            End Try
         End If
     End Sub
 
