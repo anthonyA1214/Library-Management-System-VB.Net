@@ -42,6 +42,7 @@ Partial Class LoginForm
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.cbSelectUserrole = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.pnlContainer.SuspendLayout()
         CType(Me.pbExit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,6 +62,7 @@ Partial Class LoginForm
         Me.pnlContainer.BackColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(114, Byte), Integer))
         Me.pnlContainer.BorderColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(114, Byte), Integer))
         Me.pnlContainer.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot
+        Me.pnlContainer.Controls.Add(Me.cbSelectUserrole)
         Me.pnlContainer.Controls.Add(Me.Label3)
         Me.pnlContainer.Controls.Add(Me.lblIncorrect)
         Me.pnlContainer.Controls.Add(Me.Label2)
@@ -96,7 +98,7 @@ Partial Class LoginForm
         Me.lblIncorrect.BackColor = System.Drawing.Color.Transparent
         Me.lblIncorrect.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIncorrect.ForeColor = System.Drawing.Color.Red
-        Me.lblIncorrect.Location = New System.Drawing.Point(73, 374)
+        Me.lblIncorrect.Location = New System.Drawing.Point(73, 389)
         Me.lblIncorrect.Margin = New System.Windows.Forms.Padding(4)
         Me.lblIncorrect.Name = "lblIncorrect"
         Me.lblIncorrect.Size = New System.Drawing.Size(205, 21)
@@ -108,7 +110,7 @@ Partial Class LoginForm
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(51, 149)
+        Me.Label2.Location = New System.Drawing.Point(50, 76)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(288, 46)
@@ -121,7 +123,7 @@ Partial Class LoginForm
         Me.tbPassword.AutoRoundedCorners = True
         Me.tbPassword.BackColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(114, Byte), Integer))
         Me.tbPassword.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.tbPassword.BorderRadius = 15
+        Me.tbPassword.BorderRadius = 17
         Me.tbPassword.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbPassword.DefaultText = ""
         Me.tbPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -131,12 +133,12 @@ Partial Class LoginForm
         Me.tbPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbPassword.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.tbPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbPassword.Location = New System.Drawing.Point(101, 335)
+        Me.tbPassword.Location = New System.Drawing.Point(101, 346)
         Me.tbPassword.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbPassword.Name = "tbPassword"
         Me.tbPassword.PlaceholderText = "Password"
         Me.tbPassword.SelectedText = ""
-        Me.tbPassword.Size = New System.Drawing.Size(227, 32)
+        Me.tbPassword.Size = New System.Drawing.Size(227, 36)
         Me.tbPassword.TabIndex = 2
         '
         'pbExit
@@ -174,7 +176,7 @@ Partial Class LoginForm
         Me.cbShowPassword.Cursor = System.Windows.Forms.Cursors.Hand
         Me.cbShowPassword.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbShowPassword.ForeColor = System.Drawing.Color.Black
-        Me.cbShowPassword.Location = New System.Drawing.Point(73, 400)
+        Me.cbShowPassword.Location = New System.Drawing.Point(73, 415)
         Me.cbShowPassword.Margin = New System.Windows.Forms.Padding(4)
         Me.cbShowPassword.Name = "cbShowPassword"
         Me.cbShowPassword.Size = New System.Drawing.Size(151, 27)
@@ -213,7 +215,7 @@ Partial Class LoginForm
         Me.tbUsername.AutoRoundedCorners = True
         Me.tbUsername.BackColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(114, Byte), Integer))
         Me.tbUsername.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.tbUsername.BorderRadius = 15
+        Me.tbUsername.BorderRadius = 17
         Me.tbUsername.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbUsername.DefaultText = ""
         Me.tbUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -223,19 +225,19 @@ Partial Class LoginForm
         Me.tbUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbUsername.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.tbUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbUsername.Location = New System.Drawing.Point(99, 266)
+        Me.tbUsername.Location = New System.Drawing.Point(99, 277)
         Me.tbUsername.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbUsername.Name = "tbUsername"
         Me.tbUsername.PlaceholderText = "Username"
         Me.tbUsername.SelectedText = ""
-        Me.tbUsername.Size = New System.Drawing.Size(227, 32)
+        Me.tbUsername.Size = New System.Drawing.Size(227, 36)
         Me.tbUsername.TabIndex = 1
         '
         'pictureBox2
         '
         Me.pictureBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(114, Byte), Integer))
         Me.pictureBox2.Image = CType(resources.GetObject("pictureBox2.Image"), System.Drawing.Image)
-        Me.pictureBox2.Location = New System.Drawing.Point(60, 266)
+        Me.pictureBox2.Location = New System.Drawing.Point(60, 281)
         Me.pictureBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.pictureBox2.Name = "pictureBox2"
         Me.pictureBox2.Size = New System.Drawing.Size(33, 32)
@@ -247,7 +249,7 @@ Partial Class LoginForm
         '
         Me.pictureBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(114, Byte), Integer))
         Me.pictureBox3.Image = Global.Library_Management_System.My.Resources.Resources.lock
-        Me.pictureBox3.Location = New System.Drawing.Point(60, 335)
+        Me.pictureBox3.Location = New System.Drawing.Point(60, 350)
         Me.pictureBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.pictureBox3.Name = "pictureBox3"
         Me.pictureBox3.Size = New System.Drawing.Size(33, 32)
@@ -312,6 +314,23 @@ Partial Class LoginForm
         Me.Label4.TabIndex = 28
         Me.Label4.Text = "Library Management System"
         '
+        'cbSelectUserrole
+        '
+        Me.cbSelectUserrole.AutoRoundedCorners = True
+        Me.cbSelectUserrole.BackColor = System.Drawing.Color.Transparent
+        Me.cbSelectUserrole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cbSelectUserrole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbSelectUserrole.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbSelectUserrole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cbSelectUserrole.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.cbSelectUserrole.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cbSelectUserrole.ItemHeight = 30
+        Me.cbSelectUserrole.Items.AddRange(New Object() {"Borrower", "Staff"})
+        Me.cbSelectUserrole.Location = New System.Drawing.Point(99, 208)
+        Me.cbSelectUserrole.Name = "cbSelectUserrole"
+        Me.cbSelectUserrole.Size = New System.Drawing.Size(227, 36)
+        Me.cbSelectUserrole.TabIndex = 22
+        '
         'LoginForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -357,4 +376,5 @@ Partial Class LoginForm
     Private WithEvents guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Label3 As Label
     Private WithEvents Label4 As Label
+    Friend WithEvents cbSelectUserrole As Guna.UI2.WinForms.Guna2ComboBox
 End Class

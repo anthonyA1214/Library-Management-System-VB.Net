@@ -76,4 +76,49 @@ Public Class AuthenticateUser
 
         Return result
     End Function
+
+    Public Function authenticateBorrower(customMemberId As String, password As String) As AuthenticateUserResult
+        Dim result As New AuthenticateUserResult
+
+        Try
+            Using conn As SqlConnection = dbConnection.GetConnection()
+                conn.Open()
+
+                Dim query As String = "
+                    SELECT member_id, IsDeleted
+                    FROM tbl_member
+                    WHERE custom_member_id = @CustomMemberId AND password = @Password
+                "
+
+                Using cmd As New SqlCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@CustomMemberId", customMemberId)
+                    cmd.Parameters.AddWithValue("@Password", password)
+
+                    Using dr As SqlDataReader = cmd.ExecuteReader()
+                        If dr.Read() Then
+                            Dim isDeleted As Boolean = Convert.ToBoolean(dr("IsDeleted"))
+
+                            If isDeleted Then
+                                result.Message = "Your account has been deactivated."
+                                result.IsSuccesful = False
+                                Return result
+                            End If
+
+                            result.IsSuccesful = True
+                            result.Role = "borrower"
+                        Else
+                            result.Message = "Incorrect Member ID or password."
+                            result.IsSuccesful = False
+                        End If
+                    End Using
+                End Using
+            End Using
+        Catch ex As Exception
+            result.IsSuccesful = False
+            result.Message = "An error occurred: " & ex.Message
+            MessageBox.Show(result.Message)
+        End Try
+
+        Return result
+    End Function
 End Class

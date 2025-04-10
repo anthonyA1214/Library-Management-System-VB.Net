@@ -11,17 +11,14 @@ Public Class MemberProfiles
     End Sub
 
     Private Sub updateFont()
-        ' Change cell font for dgvIssue1
         For Each c As DataGridViewColumn In dgvIssue1.Columns
             c.DefaultCellStyle.Font = New Font("Arial", 12.0F, GraphicsUnit.Pixel)
         Next
 
-        ' Change cell font for dgvIssue2
         For Each c As DataGridViewColumn In dgvIssue2.Columns
             c.DefaultCellStyle.Font = New Font("Arial", 12.0F, GraphicsUnit.Pixel)
         Next
 
-        ' Change cell font for dgvMember
         For Each c As DataGridViewColumn In dgvMember.Columns
             c.DefaultCellStyle.Font = New Font("Arial", 12.0F, GraphicsUnit.Pixel)
         Next
@@ -56,8 +53,8 @@ Public Class MemberProfiles
     End Sub
 
     Private Sub ViewMemberRecords()
-        Dim query1 As String = "SELECT tbl_issue.custom_issue_id AS [Issue ID], tbl_book.title AS [Book Title], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) AS [Member Name], tbl_issue.issue_date AS [Issue Date], tbl_issue.due_date AS [Due Date], tbl_issue.return_date AS [Return Date], tbl_issue.status AS [Loan Status], CASE WHEN tbl_issue.return_date IS NULL THEN 'Not Returned' WHEN tbl_issue.return_date > tbl_issue.due_date THEN 'Overdue' ELSE 'On Time' END AS [Return Status] FROM tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id WHERE tbl_issue.member_id = @memberid;"
-        Dim query2 As String = "SELECT tbl_issue.custom_issue_id AS [Issue ID], tbl_book.title AS [Book Title], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) AS [Member Name], tbl_issue.issue_date AS [Issue Date], tbl_issue.due_date AS [Due Date], tbl_issue.status AS [Loan Status], 'Not Returned' AS [Return Status] FROM tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id WHERE tbl_issue.member_id = @memberid AND tbl_issue.return_date IS NULL;"
+        Dim query1 As String = "SELECT tbl_issue.custom_issue_id AS [Issue ID], tbl_book.title AS [Book Title], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) AS [Member Name], tbl_issue.issue_date AS [Issue Date], tbl_issue.due_date AS [Due Date], tbl_issue.return_date AS [Return Date], tbl_issue.status AS [Status], CASE WHEN tbl_issue.return_date IS NULL THEN 'Not Returned' WHEN tbl_issue.return_date > tbl_issue.due_date THEN 'Overdue' ELSE 'On Time' END AS [Return Status] FROM tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id WHERE tbl_issue.member_id = @memberid;"
+        Dim query2 As String = "SELECT tbl_issue.custom_issue_id AS [Issue ID], tbl_book.title AS [Book Title], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) AS [Member Name], tbl_issue.issue_date AS [Issue Date], tbl_issue.due_date AS [Due Date], tbl_issue.status AS [Status], 'Not Returned' AS [Return Status] FROM tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id WHERE tbl_issue.member_id = @memberid AND tbl_issue.return_date IS NULL;"
 
         Dim cmd1 As New SqlCommand(query1, conn)
         Dim cmd2 As New SqlCommand(query2, conn)

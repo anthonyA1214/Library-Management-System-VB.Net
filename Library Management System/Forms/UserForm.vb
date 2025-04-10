@@ -13,21 +13,20 @@ Public Class UserForm
     End Sub
 
     Private Sub updateFont()
-        ' Change cell font
         For Each c As DataGridViewColumn In dgvBook.Columns
-            c.DefaultCellStyle.Font = New Font("Arial", 10.0F, GraphicsUnit.Pixel)
+            c.DefaultCellStyle.Font = New Font("Arial", 11.0F, GraphicsUnit.Pixel)
         Next
 
         For Each c As DataGridViewColumn In dgvIssuedBook.Columns
-            c.DefaultCellStyle.Font = New Font("Arial", 10.0F, GraphicsUnit.Pixel)
+            c.DefaultCellStyle.Font = New Font("Arial", 11.0F, GraphicsUnit.Pixel)
         Next
 
         For Each c As DataGridViewColumn In dgvMember.Columns
-            c.DefaultCellStyle.Font = New Font("Arial", 10.0F, GraphicsUnit.Pixel)
+            c.DefaultCellStyle.Font = New Font("Arial", 11.0F, GraphicsUnit.Pixel)
         Next
 
         For Each c As DataGridViewColumn In dgvOverdueBook.Columns
-            c.DefaultCellStyle.Font = New Font("Arial", 10.0F, GraphicsUnit.Pixel)
+            c.DefaultCellStyle.Font = New Font("Arial", 11.0F, GraphicsUnit.Pixel)
         Next
     End Sub
 

@@ -24,7 +24,7 @@ End Class
 
 Public Class ManageMembers
     Public Function AddMember(member As Member) As Boolean
-        Dim query As String = "INSERT INTO tbl_member(first_name, last_name, age, address, contact_number, email, membership_type) VALUES(@firstname, @lastname, @age, @address, @contactnumber, @email, @membershiptype)"
+        Dim query As String = "INSERT INTO tbl_member(first_name, last_name, age, address, contact_number, email, membership_type, password) VALUES(@firstname, @lastname, @age, @address, @contactnumber, @email, @membershiptype, @password)"
 
         Using conn As SqlConnection = dbConnection.GetConnection()
             conn.Open()
@@ -36,6 +36,7 @@ Public Class ManageMembers
                 cmd.Parameters.AddWithValue("@contactnumber", member.ContactNumber)
                 cmd.Parameters.AddWithValue("@email", member.Email)
                 cmd.Parameters.AddWithValue("@membershiptype", member.MembershipType)
+                cmd.Parameters.AddWithValue("@password", member.LastName)
                 Dim checkrow As Integer = cmd.ExecuteNonQuery()
                 Return checkrow > 0
             End Using

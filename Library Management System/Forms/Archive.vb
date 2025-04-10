@@ -9,7 +9,6 @@ Partial Public Class Archive
     End Sub
 
     Private Sub updateFont()
-        ' Change cell font
         For Each c As DataGridViewColumn In dgvRecycleBin.Columns
             c.DefaultCellStyle.Font = New Font("Arial", 12.0F, GraphicsUnit.Pixel)
         Next
@@ -69,19 +68,9 @@ Partial Public Class Archive
             .ImageLayout = DataGridViewImageCellLayout.Zoom,
             .AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         }
-        Dim deleteImgCol As New DataGridViewImageColumn() With {
-            .Name = "delete",
-            .HeaderText = String.Empty,
-            .Image = My.Resources.deleteforever,
-            .ImageLayout = DataGridViewImageCellLayout.Zoom,
-            .AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        }
 
         If dgvRecycleBin.Columns("restore") Is Nothing Then
             dgvRecycleBin.Columns.Add(restoreImgCol)
-        End If
-        If dgvRecycleBin.Columns("delete") Is Nothing Then
-            dgvRecycleBin.Columns.Add(deleteImgCol)
         End If
 
         dgvRecycleBin.ColumnHeadersDefaultCellStyle.SelectionBackColor = dgvRecycleBin.ColumnHeadersDefaultCellStyle.BackColor
@@ -186,58 +175,11 @@ Partial Public Class Archive
                 conn.Close()
             End Try
         End If
-
-        If e.ColumnIndex >= 0 AndAlso e.ColumnIndex = dgvRecycleBin.Columns("delete").Index Then
-            Select Case tableName
-                Case "Book"
-                    query = "DELETE FROM tbl_book WHERE book_id = @id"
-                    idCol = "Book ID"
-                Case "Member"
-                    query = "DELETE FROM tbl_member WHERE member_id = @id"
-                    idCol = "Member ID"
-                Case "Staff"
-                    query = "DELETE FROM tbl_staff WHERE staff_id = @id"
-                    idCol = "Staff ID"
-                Case "Genre"
-                    query = "DELETE FROM tbl_genre WHERE genre_id = @id"
-                    idCol = "Genre ID"
-            End Select
-
-            Try
-                Dim customBookId As String = dgvRecycleBin.Rows(e.RowIndex).Cells(idCol).Value.ToString()
-                Dim id As Integer = Integer.Parse(customBookId.Substring(2))
-                Dim dialogResult As DialogResult = MessageBox.Show($"Are you sure you want to permanently delete this {tableName} record? This action cannot be undone.", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-
-                If dialogResult = DialogResult.No Then Return
-
-                conn.Open()
-                cmd.CommandText = query
-                cmd.Connection = conn
-
-                cmd.Parameters.AddWithValue("@id", id)
-
-                checkrow = cmd.ExecuteNonQuery()
-
-                If checkrow > 0 Then
-                    MessageBox.Show($"{tableName} record deleted permanently!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Else
-                    MessageBox.Show($"Failed to delete {tableName} record.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End If
-            Catch ex As Exception
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Finally
-                loadTable()
-                conn.Close()
-            End Try
-        End If
     End Sub
 
     Private Sub dgvRecycleBin_CellToolTipTextNeeded(sender As Object, e As DataGridViewCellToolTipTextNeededEventArgs) Handles dgvRecycleBin.CellToolTipTextNeeded
         If dgvRecycleBin.Columns(e.ColumnIndex).Name = "restore" Then
             e.ToolTipText = "Restore"
-        End If
-        If dgvRecycleBin.Columns(e.ColumnIndex).Name = "delete" Then
-            e.ToolTipText = "Delete Permanently"
         End If
     End Sub
 
