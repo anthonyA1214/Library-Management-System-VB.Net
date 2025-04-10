@@ -40,32 +40,23 @@ Partial Class AdminForm
         Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AdminForm))
         Me.pnlSideMenu = New System.Windows.Forms.Panel()
-        Me.btnLogout = New Guna.UI2.WinForms.Guna2Button()
         Me.pnlSettingsSubMenu = New Guna.UI2.WinForms.Guna2Panel()
         Me.btnArchive = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnSettings = New Guna.UI2.WinForms.Guna2Button()
         Me.pnlUserManagementSubMenu = New Guna.UI2.WinForms.Guna2Panel()
         Me.btnStaffApproval = New Guna.UI2.WinForms.Guna2Button()
         Me.btnManageStaffs = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnStaffManagement = New Guna.UI2.WinForms.Guna2Button()
         Me.pnlReportsSubMenu = New Guna.UI2.WinForms.Guna2Panel()
         Me.btnMemberActivityReports = New Guna.UI2.WinForms.Guna2Button()
         Me.btnCirculationReports = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnReports = New Guna.UI2.WinForms.Guna2Button()
         Me.pnlBorrowReturnSubMenu = New Guna.UI2.WinForms.Guna2Panel()
         Me.btnViewRecords = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnBorrowReturn = New Guna.UI2.WinForms.Guna2Button()
         Me.pnlMembersSubMenu = New Guna.UI2.WinForms.Guna2Panel()
         Me.btnMemberProfiles = New Guna.UI2.WinForms.Guna2Button()
         Me.btnManageMembers = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnMembers = New Guna.UI2.WinForms.Guna2Button()
         Me.pnlBooksSubMenu = New Guna.UI2.WinForms.Guna2Panel()
         Me.btnInventory = New Guna.UI2.WinForms.Guna2Button()
         Me.btnManageBooks = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnBooks = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnDashboard = New Guna.UI2.WinForms.Guna2Button()
         Me.guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.guna2PictureBox5 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.pnlContainer = New Guna.UI2.WinForms.Guna2Panel()
         Me.tlp4 = New System.Windows.Forms.TableLayoutPanel()
         Me.guna2Panel13 = New Guna.UI2.WinForms.Guna2Panel()
@@ -91,22 +82,18 @@ Partial Class AdminForm
         Me.lblOverdueBooks = New System.Windows.Forms.Label()
         Me.lblOverdueBook = New System.Windows.Forms.Label()
         Me.guna2Panel9 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.guna2PictureBox4 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Me.lblIssuedBooks = New System.Windows.Forms.Label()
         Me.lblIssuedBook = New System.Windows.Forms.Label()
         Me.guna2Panel7 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.guna2PictureBox3 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.label4 = New System.Windows.Forms.Label()
         Me.lblCountMember = New System.Windows.Forms.Label()
         Me.guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.label3 = New System.Windows.Forms.Label()
         Me.lblCountBook = New System.Windows.Forms.Label()
         Me.guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.pnlTitle = New Guna.UI2.WinForms.Guna2Panel()
         Me.lblDateAndTime = New System.Windows.Forms.Label()
         Me.lblName = New System.Windows.Forms.Label()
@@ -114,6 +101,20 @@ Partial Class AdminForm
         Me.guna2Panel10 = New Guna.UI2.WinForms.Guna2Panel()
         Me.autoLoadDashboard = New System.Windows.Forms.Timer(Me.components)
         Me.autoLoadCount = New System.Windows.Forms.Timer(Me.components)
+        Me.btnViewBooks = New Guna.UI2.WinForms.Guna2Button()
+        Me.guna2PictureBox4 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.guna2PictureBox3 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.btnLogout = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnSettings = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnStaffManagement = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnReports = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnBorrowReturn = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnMembers = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnBooks = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnDashboard = New Guna.UI2.WinForms.Guna2Button()
+        Me.guna2PictureBox5 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.pnlSideMenu.SuspendLayout()
         Me.pnlSettingsSubMenu.SuspendLayout()
         Me.pnlUserManagementSubMenu.SuspendLayout()
@@ -122,7 +123,6 @@ Partial Class AdminForm
         Me.pnlMembersSubMenu.SuspendLayout()
         Me.pnlBooksSubMenu.SuspendLayout()
         Me.guna2Panel1.SuspendLayout()
-        CType(Me.guna2PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlContainer.SuspendLayout()
         Me.tlp4.SuspendLayout()
         Me.guna2Panel13.SuspendLayout()
@@ -140,17 +140,18 @@ Partial Class AdminForm
         Me.tlp1.SuspendLayout()
         Me.guna2Panel8.SuspendLayout()
         Me.guna2Panel9.SuspendLayout()
-        CType(Me.guna2PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.guna2Panel5.SuspendLayout()
         Me.guna2Panel7.SuspendLayout()
-        CType(Me.guna2PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.guna2Panel3.SuspendLayout()
         Me.guna2Panel4.SuspendLayout()
-        CType(Me.guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.guna2Panel2.SuspendLayout()
         Me.guna2Panel6.SuspendLayout()
-        CType(Me.guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlTitle.SuspendLayout()
+        CType(Me.guna2PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.guna2PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.guna2PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlSideMenu
@@ -174,40 +175,18 @@ Partial Class AdminForm
         Me.pnlSideMenu.Controls.Add(Me.guna2Panel1)
         Me.pnlSideMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.pnlSideMenu.Location = New System.Drawing.Point(0, 0)
-        Me.pnlSideMenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlSideMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlSideMenu.Name = "pnlSideMenu"
         Me.pnlSideMenu.Size = New System.Drawing.Size(333, 717)
         Me.pnlSideMenu.TabIndex = 1
-        '
-        'btnLogout
-        '
-        Me.btnLogout.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnLogout.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnLogout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.btnLogout.FillColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.btnLogout.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogout.ForeColor = System.Drawing.Color.FromArgb(CType(CType(59, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(47, Byte), Integer))
-        Me.btnLogout.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(186, Byte), Integer))
-        Me.btnLogout.Image = Global.Library_Management_System.My.Resources.Resources.logout
-        Me.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnLogout.Location = New System.Drawing.Point(0, 1100)
-        Me.btnLogout.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
-        Me.btnLogout.Size = New System.Drawing.Size(312, 55)
-        Me.btnLogout.TabIndex = 29
-        Me.btnLogout.Text = "Logout"
-        Me.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'pnlSettingsSubMenu
         '
         Me.pnlSettingsSubMenu.Controls.Add(Me.btnArchive)
         Me.pnlSettingsSubMenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlSettingsSubMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(91, Byte), Integer))
-        Me.pnlSettingsSubMenu.Location = New System.Drawing.Point(0, 1045)
-        Me.pnlSettingsSubMenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlSettingsSubMenu.Location = New System.Drawing.Point(0, 1095)
+        Me.pnlSettingsSubMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlSettingsSubMenu.Name = "pnlSettingsSubMenu"
         Me.pnlSettingsSubMenu.Size = New System.Drawing.Size(312, 55)
         Me.pnlSettingsSubMenu.TabIndex = 28
@@ -224,7 +203,7 @@ Partial Class AdminForm
         Me.btnArchive.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnArchive.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(77, Byte), Integer))
         Me.btnArchive.Location = New System.Drawing.Point(0, 0)
-        Me.btnArchive.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnArchive.Margin = New System.Windows.Forms.Padding(4)
         Me.btnArchive.Name = "btnArchive"
         Me.btnArchive.Padding = New System.Windows.Forms.Padding(33, 0, 0, 0)
         Me.btnArchive.Size = New System.Drawing.Size(312, 49)
@@ -232,36 +211,14 @@ Partial Class AdminForm
         Me.btnArchive.Text = "Archive"
         Me.btnArchive.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
-        'btnSettings
-        '
-        Me.btnSettings.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSettings.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSettings.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSettings.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSettings.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnSettings.FillColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.btnSettings.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSettings.ForeColor = System.Drawing.Color.FromArgb(CType(CType(59, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(47, Byte), Integer))
-        Me.btnSettings.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(186, Byte), Integer))
-        Me.btnSettings.Image = Global.Library_Management_System.My.Resources.Resources.settings
-        Me.btnSettings.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnSettings.Location = New System.Drawing.Point(0, 990)
-        Me.btnSettings.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btnSettings.Name = "btnSettings"
-        Me.btnSettings.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
-        Me.btnSettings.Size = New System.Drawing.Size(312, 55)
-        Me.btnSettings.TabIndex = 27
-        Me.btnSettings.Text = "Settings"
-        Me.btnSettings.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
         'pnlUserManagementSubMenu
         '
         Me.pnlUserManagementSubMenu.Controls.Add(Me.btnStaffApproval)
         Me.pnlUserManagementSubMenu.Controls.Add(Me.btnManageStaffs)
         Me.pnlUserManagementSubMenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlUserManagementSubMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(91, Byte), Integer))
-        Me.pnlUserManagementSubMenu.Location = New System.Drawing.Point(0, 885)
-        Me.pnlUserManagementSubMenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlUserManagementSubMenu.Location = New System.Drawing.Point(0, 935)
+        Me.pnlUserManagementSubMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlUserManagementSubMenu.Name = "pnlUserManagementSubMenu"
         Me.pnlUserManagementSubMenu.Size = New System.Drawing.Size(312, 105)
         Me.pnlUserManagementSubMenu.TabIndex = 26
@@ -278,7 +235,7 @@ Partial Class AdminForm
         Me.btnStaffApproval.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnStaffApproval.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(77, Byte), Integer))
         Me.btnStaffApproval.Location = New System.Drawing.Point(0, 49)
-        Me.btnStaffApproval.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnStaffApproval.Margin = New System.Windows.Forms.Padding(4)
         Me.btnStaffApproval.Name = "btnStaffApproval"
         Me.btnStaffApproval.Padding = New System.Windows.Forms.Padding(33, 0, 0, 0)
         Me.btnStaffApproval.Size = New System.Drawing.Size(312, 49)
@@ -298,7 +255,7 @@ Partial Class AdminForm
         Me.btnManageStaffs.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnManageStaffs.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(77, Byte), Integer))
         Me.btnManageStaffs.Location = New System.Drawing.Point(0, 0)
-        Me.btnManageStaffs.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnManageStaffs.Margin = New System.Windows.Forms.Padding(4)
         Me.btnManageStaffs.Name = "btnManageStaffs"
         Me.btnManageStaffs.Padding = New System.Windows.Forms.Padding(33, 0, 0, 0)
         Me.btnManageStaffs.Size = New System.Drawing.Size(312, 49)
@@ -306,36 +263,14 @@ Partial Class AdminForm
         Me.btnManageStaffs.Text = "Manage Staffs"
         Me.btnManageStaffs.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
-        'btnStaffManagement
-        '
-        Me.btnStaffManagement.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnStaffManagement.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnStaffManagement.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnStaffManagement.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnStaffManagement.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnStaffManagement.FillColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.btnStaffManagement.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnStaffManagement.ForeColor = System.Drawing.Color.FromArgb(CType(CType(59, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(47, Byte), Integer))
-        Me.btnStaffManagement.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(186, Byte), Integer))
-        Me.btnStaffManagement.Image = Global.Library_Management_System.My.Resources.Resources.manageaccounts
-        Me.btnStaffManagement.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnStaffManagement.Location = New System.Drawing.Point(0, 830)
-        Me.btnStaffManagement.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btnStaffManagement.Name = "btnStaffManagement"
-        Me.btnStaffManagement.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
-        Me.btnStaffManagement.Size = New System.Drawing.Size(312, 55)
-        Me.btnStaffManagement.TabIndex = 25
-        Me.btnStaffManagement.Text = "Staff Management"
-        Me.btnStaffManagement.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
         'pnlReportsSubMenu
         '
         Me.pnlReportsSubMenu.Controls.Add(Me.btnMemberActivityReports)
         Me.pnlReportsSubMenu.Controls.Add(Me.btnCirculationReports)
         Me.pnlReportsSubMenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlReportsSubMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(91, Byte), Integer))
-        Me.pnlReportsSubMenu.Location = New System.Drawing.Point(0, 725)
-        Me.pnlReportsSubMenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlReportsSubMenu.Location = New System.Drawing.Point(0, 775)
+        Me.pnlReportsSubMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlReportsSubMenu.Name = "pnlReportsSubMenu"
         Me.pnlReportsSubMenu.Size = New System.Drawing.Size(312, 105)
         Me.pnlReportsSubMenu.TabIndex = 24
@@ -352,7 +287,7 @@ Partial Class AdminForm
         Me.btnMemberActivityReports.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnMemberActivityReports.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(77, Byte), Integer))
         Me.btnMemberActivityReports.Location = New System.Drawing.Point(0, 49)
-        Me.btnMemberActivityReports.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnMemberActivityReports.Margin = New System.Windows.Forms.Padding(4)
         Me.btnMemberActivityReports.Name = "btnMemberActivityReports"
         Me.btnMemberActivityReports.Padding = New System.Windows.Forms.Padding(33, 0, 0, 0)
         Me.btnMemberActivityReports.Size = New System.Drawing.Size(312, 49)
@@ -372,7 +307,7 @@ Partial Class AdminForm
         Me.btnCirculationReports.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnCirculationReports.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(77, Byte), Integer))
         Me.btnCirculationReports.Location = New System.Drawing.Point(0, 0)
-        Me.btnCirculationReports.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCirculationReports.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCirculationReports.Name = "btnCirculationReports"
         Me.btnCirculationReports.Padding = New System.Windows.Forms.Padding(33, 0, 0, 0)
         Me.btnCirculationReports.Size = New System.Drawing.Size(312, 49)
@@ -380,35 +315,13 @@ Partial Class AdminForm
         Me.btnCirculationReports.Text = "Circulation Reports"
         Me.btnCirculationReports.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
-        'btnReports
-        '
-        Me.btnReports.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnReports.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnReports.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnReports.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnReports.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnReports.FillColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.btnReports.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReports.ForeColor = System.Drawing.Color.FromArgb(CType(CType(59, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(47, Byte), Integer))
-        Me.btnReports.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(186, Byte), Integer))
-        Me.btnReports.Image = Global.Library_Management_System.My.Resources.Resources.reports
-        Me.btnReports.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnReports.Location = New System.Drawing.Point(0, 670)
-        Me.btnReports.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btnReports.Name = "btnReports"
-        Me.btnReports.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
-        Me.btnReports.Size = New System.Drawing.Size(312, 55)
-        Me.btnReports.TabIndex = 23
-        Me.btnReports.Text = "Reports"
-        Me.btnReports.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
         'pnlBorrowReturnSubMenu
         '
         Me.pnlBorrowReturnSubMenu.Controls.Add(Me.btnViewRecords)
         Me.pnlBorrowReturnSubMenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlBorrowReturnSubMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(91, Byte), Integer))
-        Me.pnlBorrowReturnSubMenu.Location = New System.Drawing.Point(0, 615)
-        Me.pnlBorrowReturnSubMenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlBorrowReturnSubMenu.Location = New System.Drawing.Point(0, 665)
+        Me.pnlBorrowReturnSubMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlBorrowReturnSubMenu.Name = "pnlBorrowReturnSubMenu"
         Me.pnlBorrowReturnSubMenu.Size = New System.Drawing.Size(312, 55)
         Me.pnlBorrowReturnSubMenu.TabIndex = 22
@@ -425,7 +338,7 @@ Partial Class AdminForm
         Me.btnViewRecords.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnViewRecords.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(77, Byte), Integer))
         Me.btnViewRecords.Location = New System.Drawing.Point(0, 0)
-        Me.btnViewRecords.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnViewRecords.Margin = New System.Windows.Forms.Padding(4)
         Me.btnViewRecords.Name = "btnViewRecords"
         Me.btnViewRecords.Padding = New System.Windows.Forms.Padding(33, 0, 0, 0)
         Me.btnViewRecords.Size = New System.Drawing.Size(312, 49)
@@ -433,36 +346,14 @@ Partial Class AdminForm
         Me.btnViewRecords.Text = "View Records"
         Me.btnViewRecords.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
-        'btnBorrowReturn
-        '
-        Me.btnBorrowReturn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnBorrowReturn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnBorrowReturn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnBorrowReturn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnBorrowReturn.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnBorrowReturn.FillColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.btnBorrowReturn.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBorrowReturn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(59, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(47, Byte), Integer))
-        Me.btnBorrowReturn.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(186, Byte), Integer))
-        Me.btnBorrowReturn.Image = Global.Library_Management_System.My.Resources.Resources.borrowreturn
-        Me.btnBorrowReturn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnBorrowReturn.Location = New System.Drawing.Point(0, 560)
-        Me.btnBorrowReturn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btnBorrowReturn.Name = "btnBorrowReturn"
-        Me.btnBorrowReturn.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
-        Me.btnBorrowReturn.Size = New System.Drawing.Size(312, 55)
-        Me.btnBorrowReturn.TabIndex = 9
-        Me.btnBorrowReturn.Text = "Records"
-        Me.btnBorrowReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
         'pnlMembersSubMenu
         '
         Me.pnlMembersSubMenu.Controls.Add(Me.btnMemberProfiles)
         Me.pnlMembersSubMenu.Controls.Add(Me.btnManageMembers)
         Me.pnlMembersSubMenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlMembersSubMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(91, Byte), Integer))
-        Me.pnlMembersSubMenu.Location = New System.Drawing.Point(0, 455)
-        Me.pnlMembersSubMenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlMembersSubMenu.Location = New System.Drawing.Point(0, 505)
+        Me.pnlMembersSubMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlMembersSubMenu.Name = "pnlMembersSubMenu"
         Me.pnlMembersSubMenu.Size = New System.Drawing.Size(312, 105)
         Me.pnlMembersSubMenu.TabIndex = 7
@@ -479,7 +370,7 @@ Partial Class AdminForm
         Me.btnMemberProfiles.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnMemberProfiles.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(77, Byte), Integer))
         Me.btnMemberProfiles.Location = New System.Drawing.Point(0, 49)
-        Me.btnMemberProfiles.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnMemberProfiles.Margin = New System.Windows.Forms.Padding(4)
         Me.btnMemberProfiles.Name = "btnMemberProfiles"
         Me.btnMemberProfiles.Padding = New System.Windows.Forms.Padding(33, 0, 0, 0)
         Me.btnMemberProfiles.Size = New System.Drawing.Size(312, 49)
@@ -499,7 +390,7 @@ Partial Class AdminForm
         Me.btnManageMembers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnManageMembers.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(77, Byte), Integer))
         Me.btnManageMembers.Location = New System.Drawing.Point(0, 0)
-        Me.btnManageMembers.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnManageMembers.Margin = New System.Windows.Forms.Padding(4)
         Me.btnManageMembers.Name = "btnManageMembers"
         Me.btnManageMembers.Padding = New System.Windows.Forms.Padding(33, 0, 0, 0)
         Me.btnManageMembers.Size = New System.Drawing.Size(312, 49)
@@ -507,38 +398,17 @@ Partial Class AdminForm
         Me.btnManageMembers.Text = "Manage Members"
         Me.btnManageMembers.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
-        'btnMembers
-        '
-        Me.btnMembers.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnMembers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnMembers.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnMembers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnMembers.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnMembers.FillColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.btnMembers.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnMembers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(59, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(47, Byte), Integer))
-        Me.btnMembers.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(186, Byte), Integer))
-        Me.btnMembers.Image = Global.Library_Management_System.My.Resources.Resources.group1
-        Me.btnMembers.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnMembers.Location = New System.Drawing.Point(0, 400)
-        Me.btnMembers.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btnMembers.Name = "btnMembers"
-        Me.btnMembers.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
-        Me.btnMembers.Size = New System.Drawing.Size(312, 55)
-        Me.btnMembers.TabIndex = 6
-        Me.btnMembers.Text = "Members"
-        Me.btnMembers.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
         'pnlBooksSubMenu
         '
+        Me.pnlBooksSubMenu.Controls.Add(Me.btnViewBooks)
         Me.pnlBooksSubMenu.Controls.Add(Me.btnInventory)
         Me.pnlBooksSubMenu.Controls.Add(Me.btnManageBooks)
         Me.pnlBooksSubMenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlBooksSubMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(91, Byte), Integer))
         Me.pnlBooksSubMenu.Location = New System.Drawing.Point(0, 295)
-        Me.pnlBooksSubMenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlBooksSubMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlBooksSubMenu.Name = "pnlBooksSubMenu"
-        Me.pnlBooksSubMenu.Size = New System.Drawing.Size(312, 105)
+        Me.pnlBooksSubMenu.Size = New System.Drawing.Size(312, 155)
         Me.pnlBooksSubMenu.TabIndex = 5
         '
         'btnInventory
@@ -553,7 +423,7 @@ Partial Class AdminForm
         Me.btnInventory.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnInventory.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(77, Byte), Integer))
         Me.btnInventory.Location = New System.Drawing.Point(0, 49)
-        Me.btnInventory.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnInventory.Margin = New System.Windows.Forms.Padding(4)
         Me.btnInventory.Name = "btnInventory"
         Me.btnInventory.Padding = New System.Windows.Forms.Padding(33, 0, 0, 0)
         Me.btnInventory.Size = New System.Drawing.Size(312, 49)
@@ -573,7 +443,7 @@ Partial Class AdminForm
         Me.btnManageBooks.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btnManageBooks.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(77, Byte), Integer))
         Me.btnManageBooks.Location = New System.Drawing.Point(0, 0)
-        Me.btnManageBooks.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnManageBooks.Margin = New System.Windows.Forms.Padding(4)
         Me.btnManageBooks.Name = "btnManageBooks"
         Me.btnManageBooks.Padding = New System.Windows.Forms.Padding(33, 0, 0, 0)
         Me.btnManageBooks.Size = New System.Drawing.Size(312, 49)
@@ -581,72 +451,15 @@ Partial Class AdminForm
         Me.btnManageBooks.Text = "Manage Books"
         Me.btnManageBooks.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
-        'btnBooks
-        '
-        Me.btnBooks.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnBooks.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnBooks.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnBooks.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnBooks.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnBooks.FillColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.btnBooks.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBooks.ForeColor = System.Drawing.Color.FromArgb(CType(CType(59, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(47, Byte), Integer))
-        Me.btnBooks.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(186, Byte), Integer))
-        Me.btnBooks.Image = Global.Library_Management_System.My.Resources.Resources.books
-        Me.btnBooks.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnBooks.Location = New System.Drawing.Point(0, 240)
-        Me.btnBooks.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btnBooks.Name = "btnBooks"
-        Me.btnBooks.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
-        Me.btnBooks.Size = New System.Drawing.Size(312, 55)
-        Me.btnBooks.TabIndex = 4
-        Me.btnBooks.Text = "Books"
-        Me.btnBooks.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
-        'btnDashboard
-        '
-        Me.btnDashboard.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnDashboard.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnDashboard.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnDashboard.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnDashboard.FillColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.btnDashboard.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(CType(CType(59, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(47, Byte), Integer))
-        Me.btnDashboard.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(186, Byte), Integer))
-        Me.btnDashboard.Image = Global.Library_Management_System.My.Resources.Resources.dashboard
-        Me.btnDashboard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnDashboard.Location = New System.Drawing.Point(0, 185)
-        Me.btnDashboard.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btnDashboard.Name = "btnDashboard"
-        Me.btnDashboard.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
-        Me.btnDashboard.Size = New System.Drawing.Size(312, 55)
-        Me.btnDashboard.TabIndex = 3
-        Me.btnDashboard.Text = "Dashboard"
-        Me.btnDashboard.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
         'guna2Panel1
         '
         Me.guna2Panel1.Controls.Add(Me.guna2PictureBox5)
         Me.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.guna2Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.guna2Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel1.Name = "guna2Panel1"
         Me.guna2Panel1.Size = New System.Drawing.Size(312, 185)
         Me.guna2Panel1.TabIndex = 2
-        '
-        'guna2PictureBox5
-        '
-        Me.guna2PictureBox5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.guna2PictureBox5.Image = Global.Library_Management_System.My.Resources.Resources.logo_removebg_preview
-        Me.guna2PictureBox5.ImageRotate = 0!
-        Me.guna2PictureBox5.Location = New System.Drawing.Point(0, 0)
-        Me.guna2PictureBox5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.guna2PictureBox5.Name = "guna2PictureBox5"
-        Me.guna2PictureBox5.Size = New System.Drawing.Size(312, 185)
-        Me.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.guna2PictureBox5.TabIndex = 0
-        Me.guna2PictureBox5.TabStop = False
         '
         'pnlContainer
         '
@@ -661,7 +474,7 @@ Partial Class AdminForm
         Me.pnlContainer.Controls.Add(Me.guna2Panel10)
         Me.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlContainer.Location = New System.Drawing.Point(333, 0)
-        Me.pnlContainer.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlContainer.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlContainer.Name = "pnlContainer"
         Me.pnlContainer.Size = New System.Drawing.Size(928, 717)
         Me.pnlContainer.TabIndex = 2
@@ -675,7 +488,7 @@ Partial Class AdminForm
         Me.tlp4.Controls.Add(Me.guna2Panel14, 1, 0)
         Me.tlp4.Dock = System.Windows.Forms.DockStyle.Top
         Me.tlp4.Location = New System.Drawing.Point(0, 893)
-        Me.tlp4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tlp4.Margin = New System.Windows.Forms.Padding(4)
         Me.tlp4.Name = "tlp4"
         Me.tlp4.RowCount = 1
         Me.tlp4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -694,7 +507,7 @@ Partial Class AdminForm
         Me.guna2Panel13.Dock = System.Windows.Forms.DockStyle.Fill
         Me.guna2Panel13.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.guna2Panel13.Location = New System.Drawing.Point(4, 4)
-        Me.guna2Panel13.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel13.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel13.Name = "guna2Panel13"
         Me.guna2Panel13.Size = New System.Drawing.Size(445, 300)
         Me.guna2Panel13.TabIndex = 4
@@ -729,7 +542,7 @@ Partial Class AdminForm
         Me.dgvIssuedBook.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvIssuedBook.GridColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.dgvIssuedBook.Location = New System.Drawing.Point(7, 49)
-        Me.dgvIssuedBook.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgvIssuedBook.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvIssuedBook.Name = "dgvIssuedBook"
         Me.dgvIssuedBook.ReadOnly = True
         Me.dgvIssuedBook.RowHeadersVisible = False
@@ -782,7 +595,7 @@ Partial Class AdminForm
         Me.guna2Panel14.Dock = System.Windows.Forms.DockStyle.Fill
         Me.guna2Panel14.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.guna2Panel14.Location = New System.Drawing.Point(457, 4)
-        Me.guna2Panel14.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel14.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel14.Name = "guna2Panel14"
         Me.guna2Panel14.Size = New System.Drawing.Size(446, 300)
         Me.guna2Panel14.TabIndex = 3
@@ -803,7 +616,7 @@ Partial Class AdminForm
         Legend1.TitleBackColor = System.Drawing.Color.Transparent
         Me.borrowerstatistics.Legends.Add(Legend1)
         Me.borrowerstatistics.Location = New System.Drawing.Point(0, 0)
-        Me.borrowerstatistics.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.borrowerstatistics.Margin = New System.Windows.Forms.Padding(4)
         Me.borrowerstatistics.Name = "borrowerstatistics"
         Me.borrowerstatistics.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen
         Series1.ChartArea = "ChartArea1"
@@ -821,7 +634,7 @@ Partial Class AdminForm
         Me.tlp3.Controls.Add(Me.guna2Panel12, 0, 0)
         Me.tlp3.Dock = System.Windows.Forms.DockStyle.Top
         Me.tlp3.Location = New System.Drawing.Point(0, 585)
-        Me.tlp3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tlp3.Margin = New System.Windows.Forms.Padding(4)
         Me.tlp3.Name = "tlp3"
         Me.tlp3.RowCount = 1
         Me.tlp3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -840,7 +653,7 @@ Partial Class AdminForm
         Me.guna2Panel12.Dock = System.Windows.Forms.DockStyle.Fill
         Me.guna2Panel12.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.guna2Panel12.Location = New System.Drawing.Point(4, 4)
-        Me.guna2Panel12.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel12.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel12.Name = "guna2Panel12"
         Me.guna2Panel12.Size = New System.Drawing.Size(899, 300)
         Me.guna2Panel12.TabIndex = 2
@@ -875,7 +688,7 @@ Partial Class AdminForm
         Me.dgvOverdueBook.DefaultCellStyle = DataGridViewCellStyle6
         Me.dgvOverdueBook.GridColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.dgvOverdueBook.Location = New System.Drawing.Point(7, 49)
-        Me.dgvOverdueBook.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgvOverdueBook.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvOverdueBook.Name = "dgvOverdueBook"
         Me.dgvOverdueBook.ReadOnly = True
         Me.dgvOverdueBook.RowHeadersVisible = False
@@ -927,7 +740,7 @@ Partial Class AdminForm
         Me.tlp2.Controls.Add(Me.guna2Panel15, 0, 0)
         Me.tlp2.Dock = System.Windows.Forms.DockStyle.Top
         Me.tlp2.Location = New System.Drawing.Point(0, 277)
-        Me.tlp2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tlp2.Margin = New System.Windows.Forms.Padding(4)
         Me.tlp2.Name = "tlp2"
         Me.tlp2.RowCount = 1
         Me.tlp2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -947,7 +760,7 @@ Partial Class AdminForm
         Me.guna2Panel11.Dock = System.Windows.Forms.DockStyle.Fill
         Me.guna2Panel11.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.guna2Panel11.Location = New System.Drawing.Point(457, 4)
-        Me.guna2Panel11.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel11.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel11.Name = "guna2Panel11"
         Me.guna2Panel11.Size = New System.Drawing.Size(446, 300)
         Me.guna2Panel11.TabIndex = 2
@@ -982,7 +795,7 @@ Partial Class AdminForm
         Me.dgvBook.DefaultCellStyle = DataGridViewCellStyle9
         Me.dgvBook.GridColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.dgvBook.Location = New System.Drawing.Point(7, 49)
-        Me.dgvBook.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgvBook.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvBook.Name = "dgvBook"
         Me.dgvBook.ReadOnly = True
         Me.dgvBook.RowHeadersVisible = False
@@ -1050,7 +863,7 @@ Partial Class AdminForm
         Me.guna2Panel15.Dock = System.Windows.Forms.DockStyle.Fill
         Me.guna2Panel15.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.guna2Panel15.Location = New System.Drawing.Point(4, 4)
-        Me.guna2Panel15.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel15.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel15.Name = "guna2Panel15"
         Me.guna2Panel15.Size = New System.Drawing.Size(445, 300)
         Me.guna2Panel15.TabIndex = 1
@@ -1085,7 +898,7 @@ Partial Class AdminForm
         Me.dgvMember.DefaultCellStyle = DataGridViewCellStyle12
         Me.dgvMember.GridColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.dgvMember.Location = New System.Drawing.Point(7, 49)
-        Me.dgvMember.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgvMember.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvMember.Name = "dgvMember"
         Me.dgvMember.ReadOnly = True
         Me.dgvMember.RowHeadersVisible = False
@@ -1154,7 +967,7 @@ Partial Class AdminForm
         Me.tlp1.Controls.Add(Me.guna2Panel2, 0, 0)
         Me.tlp1.Dock = System.Windows.Forms.DockStyle.Top
         Me.tlp1.Location = New System.Drawing.Point(0, 123)
-        Me.tlp1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tlp1.Margin = New System.Windows.Forms.Padding(4)
         Me.tlp1.Name = "tlp1"
         Me.tlp1.RowCount = 1
         Me.tlp1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -1173,7 +986,7 @@ Partial Class AdminForm
         Me.guna2Panel8.Dock = System.Windows.Forms.DockStyle.Fill
         Me.guna2Panel8.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.guna2Panel8.Location = New System.Drawing.Point(682, 4)
-        Me.guna2Panel8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel8.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel8.Name = "guna2Panel8"
         Me.guna2Panel8.Size = New System.Drawing.Size(221, 146)
         Me.guna2Panel8.TabIndex = 3
@@ -1209,22 +1022,10 @@ Partial Class AdminForm
         Me.guna2Panel9.Controls.Add(Me.guna2PictureBox4)
         Me.guna2Panel9.FillColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(213, Byte), Integer), CType(CType(186, Byte), Integer))
         Me.guna2Panel9.Location = New System.Drawing.Point(141, 9)
-        Me.guna2Panel9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel9.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel9.Name = "guna2Panel9"
         Me.guna2Panel9.Size = New System.Drawing.Size(67, 62)
         Me.guna2Panel9.TabIndex = 0
-        '
-        'guna2PictureBox4
-        '
-        Me.guna2PictureBox4.Image = Global.Library_Management_System.My.Resources.Resources.hourglass
-        Me.guna2PictureBox4.ImageRotate = 0!
-        Me.guna2PictureBox4.Location = New System.Drawing.Point(17, 16)
-        Me.guna2PictureBox4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.guna2PictureBox4.Name = "guna2PictureBox4"
-        Me.guna2PictureBox4.Size = New System.Drawing.Size(33, 31)
-        Me.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.guna2PictureBox4.TabIndex = 0
-        Me.guna2PictureBox4.TabStop = False
         '
         'guna2Panel5
         '
@@ -1238,7 +1039,7 @@ Partial Class AdminForm
         Me.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.guna2Panel5.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.guna2Panel5.Location = New System.Drawing.Point(456, 4)
-        Me.guna2Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel5.Name = "guna2Panel5"
         Me.guna2Panel5.Size = New System.Drawing.Size(218, 146)
         Me.guna2Panel5.TabIndex = 2
@@ -1274,22 +1075,10 @@ Partial Class AdminForm
         Me.guna2Panel7.Controls.Add(Me.guna2PictureBox3)
         Me.guna2Panel7.FillColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(213, Byte), Integer), CType(CType(186, Byte), Integer))
         Me.guna2Panel7.Location = New System.Drawing.Point(144, 9)
-        Me.guna2Panel7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel7.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel7.Name = "guna2Panel7"
         Me.guna2Panel7.Size = New System.Drawing.Size(67, 62)
         Me.guna2Panel7.TabIndex = 0
-        '
-        'guna2PictureBox3
-        '
-        Me.guna2PictureBox3.Image = CType(resources.GetObject("guna2PictureBox3.Image"), System.Drawing.Image)
-        Me.guna2PictureBox3.ImageRotate = 0!
-        Me.guna2PictureBox3.Location = New System.Drawing.Point(17, 16)
-        Me.guna2PictureBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.guna2PictureBox3.Name = "guna2PictureBox3"
-        Me.guna2PictureBox3.Size = New System.Drawing.Size(33, 31)
-        Me.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.guna2PictureBox3.TabIndex = 0
-        Me.guna2PictureBox3.TabStop = False
         '
         'guna2Panel3
         '
@@ -1303,7 +1092,7 @@ Partial Class AdminForm
         Me.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.guna2Panel3.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.guna2Panel3.Location = New System.Drawing.Point(230, 4)
-        Me.guna2Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel3.Name = "guna2Panel3"
         Me.guna2Panel3.Size = New System.Drawing.Size(218, 146)
         Me.guna2Panel3.TabIndex = 1
@@ -1339,22 +1128,10 @@ Partial Class AdminForm
         Me.guna2Panel4.Controls.Add(Me.guna2PictureBox2)
         Me.guna2Panel4.FillColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(213, Byte), Integer), CType(CType(186, Byte), Integer))
         Me.guna2Panel4.Location = New System.Drawing.Point(144, 9)
-        Me.guna2Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel4.Name = "guna2Panel4"
         Me.guna2Panel4.Size = New System.Drawing.Size(67, 62)
         Me.guna2Panel4.TabIndex = 0
-        '
-        'guna2PictureBox2
-        '
-        Me.guna2PictureBox2.Image = Global.Library_Management_System.My.Resources.Resources.group
-        Me.guna2PictureBox2.ImageRotate = 0!
-        Me.guna2PictureBox2.Location = New System.Drawing.Point(17, 16)
-        Me.guna2PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.guna2PictureBox2.Name = "guna2PictureBox2"
-        Me.guna2PictureBox2.Size = New System.Drawing.Size(33, 31)
-        Me.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.guna2PictureBox2.TabIndex = 1
-        Me.guna2PictureBox2.TabStop = False
         '
         'guna2Panel2
         '
@@ -1368,7 +1145,7 @@ Partial Class AdminForm
         Me.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.guna2Panel2.Location = New System.Drawing.Point(4, 4)
-        Me.guna2Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel2.Name = "guna2Panel2"
         Me.guna2Panel2.Size = New System.Drawing.Size(218, 146)
         Me.guna2Panel2.TabIndex = 0
@@ -1404,22 +1181,10 @@ Partial Class AdminForm
         Me.guna2Panel6.Controls.Add(Me.guna2PictureBox1)
         Me.guna2Panel6.FillColor = System.Drawing.Color.FromArgb(CType(CType(168, Byte), Integer), CType(CType(213, Byte), Integer), CType(CType(186, Byte), Integer))
         Me.guna2Panel6.Location = New System.Drawing.Point(144, 9)
-        Me.guna2Panel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel6.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel6.Name = "guna2Panel6"
         Me.guna2Panel6.Size = New System.Drawing.Size(67, 62)
         Me.guna2Panel6.TabIndex = 0
-        '
-        'guna2PictureBox1
-        '
-        Me.guna2PictureBox1.Image = CType(resources.GetObject("guna2PictureBox1.Image"), System.Drawing.Image)
-        Me.guna2PictureBox1.ImageRotate = 0!
-        Me.guna2PictureBox1.Location = New System.Drawing.Point(17, 16)
-        Me.guna2PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.guna2PictureBox1.Name = "guna2PictureBox1"
-        Me.guna2PictureBox1.Size = New System.Drawing.Size(33, 31)
-        Me.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.guna2PictureBox1.TabIndex = 0
-        Me.guna2PictureBox1.TabStop = False
         '
         'pnlTitle
         '
@@ -1428,7 +1193,7 @@ Partial Class AdminForm
         Me.pnlTitle.Controls.Add(Me.label1)
         Me.pnlTitle.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlTitle.Location = New System.Drawing.Point(0, 0)
-        Me.pnlTitle.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlTitle.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlTitle.Name = "pnlTitle"
         Me.pnlTitle.Size = New System.Drawing.Size(907, 123)
         Me.pnlTitle.TabIndex = 3
@@ -1473,7 +1238,7 @@ Partial Class AdminForm
         '
         Me.guna2Panel10.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.guna2Panel10.Location = New System.Drawing.Point(0, 1201)
-        Me.guna2Panel10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel10.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel10.Name = "guna2Panel10"
         Me.guna2Panel10.Size = New System.Drawing.Size(907, 6)
         Me.guna2Panel10.TabIndex = 2
@@ -1485,6 +1250,263 @@ Partial Class AdminForm
         'autoLoadCount
         '
         Me.autoLoadCount.Enabled = True
+        '
+        'btnViewBooks
+        '
+        Me.btnViewBooks.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnViewBooks.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnViewBooks.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnViewBooks.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnViewBooks.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnViewBooks.FillColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(91, Byte), Integer))
+        Me.btnViewBooks.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnViewBooks.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnViewBooks.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(77, Byte), Integer))
+        Me.btnViewBooks.Location = New System.Drawing.Point(0, 98)
+        Me.btnViewBooks.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnViewBooks.Name = "btnViewBooks"
+        Me.btnViewBooks.Padding = New System.Windows.Forms.Padding(33, 0, 0, 0)
+        Me.btnViewBooks.Size = New System.Drawing.Size(312, 49)
+        Me.btnViewBooks.TabIndex = 7
+        Me.btnViewBooks.Text = "View Books"
+        Me.btnViewBooks.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'guna2PictureBox4
+        '
+        Me.guna2PictureBox4.Image = Global.Library_Management_System.My.Resources.Resources.hourglass
+        Me.guna2PictureBox4.ImageRotate = 0!
+        Me.guna2PictureBox4.Location = New System.Drawing.Point(17, 16)
+        Me.guna2PictureBox4.Margin = New System.Windows.Forms.Padding(4)
+        Me.guna2PictureBox4.Name = "guna2PictureBox4"
+        Me.guna2PictureBox4.Size = New System.Drawing.Size(33, 31)
+        Me.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.guna2PictureBox4.TabIndex = 0
+        Me.guna2PictureBox4.TabStop = False
+        '
+        'guna2PictureBox3
+        '
+        Me.guna2PictureBox3.Image = CType(resources.GetObject("guna2PictureBox3.Image"), System.Drawing.Image)
+        Me.guna2PictureBox3.ImageRotate = 0!
+        Me.guna2PictureBox3.Location = New System.Drawing.Point(17, 16)
+        Me.guna2PictureBox3.Margin = New System.Windows.Forms.Padding(4)
+        Me.guna2PictureBox3.Name = "guna2PictureBox3"
+        Me.guna2PictureBox3.Size = New System.Drawing.Size(33, 31)
+        Me.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.guna2PictureBox3.TabIndex = 0
+        Me.guna2PictureBox3.TabStop = False
+        '
+        'guna2PictureBox2
+        '
+        Me.guna2PictureBox2.Image = Global.Library_Management_System.My.Resources.Resources.group
+        Me.guna2PictureBox2.ImageRotate = 0!
+        Me.guna2PictureBox2.Location = New System.Drawing.Point(17, 16)
+        Me.guna2PictureBox2.Margin = New System.Windows.Forms.Padding(4)
+        Me.guna2PictureBox2.Name = "guna2PictureBox2"
+        Me.guna2PictureBox2.Size = New System.Drawing.Size(33, 31)
+        Me.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.guna2PictureBox2.TabIndex = 1
+        Me.guna2PictureBox2.TabStop = False
+        '
+        'guna2PictureBox1
+        '
+        Me.guna2PictureBox1.Image = CType(resources.GetObject("guna2PictureBox1.Image"), System.Drawing.Image)
+        Me.guna2PictureBox1.ImageRotate = 0!
+        Me.guna2PictureBox1.Location = New System.Drawing.Point(17, 16)
+        Me.guna2PictureBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.guna2PictureBox1.Name = "guna2PictureBox1"
+        Me.guna2PictureBox1.Size = New System.Drawing.Size(33, 31)
+        Me.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.guna2PictureBox1.TabIndex = 0
+        Me.guna2PictureBox1.TabStop = False
+        '
+        'btnLogout
+        '
+        Me.btnLogout.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnLogout.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnLogout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.btnLogout.FillColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(199, Byte), Integer))
+        Me.btnLogout.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogout.ForeColor = System.Drawing.Color.FromArgb(CType(CType(59, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(47, Byte), Integer))
+        Me.btnLogout.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(186, Byte), Integer))
+        Me.btnLogout.Image = Global.Library_Management_System.My.Resources.Resources.logout
+        Me.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnLogout.Location = New System.Drawing.Point(0, 1150)
+        Me.btnLogout.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnLogout.Name = "btnLogout"
+        Me.btnLogout.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
+        Me.btnLogout.Size = New System.Drawing.Size(312, 55)
+        Me.btnLogout.TabIndex = 29
+        Me.btnLogout.Text = "Logout"
+        Me.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'btnSettings
+        '
+        Me.btnSettings.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSettings.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSettings.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSettings.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSettings.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnSettings.FillColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(199, Byte), Integer))
+        Me.btnSettings.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSettings.ForeColor = System.Drawing.Color.FromArgb(CType(CType(59, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(47, Byte), Integer))
+        Me.btnSettings.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(186, Byte), Integer))
+        Me.btnSettings.Image = Global.Library_Management_System.My.Resources.Resources.settings
+        Me.btnSettings.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnSettings.Location = New System.Drawing.Point(0, 1040)
+        Me.btnSettings.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnSettings.Name = "btnSettings"
+        Me.btnSettings.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
+        Me.btnSettings.Size = New System.Drawing.Size(312, 55)
+        Me.btnSettings.TabIndex = 27
+        Me.btnSettings.Text = "Settings"
+        Me.btnSettings.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'btnStaffManagement
+        '
+        Me.btnStaffManagement.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnStaffManagement.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnStaffManagement.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnStaffManagement.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnStaffManagement.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnStaffManagement.FillColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(199, Byte), Integer))
+        Me.btnStaffManagement.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnStaffManagement.ForeColor = System.Drawing.Color.FromArgb(CType(CType(59, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(47, Byte), Integer))
+        Me.btnStaffManagement.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(186, Byte), Integer))
+        Me.btnStaffManagement.Image = Global.Library_Management_System.My.Resources.Resources.manageaccounts
+        Me.btnStaffManagement.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnStaffManagement.Location = New System.Drawing.Point(0, 880)
+        Me.btnStaffManagement.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnStaffManagement.Name = "btnStaffManagement"
+        Me.btnStaffManagement.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
+        Me.btnStaffManagement.Size = New System.Drawing.Size(312, 55)
+        Me.btnStaffManagement.TabIndex = 25
+        Me.btnStaffManagement.Text = "Staff Management"
+        Me.btnStaffManagement.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'btnReports
+        '
+        Me.btnReports.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnReports.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnReports.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnReports.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnReports.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnReports.FillColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(199, Byte), Integer))
+        Me.btnReports.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReports.ForeColor = System.Drawing.Color.FromArgb(CType(CType(59, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(47, Byte), Integer))
+        Me.btnReports.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(186, Byte), Integer))
+        Me.btnReports.Image = Global.Library_Management_System.My.Resources.Resources.reports
+        Me.btnReports.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnReports.Location = New System.Drawing.Point(0, 720)
+        Me.btnReports.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnReports.Name = "btnReports"
+        Me.btnReports.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
+        Me.btnReports.Size = New System.Drawing.Size(312, 55)
+        Me.btnReports.TabIndex = 23
+        Me.btnReports.Text = "Reports"
+        Me.btnReports.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'btnBorrowReturn
+        '
+        Me.btnBorrowReturn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnBorrowReturn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnBorrowReturn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnBorrowReturn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnBorrowReturn.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnBorrowReturn.FillColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(199, Byte), Integer))
+        Me.btnBorrowReturn.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBorrowReturn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(59, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(47, Byte), Integer))
+        Me.btnBorrowReturn.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(186, Byte), Integer))
+        Me.btnBorrowReturn.Image = Global.Library_Management_System.My.Resources.Resources.borrowreturn
+        Me.btnBorrowReturn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnBorrowReturn.Location = New System.Drawing.Point(0, 610)
+        Me.btnBorrowReturn.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnBorrowReturn.Name = "btnBorrowReturn"
+        Me.btnBorrowReturn.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
+        Me.btnBorrowReturn.Size = New System.Drawing.Size(312, 55)
+        Me.btnBorrowReturn.TabIndex = 9
+        Me.btnBorrowReturn.Text = "Records"
+        Me.btnBorrowReturn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'btnMembers
+        '
+        Me.btnMembers.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnMembers.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnMembers.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnMembers.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnMembers.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnMembers.FillColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(199, Byte), Integer))
+        Me.btnMembers.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnMembers.ForeColor = System.Drawing.Color.FromArgb(CType(CType(59, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(47, Byte), Integer))
+        Me.btnMembers.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(186, Byte), Integer))
+        Me.btnMembers.Image = Global.Library_Management_System.My.Resources.Resources.group1
+        Me.btnMembers.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnMembers.Location = New System.Drawing.Point(0, 450)
+        Me.btnMembers.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnMembers.Name = "btnMembers"
+        Me.btnMembers.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
+        Me.btnMembers.Size = New System.Drawing.Size(312, 55)
+        Me.btnMembers.TabIndex = 6
+        Me.btnMembers.Text = "Members"
+        Me.btnMembers.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'btnBooks
+        '
+        Me.btnBooks.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnBooks.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnBooks.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnBooks.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnBooks.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnBooks.FillColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(199, Byte), Integer))
+        Me.btnBooks.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBooks.ForeColor = System.Drawing.Color.FromArgb(CType(CType(59, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(47, Byte), Integer))
+        Me.btnBooks.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(186, Byte), Integer))
+        Me.btnBooks.Image = Global.Library_Management_System.My.Resources.Resources.books
+        Me.btnBooks.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnBooks.Location = New System.Drawing.Point(0, 240)
+        Me.btnBooks.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnBooks.Name = "btnBooks"
+        Me.btnBooks.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
+        Me.btnBooks.Size = New System.Drawing.Size(312, 55)
+        Me.btnBooks.TabIndex = 4
+        Me.btnBooks.Text = "Books"
+        Me.btnBooks.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'btnDashboard
+        '
+        Me.btnDashboard.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnDashboard.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnDashboard.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnDashboard.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnDashboard.FillColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(199, Byte), Integer))
+        Me.btnDashboard.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDashboard.ForeColor = System.Drawing.Color.FromArgb(CType(CType(59, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(47, Byte), Integer))
+        Me.btnDashboard.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(186, Byte), Integer))
+        Me.btnDashboard.Image = Global.Library_Management_System.My.Resources.Resources.dashboard
+        Me.btnDashboard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.btnDashboard.Location = New System.Drawing.Point(0, 185)
+        Me.btnDashboard.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnDashboard.Name = "btnDashboard"
+        Me.btnDashboard.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
+        Me.btnDashboard.Size = New System.Drawing.Size(312, 55)
+        Me.btnDashboard.TabIndex = 3
+        Me.btnDashboard.Text = "Dashboard"
+        Me.btnDashboard.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        '
+        'guna2PictureBox5
+        '
+        Me.guna2PictureBox5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.guna2PictureBox5.Image = Global.Library_Management_System.My.Resources.Resources.logo_removebg_preview
+        Me.guna2PictureBox5.ImageRotate = 0!
+        Me.guna2PictureBox5.Location = New System.Drawing.Point(0, 0)
+        Me.guna2PictureBox5.Margin = New System.Windows.Forms.Padding(4)
+        Me.guna2PictureBox5.Name = "guna2PictureBox5"
+        Me.guna2PictureBox5.Size = New System.Drawing.Size(312, 185)
+        Me.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.guna2PictureBox5.TabIndex = 0
+        Me.guna2PictureBox5.TabStop = False
         '
         'AdminForm
         '
@@ -1507,7 +1529,6 @@ Partial Class AdminForm
         Me.pnlMembersSubMenu.ResumeLayout(False)
         Me.pnlBooksSubMenu.ResumeLayout(False)
         Me.guna2Panel1.ResumeLayout(False)
-        CType(Me.guna2PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlContainer.ResumeLayout(False)
         Me.tlp4.ResumeLayout(False)
         Me.guna2Panel13.ResumeLayout(False)
@@ -1530,21 +1551,22 @@ Partial Class AdminForm
         Me.guna2Panel8.ResumeLayout(False)
         Me.guna2Panel8.PerformLayout()
         Me.guna2Panel9.ResumeLayout(False)
-        CType(Me.guna2PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.guna2Panel5.ResumeLayout(False)
         Me.guna2Panel5.PerformLayout()
         Me.guna2Panel7.ResumeLayout(False)
-        CType(Me.guna2PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.guna2Panel3.ResumeLayout(False)
         Me.guna2Panel3.PerformLayout()
         Me.guna2Panel4.ResumeLayout(False)
-        CType(Me.guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.guna2Panel2.ResumeLayout(False)
         Me.guna2Panel2.PerformLayout()
         Me.guna2Panel6.ResumeLayout(False)
-        CType(Me.guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlTitle.ResumeLayout(False)
         Me.pnlTitle.PerformLayout()
+        CType(Me.guna2PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.guna2PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.guna2PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1624,4 +1646,5 @@ Partial Class AdminForm
     Private WithEvents autoLoadDashboard As Timer
     Private WithEvents autoLoadCount As Timer
     Private WithEvents borrowerstatistics As DataVisualization.Charting.Chart
+    Private WithEvents btnViewBooks As Guna.UI2.WinForms.Guna2Button
 End Class

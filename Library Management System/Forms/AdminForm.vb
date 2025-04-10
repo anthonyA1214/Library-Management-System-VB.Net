@@ -305,4 +305,8 @@ Public Class AdminForm
 
         borrowerstatistics.Series.Add(series)
     End Sub
+
+    Private Sub btnViewBooks_Click(sender As Object, e As EventArgs) Handles btnViewBooks.Click
+        openForm(New ViewBooks())
+    End Sub
 End Class

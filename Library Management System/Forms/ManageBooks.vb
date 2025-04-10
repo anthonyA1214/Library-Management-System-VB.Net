@@ -21,7 +21,29 @@ Partial Public Class ManageBooks
 
     Private Sub loadTable()
         updateFont()
-        Dim query As String = "SELECT custom_book_id as [Book ID], title as [Title], author as [Author], isbn as [ISBN], genre as [Genre], publication_year as [Publication Year], quantity as [Quantity] from tbl_book WHERE IsDeleted = 0"
+        Dim query As String = "
+        SELECT 
+            tbl_book.custom_book_id AS [Book ID], 
+            tbl_book.title AS [Title], 
+            tbl_book.author AS [Author], 
+            tbl_book.isbn AS [ISBN], 
+            tbl_book.genre AS [Genre], 
+            tbl_book.publication_year AS [Publication Year], 
+            COUNT(tbl_book_copy.copy_id) AS [Total Copies]
+        FROM 
+            tbl_book
+        LEFT JOIN 
+            tbl_book_copy ON tbl_book.book_id = tbl_book_copy.book_id
+        WHERE 
+            tbl_book.IsDeleted = 0
+        GROUP BY 
+            tbl_book.custom_book_id, 
+            tbl_book.title, 
+            tbl_book.author, 
+            tbl_book.isbn, 
+            tbl_book.genre, 
+            tbl_book.publication_year
+        "
         Dim cmd As New SqlCommand(query, conn)
         Dim da As New SqlDataAdapter(cmd)
         Dim dt As New DataTable()

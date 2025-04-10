@@ -32,7 +32,6 @@ Public Class ManageBooks
 
             Using trans As SqlTransaction = conn.BeginTransaction()
                 Try
-                    ' Insert into tbl_book and get the book_id
                     Using cmdBook As New SqlCommand(queryBook, conn, trans)
                         cmdBook.Parameters.AddWithValue("@title", book.Title)
                         cmdBook.Parameters.AddWithValue("@author", book.Author)
@@ -44,7 +43,6 @@ Public Class ManageBooks
                         bookId = Convert.ToInt32(cmdBook.ExecuteScalar())
                     End Using
 
-                    ' Insert copies into tbl_book_copy
                     Dim queryCopy As String = "INSERT INTO tbl_book_copy (book_id, isbn, copy_number)
                                        VALUES (@book_id, @isbn, @copy_number)"
 
@@ -62,7 +60,6 @@ Public Class ManageBooks
 
                 Catch ex As Exception
                     trans.Rollback()
-                    ' You may log or rethrow the error
                     Return False
                 End Try
             End Using

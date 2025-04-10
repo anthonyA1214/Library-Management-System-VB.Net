@@ -251,4 +251,8 @@ Public Class UserForm
         loadCount()
         lblDateAndTime.Text = DateTime.Now.ToLongDateString() & " | " & DateTime.Now.ToLongTimeString()
     End Sub
+
+    Private Sub btnViewBooks_Click(sender As Object, e As EventArgs) Handles btnViewBooks.Click
+        openForm(New ViewBooks())
+    End Sub
 End Class
