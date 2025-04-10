@@ -71,7 +71,7 @@ Public Class ManageBooks
     End Function
 
     Public Function UpdateBook(book As Book) As Boolean
-        Dim query As String = "UPDATE tbl_book SET title = @title, author = @author, isbn = @isbn, genre = @genre, publication_year = @publicationyear WHERE book_id = @bookid"
+        Dim query As String = "UPDATE tbl_book SET title = @title, author = @author, genre = @genre, publication_year = @publicationyear WHERE book_id = @bookid"
 
         Using conn As SqlConnection = dbConnection.GetConnection()
             conn.Open()
@@ -79,7 +79,6 @@ Public Class ManageBooks
                 cmd.Parameters.AddWithValue("@bookid", book.BookId)
                 cmd.Parameters.AddWithValue("@title", book.Title)
                 cmd.Parameters.AddWithValue("@author", book.Author)
-                cmd.Parameters.AddWithValue("@isbn", book.ISBN)
                 cmd.Parameters.AddWithValue("@genre", book.Genre)
                 cmd.Parameters.AddWithValue("@publicationyear", book.PublicationYear)
                 Dim checkrow As Integer = cmd.ExecuteNonQuery()

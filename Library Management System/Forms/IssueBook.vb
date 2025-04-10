@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Net
 Imports System.Text.RegularExpressions
 
 Public Class IssueBook
@@ -105,73 +106,96 @@ Public Class IssueBook
         Dim issuedate As DateTime = dtpIssueDate.Value
         Dim duedate As DateTime = dtpDueDate.Value
         Dim currentdate As DateTime = DateTime.Now.Date
+
         If memberid = 0 OrElse bookid = 0 Then
-            MessageBox.Show("Please select Borrower or Book.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Please select a borrower and a book.", "Missing Info", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
         Try
             conn.Open()
 
-            Dim checkQuery As String = "SELECT quantity from tbl_book WHERE book_id = @bookid"
-            Dim checkCmd As New SqlCommand(checkQuery, conn)
-            checkCmd.Parameters.AddWithValue("@bookid", bookid)
-            Dim copiesAvailable As Integer = Convert.ToInt32(checkCmd.ExecuteScalar())
+            ' Check book quantity
+            Dim checkQtyQuery As String = "SELECT quantity FROM tbl_book WHERE book_id = @bookid"
+            Dim checkQtyCmd As New SqlCommand(checkQtyQuery, conn)
+            checkQtyCmd.Parameters.AddWithValue("@bookid", bookid)
+            Dim copiesAvailable As Integer = Convert.ToInt32(checkQtyCmd.ExecuteScalar())
 
             If issuedate < currentdate Then
-                MessageBox.Show("Issue date connot be earlier than the current date.", "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                MessageBox.Show("Issue date cannot be in the past.", "Invalid Date", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 dtpIssueDate.Value = currentdate
                 Return
             End If
 
             If copiesAvailable <= 0 Then
-                MessageBox.Show("Insufficient copies.", "Not enough copies", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("No available copies for this book.", "Unavailable", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Return
             End If
 
             If duedate < issuedate Then
-                MessageBox.Show("Due date must not be earlier than the issue date.", "Invalid Due Date", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                MessageBox.Show("Due date must be after issue date.", "Invalid Due Date", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Return
             End If
 
-            Dim borrowingLimitQuery As String = "SELECT tbl_membership_type.borrowing_limit FROM tbl_member JOIN tbl_membership_type ON tbl_member.membership_type = tbl_membership_type.membership_type WHERE tbl_member.member_id = @memberid"
-            Dim borrowingLimitCmd As New SqlCommand(borrowingLimitQuery, conn)
-            borrowingLimitCmd.Parameters.AddWithValue("@memberid", memberid)
-            Dim borrowingLimit As Integer = Convert.ToInt32(borrowingLimitCmd.ExecuteScalar())
+            ' Check borrowing limit
+            Dim limitQuery As String = "SELECT mt.borrowing_limit FROM tbl_member m JOIN tbl_membership_type mt ON m.membership_type = mt.membership_type WHERE m.member_id = @memberid"
+            Dim limitCmd As New SqlCommand(limitQuery, conn)
+            limitCmd.Parameters.AddWithValue("@memberid", memberid)
+            Dim borrowingLimit As Integer = Convert.ToInt32(limitCmd.ExecuteScalar())
 
-            Dim borrowedCountQuery As String = "SELECT COUNT(*) FROM tbl_issue WHERE member_id = @memberid AND status = 'Issued'"
-            Dim borrowedCountCmd As New SqlCommand(borrowedCountQuery, conn)
-            borrowedCountCmd.Parameters.AddWithValue("@memberid", memberid)
-            Dim borrowedCount As Integer = Convert.ToInt32(borrowedCountCmd.ExecuteScalar())
+            Dim countQuery As String = "SELECT COUNT(*) FROM tbl_issue WHERE member_id = @memberid AND status = 'Issued'"
+            Dim countCmd As New SqlCommand(countQuery, conn)
+            countCmd.Parameters.AddWithValue("@memberid", memberid)
+            Dim borrowedCount As Integer = Convert.ToInt32(countCmd.ExecuteScalar())
 
             If borrowedCount >= borrowingLimit Then
-                MessageBox.Show($"This member has reached their borrowing limit of {borrowingLimit} books.", "Borrowing Limit Reached", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                MessageBox.Show($"This member has reached their borrowing limit of {borrowingLimit} books.", "Limit Reached", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Return
             End If
 
-            Dim dialogResult As DialogResult = MessageBox.Show("Are you sure you want to issue this book?", "Confirm Issuance", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            ' Find an available copy
+            Dim copyQuery As String = "SELECT TOP 1 copy_id FROM tbl_book_copy WHERE book_id = @bookid AND status = 'Available'"
+            Dim copyCmd As New SqlCommand(copyQuery, conn)
+            copyCmd.Parameters.AddWithValue("@bookid", bookid)
+            Dim copy_id As Object = copyCmd.ExecuteScalar()
 
+            If copy_id Is Nothing Then
+                MessageBox.Show("No available copies found in copy table.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
+
+            Dim dialogResult As DialogResult = MessageBox.Show("Are you sure you want to issue this book?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If dialogResult = DialogResult.Yes Then
-                Dim issueQuery As String = "INSERT into tbl_issue (book_id, member_id, issue_date, due_date, status) VALUES(@bookid, @memberid, @issuedate, @duedate, 'Issued')"
+                ' Insert issue record with copy_id
+                Dim issueQuery As String = "INSERT INTO tbl_issue (book_id, member_id, issue_date, due_date, status, copy_id) VALUES (@bookid, @memberid, @issuedate, @duedate, 'Issued', @copyid)"
                 Dim issueCmd As New SqlCommand(issueQuery, conn)
                 issueCmd.Parameters.AddWithValue("@bookid", bookid)
                 issueCmd.Parameters.AddWithValue("@memberid", memberid)
                 issueCmd.Parameters.AddWithValue("@issuedate", issuedate)
                 issueCmd.Parameters.AddWithValue("@duedate", duedate)
-                Dim checkissue As Integer = issueCmd.ExecuteNonQuery()
+                issueCmd.Parameters.AddWithValue("@copyid", copy_id)
+                Dim checkIssue As Integer = issueCmd.ExecuteNonQuery()
 
-                Dim updateQuery As String = "UPDATE tbl_book SET quantity = quantity - 1 WHERE book_id = @bookid"
-                Dim updateCmd As New SqlCommand(updateQuery, conn)
-                updateCmd.Parameters.AddWithValue("@bookid", bookid)
-                Dim checkupdate As Integer = updateCmd.ExecuteNonQuery()
+                ' Update copy status
+                Dim updateCopyQuery As String = "UPDATE tbl_book_copy SET status = 'Issued' WHERE copy_id = @copyid"
+                Dim updateCopyCmd As New SqlCommand(updateCopyQuery, conn)
+                updateCopyCmd.Parameters.AddWithValue("@copyid", copy_id)
+                Dim checkUpdateCopy As Integer = updateCopyCmd.ExecuteNonQuery()
 
-                If checkissue > 0 AndAlso checkupdate > 0 Then
-                    MessageBox.Show("Issued book successfully!`nInventory updated.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                ' Decrease quantity in tbl_book
+                Dim updateQtyQuery As String = "UPDATE tbl_book SET quantity = quantity - 1 WHERE book_id = @bookid"
+                Dim updateQtyCmd As New SqlCommand(updateQtyQuery, conn)
+                updateQtyCmd.Parameters.AddWithValue("@bookid", bookid)
+                updateQtyCmd.ExecuteNonQuery()
+
+                If checkIssue > 0 AndAlso checkUpdateCopy > 0 Then
+                    MessageBox.Show("Book issued successfully. Inventory updated.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     clearTexts()
                 End If
             End If
+
         Catch ex As Exception
-            MessageBox.Show($"An error occurred. {ex.Message}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
             conn.Close()
             loadBookTable()

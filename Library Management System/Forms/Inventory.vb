@@ -129,23 +129,66 @@ Partial Public Class Inventory
 
     Private Sub btnEnter_Click(sender As Object, e As EventArgs) Handles btnEnter.Click
         Dim quantity As Integer = Integer.Parse(numQuantity.Text)
-        Dim query As String = "UPDATE tbl_book SET quantity = quantity + @quantity WHERE book_id = @bookid"
+        Dim queryUpdate As String = "UPDATE tbl_book SET quantity = quantity + @quantity WHERE book_id = @bookid"
+        Dim queryGetISBN As String = "SELECT isbn FROM tbl_book WHERE book_id = @bookid"
+        Dim queryGetMaxCopy As String = "SELECT ISNULL(MAX(copy_number), 0) FROM tbl_book_copy WHERE book_id = @bookid"
+        Dim queryInsertCopy As String = "INSERT INTO tbl_book_copy (book_id, isbn, copy_number) VALUES (@bookid, @isbn, @copy_number)"
+
+        Dim trans As SqlTransaction = Nothing
+
         Try
             conn.Open()
-            Dim cmd As New SqlCommand(query, conn)
-            cmd.Parameters.AddWithValue("@bookid", bookid)
-            cmd.Parameters.AddWithValue("@quantity", quantity)
-            Dim checkrow As Integer = cmd.ExecuteNonQuery()
-            If checkrow > 0 Then
-                MessageBox.Show("Stock successfully added!")
-            End If
+            trans = conn.BeginTransaction()
+
+            ' Get the book's ISBN
+            Dim isbn As String
+            Using cmdISBN As New SqlCommand(queryGetISBN, conn, trans)
+                cmdISBN.Parameters.AddWithValue("@bookid", bookid)
+                isbn = Convert.ToString(cmdISBN.ExecuteScalar())
+            End Using
+
+            ' Get the current max copy_number
+            Dim maxCopyNumber As Integer
+            Using cmdMaxCopy As New SqlCommand(queryGetMaxCopy, conn, trans)
+                cmdMaxCopy.Parameters.AddWithValue("@bookid", bookid)
+                maxCopyNumber = Convert.ToInt32(cmdMaxCopy.ExecuteScalar())
+            End Using
+
+            ' Update quantity in tbl_book
+            Using cmdUpdate As New SqlCommand(queryUpdate, conn, trans)
+                cmdUpdate.Parameters.AddWithValue("@bookid", bookid)
+                cmdUpdate.Parameters.AddWithValue("@quantity", quantity)
+                cmdUpdate.ExecuteNonQuery()
+            End Using
+
+            ' Insert new copies into tbl_book_copy
+            For i As Integer = 1 To quantity
+                Using cmdInsertCopy As New SqlCommand(queryInsertCopy, conn, trans)
+                    cmdInsertCopy.Parameters.AddWithValue("@bookid", bookid)
+                    cmdInsertCopy.Parameters.AddWithValue("@isbn", isbn)
+                    cmdInsertCopy.Parameters.AddWithValue("@copy_number", maxCopyNumber + i)
+                    cmdInsertCopy.ExecuteNonQuery()
+                End Using
+            Next
+
+            trans.Commit()
+            MessageBox.Show("Stock successfully added!")
+
         Catch ex As Exception
             MessageBox.Show($"An error occurred. {ex.Message}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            If trans IsNot Nothing Then
+                Try
+                    trans.Rollback()
+                Catch ex2 As Exception
+                    ' Optionally log rollback failure
+                End Try
+            End If
         Finally
             conn.Close()
             LoadTable()
             pnlSideMenu.Visible = False
         End Try
+
     End Sub
 
     Private Sub SearchFilter()

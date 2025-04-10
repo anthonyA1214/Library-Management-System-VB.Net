@@ -95,6 +95,7 @@ Partial Public Class ManageBooks
 
     Private Sub btnAddBook_Click(sender As Object, e As EventArgs) Handles btnAddBook.Click
         numQuantity.Enabled = True
+        tbISBN.Enabled = True
         lblSideMenu.Text = "ADD BOOK"
         selectionMode = 1
         clearTexts()
@@ -190,6 +191,7 @@ Partial Public Class ManageBooks
     Private Sub dgvBook_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvBook.CellContentClick
         If e.RowIndex >= 0 AndAlso e.ColumnIndex = dgvBook.Columns("update").Index Then
             numQuantity.Enabled = False
+            tbISBN.Enabled = False
             Dim customBookId As String = dgvBook.Rows(e.RowIndex).Cells("Book ID").Value.ToString()
             bookid = Integer.Parse(customBookId.Substring(2))
 

@@ -40,32 +40,54 @@ Public Class ReturnBook
 
     Private Sub btnReturnBook_Click(sender As Object, e As EventArgs) Handles btnReturnBook.Click
         If String.IsNullOrEmpty(lblIssueID.Text) Then
-            MessageBox.Show("Please select a record to return.", "No Record Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Please select a record to return.", "No Record", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
         Dim dialogResult As DialogResult = MessageBox.Show($"Are you sure you want to return the book '{lblBookTitle.Text}' issued to '{lblMemberName.Text}'?", "Confirm Return", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If dialogResult = DialogResult.Yes Then
-            Dim returndate As String = DateTime.Now.ToShortDateString()
+            Dim returndate As Date = DateTime.Now.Date
+
             Try
                 conn.Open()
+
+                ' First, get copy_id from tbl_issue
+                Dim getCopyQuery As String = "SELECT copy_id FROM tbl_issue WHERE issue_id = @issueid"
+                Dim getCopyCmd As New SqlCommand(getCopyQuery, conn)
+                getCopyCmd.Parameters.AddWithValue("@issueid", issueid)
+                Dim copy_id As Object = getCopyCmd.ExecuteScalar()
+
+                If copy_id Is Nothing Then
+                    MessageBox.Show("Could not find associated book copy.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+
+                ' Update issue record
                 Dim returnQuery As String = "UPDATE tbl_issue SET return_date = @returndate, status = 'Returned' WHERE issue_id = @issueid"
                 Dim returnCmd As New SqlCommand(returnQuery, conn)
                 returnCmd.Parameters.AddWithValue("@returndate", returndate)
                 returnCmd.Parameters.AddWithValue("@issueid", issueid)
-                Dim checkreturn As Integer = returnCmd.ExecuteNonQuery()
+                Dim checkReturn As Integer = returnCmd.ExecuteNonQuery()
 
-                Dim updateQuery As String = "UPDATE tbl_book SET quantity = quantity + 1 WHERE book_id = @bookid"
-                Dim updateCmd As New SqlCommand(updateQuery, conn)
-                updateCmd.Parameters.AddWithValue("@bookid", bookid)
-                Dim checkupdate As Integer = updateCmd.ExecuteNonQuery()
+                ' Update copy status
+                Dim updateCopyQuery As String = "UPDATE tbl_book_copy SET status = 'Available' WHERE copy_id = @copyid"
+                Dim updateCopyCmd As New SqlCommand(updateCopyQuery, conn)
+                updateCopyCmd.Parameters.AddWithValue("@copyid", copy_id)
+                Dim checkUpdateCopy As Integer = updateCopyCmd.ExecuteNonQuery()
 
-                If checkreturn > 0 AndAlso checkupdate > 0 Then
-                    MessageBox.Show("Returned book successfully.\nInventory updated.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                ' Increase quantity
+                Dim updateQtyQuery As String = "UPDATE tbl_book SET quantity = quantity + 1 WHERE book_id = @bookid"
+                Dim updateQtyCmd As New SqlCommand(updateQtyQuery, conn)
+                updateQtyCmd.Parameters.AddWithValue("@bookid", bookid)
+                updateQtyCmd.ExecuteNonQuery()
+
+                If checkReturn > 0 AndAlso checkUpdateCopy > 0 Then
+                    MessageBox.Show("Book returned successfully. Inventory updated.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
+
             Catch ex As Exception
-                MessageBox.Show($"An error occurred. {ex.Message}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Finally
                 conn.Close()
                 LoadTable()
