@@ -122,7 +122,8 @@ Public Class ReturnBook
     Private Sub dgvIssue_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvIssue.CellClick
         If e.RowIndex >= 0 AndAlso dgvIssue.Rows(e.RowIndex).Cells(e.ColumnIndex) IsNot Nothing Then
             Try
-                issueid = Integer.Parse(dgvIssue.Rows(e.RowIndex).Cells(0).Value.ToString())
+                Dim customIssueId As String = dgvIssue.Rows(e.RowIndex).Cells("Issue ID").Value.ToString()
+                issueid = Integer.Parse(customIssueId.Substring(2))
 
                 Dim query As String = "SELECT tbl_issue.issue_id, tbl_issue.book_id, tbl_book.title, tbl_member.first_name, tbl_member.last_name, tbl_issue.issue_date, tbl_issue.due_date FROM tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id WHERE tbl_issue.issue_id = @issueid AND tbl_issue.status = 'Issued'"
 
@@ -133,7 +134,7 @@ Public Class ReturnBook
                 Dim reader As SqlDataReader = cmd.ExecuteReader()
 
                 If reader.Read() Then
-                    lblIssueID.Text = reader("issue_id").ToString()
+                    lblIssueID.Text = customIssueId.ToString()
                     lblBookTitle.Text = reader("title").ToString()
                     lblMemberName.Text = $"{reader("first_name")} {reader("last_name")}"
                     lblIssueDate.Text = Convert.ToDateTime(reader("issue_date")).ToString("MM/dd/yyyy")
