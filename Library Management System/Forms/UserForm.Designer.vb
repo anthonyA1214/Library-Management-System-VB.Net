@@ -38,9 +38,6 @@ Partial Class UserForm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UserForm))
         Me.pnlSideMenu = New System.Windows.Forms.Panel()
         Me.btnLogout = New Guna.UI2.WinForms.Guna2Button()
-        Me.pnlSettingsSubMenu = New Guna.UI2.WinForms.Guna2Panel()
-        Me.btnManageGenre = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnSettings = New Guna.UI2.WinForms.Guna2Button()
         Me.pnlReportsSubMenu = New Guna.UI2.WinForms.Guna2Panel()
         Me.btnMemberActivityReports = New Guna.UI2.WinForms.Guna2Button()
         Me.btnCirculationReports = New Guna.UI2.WinForms.Guna2Button()
@@ -108,7 +105,6 @@ Partial Class UserForm
         Me.autoLoadDashboard = New System.Windows.Forms.Timer(Me.components)
         Me.autoLoadCount = New System.Windows.Forms.Timer(Me.components)
         Me.pnlSideMenu.SuspendLayout()
-        Me.pnlSettingsSubMenu.SuspendLayout()
         Me.pnlReportsSubMenu.SuspendLayout()
         Me.pnlBorrowReturnSubMenu.SuspendLayout()
         Me.pnlMembersSubMenu.SuspendLayout()
@@ -148,8 +144,6 @@ Partial Class UserForm
         Me.pnlSideMenu.AutoScroll = True
         Me.pnlSideMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.pnlSideMenu.Controls.Add(Me.btnLogout)
-        Me.pnlSideMenu.Controls.Add(Me.pnlSettingsSubMenu)
-        Me.pnlSideMenu.Controls.Add(Me.btnSettings)
         Me.pnlSideMenu.Controls.Add(Me.pnlReportsSubMenu)
         Me.pnlSideMenu.Controls.Add(Me.btnReports)
         Me.pnlSideMenu.Controls.Add(Me.pnlBorrowReturnSubMenu)
@@ -180,7 +174,7 @@ Partial Class UserForm
         Me.btnLogout.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(186, Byte), Integer))
         Me.btnLogout.Image = Global.Library_Management_System.My.Resources.Resources.logout
         Me.btnLogout.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnLogout.Location = New System.Drawing.Point(0, 990)
+        Me.btnLogout.Location = New System.Drawing.Point(0, 880)
         Me.btnLogout.Margin = New System.Windows.Forms.Padding(4)
         Me.btnLogout.Name = "btnLogout"
         Me.btnLogout.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
@@ -188,59 +182,6 @@ Partial Class UserForm
         Me.btnLogout.TabIndex = 28
         Me.btnLogout.Text = "Logout"
         Me.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
-        'pnlSettingsSubMenu
-        '
-        Me.pnlSettingsSubMenu.Controls.Add(Me.btnManageGenre)
-        Me.pnlSettingsSubMenu.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pnlSettingsSubMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(91, Byte), Integer))
-        Me.pnlSettingsSubMenu.Location = New System.Drawing.Point(0, 935)
-        Me.pnlSettingsSubMenu.Margin = New System.Windows.Forms.Padding(4)
-        Me.pnlSettingsSubMenu.Name = "pnlSettingsSubMenu"
-        Me.pnlSettingsSubMenu.Size = New System.Drawing.Size(312, 55)
-        Me.pnlSettingsSubMenu.TabIndex = 27
-        '
-        'btnManageGenre
-        '
-        Me.btnManageGenre.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnManageGenre.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnManageGenre.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnManageGenre.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnManageGenre.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnManageGenre.FillColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(154, Byte), Integer), CType(CType(91, Byte), Integer))
-        Me.btnManageGenre.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnManageGenre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.btnManageGenre.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(77, Byte), Integer))
-        Me.btnManageGenre.Location = New System.Drawing.Point(0, 0)
-        Me.btnManageGenre.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnManageGenre.Name = "btnManageGenre"
-        Me.btnManageGenre.Padding = New System.Windows.Forms.Padding(33, 0, 0, 0)
-        Me.btnManageGenre.Size = New System.Drawing.Size(312, 49)
-        Me.btnManageGenre.TabIndex = 5
-        Me.btnManageGenre.Text = "Manage Genre"
-        Me.btnManageGenre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
-        'btnSettings
-        '
-        Me.btnSettings.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnSettings.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnSettings.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnSettings.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnSettings.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnSettings.FillColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(232, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.btnSettings.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSettings.ForeColor = System.Drawing.Color.FromArgb(CType(CType(59, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(47, Byte), Integer))
-        Me.btnSettings.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(186, Byte), Integer))
-        Me.btnSettings.Image = Global.Library_Management_System.My.Resources.Resources.settings
-        Me.btnSettings.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.btnSettings.Location = New System.Drawing.Point(0, 880)
-        Me.btnSettings.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnSettings.Name = "btnSettings"
-        Me.btnSettings.Padding = New System.Windows.Forms.Padding(7, 0, 0, 0)
-        Me.btnSettings.Size = New System.Drawing.Size(312, 55)
-        Me.btnSettings.TabIndex = 26
-        Me.btnSettings.Text = "Settings"
-        Me.btnSettings.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'pnlReportsSubMenu
         '
@@ -1401,7 +1342,6 @@ Partial Class UserForm
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "UserForm"
         Me.pnlSideMenu.ResumeLayout(False)
-        Me.pnlSettingsSubMenu.ResumeLayout(False)
         Me.pnlReportsSubMenu.ResumeLayout(False)
         Me.pnlBorrowReturnSubMenu.ResumeLayout(False)
         Me.pnlMembersSubMenu.ResumeLayout(False)
@@ -1499,9 +1439,6 @@ Partial Class UserForm
     Private WithEvents autoLoadCount As Timer
     Private WithEvents btnViewBooks As Guna.UI2.WinForms.Guna2Button
     Private WithEvents btnLogout As Guna.UI2.WinForms.Guna2Button
-    Private WithEvents pnlSettingsSubMenu As Guna.UI2.WinForms.Guna2Panel
-    Private WithEvents btnManageGenre As Guna.UI2.WinForms.Guna2Button
-    Private WithEvents btnSettings As Guna.UI2.WinForms.Guna2Button
     Private WithEvents pnlReportsSubMenu As Guna.UI2.WinForms.Guna2Panel
     Private WithEvents btnMemberActivityReports As Guna.UI2.WinForms.Guna2Button
     Private WithEvents btnCirculationReports As Guna.UI2.WinForms.Guna2Button

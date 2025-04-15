@@ -52,7 +52,6 @@ Public Class UserForm
         pnlMembersSubMenu.Visible = False
         pnlBorrowReturnSubMenu.Visible = False
         pnlReportsSubMenu.Visible = False
-        pnlSettingsSubMenu.Visible = False
     End Sub
 
     Private Sub showSubMenu(SubMenu As Panel)
@@ -95,11 +94,11 @@ Public Class UserForm
 
     Private Sub loadTable()
         updateFont()
-        Dim issueQuery As String = "SELECT tbl_issue.custom_issue_id AS [Issue ID], tbl_book.title AS [Book Title], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) AS [Member Name], tbl_issue.issue_date AS [Issue Date], tbl_issue.due_date AS [Due Date], tbl_issue.status AS [Loan Status], CASE WHEN tbl_issue.return_date IS NULL AND tbl_issue.due_date < GETDATE() THEN 'Overdue' WHEN tbl_issue.return_date IS NULL THEN 'Not Returned' WHEN tbl_issue.return_date <= tbl_issue.due_date THEN 'On Time' ELSE 'Late Return' END AS [Return Status] FROM tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id WHERE tbl_issue.status = 'Issued'"
+        Dim issueQuery As String = "SELECT tbl_issue.custom_issue_id AS [Issue ID], tbl_book.title AS [Book Title], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) AS [Member Name], tbl_issue.issue_date AS [Issue Date], tbl_issue.due_date AS [Due Date], tbl_issue.status AS [Status], CASE WHEN tbl_issue.return_date IS NULL AND tbl_issue.due_date < GETDATE() THEN 'Overdue' WHEN tbl_issue.return_date IS NULL THEN 'Not Returned' WHEN tbl_issue.return_date <= tbl_issue.due_date THEN 'On Time' ELSE 'Late Return' END AS [Return Status] FROM tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id WHERE tbl_issue.status = 'Issued'"
         dgvIssuedBook.DataSource = loadData(issueQuery)
         dgvIssuedBook.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
 
-        Dim overdueQuery As String = "SELECT tbl_issue.custom_issue_id AS [Issue ID], tbl_book.title AS [Book Title], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) AS [Member Name], tbl_issue.issue_date AS [Issue Date], tbl_issue.due_date AS [Due Date], tbl_issue.status AS [Loan Status], 'Overdue' AS [Return Status] FROM tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id WHERE tbl_issue.return_date IS NULL AND tbl_issue.due_date < GETDATE()"
+        Dim overdueQuery As String = "SELECT tbl_issue.custom_issue_id AS [Issue ID], tbl_book.title AS [Book Title], CONCAT(tbl_member.first_name, ' ', tbl_member.last_name) AS [Member Name], tbl_issue.issue_date AS [Issue Date], tbl_issue.due_date AS [Due Date], tbl_issue.status AS [Status], 'Overdue' AS [Return Status] FROM tbl_issue INNER JOIN tbl_book ON tbl_issue.book_id = tbl_book.book_id INNER JOIN tbl_member ON tbl_issue.member_id = tbl_member.member_id WHERE tbl_issue.return_date IS NULL AND tbl_issue.due_date < GETDATE()"
         dgvOverdueBook.DataSource = loadData(overdueQuery)
         dgvOverdueBook.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
 
@@ -134,10 +133,6 @@ Public Class UserForm
 
     Private Sub btnReports_Click(sender As Object, e As EventArgs) Handles btnReports.Click
         showSubMenu(pnlReportsSubMenu)
-    End Sub
-
-    Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
-        showSubMenu(pnlSettingsSubMenu)
     End Sub
 
     Private activeForm As Form = Nothing
@@ -233,11 +228,11 @@ Public Class UserForm
         openForm(New Inventory())
     End Sub
 
-    Private Sub btnIssueBook2_Click(sender As Object, e As EventArgs) 
+    Private Sub btnIssueBook2_Click(sender As Object, e As EventArgs)
         openForm(New IssueBook())
     End Sub
 
-    Private Sub btnManageGenre_Click(sender As Object, e As EventArgs) Handles btnManageGenre.Click
+    Private Sub btnManageGenre_Click(sender As Object, e As EventArgs)
         openForm(New ManageGenres("Staff"))
     End Sub
 
@@ -253,5 +248,9 @@ Public Class UserForm
 
     Private Sub btnViewBooks_Click(sender As Object, e As EventArgs) Handles btnViewBooks.Click
         openForm(New ViewBooks())
+    End Sub
+
+    Private Sub guna2Panel3_Paint(sender As Object, e As PaintEventArgs) Handles guna2Panel3.Paint
+
     End Sub
 End Class

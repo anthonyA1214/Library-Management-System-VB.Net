@@ -15,7 +15,7 @@ Public Class ViewBooks
         tbl_book.title AS [Title], 
         tbl_book.isbn AS [ISBN], 
         tbl_book_copy.accession_number AS [Accession Number], 
-        tbl_book_copy.status AS [Status]
+        tbl_book_copy.status AS [Availability Status]
     FROM 
         tbl_book
     INNER JOIN 
@@ -84,7 +84,7 @@ Public Class ViewBooks
             tbl_book.title AS [Title], 
             tbl_book.isbn AS [ISBN], 
             tbl_book_copy.accession_number AS [Accession Number], 
-            tbl_book_copy.status AS [Status]
+            tbl_book_copy.status AS [Availability Status]
         FROM 
             tbl_book
         INNER JOIN 
