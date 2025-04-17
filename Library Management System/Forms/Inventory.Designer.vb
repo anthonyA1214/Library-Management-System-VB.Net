@@ -22,9 +22,9 @@ Partial Class Inventory
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlTopMenu = New Guna.UI2.WinForms.Guna2Panel()
         Me.btnClear = New Guna.UI2.WinForms.Guna2Button()
         Me.label1 = New System.Windows.Forms.Label()
@@ -73,7 +73,7 @@ Partial Class Inventory
         Me.pnlTopMenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlTopMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.pnlTopMenu.Location = New System.Drawing.Point(13, 12)
-        Me.pnlTopMenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlTopMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlTopMenu.Name = "pnlTopMenu"
         Me.pnlTopMenu.Size = New System.Drawing.Size(865, 62)
         Me.pnlTopMenu.TabIndex = 12
@@ -91,7 +91,7 @@ Partial Class Inventory
         Me.btnClear.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.btnClear.ForeColor = System.Drawing.Color.White
         Me.btnClear.Location = New System.Drawing.Point(673, 5)
-        Me.btnClear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(4)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(152, 49)
         Me.btnClear.TabIndex = 12
@@ -148,7 +148,7 @@ Partial Class Inventory
         Me.cbSearchBy.ItemHeight = 30
         Me.cbSearchBy.Items.AddRange(New Object() {"Title", "Author", "ISBN", "Publication Year", "ID"})
         Me.cbSearchBy.Location = New System.Drawing.Point(177, 9)
-        Me.cbSearchBy.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbSearchBy.Margin = New System.Windows.Forms.Padding(4)
         Me.cbSearchBy.Name = "cbSearchBy"
         Me.cbSearchBy.Size = New System.Drawing.Size(185, 36)
         Me.cbSearchBy.TabIndex = 0
@@ -167,7 +167,7 @@ Partial Class Inventory
         Me.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.guna2Panel2.Location = New System.Drawing.Point(13, 74)
-        Me.guna2Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel2.Name = "guna2Panel2"
         Me.guna2Panel2.Size = New System.Drawing.Size(865, 133)
         Me.guna2Panel2.TabIndex = 15
@@ -178,7 +178,7 @@ Partial Class Inventory
         Me.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pictureBox1.Image = Global.Library_Management_System.My.Resources.Resources.Legends
         Me.pictureBox1.Location = New System.Drawing.Point(658, 12)
-        Me.pictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.pictureBox1.Name = "pictureBox1"
         Me.pictureBox1.Size = New System.Drawing.Size(195, 105)
         Me.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -198,7 +198,7 @@ Partial Class Inventory
         Me.btnRefresh.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.btnRefresh.ForeColor = System.Drawing.Color.White
         Me.btnRefresh.Location = New System.Drawing.Point(27, 71)
-        Me.btnRefresh.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnRefresh.Margin = New System.Windows.Forms.Padding(4)
         Me.btnRefresh.Name = "btnRefresh"
         Me.btnRefresh.Size = New System.Drawing.Size(200, 49)
         Me.btnRefresh.TabIndex = 3
@@ -229,7 +229,7 @@ Partial Class Inventory
         Me.btnExport.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.btnExport.ForeColor = System.Drawing.Color.White
         Me.btnExport.Location = New System.Drawing.Point(27, 15)
-        Me.btnExport.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnExport.Margin = New System.Windows.Forms.Padding(4)
         Me.btnExport.Name = "btnExport"
         Me.btnExport.Size = New System.Drawing.Size(200, 49)
         Me.btnExport.TabIndex = 2
@@ -251,7 +251,7 @@ Partial Class Inventory
         Me.cbAvailabilityStatus.ItemHeight = 30
         Me.cbAvailabilityStatus.Items.AddRange(New Object() {"All", "Available", "Unavailable"})
         Me.cbAvailabilityStatus.Location = New System.Drawing.Point(447, 50)
-        Me.cbAvailabilityStatus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbAvailabilityStatus.Margin = New System.Windows.Forms.Padding(4)
         Me.cbAvailabilityStatus.Name = "cbAvailabilityStatus"
         Me.cbAvailabilityStatus.Size = New System.Drawing.Size(185, 36)
         Me.cbAvailabilityStatus.TabIndex = 4
@@ -284,7 +284,7 @@ Partial Class Inventory
         Me.cbGenre.ItemHeight = 30
         Me.cbGenre.Items.AddRange(New Object() {"All", "Title", "Author", "ISBN", "Genre", "Publication Year"})
         Me.cbGenre.Location = New System.Drawing.Point(252, 48)
-        Me.cbGenre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbGenre.Margin = New System.Windows.Forms.Padding(4)
         Me.cbGenre.Name = "cbGenre"
         Me.cbGenre.Size = New System.Drawing.Size(185, 36)
         Me.cbGenre.TabIndex = 1
@@ -306,7 +306,7 @@ Partial Class Inventory
         Me.pnlSideMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.pnlSideMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.pnlSideMenu.Location = New System.Drawing.Point(13, 207)
-        Me.pnlSideMenu.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlSideMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlSideMenu.Name = "pnlSideMenu"
         Me.pnlSideMenu.Size = New System.Drawing.Size(300, 423)
         Me.pnlSideMenu.TabIndex = 18
@@ -338,7 +338,7 @@ Partial Class Inventory
         Me.btnEnter.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.btnEnter.ForeColor = System.Drawing.Color.White
         Me.btnEnter.Location = New System.Drawing.Point(49, 324)
-        Me.btnEnter.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnEnter.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEnter.Name = "btnEnter"
         Me.btnEnter.Size = New System.Drawing.Size(200, 49)
         Me.btnEnter.TabIndex = 12
@@ -429,7 +429,7 @@ Partial Class Inventory
         Me.pbExit2.Image = Global.Library_Management_System.My.Resources.Resources.reject2
         Me.pbExit2.ImageRotate = 0!
         Me.pbExit2.Location = New System.Drawing.Point(241, 7)
-        Me.pbExit2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pbExit2.Margin = New System.Windows.Forms.Padding(4)
         Me.pbExit2.Name = "pbExit2"
         Me.pbExit2.Size = New System.Drawing.Size(33, 31)
         Me.pbExit2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -453,7 +453,7 @@ Partial Class Inventory
         Me.guna2Panel5.Controls.Add(Me.pnlGrid)
         Me.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.guna2Panel5.Location = New System.Drawing.Point(313, 207)
-        Me.guna2Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.guna2Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel5.Name = "guna2Panel5"
         Me.guna2Panel5.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
         Me.guna2Panel5.Size = New System.Drawing.Size(565, 423)
@@ -467,7 +467,7 @@ Partial Class Inventory
         Me.pnlGrid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlGrid.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.pnlGrid.Location = New System.Drawing.Point(13, 12)
-        Me.pnlGrid.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.pnlGrid.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlGrid.Name = "pnlGrid"
         Me.pnlGrid.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
         Me.pnlGrid.Size = New System.Drawing.Size(539, 399)
@@ -479,30 +479,30 @@ Partial Class Inventory
         Me.dgvBook.AllowUserToDeleteRows = False
         Me.dgvBook.AllowUserToResizeColumns = False
         Me.dgvBook.AllowUserToResizeRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(201, Byte), Integer))
-        Me.dgvBook.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(201, Byte), Integer))
+        Me.dgvBook.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvBook.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(74, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvBook.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(74, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvBook.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvBook.ColumnHeadersHeight = 50
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(177, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(134, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvBook.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(177, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(134, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvBook.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvBook.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvBook.GridColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.dgvBook.Location = New System.Drawing.Point(13, 12)
-        Me.dgvBook.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgvBook.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvBook.Name = "dgvBook"
         Me.dgvBook.ReadOnly = True
         Me.dgvBook.RowHeadersVisible = False
@@ -543,7 +543,7 @@ Partial Class Inventory
         Me.Controls.Add(Me.pnlSideMenu)
         Me.Controls.Add(Me.guna2Panel2)
         Me.Controls.Add(Me.pnlTopMenu)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Inventory"
         Me.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
         Me.Text = "Inventory"

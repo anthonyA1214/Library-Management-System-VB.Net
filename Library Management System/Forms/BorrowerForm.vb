@@ -169,4 +169,11 @@ Public Class BorrowerForm
         dgvIssue2.ColumnHeadersDefaultCellStyle.SelectionBackColor = dgvIssue2.ColumnHeadersDefaultCellStyle.BackColor
         dgvIssue2.ColumnHeadersDefaultCellStyle.SelectionForeColor = dgvIssue2.ColumnHeadersDefaultCellStyle.ForeColor
     End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If result = DialogResult.Yes Then
+            Application.Exit()
+        End If
+    End Sub
 End Class

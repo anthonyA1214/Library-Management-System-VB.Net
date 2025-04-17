@@ -4,6 +4,7 @@ Public Class AuthenticateUserResult
     Private _role As String
     Private _message As String
     Private _isSuccesful As Boolean
+
     Public Property Role As String
         Get
             Return _role
@@ -38,7 +39,11 @@ Public Class AuthenticateUser
         Try
             Using conn As SqlConnection = dbConnection.GetConnection()
                 conn.Open()
-                Dim query As String = "SELECT role, IsDeleted, IsApproved from tbl_staff WHERE username = @username AND password = @password"
+                Dim query As String = "
+                    SELECT role, IsDeleted, IsApproved 
+                    FROM tbl_staff 
+                    WHERE username = @username COLLATE Latin1_General_CS_AS 
+                      AND password = @password COLLATE Latin1_General_CS_AS"
                 Using cmd As New SqlCommand(query, conn)
                     cmd.Parameters.AddWithValue("@username", username)
                     cmd.Parameters.AddWithValue("@password", password)
@@ -87,7 +92,8 @@ Public Class AuthenticateUser
                 Dim query As String = "
                     SELECT member_id, IsDeleted
                     FROM tbl_member
-                    WHERE custom_member_id = @CustomMemberId AND password = @Password
+                    WHERE custom_member_id = @CustomMemberId COLLATE Latin1_General_CS_AS 
+                      AND password = @Password COLLATE Latin1_General_CS_AS
                 "
 
                 Using cmd As New SqlCommand(query, conn)
