@@ -315,4 +315,12 @@ Partial Public Class Inventory
         tbSearch.Clear()
         SearchFilter()
     End Sub
+
+    Private Sub pnlTopMenu_Paint(sender As Object, e As PaintEventArgs) Handles pnlTopMenu.Paint
+
+    End Sub
+
+    Private Sub pnlGrid_Paint(sender As Object, e As PaintEventArgs) Handles pnlGrid.Paint
+
+    End Sub
 End Class
