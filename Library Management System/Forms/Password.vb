@@ -112,6 +112,11 @@ Public Class Password
                 Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
 
                 If rowsAffected > 0 Then
+                    loadPassword()
+                    visibility1.Image = My.Resources.visibilityon
+                    tbCurrentPassword.UseSystemPasswordChar = True
+                    tbConfirmPassword.Clear()
+                    tbNewPassword.Clear()
                     MessageBox.Show("Password has been successfully changed!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
                     MessageBox.Show("No records were updated. Please check the member ID.", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning)

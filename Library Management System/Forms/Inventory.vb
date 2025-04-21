@@ -6,7 +6,6 @@ Partial Public Class Inventory
 
     Private conn As SqlConnection = dbConnection.GetConnection()
     Private bookid As Integer
-    Private userRole As String
 
     Public Sub New()
         InitializeComponent()
@@ -116,10 +115,6 @@ Partial Public Class Inventory
             tbTitle.Text = ds.Tables(0).Rows(0)(2).ToString()
             tbAuthor.Text = ds.Tables(0).Rows(0)(3).ToString()
         End If
-    End Sub
-
-    Private Sub pbExit_Click(sender As Object, e As EventArgs)
-        Me.Close()
     End Sub
 
     Private Sub pbExit2_Click(sender As Object, e As EventArgs) Handles pbExit2.Click
@@ -246,7 +241,6 @@ Partial Public Class Inventory
         dgvBook.DataSource = dt
     End Sub
 
-
     Private Sub tbSearch_TextChanged(sender As Object, e As EventArgs) Handles tbSearch.TextChanged
         SearchFilter()
     End Sub
@@ -314,13 +308,5 @@ Partial Public Class Inventory
         cbAvailabilityStatus.Text = "All"
         tbSearch.Clear()
         SearchFilter()
-    End Sub
-
-    Private Sub pnlTopMenu_Paint(sender As Object, e As PaintEventArgs) Handles pnlTopMenu.Paint
-
-    End Sub
-
-    Private Sub pnlGrid_Paint(sender As Object, e As PaintEventArgs) Handles pnlGrid.Paint
-
     End Sub
 End Class

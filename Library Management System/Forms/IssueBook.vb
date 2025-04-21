@@ -15,7 +15,7 @@ Public Class IssueBook
 
     Private Sub updateFont()
         ' Change cell font
-        For Each c As DataGridViewColumn In dgvBook.Columns
+        For Each c As DataGridViewColumn In dgvMember.Columns
             c.DefaultCellStyle.Font = New Font("Arial", 12.0F, GraphicsUnit.Pixel)
         Next
     End Sub
@@ -31,41 +31,12 @@ Public Class IssueBook
         dgvMember.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
     End Sub
 
-    Private Sub loadBookTable()
-        updateFont()
-        Dim query As String = "SELECT custom_book_id as [Book ID], title as [Title], author as [Author], quantity as [Quantity] from tbl_book WHERE IsDeleted = 0"
-        Dim cmd As New SqlCommand(query, conn)
-        Dim da As New SqlDataAdapter(cmd)
-        Dim dt As New DataTable()
-        da.Fill(dt)
-        dgvBook.DataSource = dt
-        dgvBook.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-    End Sub
-
     Private Sub clearTexts()
         lblMemberID.Text = ""
         lblMemberName.Text = ""
         lblBookID.Text = ""
         lblBookTitle.Text = ""
         lblBookAuthor.Text = ""
-    End Sub
-
-    Private Sub dgvBook_CellClick(sender As Object, e As DataGridViewCellEventArgs)
-        If e.RowIndex >= 0 AndAlso dgvBook.Rows(e.RowIndex).Cells(e.ColumnIndex) IsNot Nothing Then
-            Dim customBookId As String = dgvBook.Rows(e.RowIndex).Cells(0).Value.ToString()
-            bookid = Integer.Parse(customBookId.Substring(2))
-
-            Dim query As String = "SELECT * from tbl_book WHERE book_id = @bookid"
-            Dim cmd As New SqlCommand(query, conn)
-            cmd.Parameters.AddWithValue("@bookid", bookid)
-            Dim da As New SqlDataAdapter(cmd)
-            Dim ds As New DataSet()
-            da.Fill(ds)
-
-            lblBookID.Text = ds.Tables(0).Rows(0)(1).ToString()
-            lblBookTitle.Text = ds.Tables(0).Rows(0)(2).ToString()
-            lblBookAuthor.Text = ds.Tables(0).Rows(0)(3).ToString()
-        End If
     End Sub
 
     Private Sub dgvMember_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvMember.CellClick
@@ -87,10 +58,8 @@ Public Class IssueBook
 
     Private Sub IssueBook_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadMemberTable()
-        loadBookTable()
         clearTexts()
         cbSearchBy1.Text = "Name"
-        cbSearchBy2.Text = "Title"
         lblMemberName.AutoEllipsis = True
         lblBookTitle.AutoEllipsis = True
         lblBookAuthor.AutoEllipsis = True
@@ -98,8 +67,6 @@ Public Class IssueBook
         dtpDueDate.Value = DateTime.Now.Date
         dgvMember.ColumnHeadersDefaultCellStyle.SelectionBackColor = dgvMember.ColumnHeadersDefaultCellStyle.BackColor
         dgvMember.ColumnHeadersDefaultCellStyle.SelectionForeColor = dgvMember.ColumnHeadersDefaultCellStyle.ForeColor
-        dgvBook.ColumnHeadersDefaultCellStyle.SelectionBackColor = dgvBook.ColumnHeadersDefaultCellStyle.BackColor
-        dgvBook.ColumnHeadersDefaultCellStyle.SelectionForeColor = dgvBook.ColumnHeadersDefaultCellStyle.ForeColor
     End Sub
 
     Private Sub btnIssueBook_Click(sender As Object, e As EventArgs) Handles btnIssueBook.Click
@@ -198,7 +165,6 @@ Public Class IssueBook
             MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
             conn.Close()
-            loadBookTable()
             loadMemberTable()
         End Try
     End Sub
@@ -229,37 +195,4 @@ Public Class IssueBook
         dgvMember.DataSource = dt
     End Sub
 
-    Private Sub tbSearch2_TextChanged(sender As Object, e As EventArgs)
-        Dim query As String = "SELECT custom_book_id as [Book ID], title as [Title], author as [Author], quantity as [Quantity] from tbl_book WHERE IsDeleted = 0"
-        Dim search As String = tbSearch2.Text
-
-        If String.IsNullOrEmpty(tbSearch2.Text) Then
-            loadBookTable()
-            Return
-        End If
-
-        If cbSearchBy2.Text = "Title" Then
-            query += " AND title LIKE @search"
-        ElseIf cbSearchBy2.Text = "Author" Then
-            query += " AND author LIKE @search"
-        ElseIf cbSearchBy2.Text = "ISBN" Then
-            query += " AND isbn LIKE @search"
-        ElseIf cbSearchBy2.Text = "ID" Then
-            Dim pattern As String = "^b-\d{6}$"
-            If Not System.Text.RegularExpressions.Regex.IsMatch(search, pattern, RegexOptions.IgnoreCase) Then Return
-            query += " AND custom_book_id LIKE @search" ' Use custom_book_id instead of book_id
-        End If
-
-        Dim cmd As New SqlCommand(query, conn)
-        cmd.Parameters.AddWithValue("@search", "%" & search & "%")
-
-        Dim da As New SqlDataAdapter(cmd)
-        Dim dt As New DataTable()
-        da.Fill(dt)
-        dgvBook.DataSource = dt
-    End Sub
-
-    Private Sub pbExit_Click(sender As Object, e As EventArgs)
-        Me.Close()
-    End Sub
 End Class

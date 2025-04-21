@@ -37,6 +37,7 @@ Partial Class BorrowBook
         Me.tbSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.cbSearchBy = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.guna2CustomGradientPanel2 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.label10 = New System.Windows.Forms.Label()
         Me.lblGenre = New System.Windows.Forms.Label()
         Me.lblAuthor = New System.Windows.Forms.Label()
@@ -47,7 +48,6 @@ Partial Class BorrowBook
         Me.guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Me.pnlGrid = New Guna.UI2.WinForms.Guna2Panel()
         Me.dgvBook = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.guna2Panel2.SuspendLayout()
         CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlTopMenu.SuspendLayout()
@@ -68,9 +68,10 @@ Partial Class BorrowBook
         Me.guna2Panel2.Controls.Add(Me.cbGenre)
         Me.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.guna2Panel2.Location = New System.Drawing.Point(0, 50)
+        Me.guna2Panel2.Location = New System.Drawing.Point(13, 74)
+        Me.guna2Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel2.Name = "guna2Panel2"
-        Me.guna2Panel2.Size = New System.Drawing.Size(668, 87)
+        Me.guna2Panel2.Size = New System.Drawing.Size(865, 107)
         Me.guna2Panel2.TabIndex = 17
         '
         'pictureBox1
@@ -78,9 +79,10 @@ Partial Class BorrowBook
         Me.pictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pictureBox1.Image = Global.Library_Management_System.My.Resources.Resources.Legends
-        Me.pictureBox1.Location = New System.Drawing.Point(401, 6)
+        Me.pictureBox1.Location = New System.Drawing.Point(509, 7)
+        Me.pictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.pictureBox1.Name = "pictureBox1"
-        Me.pictureBox1.Size = New System.Drawing.Size(126, 75)
+        Me.pictureBox1.Size = New System.Drawing.Size(167, 92)
         Me.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pictureBox1.TabIndex = 1
         Me.pictureBox1.TabStop = False
@@ -90,9 +92,10 @@ Partial Class BorrowBook
         Me.label3.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.label3.AutoSize = True
         Me.label3.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label3.Location = New System.Drawing.Point(243, 21)
+        Me.label3.Location = New System.Drawing.Point(311, 26)
+        Me.label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label3.Name = "label3"
-        Me.label3.Size = New System.Drawing.Size(118, 17)
+        Me.label3.Size = New System.Drawing.Size(149, 23)
         Me.label3.TabIndex = 5
         Me.label3.Text = "Availability Status:"
         '
@@ -111,9 +114,10 @@ Partial Class BorrowBook
         Me.cbAvailabilityStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cbAvailabilityStatus.ItemHeight = 30
         Me.cbAvailabilityStatus.Items.AddRange(New Object() {"All", "Available", "Unavailable"})
-        Me.cbAvailabilityStatus.Location = New System.Drawing.Point(246, 41)
+        Me.cbAvailabilityStatus.Location = New System.Drawing.Point(315, 50)
+        Me.cbAvailabilityStatus.Margin = New System.Windows.Forms.Padding(4)
         Me.cbAvailabilityStatus.Name = "cbAvailabilityStatus"
-        Me.cbAvailabilityStatus.Size = New System.Drawing.Size(140, 36)
+        Me.cbAvailabilityStatus.Size = New System.Drawing.Size(185, 36)
         Me.cbAvailabilityStatus.TabIndex = 4
         '
         'label2
@@ -121,9 +125,10 @@ Partial Class BorrowBook
         Me.label2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.label2.AutoSize = True
         Me.label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label2.Location = New System.Drawing.Point(97, 19)
+        Me.label2.Location = New System.Drawing.Point(116, 23)
+        Me.label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label2.Name = "label2"
-        Me.label2.Size = New System.Drawing.Size(47, 17)
+        Me.label2.Size = New System.Drawing.Size(60, 23)
         Me.label2.TabIndex = 3
         Me.label2.Text = "Genre:"
         '
@@ -142,9 +147,10 @@ Partial Class BorrowBook
         Me.cbGenre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cbGenre.ItemHeight = 30
         Me.cbGenre.Items.AddRange(New Object() {"All", "Title", "Author", "ISBN", "Genre", "Publication Year"})
-        Me.cbGenre.Location = New System.Drawing.Point(100, 39)
+        Me.cbGenre.Location = New System.Drawing.Point(120, 48)
+        Me.cbGenre.Margin = New System.Windows.Forms.Padding(4)
         Me.cbGenre.Name = "cbGenre"
-        Me.cbGenre.Size = New System.Drawing.Size(140, 36)
+        Me.cbGenre.Size = New System.Drawing.Size(185, 36)
         Me.cbGenre.TabIndex = 1
         '
         'pnlTopMenu
@@ -157,16 +163,17 @@ Partial Class BorrowBook
         Me.pnlTopMenu.Controls.Add(Me.cbSearchBy)
         Me.pnlTopMenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlTopMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.pnlTopMenu.Location = New System.Drawing.Point(0, 0)
+        Me.pnlTopMenu.Location = New System.Drawing.Point(13, 12)
+        Me.pnlTopMenu.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlTopMenu.Name = "pnlTopMenu"
-        Me.pnlTopMenu.Size = New System.Drawing.Size(668, 50)
+        Me.pnlTopMenu.Size = New System.Drawing.Size(865, 62)
         Me.pnlTopMenu.TabIndex = 16
         '
         'btnClear
         '
         Me.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.btnClear.AutoRoundedCorners = True
-        Me.btnClear.BorderRadius = 19
+        Me.btnClear.BorderRadius = 23
         Me.btnClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btnClear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnClear.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
@@ -174,9 +181,10 @@ Partial Class BorrowBook
         Me.btnClear.FillColor = System.Drawing.Color.FromArgb(CType(CType(162, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(163, Byte), Integer))
         Me.btnClear.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.btnClear.ForeColor = System.Drawing.Color.White
-        Me.btnClear.Location = New System.Drawing.Point(515, 4)
+        Me.btnClear.Location = New System.Drawing.Point(674, 5)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(4)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(114, 40)
+        Me.btnClear.Size = New System.Drawing.Size(152, 49)
         Me.btnClear.TabIndex = 12
         Me.btnClear.Text = "Clear"
         '
@@ -185,9 +193,10 @@ Partial Class BorrowBook
         Me.label1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.label1.AutoSize = True
         Me.label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label1.Location = New System.Drawing.Point(64, 18)
+        Me.label1.Location = New System.Drawing.Point(72, 22)
+        Me.label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label1.Name = "label1"
-        Me.label1.Size = New System.Drawing.Size(70, 17)
+        Me.label1.Size = New System.Drawing.Size(89, 23)
         Me.label1.TabIndex = 1
         Me.label1.Text = "Search by:"
         '
@@ -195,7 +204,7 @@ Partial Class BorrowBook
         '
         Me.tbSearch.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.tbSearch.AutoRoundedCorners = True
-        Me.tbSearch.BorderRadius = 17
+        Me.tbSearch.BorderRadius = 21
         Me.tbSearch.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbSearch.DefaultText = ""
         Me.tbSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -206,12 +215,12 @@ Partial Class BorrowBook
         Me.tbSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbSearch.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbSearch.Location = New System.Drawing.Point(292, 7)
-        Me.tbSearch.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.tbSearch.Location = New System.Drawing.Point(376, 9)
+        Me.tbSearch.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbSearch.Name = "tbSearch"
         Me.tbSearch.PlaceholderText = "Search books"
         Me.tbSearch.SelectedText = ""
-        Me.tbSearch.Size = New System.Drawing.Size(200, 36)
+        Me.tbSearch.Size = New System.Drawing.Size(267, 44)
         Me.tbSearch.TabIndex = 1
         '
         'cbSearchBy
@@ -229,9 +238,10 @@ Partial Class BorrowBook
         Me.cbSearchBy.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cbSearchBy.ItemHeight = 30
         Me.cbSearchBy.Items.AddRange(New Object() {"Title", "Author", "ISBN", "Publication Year", "ID"})
-        Me.cbSearchBy.Location = New System.Drawing.Point(143, 7)
+        Me.cbSearchBy.Location = New System.Drawing.Point(178, 9)
+        Me.cbSearchBy.Margin = New System.Windows.Forms.Padding(4)
         Me.cbSearchBy.Name = "cbSearchBy"
-        Me.cbSearchBy.Size = New System.Drawing.Size(140, 36)
+        Me.cbSearchBy.Size = New System.Drawing.Size(185, 36)
         Me.cbSearchBy.TabIndex = 0
         '
         'guna2CustomGradientPanel2
@@ -249,19 +259,41 @@ Partial Class BorrowBook
         Me.guna2CustomGradientPanel2.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.guna2CustomGradientPanel2.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.guna2CustomGradientPanel2.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.guna2CustomGradientPanel2.Location = New System.Drawing.Point(0, 379)
+        Me.guna2CustomGradientPanel2.Location = New System.Drawing.Point(13, 454)
+        Me.guna2CustomGradientPanel2.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2"
-        Me.guna2CustomGradientPanel2.Size = New System.Drawing.Size(668, 143)
-        Me.guna2CustomGradientPanel2.TabIndex = 58
+        Me.guna2CustomGradientPanel2.Size = New System.Drawing.Size(865, 176)
+        Me.guna2CustomGradientPanel2.TabIndex = 59
+        '
+        'Guna2Button1
+        '
+        Me.Guna2Button1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Guna2Button1.AutoRoundedCorners = True
+        Me.Guna2Button1.BorderRadius = 23
+        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(162, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(163, Byte), Integer))
+        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button1.Location = New System.Drawing.Point(674, 60)
+        Me.Guna2Button1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Guna2Button1.Name = "Guna2Button1"
+        Me.Guna2Button1.Size = New System.Drawing.Size(152, 49)
+        Me.Guna2Button1.TabIndex = 13
+        Me.Guna2Button1.Text = "Borrow"
         '
         'label10
         '
         Me.label10.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.label10.AutoSize = True
+        Me.label10.BackColor = System.Drawing.Color.Transparent
         Me.label10.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label10.Location = New System.Drawing.Point(122, 63)
+        Me.label10.Location = New System.Drawing.Point(175, 76)
+        Me.label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label10.Name = "label10"
-        Me.label10.Size = New System.Drawing.Size(56, 17)
+        Me.label10.Size = New System.Drawing.Size(72, 23)
         Me.label10.TabIndex = 55
         Me.label10.Text = "Author:"
         '
@@ -269,10 +301,12 @@ Partial Class BorrowBook
         '
         Me.lblGenre.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lblGenre.AutoSize = True
+        Me.lblGenre.BackColor = System.Drawing.Color.Transparent
         Me.lblGenre.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.lblGenre.Location = New System.Drawing.Point(203, 90)
+        Me.lblGenre.Location = New System.Drawing.Point(244, 113)
+        Me.lblGenre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblGenre.Name = "lblGenre"
-        Me.lblGenre.Size = New System.Drawing.Size(44, 17)
+        Me.lblGenre.Size = New System.Drawing.Size(56, 23)
         Me.lblGenre.TabIndex = 53
         Me.lblGenre.Text = "Genre"
         '
@@ -280,10 +314,12 @@ Partial Class BorrowBook
         '
         Me.lblAuthor.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lblAuthor.AutoSize = True
+        Me.lblAuthor.BackColor = System.Drawing.Color.Transparent
         Me.lblAuthor.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.lblAuthor.Location = New System.Drawing.Point(203, 60)
+        Me.lblAuthor.Location = New System.Drawing.Point(243, 76)
+        Me.lblAuthor.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblAuthor.Name = "lblAuthor"
-        Me.lblAuthor.Size = New System.Drawing.Size(51, 17)
+        Me.lblAuthor.Size = New System.Drawing.Size(63, 23)
         Me.lblAuthor.TabIndex = 52
         Me.lblAuthor.Text = "Author"
         '
@@ -291,10 +327,12 @@ Partial Class BorrowBook
         '
         Me.lblBookTitle.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lblBookTitle.AutoSize = True
+        Me.lblBookTitle.BackColor = System.Drawing.Color.Transparent
         Me.lblBookTitle.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBookTitle.Location = New System.Drawing.Point(203, 27)
+        Me.lblBookTitle.Location = New System.Drawing.Point(243, 34)
+        Me.lblBookTitle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblBookTitle.Name = "lblBookTitle"
-        Me.lblBookTitle.Size = New System.Drawing.Size(68, 17)
+        Me.lblBookTitle.Size = New System.Drawing.Size(86, 23)
         Me.lblBookTitle.TabIndex = 51
         Me.lblBookTitle.Text = "Book Title"
         '
@@ -302,10 +340,12 @@ Partial Class BorrowBook
         '
         Me.label6.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.label6.AutoSize = True
+        Me.label6.BackColor = System.Drawing.Color.Transparent
         Me.label6.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label6.Location = New System.Drawing.Point(122, 93)
+        Me.label6.Location = New System.Drawing.Point(185, 113)
+        Me.label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.label6.Name = "label6"
-        Me.label6.Size = New System.Drawing.Size(48, 17)
+        Me.label6.Size = New System.Drawing.Size(62, 23)
         Me.label6.TabIndex = 50
         Me.label6.Text = "Genre:"
         '
@@ -313,10 +353,12 @@ Partial Class BorrowBook
         '
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(122, 30)
+        Me.Label4.Location = New System.Drawing.Point(150, 34)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(75, 17)
+        Me.Label4.Size = New System.Drawing.Size(97, 23)
         Me.Label4.TabIndex = 48
         Me.Label4.Text = "Book Title:"
         '
@@ -324,10 +366,12 @@ Partial Class BorrowBook
         '
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(18, 5)
+        Me.Label5.Location = New System.Drawing.Point(11, 6)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(85, 21)
+        Me.Label5.Size = New System.Drawing.Size(109, 28)
         Me.Label5.TabIndex = 48
         Me.Label5.Text = "Book Info:"
         '
@@ -335,11 +379,12 @@ Partial Class BorrowBook
         '
         Me.guna2Panel5.Controls.Add(Me.pnlGrid)
         Me.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.guna2Panel5.Location = New System.Drawing.Point(0, 137)
+        Me.guna2Panel5.Location = New System.Drawing.Point(13, 181)
+        Me.guna2Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.guna2Panel5.Name = "guna2Panel5"
-        Me.guna2Panel5.Padding = New System.Windows.Forms.Padding(10)
-        Me.guna2Panel5.Size = New System.Drawing.Size(668, 242)
-        Me.guna2Panel5.TabIndex = 59
+        Me.guna2Panel5.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
+        Me.guna2Panel5.Size = New System.Drawing.Size(865, 273)
+        Me.guna2Panel5.TabIndex = 60
         '
         'pnlGrid
         '
@@ -348,10 +393,11 @@ Partial Class BorrowBook
         Me.pnlGrid.Controls.Add(Me.dgvBook)
         Me.pnlGrid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlGrid.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.pnlGrid.Location = New System.Drawing.Point(10, 10)
+        Me.pnlGrid.Location = New System.Drawing.Point(13, 12)
+        Me.pnlGrid.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlGrid.Name = "pnlGrid"
-        Me.pnlGrid.Padding = New System.Windows.Forms.Padding(10)
-        Me.pnlGrid.Size = New System.Drawing.Size(648, 222)
+        Me.pnlGrid.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
+        Me.pnlGrid.Size = New System.Drawing.Size(839, 249)
         Me.pnlGrid.TabIndex = 0
         '
         'dgvBook
@@ -382,14 +428,15 @@ Partial Class BorrowBook
         Me.dgvBook.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvBook.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvBook.GridColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.dgvBook.Location = New System.Drawing.Point(10, 10)
+        Me.dgvBook.Location = New System.Drawing.Point(13, 12)
+        Me.dgvBook.Margin = New System.Windows.Forms.Padding(4)
         Me.dgvBook.Name = "dgvBook"
         Me.dgvBook.ReadOnly = True
         Me.dgvBook.RowHeadersVisible = False
         Me.dgvBook.RowHeadersWidth = 51
         Me.dgvBook.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.dgvBook.Size = New System.Drawing.Size(628, 202)
-        Me.dgvBook.TabIndex = 0
+        Me.dgvBook.Size = New System.Drawing.Size(813, 225)
+        Me.dgvBook.TabIndex = 1
         Me.dgvBook.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.LightGreen
         Me.dgvBook.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(201, Byte), Integer))
         Me.dgvBook.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -413,34 +460,19 @@ Partial Class BorrowBook
         Me.dgvBook.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(177, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(134, Byte), Integer))
         Me.dgvBook.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black
         '
-        'Guna2Button1
-        '
-        Me.Guna2Button1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Guna2Button1.AutoRoundedCorners = True
-        Me.Guna2Button1.BorderRadius = 19
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(162, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(163, Byte), Integer))
-        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Location = New System.Drawing.Point(515, 49)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(114, 40)
-        Me.Guna2Button1.TabIndex = 13
-        Me.Guna2Button1.Text = "Borrow"
-        '
         'BorrowBook
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(668, 522)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(233, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(891, 642)
         Me.Controls.Add(Me.guna2Panel5)
         Me.Controls.Add(Me.guna2CustomGradientPanel2)
         Me.Controls.Add(Me.guna2Panel2)
         Me.Controls.Add(Me.pnlTopMenu)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "BorrowBook"
+        Me.Padding = New System.Windows.Forms.Padding(13, 12, 13, 12)
         Me.Text = "BorrowBook"
         Me.guna2Panel2.ResumeLayout(False)
         Me.guna2Panel2.PerformLayout()
@@ -468,6 +500,7 @@ Partial Class BorrowBook
     Private WithEvents tbSearch As Guna.UI2.WinForms.Guna2TextBox
     Private WithEvents cbSearchBy As Guna.UI2.WinForms.Guna2ComboBox
     Private WithEvents guna2CustomGradientPanel2 As Guna.UI2.WinForms.Guna2CustomGradientPanel
+    Private WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
     Private WithEvents label10 As Label
     Private WithEvents lblGenre As Label
     Private WithEvents lblAuthor As Label
@@ -475,7 +508,6 @@ Partial Class BorrowBook
     Private WithEvents label6 As Label
     Private WithEvents Label4 As Label
     Private WithEvents Label5 As Label
-    Private WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
     Private WithEvents guna2Panel5 As Guna.UI2.WinForms.Guna2Panel
     Private WithEvents pnlGrid As Guna.UI2.WinForms.Guna2Panel
     Private WithEvents dgvBook As Guna.UI2.WinForms.Guna2DataGridView

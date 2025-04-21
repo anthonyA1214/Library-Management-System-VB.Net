@@ -22,9 +22,9 @@ Partial Class CirculationReport
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnlAddGenre = New Guna.UI2.WinForms.Guna2Panel()
         Me.btnClear = New Guna.UI2.WinForms.Guna2Button()
         Me.cbReturnStatus = New Guna.UI2.WinForms.Guna2ComboBox()
@@ -273,7 +273,7 @@ Partial Class CirculationReport
         Me.lblOverdueItems.AutoSize = True
         Me.lblOverdueItems.BackColor = System.Drawing.Color.Transparent
         Me.lblOverdueItems.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOverdueItems.Location = New System.Drawing.Point(407, 111)
+        Me.lblOverdueItems.Location = New System.Drawing.Point(395, 111)
         Me.lblOverdueItems.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblOverdueItems.Name = "lblOverdueItems"
         Me.lblOverdueItems.Size = New System.Drawing.Size(52, 25)
@@ -286,7 +286,7 @@ Partial Class CirculationReport
         Me.lblTotalItemsReturned.AutoSize = True
         Me.lblTotalItemsReturned.BackColor = System.Drawing.Color.Transparent
         Me.lblTotalItemsReturned.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotalItemsReturned.Location = New System.Drawing.Point(407, 75)
+        Me.lblTotalItemsReturned.Location = New System.Drawing.Point(394, 75)
         Me.lblTotalItemsReturned.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTotalItemsReturned.Name = "lblTotalItemsReturned"
         Me.lblTotalItemsReturned.Size = New System.Drawing.Size(52, 25)
@@ -299,7 +299,7 @@ Partial Class CirculationReport
         Me.lblTotalItemsBorrowed.AutoSize = True
         Me.lblTotalItemsBorrowed.BackColor = System.Drawing.Color.Transparent
         Me.lblTotalItemsBorrowed.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotalItemsBorrowed.Location = New System.Drawing.Point(411, 34)
+        Me.lblTotalItemsBorrowed.Location = New System.Drawing.Point(394, 34)
         Me.lblTotalItemsBorrowed.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTotalItemsBorrowed.Name = "lblTotalItemsBorrowed"
         Me.lblTotalItemsBorrowed.Size = New System.Drawing.Size(52, 25)
@@ -376,26 +376,26 @@ Partial Class CirculationReport
         Me.dgvIssue.AllowUserToDeleteRows = False
         Me.dgvIssue.AllowUserToResizeColumns = False
         Me.dgvIssue.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(201, Byte), Integer))
-        Me.dgvIssue.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(201, Byte), Integer))
+        Me.dgvIssue.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvIssue.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(74, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvIssue.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(74, Byte), Integer))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvIssue.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.dgvIssue.ColumnHeadersHeight = 50
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(177, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(134, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvIssue.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(177, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(134, Byte), Integer))
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvIssue.DefaultCellStyle = DataGridViewCellStyle9
         Me.dgvIssue.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvIssue.GridColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.dgvIssue.Location = New System.Drawing.Point(13, 12)
