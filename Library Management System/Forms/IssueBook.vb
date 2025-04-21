@@ -50,7 +50,7 @@ Public Class IssueBook
         lblBookAuthor.Text = ""
     End Sub
 
-    Private Sub dgvBook_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvBook.CellClick
+    Private Sub dgvBook_CellClick(sender As Object, e As DataGridViewCellEventArgs)
         If e.RowIndex >= 0 AndAlso dgvBook.Rows(e.RowIndex).Cells(e.ColumnIndex) IsNot Nothing Then
             Dim customBookId As String = dgvBook.Rows(e.RowIndex).Cells(0).Value.ToString()
             bookid = Integer.Parse(customBookId.Substring(2))
@@ -229,7 +229,7 @@ Public Class IssueBook
         dgvMember.DataSource = dt
     End Sub
 
-    Private Sub tbSearch2_TextChanged(sender As Object, e As EventArgs) Handles tbSearch2.TextChanged
+    Private Sub tbSearch2_TextChanged(sender As Object, e As EventArgs)
         Dim query As String = "SELECT custom_book_id as [Book ID], title as [Title], author as [Author], quantity as [Quantity] from tbl_book WHERE IsDeleted = 0"
         Dim search As String = tbSearch2.Text
 

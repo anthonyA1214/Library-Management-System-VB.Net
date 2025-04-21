@@ -135,6 +135,12 @@
     <Compile Include="Forms\Archive.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\BorrowBook.Designer.vb">
+      <DependentUpon>BorrowBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BorrowBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\BorrowerForm.Designer.vb">
       <DependentUpon>BorrowerForm.vb</DependentUpon>
     </Compile>
@@ -262,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Archive.resx">
       <DependentUpon>Archive.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BorrowBook.resx">
+      <DependentUpon>BorrowBook.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BorrowerForm.resx">
       <DependentUpon>BorrowerForm.vb</DependentUpon>

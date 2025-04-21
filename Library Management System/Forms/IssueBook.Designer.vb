@@ -22,25 +22,12 @@ Partial Class IssueBook
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.tableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.label6 = New System.Windows.Forms.Label()
-        Me.dgvBook = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.tbSearch2 = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.label5 = New System.Windows.Forms.Label()
-        Me.guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.cbSearchBy2 = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.panel1 = New System.Windows.Forms.Panel()
-        Me.label4 = New System.Windows.Forms.Label()
         Me.guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.tbSearch1 = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.label3 = New System.Windows.Forms.Label()
         Me.label2 = New System.Windows.Forms.Label()
         Me.cbSearchBy1 = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
@@ -70,9 +57,6 @@ Partial Class IssueBook
         Me.guna2PictureBox3 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.tableLayoutPanel1.SuspendLayout()
-        Me.guna2Panel3.SuspendLayout()
-        CType(Me.dgvBook, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.guna2Panel1.SuspendLayout()
         CType(Me.guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvMember, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,11 +68,10 @@ Partial Class IssueBook
         '
         'tableLayoutPanel1
         '
-        Me.tableLayoutPanel1.ColumnCount = 3
-        Me.tableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tableLayoutPanel1.ColumnCount = 2
+        Me.tableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.82098!))
+        Me.tableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.17901!))
         Me.tableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 215.0!))
-        Me.tableLayoutPanel1.Controls.Add(Me.guna2Panel3, 1, 0)
         Me.tableLayoutPanel1.Controls.Add(Me.guna2Panel1, 0, 0)
         Me.tableLayoutPanel1.Controls.Add(Me.guna2Panel5, 2, 0)
         Me.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -99,192 +82,11 @@ Partial Class IssueBook
         Me.tableLayoutPanel1.Size = New System.Drawing.Size(648, 502)
         Me.tableLayoutPanel1.TabIndex = 1
         '
-        'guna2Panel3
-        '
-        Me.guna2Panel3.BackColor = System.Drawing.Color.Transparent
-        Me.guna2Panel3.BorderRadius = 20
-        Me.guna2Panel3.Controls.Add(Me.label6)
-        Me.guna2Panel3.Controls.Add(Me.dgvBook)
-        Me.guna2Panel3.Controls.Add(Me.tbSearch2)
-        Me.guna2Panel3.Controls.Add(Me.label5)
-        Me.guna2Panel3.Controls.Add(Me.guna2PictureBox1)
-        Me.guna2Panel3.Controls.Add(Me.cbSearchBy2)
-        Me.guna2Panel3.Controls.Add(Me.panel1)
-        Me.guna2Panel3.Controls.Add(Me.label4)
-        Me.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.guna2Panel3.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.guna2Panel3.Location = New System.Drawing.Point(219, 3)
-        Me.guna2Panel3.Name = "guna2Panel3"
-        Me.guna2Panel3.Size = New System.Drawing.Size(210, 496)
-        Me.guna2Panel3.TabIndex = 11
-        '
-        'label6
-        '
-        Me.label6.AutoSize = True
-        Me.label6.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.label6.Location = New System.Drawing.Point(4, 189)
-        Me.label6.Name = "label6"
-        Me.label6.Size = New System.Drawing.Size(60, 21)
-        Me.label6.TabIndex = 39
-        Me.label6.Text = "Books:"
-        '
-        'dgvBook
-        '
-        Me.dgvBook.AllowUserToAddRows = False
-        Me.dgvBook.AllowUserToDeleteRows = False
-        Me.dgvBook.AllowUserToResizeColumns = False
-        Me.dgvBook.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(201, Byte), Integer))
-        Me.dgvBook.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvBook.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dgvBook.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(74, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvBook.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.dgvBook.ColumnHeadersHeight = 50
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(177, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(134, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvBook.DefaultCellStyle = DataGridViewCellStyle3
-        Me.dgvBook.GridColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.dgvBook.Location = New System.Drawing.Point(8, 213)
-        Me.dgvBook.Name = "dgvBook"
-        Me.dgvBook.ReadOnly = True
-        Me.dgvBook.RowHeadersVisible = False
-        Me.dgvBook.RowHeadersWidth = 51
-        Me.dgvBook.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.dgvBook.Size = New System.Drawing.Size(197, 264)
-        Me.dgvBook.TabIndex = 38
-        Me.dgvBook.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.LightGreen
-        Me.dgvBook.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(201, Byte), Integer))
-        Me.dgvBook.ThemeStyle.AlternatingRowsStyle.Font = Nothing
-        Me.dgvBook.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
-        Me.dgvBook.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
-        Me.dgvBook.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
-        Me.dgvBook.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.dgvBook.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.dgvBook.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(74, Byte), Integer))
-        Me.dgvBook.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.dgvBook.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvBook.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.dgvBook.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgvBook.ThemeStyle.HeaderStyle.Height = 50
-        Me.dgvBook.ThemeStyle.ReadOnly = True
-        Me.dgvBook.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.dgvBook.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.dgvBook.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgvBook.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black
-        Me.dgvBook.ThemeStyle.RowsStyle.Height = 22
-        Me.dgvBook.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(177, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(134, Byte), Integer))
-        Me.dgvBook.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black
-        '
-        'tbSearch2
-        '
-        Me.tbSearch2.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.tbSearch2.AutoRoundedCorners = True
-        Me.tbSearch2.BorderRadius = 17
-        Me.tbSearch2.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.tbSearch2.DefaultText = ""
-        Me.tbSearch2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.tbSearch2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.tbSearch2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.tbSearch2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.tbSearch2.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.tbSearch2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbSearch2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbSearch2.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbSearch2.Location = New System.Drawing.Point(5, 140)
-        Me.tbSearch2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.tbSearch2.Name = "tbSearch2"
-        Me.tbSearch2.PlaceholderText = "Search books"
-        Me.tbSearch2.SelectedText = ""
-        Me.tbSearch2.Size = New System.Drawing.Size(200, 36)
-        Me.tbSearch2.TabIndex = 37
-        '
-        'label5
-        '
-        Me.label5.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.label5.AutoSize = True
-        Me.label5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.label5.Location = New System.Drawing.Point(2, 107)
-        Me.label5.Name = "label5"
-        Me.label5.Size = New System.Drawing.Size(70, 17)
-        Me.label5.TabIndex = 37
-        Me.label5.Text = "Search by:"
-        '
-        'guna2PictureBox1
-        '
-        Me.guna2PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.guna2PictureBox1.Image = Global.Library_Management_System.My.Resources.Resources.book4
-        Me.guna2PictureBox1.ImageRotate = 0!
-        Me.guna2PictureBox1.Location = New System.Drawing.Point(25, 38)
-        Me.guna2PictureBox1.Name = "guna2PictureBox1"
-        Me.guna2PictureBox1.Size = New System.Drawing.Size(45, 45)
-        Me.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.guna2PictureBox1.TabIndex = 34
-        Me.guna2PictureBox1.TabStop = False
-        '
-        'cbSearchBy2
-        '
-        Me.cbSearchBy2.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.cbSearchBy2.AutoRoundedCorners = True
-        Me.cbSearchBy2.BackColor = System.Drawing.Color.Transparent
-        Me.cbSearchBy2.BorderRadius = 17
-        Me.cbSearchBy2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cbSearchBy2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbSearchBy2.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.cbSearchBy2.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cbSearchBy2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cbSearchBy2.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cbSearchBy2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cbSearchBy2.ItemHeight = 30
-        Me.cbSearchBy2.Items.AddRange(New Object() {"Title", "Author", "ISBN", "ID"})
-        Me.cbSearchBy2.Location = New System.Drawing.Point(73, 98)
-        Me.cbSearchBy2.Name = "cbSearchBy2"
-        Me.cbSearchBy2.Size = New System.Drawing.Size(135, 36)
-        Me.cbSearchBy2.TabIndex = 36
-        '
-        'panel1
-        '
-        Me.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.panel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.panel1.Location = New System.Drawing.Point(5, 89)
-        Me.panel1.Name = "panel1"
-        Me.panel1.Size = New System.Drawing.Size(200, 3)
-        Me.panel1.TabIndex = 32
-        '
-        'label4
-        '
-        Me.label4.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.label4.AutoSize = True
-        Me.label4.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.label4.Location = New System.Drawing.Point(70, 47)
-        Me.label4.Name = "label4"
-        Me.label4.Size = New System.Drawing.Size(116, 25)
-        Me.label4.TabIndex = 33
-        Me.label4.Text = "Select Book"
-        '
         'guna2Panel1
         '
         Me.guna2Panel1.BackColor = System.Drawing.Color.Transparent
         Me.guna2Panel1.BorderRadius = 20
         Me.guna2Panel1.Controls.Add(Me.tbSearch1)
-        Me.guna2Panel1.Controls.Add(Me.label3)
         Me.guna2Panel1.Controls.Add(Me.label2)
         Me.guna2Panel1.Controls.Add(Me.cbSearchBy1)
         Me.guna2Panel1.Controls.Add(Me.guna2PictureBox2)
@@ -295,7 +97,7 @@ Partial Class IssueBook
         Me.guna2Panel1.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.guna2Panel1.Location = New System.Drawing.Point(3, 3)
         Me.guna2Panel1.Name = "guna2Panel1"
-        Me.guna2Panel1.Size = New System.Drawing.Size(210, 496)
+        Me.guna2Panel1.Size = New System.Drawing.Size(426, 496)
         Me.guna2Panel1.TabIndex = 10
         '
         'tbSearch1
@@ -313,24 +115,13 @@ Partial Class IssueBook
         Me.tbSearch1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tbSearch1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbSearch1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tbSearch1.Location = New System.Drawing.Point(5, 140)
+        Me.tbSearch1.Location = New System.Drawing.Point(257, 105)
         Me.tbSearch1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tbSearch1.Name = "tbSearch1"
-        Me.tbSearch1.PlaceholderText = "Search members"
+        Me.tbSearch1.PlaceholderText = "Search pendings"
         Me.tbSearch1.SelectedText = ""
-        Me.tbSearch1.Size = New System.Drawing.Size(200, 36)
+        Me.tbSearch1.Size = New System.Drawing.Size(143, 36)
         Me.tbSearch1.TabIndex = 36
-        '
-        'label3
-        '
-        Me.label3.AutoSize = True
-        Me.label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.label3.Location = New System.Drawing.Point(4, 189)
-        Me.label3.Name = "label3"
-        Me.label3.Size = New System.Drawing.Size(85, 21)
-        Me.label3.TabIndex = 35
-        Me.label3.Text = "Members:"
         '
         'label2
         '
@@ -338,7 +129,7 @@ Partial Class IssueBook
         Me.label2.AutoSize = True
         Me.label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.label2.Location = New System.Drawing.Point(2, 107)
+        Me.label2.Location = New System.Drawing.Point(39, 113)
         Me.label2.Name = "label2"
         Me.label2.Size = New System.Drawing.Size(70, 17)
         Me.label2.TabIndex = 34
@@ -358,8 +149,8 @@ Partial Class IssueBook
         Me.cbSearchBy1.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.cbSearchBy1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cbSearchBy1.ItemHeight = 30
-        Me.cbSearchBy1.Items.AddRange(New Object() {"Name", "ID"})
-        Me.cbSearchBy1.Location = New System.Drawing.Point(73, 98)
+        Me.cbSearchBy1.Items.AddRange(New Object() {"Member ID", "Member Name", "Book Title", "Author", "Genre"})
+        Me.cbSearchBy1.Location = New System.Drawing.Point(111, 104)
         Me.cbSearchBy1.Name = "cbSearchBy1"
         Me.cbSearchBy1.Size = New System.Drawing.Size(135, 36)
         Me.cbSearchBy1.TabIndex = 33
@@ -369,7 +160,7 @@ Partial Class IssueBook
         Me.guna2PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.guna2PictureBox2.Image = Global.Library_Management_System.My.Resources.Resources.user2
         Me.guna2PictureBox2.ImageRotate = 0!
-        Me.guna2PictureBox2.Location = New System.Drawing.Point(6, 38)
+        Me.guna2PictureBox2.Location = New System.Drawing.Point(96, 38)
         Me.guna2PictureBox2.Name = "guna2PictureBox2"
         Me.guna2PictureBox2.Size = New System.Drawing.Size(45, 45)
         Me.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -381,9 +172,9 @@ Partial Class IssueBook
         Me.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
         Me.panel5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.panel5.Location = New System.Drawing.Point(5, 89)
+        Me.panel5.Location = New System.Drawing.Point(106, 89)
         Me.panel5.Name = "panel5"
-        Me.panel5.Size = New System.Drawing.Size(200, 3)
+        Me.panel5.Size = New System.Drawing.Size(215, 3)
         Me.panel5.TabIndex = 29
         '
         'label1
@@ -392,11 +183,11 @@ Partial Class IssueBook
         Me.label1.AutoSize = True
         Me.label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer))
-        Me.label1.Location = New System.Drawing.Point(51, 47)
+        Me.label1.Location = New System.Drawing.Point(141, 47)
         Me.label1.Name = "label1"
-        Me.label1.Size = New System.Drawing.Size(154, 25)
+        Me.label1.Size = New System.Drawing.Size(184, 25)
         Me.label1.TabIndex = 30
-        Me.label1.Text = "Select Borrower"
+        Me.label1.Text = "Pending Borrowers"
         '
         'dgvMember
         '
@@ -428,13 +219,13 @@ Partial Class IssueBook
         DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvMember.DefaultCellStyle = DataGridViewCellStyle6
         Me.dgvMember.GridColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.dgvMember.Location = New System.Drawing.Point(8, 213)
+        Me.dgvMember.Location = New System.Drawing.Point(8, 156)
         Me.dgvMember.Name = "dgvMember"
         Me.dgvMember.ReadOnly = True
         Me.dgvMember.RowHeadersVisible = False
         Me.dgvMember.RowHeadersWidth = 51
         Me.dgvMember.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.dgvMember.Size = New System.Drawing.Size(197, 264)
+        Me.dgvMember.Size = New System.Drawing.Size(413, 321)
         Me.dgvMember.TabIndex = 28
         Me.dgvMember.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.LightGreen
         Me.dgvMember.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(201, Byte), Integer))
@@ -780,13 +571,9 @@ Partial Class IssueBook
         Me.ClientSize = New System.Drawing.Size(668, 522)
         Me.Controls.Add(Me.tableLayoutPanel1)
         Me.Name = "IssueBook"
-        Me.Padding = New System.Windows.Forms.Padding(10, 10, 10, 10)
+        Me.Padding = New System.Windows.Forms.Padding(10)
         Me.Text = "IssueBook"
         Me.tableLayoutPanel1.ResumeLayout(False)
-        Me.guna2Panel3.ResumeLayout(False)
-        Me.guna2Panel3.PerformLayout()
-        CType(Me.dgvBook, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.guna2Panel1.ResumeLayout(False)
         Me.guna2Panel1.PerformLayout()
         CType(Me.guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -801,18 +588,8 @@ Partial Class IssueBook
     End Sub
 
     Private WithEvents tableLayoutPanel1 As TableLayoutPanel
-    Private WithEvents guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
-    Private WithEvents label6 As Label
-    Private WithEvents dgvBook As Guna.UI2.WinForms.Guna2DataGridView
-    Private WithEvents tbSearch2 As Guna.UI2.WinForms.Guna2TextBox
-    Private WithEvents label5 As Label
-    Private WithEvents guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
-    Private WithEvents cbSearchBy2 As Guna.UI2.WinForms.Guna2ComboBox
-    Private WithEvents panel1 As Panel
-    Private WithEvents label4 As Label
     Private WithEvents guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Private WithEvents tbSearch1 As Guna.UI2.WinForms.Guna2TextBox
-    Private WithEvents label3 As Label
     Private WithEvents label2 As Label
     Private WithEvents cbSearchBy1 As Guna.UI2.WinForms.Guna2ComboBox
     Private WithEvents guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
