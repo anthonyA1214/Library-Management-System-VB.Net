@@ -253,4 +253,11 @@ Public Class UserForm
     Private Sub guna2Panel3_Paint(sender As Object, e As PaintEventArgs) Handles guna2Panel3.Paint
 
     End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If result = DialogResult.Yes Then
+            Application.Exit()
+        End If
+    End Sub
 End Class

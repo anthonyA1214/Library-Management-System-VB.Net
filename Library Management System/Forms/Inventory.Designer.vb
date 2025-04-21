@@ -72,7 +72,6 @@ Partial Class Inventory
         Me.pnlTopMenu.Controls.Add(Me.cbSearchBy)
         Me.pnlTopMenu.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlTopMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.pnlTopMenu.Location = New System.Drawing.Point(10, 10)
         Me.pnlTopMenu.Name = "pnlTopMenu"
         Me.pnlTopMenu.Size = New System.Drawing.Size(648, 50)
         Me.pnlTopMenu.TabIndex = 12
@@ -89,7 +88,6 @@ Partial Class Inventory
         Me.btnClear.FillColor = System.Drawing.Color.FromArgb(CType(CType(162, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(163, Byte), Integer))
         Me.btnClear.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.btnClear.ForeColor = System.Drawing.Color.White
-        Me.btnClear.Location = New System.Drawing.Point(505, 4)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(114, 40)
         Me.btnClear.TabIndex = 12
@@ -144,7 +142,6 @@ Partial Class Inventory
         Me.cbSearchBy.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cbSearchBy.ItemHeight = 30
         Me.cbSearchBy.Items.AddRange(New Object() {"Title", "Author", "ISBN", "Publication Year", "ID"})
-        Me.cbSearchBy.Location = New System.Drawing.Point(133, 7)
         Me.cbSearchBy.Name = "cbSearchBy"
         Me.cbSearchBy.Size = New System.Drawing.Size(140, 36)
         Me.cbSearchBy.TabIndex = 0
@@ -162,7 +159,6 @@ Partial Class Inventory
         Me.guna2Panel2.Controls.Add(Me.cbGenre)
         Me.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.guna2Panel2.Location = New System.Drawing.Point(10, 60)
         Me.guna2Panel2.Name = "guna2Panel2"
         Me.guna2Panel2.Size = New System.Drawing.Size(648, 108)
         Me.guna2Panel2.TabIndex = 15
@@ -172,7 +168,6 @@ Partial Class Inventory
         Me.pictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pictureBox1.Image = Global.Library_Management_System.My.Resources.Resources.Legends
-        Me.pictureBox1.Location = New System.Drawing.Point(493, 10)
         Me.pictureBox1.Name = "pictureBox1"
         Me.pictureBox1.Size = New System.Drawing.Size(147, 86)
         Me.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -191,7 +186,6 @@ Partial Class Inventory
         Me.btnRefresh.FillColor = System.Drawing.Color.FromArgb(CType(CType(162, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(163, Byte), Integer))
         Me.btnRefresh.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.btnRefresh.ForeColor = System.Drawing.Color.White
-        Me.btnRefresh.Location = New System.Drawing.Point(20, 58)
         Me.btnRefresh.Name = "btnRefresh"
         Me.btnRefresh.Size = New System.Drawing.Size(150, 40)
         Me.btnRefresh.TabIndex = 3
@@ -220,7 +214,6 @@ Partial Class Inventory
         Me.btnExport.FillColor = System.Drawing.Color.FromArgb(CType(CType(162, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(163, Byte), Integer))
         Me.btnExport.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.btnExport.ForeColor = System.Drawing.Color.White
-        Me.btnExport.Location = New System.Drawing.Point(20, 12)
         Me.btnExport.Name = "btnExport"
         Me.btnExport.Size = New System.Drawing.Size(150, 40)
         Me.btnExport.TabIndex = 2
@@ -241,7 +234,6 @@ Partial Class Inventory
         Me.cbAvailabilityStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cbAvailabilityStatus.ItemHeight = 30
         Me.cbAvailabilityStatus.Items.AddRange(New Object() {"All", "Available", "Unavailable"})
-        Me.cbAvailabilityStatus.Location = New System.Drawing.Point(335, 41)
         Me.cbAvailabilityStatus.Name = "cbAvailabilityStatus"
         Me.cbAvailabilityStatus.Size = New System.Drawing.Size(140, 36)
         Me.cbAvailabilityStatus.TabIndex = 4
@@ -272,7 +264,6 @@ Partial Class Inventory
         Me.cbGenre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cbGenre.ItemHeight = 30
         Me.cbGenre.Items.AddRange(New Object() {"All", "Title", "Author", "ISBN", "Genre", "Publication Year"})
-        Me.cbGenre.Location = New System.Drawing.Point(189, 39)
         Me.cbGenre.Name = "cbGenre"
         Me.cbGenre.Size = New System.Drawing.Size(140, 36)
         Me.cbGenre.TabIndex = 1
@@ -293,7 +284,6 @@ Partial Class Inventory
         Me.pnlSideMenu.Controls.Add(Me.lblSideMenu)
         Me.pnlSideMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.pnlSideMenu.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.pnlSideMenu.Location = New System.Drawing.Point(10, 168)
         Me.pnlSideMenu.Name = "pnlSideMenu"
         Me.pnlSideMenu.Size = New System.Drawing.Size(225, 344)
         Me.pnlSideMenu.TabIndex = 18
@@ -324,7 +314,6 @@ Partial Class Inventory
         Me.btnEnter.FillColor = System.Drawing.Color.FromArgb(CType(CType(162, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(163, Byte), Integer))
         Me.btnEnter.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
         Me.btnEnter.ForeColor = System.Drawing.Color.White
-        Me.btnEnter.Location = New System.Drawing.Point(37, 263)
         Me.btnEnter.Name = "btnEnter"
         Me.btnEnter.Size = New System.Drawing.Size(150, 40)
         Me.btnEnter.TabIndex = 12
@@ -411,7 +400,6 @@ Partial Class Inventory
         '
         Me.pbExit2.Image = Global.Library_Management_System.My.Resources.Resources.reject2
         Me.pbExit2.ImageRotate = 0!
-        Me.pbExit2.Location = New System.Drawing.Point(181, 6)
         Me.pbExit2.Name = "pbExit2"
         Me.pbExit2.Size = New System.Drawing.Size(25, 25)
         Me.pbExit2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -433,7 +421,6 @@ Partial Class Inventory
         '
         Me.guna2Panel5.Controls.Add(Me.pnlGrid)
         Me.guna2Panel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.guna2Panel5.Location = New System.Drawing.Point(235, 168)
         Me.guna2Panel5.Name = "guna2Panel5"
         Me.guna2Panel5.Padding = New System.Windows.Forms.Padding(10, 10, 10, 10)
         Me.guna2Panel5.Size = New System.Drawing.Size(423, 344)
@@ -446,7 +433,6 @@ Partial Class Inventory
         Me.pnlGrid.Controls.Add(Me.dgvBook)
         Me.pnlGrid.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlGrid.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.pnlGrid.Location = New System.Drawing.Point(10, 10)
         Me.pnlGrid.Name = "pnlGrid"
         Me.pnlGrid.Padding = New System.Windows.Forms.Padding(10, 10, 10, 10)
         Me.pnlGrid.Size = New System.Drawing.Size(403, 324)
@@ -480,7 +466,6 @@ Partial Class Inventory
         Me.dgvBook.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgvBook.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvBook.GridColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.dgvBook.Location = New System.Drawing.Point(10, 10)
         Me.dgvBook.Name = "dgvBook"
         Me.dgvBook.ReadOnly = True
         Me.dgvBook.RowHeadersVisible = False

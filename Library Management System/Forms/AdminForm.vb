@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Runtime.InteropServices
 Imports System.Windows.Forms.DataVisualization.Charting
 
 Public Class AdminForm
@@ -6,10 +7,12 @@ Public Class AdminForm
 
     Dim conn As SqlConnection = dbConnection.GetConnection()
     Private Username As String
+    Private borderSize As Integer = 2
 
     Public Sub New(username As String)
         InitializeComponent()
         Me.Username = username
+        Me.Padding = New Padding(borderSize)
     End Sub
 
     Private Sub updateFont()
@@ -307,5 +310,12 @@ Public Class AdminForm
 
     Private Sub btnViewBooks_Click(sender As Object, e As EventArgs) Handles btnViewBooks.Click
         openForm(New ViewBooks())
+    End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If result = DialogResult.Yes Then
+            Application.Exit()
+        End If
     End Sub
 End Class
