@@ -22,9 +22,9 @@ Partial Class BorrowBook
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.pictureBox1 = New System.Windows.Forms.PictureBox()
         Me.label3 = New System.Windows.Forms.Label()
@@ -36,8 +36,8 @@ Partial Class BorrowBook
         Me.label1 = New System.Windows.Forms.Label()
         Me.tbSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.cbSearchBy = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.guna2CustomGradientPanel2 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.pnlBottom = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Me.btnBorrow = New Guna.UI2.WinForms.Guna2Button()
         Me.label10 = New System.Windows.Forms.Label()
         Me.lblGenre = New System.Windows.Forms.Label()
         Me.lblAuthor = New System.Windows.Forms.Label()
@@ -51,7 +51,7 @@ Partial Class BorrowBook
         Me.guna2Panel2.SuspendLayout()
         CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlTopMenu.SuspendLayout()
-        Me.guna2CustomGradientPanel2.SuspendLayout()
+        Me.pnlBottom.SuspendLayout()
         Me.guna2Panel5.SuspendLayout()
         Me.pnlGrid.SuspendLayout()
         CType(Me.dgvBook, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -244,45 +244,45 @@ Partial Class BorrowBook
         Me.cbSearchBy.Size = New System.Drawing.Size(185, 36)
         Me.cbSearchBy.TabIndex = 0
         '
-        'guna2CustomGradientPanel2
+        'pnlBottom
         '
-        Me.guna2CustomGradientPanel2.Controls.Add(Me.Guna2Button1)
-        Me.guna2CustomGradientPanel2.Controls.Add(Me.label10)
-        Me.guna2CustomGradientPanel2.Controls.Add(Me.lblGenre)
-        Me.guna2CustomGradientPanel2.Controls.Add(Me.lblAuthor)
-        Me.guna2CustomGradientPanel2.Controls.Add(Me.lblBookTitle)
-        Me.guna2CustomGradientPanel2.Controls.Add(Me.label6)
-        Me.guna2CustomGradientPanel2.Controls.Add(Me.Label4)
-        Me.guna2CustomGradientPanel2.Controls.Add(Me.Label5)
-        Me.guna2CustomGradientPanel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.guna2CustomGradientPanel2.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.guna2CustomGradientPanel2.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.guna2CustomGradientPanel2.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.guna2CustomGradientPanel2.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        Me.guna2CustomGradientPanel2.Location = New System.Drawing.Point(13, 454)
-        Me.guna2CustomGradientPanel2.Margin = New System.Windows.Forms.Padding(4)
-        Me.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2"
-        Me.guna2CustomGradientPanel2.Size = New System.Drawing.Size(865, 176)
-        Me.guna2CustomGradientPanel2.TabIndex = 59
+        Me.pnlBottom.Controls.Add(Me.btnBorrow)
+        Me.pnlBottom.Controls.Add(Me.label10)
+        Me.pnlBottom.Controls.Add(Me.lblGenre)
+        Me.pnlBottom.Controls.Add(Me.lblAuthor)
+        Me.pnlBottom.Controls.Add(Me.lblBookTitle)
+        Me.pnlBottom.Controls.Add(Me.label6)
+        Me.pnlBottom.Controls.Add(Me.Label4)
+        Me.pnlBottom.Controls.Add(Me.Label5)
+        Me.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.pnlBottom.FillColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.pnlBottom.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.pnlBottom.FillColor3 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.pnlBottom.FillColor4 = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
+        Me.pnlBottom.Location = New System.Drawing.Point(13, 454)
+        Me.pnlBottom.Margin = New System.Windows.Forms.Padding(4)
+        Me.pnlBottom.Name = "pnlBottom"
+        Me.pnlBottom.Size = New System.Drawing.Size(865, 176)
+        Me.pnlBottom.TabIndex = 59
         '
-        'Guna2Button1
+        'btnBorrow
         '
-        Me.Guna2Button1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Guna2Button1.AutoRoundedCorners = True
-        Me.Guna2Button1.BorderRadius = 23
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(162, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(163, Byte), Integer))
-        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Location = New System.Drawing.Point(674, 60)
-        Me.Guna2Button1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(152, 49)
-        Me.Guna2Button1.TabIndex = 13
-        Me.Guna2Button1.Text = "Borrow"
+        Me.btnBorrow.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnBorrow.AutoRoundedCorners = True
+        Me.btnBorrow.BorderRadius = 23
+        Me.btnBorrow.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnBorrow.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnBorrow.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnBorrow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnBorrow.FillColor = System.Drawing.Color.FromArgb(CType(CType(162, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(163, Byte), Integer))
+        Me.btnBorrow.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.btnBorrow.ForeColor = System.Drawing.Color.White
+        Me.btnBorrow.Location = New System.Drawing.Point(674, 60)
+        Me.btnBorrow.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnBorrow.Name = "btnBorrow"
+        Me.btnBorrow.Size = New System.Drawing.Size(152, 49)
+        Me.btnBorrow.TabIndex = 13
+        Me.btnBorrow.Text = "Borrow"
         '
         'label10
         '
@@ -406,26 +406,26 @@ Partial Class BorrowBook
         Me.dgvBook.AllowUserToDeleteRows = False
         Me.dgvBook.AllowUserToResizeColumns = False
         Me.dgvBook.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(201, Byte), Integer))
-        Me.dgvBook.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(201, Byte), Integer))
+        Me.dgvBook.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvBook.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(225, Byte), Integer))
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(74, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvBook.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(139, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(74, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvBook.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvBook.ColumnHeadersHeight = 50
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(177, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(134, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvBook.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(242, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(177, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(134, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvBook.DefaultCellStyle = DataGridViewCellStyle6
         Me.dgvBook.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgvBook.GridColor = System.Drawing.Color.FromArgb(CType(CType(219, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(199, Byte), Integer))
         Me.dgvBook.Location = New System.Drawing.Point(13, 12)
@@ -467,7 +467,7 @@ Partial Class BorrowBook
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(233, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(891, 642)
         Me.Controls.Add(Me.guna2Panel5)
-        Me.Controls.Add(Me.guna2CustomGradientPanel2)
+        Me.Controls.Add(Me.pnlBottom)
         Me.Controls.Add(Me.guna2Panel2)
         Me.Controls.Add(Me.pnlTopMenu)
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -479,8 +479,8 @@ Partial Class BorrowBook
         CType(Me.pictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlTopMenu.ResumeLayout(False)
         Me.pnlTopMenu.PerformLayout()
-        Me.guna2CustomGradientPanel2.ResumeLayout(False)
-        Me.guna2CustomGradientPanel2.PerformLayout()
+        Me.pnlBottom.ResumeLayout(False)
+        Me.pnlBottom.PerformLayout()
         Me.guna2Panel5.ResumeLayout(False)
         Me.pnlGrid.ResumeLayout(False)
         CType(Me.dgvBook, System.ComponentModel.ISupportInitialize).EndInit()
@@ -499,8 +499,8 @@ Partial Class BorrowBook
     Private WithEvents label1 As Label
     Private WithEvents tbSearch As Guna.UI2.WinForms.Guna2TextBox
     Private WithEvents cbSearchBy As Guna.UI2.WinForms.Guna2ComboBox
-    Private WithEvents guna2CustomGradientPanel2 As Guna.UI2.WinForms.Guna2CustomGradientPanel
-    Private WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Private WithEvents pnlBottom As Guna.UI2.WinForms.Guna2CustomGradientPanel
+    Private WithEvents btnBorrow As Guna.UI2.WinForms.Guna2Button
     Private WithEvents label10 As Label
     Private WithEvents lblGenre As Label
     Private WithEvents lblAuthor As Label

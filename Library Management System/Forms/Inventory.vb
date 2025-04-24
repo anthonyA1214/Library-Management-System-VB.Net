@@ -309,4 +309,5 @@ Partial Public Class Inventory
         tbSearch.Clear()
         SearchFilter()
     End Sub
+
 End Class

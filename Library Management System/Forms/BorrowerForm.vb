@@ -136,7 +136,7 @@ Public Class BorrowerForm
     End Sub
 
     Private Sub btnBorrow_Click(sender As Object, e As EventArgs) Handles btnBorrow.Click
-        openForm(New BorrowBook())
+        openForm(New BorrowBook(Id))
     End Sub
     Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
         showSubMenu(pnlSettingsSubMenu)

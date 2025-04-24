@@ -4,9 +4,11 @@ Public Class BorrowBook
 
     Private conn As SqlConnection = dbConnection.GetConnection()
     Private bookid As Integer
+    Private memberid As Integer
 
-    Public Sub New()
+    Public Sub New(Id As Integer)
         InitializeComponent()
+        Me.memberid = Id
     End Sub
 
     Private Sub updateFont()
@@ -47,6 +49,7 @@ Public Class BorrowBook
     End Sub
 
     Private Sub BorrowBook_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        pnlBottom.Visible = False
         LoadTable()
         LoadGenre()
         cbSearchBy.Text = "Title"
@@ -71,10 +74,36 @@ Public Class BorrowBook
         End If
     End Sub
 
-    Private Sub dgvBook_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
+    Private Sub dgvBook_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvBook.CellClick
+        If e.RowIndex >= 0 AndAlso dgvBook.Rows(e.RowIndex).Cells(e.ColumnIndex) IsNot Nothing Then
+            Dim customBookId As String = dgvBook.Rows(e.RowIndex).Cells(0).Value.ToString()
+            bookid = Integer.Parse(customBookId.Substring(2))
+            pnlBottom.Visible = True
+            Dim query As String = "SELECT * from tbl_book WHERE book_id = @bookid"
+            Dim cmd As New SqlCommand(query, conn)
+            cmd.Parameters.AddWithValue("@bookid", bookid)
+            Dim da As New SqlDataAdapter(cmd)
+            Dim ds As New DataSet()
+            da.Fill(ds)
 
+            lblBookTitle.Text = ds.Tables(0).Rows(0)(2).ToString()
+            lblAuthor.Text = ds.Tables(0).Rows(0)(3).ToString()
+            lblGenre.Text = ds.Tables(0).Rows(0)(5).ToString()
+
+            conn.Open()
+            Dim qtyQuery As String = "SELECT quantity FROM tbl_book WHERE book_id = @bookid"
+            Dim qtyCmd As New SqlCommand(qtyQuery, conn)
+            qtyCmd.Parameters.AddWithValue("@bookid", bookid)
+            Dim quantity As Integer = Convert.ToInt32(qtyCmd.ExecuteScalar())
+
+            If quantity <= 0 Then
+                btnBorrow.Enabled = False
+            Else
+                btnBorrow.Enabled = True
+            End If
+            conn.Close()
+        End If
     End Sub
-
     Private Sub SearchFilter()
         Dim query As String = "SELECT custom_book_id as [Book ID], title as [Title], author as [Author], isbn as [ISBN], genre as [Genre], publication_year as [Publication Year], quantity as [Quantity], CASE WHEN quantity > 0 THEN 'Available' ELSE 'Unavailable' END AS [Availability Status] FROM tbl_book WHERE IsDeleted = 0"
 
@@ -148,5 +177,72 @@ Public Class BorrowBook
         cbAvailabilityStatus.Text = "All"
         tbSearch.Clear()
         SearchFilter()
+    End Sub
+
+    Private Sub btnBorrow_Click(sender As Object, e As EventArgs) Handles btnBorrow.Click
+        Try
+            conn.Open()
+
+            ' Check if the book has available quantity
+            Dim checkQtyQuery As String = "SELECT quantity FROM tbl_book WHERE book_id = @bookid"
+            Dim checkQtyCmd As New SqlCommand(checkQtyQuery, conn)
+            checkQtyCmd.Parameters.AddWithValue("@bookid", bookid)
+            Dim quantity As Integer = Convert.ToInt32(checkQtyCmd.ExecuteScalar())
+
+            If quantity <= 0 Then
+                MessageBox.Show("This book is currently unavailable.", "Unavailable", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Return
+            End If
+
+            ' Get the member's borrowing limit
+            Dim getLimitQuery As String = "
+            SELECT mt.borrowing_limit
+            FROM tbl_member m
+            JOIN tbl_membership_type mt ON m.membership_type = mt.membership_type
+            WHERE m.member_id = @memberid"
+            Dim getLimitCmd As New SqlCommand(getLimitQuery, conn)
+            getLimitCmd.Parameters.AddWithValue("@memberid", memberid)
+            Dim borrowingLimitObj As Object = getLimitCmd.ExecuteScalar()
+
+            If borrowingLimitObj Is Nothing Then
+                MessageBox.Show("Unable to retrieve borrowing limit.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
+
+            Dim maxLimit As Integer = Convert.ToInt32(borrowingLimitObj)
+
+            ' Check how many books this member currently has (Pending or Issued)
+            Dim countBorrowedQuery As String = "
+            SELECT COUNT(*) 
+            FROM tbl_issue 
+            WHERE member_id = @memberid AND status IN ('Pending', 'Issued')"
+            Dim countBorrowedCmd As New SqlCommand(countBorrowedQuery, conn)
+            countBorrowedCmd.Parameters.AddWithValue("@memberid", memberid)
+            Dim currentBorrowed As Integer = Convert.ToInt32(countBorrowedCmd.ExecuteScalar())
+
+            If currentBorrowed >= maxLimit Then
+                MessageBox.Show("You have reached your borrowing limit.", "Limit Reached", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Return
+            End If
+
+            ' Insert the request as pending
+            Dim requestQuery As String = "
+            INSERT INTO tbl_issue (book_id, member_id, status) 
+            VALUES (@bookid, @memberid, 'Pending')"
+            Dim cmd As New SqlCommand(requestQuery, conn)
+            cmd.Parameters.AddWithValue("@bookid", bookid)
+            cmd.Parameters.AddWithValue("@memberid", memberid)
+            Dim checkInsert As Integer = cmd.ExecuteNonQuery()
+
+            If checkInsert > 0 Then
+                MessageBox.Show("Your request has been submitted and is pending staff approval.", "Request Sent", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                pnlBottom.Visible = False
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            conn.Close()
+        End Try
     End Sub
 End Class
